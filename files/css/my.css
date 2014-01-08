@@ -1,0 +1,365 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background: #13110e;
+    scrollbar-face-color: #636363;
+	scrollbar-arrow-color: #898989;
+	scrollbar-highlight-color: #707070;
+	scrollbar-shadow-color: #555555;
+	scrollbar-darkshadow-color: #464646;
+	scrollbar-3dlight-color: #7d7d7d;
+	scrollbar-track-color: #252525;
+}
+
+body, input, textarea, select, td {
+    color: #F6C577;
+    font-family: "verdana", "arial", "helvetica";
+    font-size: 8pt;
+}
+
+hr {
+    color: #160D0B;
+    height: 1px;
+    border: 1px inset #CCC;
+    margin: 0.5em auto;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 5px 0 8px;
+}
+h1 { font-size: 19pt; }
+h2 { font-size: 14pt; }
+h3 { font-size: 10pt; }
+h4 { font-size: 8pt; }
+h5 { font-size: 8pt; font-weight: 500; }
+h6 { font-size: 8pt; font-weight: 400; }
+
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:active, a:visited {
+    color: #FFBA4B;
+}
+
+a:hover {
+    color:#FFFFFF;
+}
+
+textarea, input {
+    background: #13110E;
+    border: 1px solid #4A4842;
+    color: #A89D7B;
+}
+
+button, input[type=button], input[type=submit], input[type=file], input[type=reset] {
+    background: #856749;
+    border: 1px outset #4A4842;
+    color: #13110E;
+    padding: 1px 8px;
+}
+
+input[type=checkbox], input[type=radio] {
+    border: 0;
+    color: #F6C577;
+    margin: 3px 3px 0px 5px;
+    padding: 1px;
+}
+
+.wrapper {
+    /* min-width: 800px; */
+    padding: 0px 45px;
+    background: scroll url(/site/13.gif) left repeat-y,
+                scroll url(/site/15.gif) right repeat-y;
+}
+
+/* Text
+-----------------------------------------------------------------------------*/
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+.header {
+    height: 204px;
+    margin: 0px -45px;
+    position: relative;
+    background: scroll url(http://nevendaar.com/tmp/9_12.gif) right no-repeat,
+    scroll url(http://nevendaar.com/tmp/10_.gif) left no-repeat,
+    scroll url(http://nevendaar.com/tmp/11.gif) 357px 26px no-repeat,
+    scroll url(http://nevendaar.com/tmp/2.gif) top repeat-x;
+}
+
+.header a.logo {
+    font-size: 20pt;
+    letter-spacing: 6pt;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+}
+
+.header > .topbar {
+    height: 26px;
+    position: absolute;
+    right: 27%;
+}
+
+.header .icon{
+    background: url(http://nevendaar.com/tmp/3.gif) no-repeat;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    margin-right: 5px;
+    border-bottom: 1px solid #13110E;
+    box-shadow: 10px 0px 10px -5px #000;
+}
+.header .home_icon{        background-position: 0    0;}
+.header .home_icon:hover{  background-position: 100% 0;}
+.header .reg_icon{         background-position: 0    -25px;}
+.header .reg_icon:hover{   background-position: 100% -25px;}
+.header .login_icon{       background-position: 0    -50px;}
+.header .login_icon:hover{ background-position: 100% -50px;}
+.header .logout_icon{      background-position: 0    -75px;}
+.header .logout_icon:hover{background-position: 100% -75px;}
+.header .person_icon{      background-position: 0    -100px;}
+.header .person_icon:hover{background-position: 100% -100px;}
+
+.header > .infobar {
+    position: absolute;
+    right: 80px;
+    bottom: 2px;
+}
+
+.silver_line {
+    height: 12px;
+    background: url('http://nevendaar.com/tmp/14.gif');
+}
+
+/* Left Sidebar
+-----------------------------------------------------------------------------*/
+.left-sidebar {
+    float: left;
+    left: 8px;
+    top: 12px;
+    width: 210px;
+    margin-left: -100%;
+    position: relative;
+}
+
+.left-sidebar .control_box:before {
+	background: url(http://nevendaar.com/tmp/16.gif) no-repeat 50% 0%;
+	height: 31px;
+    display: block;
+    width: 210px;
+	text-align: center;
+	color: #000;
+    content: attr(data-title);
+    margin: 0px -15px;
+}
+
+.left-sidebar .control_box {
+	background: url(http://nevendaar.com/tmp/18.gif) no-repeat 0% 100%,
+                url(http://nevendaar.com/tmp/17.gif) repeat-y 50% 0%;
+	margin-bottom: 15px;
+    padding: 0px 15px 16px;
+	min-height: 16px;
+}
+
+.left-sidebar .control_box ul.menu,
+.left-sidebar .control_box ul.submenu {
+    list-style: none outside none;
+}
+
+.left-sidebar .control_box ul.menu > li {
+    background: url("http://nevendaar.com/site/42.gif") no-repeat transparent;
+    margin-bottom: 0.6em;
+    padding-left: 17px;
+    font-weight: 400;
+}
+
+.left-sidebar .control_box ul.menu > li.slider {
+    background: none;
+}
+
+.left-sidebar .control_box ul.menu li.active {
+    font-weight: 700;
+}
+
+/* Footer
+-----------------------------------------------------------------------------*/
+.footer {
+    height: 190px;
+    margin: 0px -45px;
+    background: scroll url(http://nevendaar.com/tmp/36.gif) left bottom no-repeat,
+                scroll url(http://nevendaar.com/site/40.gif) right bottom no-repeat,
+                scroll url(http://nevendaar.com/tmp/35.gif) bottom repeat-x;
+}
+
+.footer > .copyright {
+    position: relative;
+    top: 45%;
+    margin: 0px auto;
+    width: 348px;
+    height: 44px;
+    color: #5C90A0;
+    text-align: center;
+    padding-top: 10px;
+    background: url(http://nevendaar.com/tmp/cp.gif) no-repeat 0% 0%;
+}
+
+/* Middle
+-----------------------------------------------------------------------------*/
+.middle {
+    width: 100%;
+    position: relative;
+}
+
+.middle:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.container {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.content {
+    margin: 10px 8px 0px 230px;
+}
+
+.bordered {
+    background: url("http://nevendaar.com/site/born3.gif") #746F66;
+    border-top: 52px solid transparent;
+	border-bottom: 52px solid transparent;
+	border-left: 44px solid transparent;
+	border-right: 44px solid transparent;
+	border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
+	-moz-border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
+	-webkit-border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
+	-o-border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.breadcrumb {
+    padding: 0px 5px 10px;
+    margin-bottom: 20px;
+    list-style: none;
+    border-bottom: 1px inset #CCC;
+    /*background-color: #f5f5f5;*/
+}
+
+.breadcrumb > li {
+    display: inline-block;
+}
+
+.breadcrumb > li + li:before {
+    padding: 0px 2px;
+    content: "»\00a0";
+}
+
+.breadcrumb > .active {
+    color: #F6C577;
+}
+
+.material {
+    
+}
+
+.material > .title {
+    vertical-align: middle;
+}
+
+.material > .title > h1,
+.material > .title > h2,
+.material > .title > h3,
+.material > .title > h4
+{
+    display: inline-block;
+}
+
+.material > .body {
+    padding: 0 5px 3px;
+}
+
+.material > .title > .time {
+    height: 100%;
+}
+
+.material > .body > .details {
+    margin: 10px 0px;
+    list-style: none;
+}
+
+.material > .body > .details > li {
+    display: inline-block;
+}
+
+.material > .body > .details > li + li:before {
+    padding: 0px 2px;
+    content: "|\00a0";
+}
+
+.uRelatedEntries {
+    padding-left: 15px;
+    list-style: none;
+}
+
+.uRelatedEntries:before {
+    content: "Также смотрите:";
+    margin-left: -10px;
+}
+
+.comment_box {
+    margin: 10px;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
