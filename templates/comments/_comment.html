@@ -1,0 +1,82 @@
+﻿<table border="0" cellpadding="0" cellspacing="0" width="100%" class="$CLASS$">
+    <tr>
+        <td style="padding:3px;">
+        <div class="cDate" style="float:right;font:7pt;">
+            $DATE$
+            <?if(substr($MESSAGE$,0,6)!='&DICE&')?>
+                $MODER_PANEL$
+            <?else?>
+                $TIME$
+            <?endif?>
+        </div>
+        <div class="cTop" style="text-align:left;">
+            <span style="width:18px;">
+                <a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/dice/#$NUMBER$<?else?>#ent$ID$<?endif?>" onclick="if (document.getElementById('comEnt$ID$')){$('body').scrollTo( { top:$('#comEnt$ID$').offset().top-22, left:0}, 500 );return false;}" name="ent$ID$"><b>$NUMBER$</b></a>.
+            </span>
+            <b>$NAME$</b>
+            <?if($USERNAME$)?>(<a href="$PROFILE_URL$">$USERNAME$</a>)<?endif?>
+            <?if($EMAIL$)?>
+                <a href="$EMAIL_JS$" title="Email"><img border="0" align="absmiddle" src="http://src.ucoz.ru/t/601/e.gif"></a>
+            <?endif?>
+            <?if($SITE$)?>
+                <a rel="nofollow" href="$SITE$" target="_blank" title="Site"><img border="0" align="absmiddle" src="http://src.ucoz.ru/t/601/h.gif"></a>
+            <?endif?>
+            <?if($ENTRY_URL$)?>
+                [<a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank" title="Перейти на страницу материала">Материал</a>]
+            <?endif?>
+        </div>
+        <div class="cMessage" style="text-align:left;clear:both;padding-top:2px;padding-bottom:2px;">
+            <?if($USER_AVATAR_URL$)?>
+                <a href="$PROFILE_URL$" title="$USERNAME$" style="padding-right:4px;"><img alt="" align="left" src="$USER_AVATAR_URL$" width="30" border="0" /></a>
+            <?endif?>
+            <?if(substr($MESSAGE$,0,6)='&DICE&' && len($MESSAGE$)>=9)?>
+                <?if($ENTRY_URL$)?>
+                    <br/>*бросает кость...*
+                <?else?>
+                    <?substr($MESSAGE$,9)?><br/>
+                    Результат (<b><?substr($MESSAGE$,6,1)?></b> ступень):
+                    <img border="0" align="absmiddle" src="/dice/cub<? (($TIMESTAMP$/$NUMBER$)^101)%6 ?>.gif">
+                    <?if(substr($MESSAGE$,7,1))?> ("Расчетливый бой")<?endif?>
+                    <?if(substr($MESSAGE$,8,1))?> ("Уворот")<?endif?>&nbsp;&nbsp;&nbsp; Итог:
+                    <?if(substr($MESSAGE$,6,1)='1')?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=1)?><span style="color:#bbbbbb;">промах!</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=2)?><span style="color:#<?if(substr($MESSAGE$,7,2)='10')?>f6c577;">легкое ранение.<?else?>bbbbbb;">промах!<?endif?></span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=3)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>bbbbbb;">промах!<?else?>f6c577;">легкое ранение.<?endif?></span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=4)?><span style="color:#<?if(substr($MESSAGE$,7,2)='10')?>efd334;">среднее (серьёзное)<?else?>f6c577;">легкое<?endif?> ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=5)?><span style="color:#efd334;">среднее (серьёзное) ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=0)?><span style="color:#ffa500;">тяжёлое ранение.</span><?endif?>
+                    <?endif?>
+                    <?if(substr($MESSAGE$,6,1)='2')?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=1)?><span style="color:#<?if(substr($MESSAGE$,7,2)='10')?>f6c577;">легкое ранение.<?else?>bbbbbb;">промах!<?endif?></span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=2)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>bbbbbb;">промах!<?else?>f6c577;">легкое ранение.<?endif?></span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=3)?><span style="color:#<?if(substr($MESSAGE$,7,2)='10')?>efd334;">среднее (серьёзное)<?else?>f6c577;">легкое<?endif?> ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=4)?><span style="color:#efd334;">среднее (серьёзное) ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=5)?><span style="color:#ffa500;">тяжёлое ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=0)?><span style="color:#800;">смертельное ранение.</span><?endif?>
+                    <?endif?>
+                    <?if(substr($MESSAGE$,6,1)='3')?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=1)?><span style="color:#<?if(substr($MESSAGE$,7,2)='10')?>efd334;">среднее (серьёзное) ранение.<?else?><?if(substr($MESSAGE$,7,2)='01')?>bbbbbb;">промах!<?else?>f6c577;">легкое ранение.<?endif?><?endif?></span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=2)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>f6c577;">легкое<?else?>efd334;">среднее (серьёзное)<?endif?> ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=3)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>efd334;">среднее (серьёзное)<?else?>ffa500;">тяжёлое<?endif?> ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=4)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>ffa500;">тяжёлое<?else?>ff4f00;">калечащее<?endif?> ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=5)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>ff4f00;">калечащее<?else?>800;">смертельное<?endif?> ранение.</span><?endif?>
+                        <?if((($TIMESTAMP$/$NUMBER$)^101)%6=0)?><span style="color:#<?if(substr($MESSAGE$,7,2)='01')?>800;">смертельное ранение.<?else?>000;font-weight:bold;">убийство.<?endif?></span><?endif?>
+                    <?endif?>
+                <?endif?>
+            <?else?>
+                $MESSAGE$
+            <?endif?>
+        </div> 
+        <?if($ANSWER$ && substr($MESSAGE$,0,6)!='&DICE&')?>
+            <div class="cAnswer" style="text-align:left;clear:both;">
+                <b>Ответ</b>: $ANSWER$
+            </div>
+        <?endif?>
+        <?if($ANSWER_URL$ && substr($MESSAGE$,0,6)!='&DICE&')?>
+            <div style="clear:both;padding:4px 0;font-size:7pt; text-align: right;">
+                [<b><a href="$ANSWER_URL$">Ответить</a></b>]
+            </div>
+        <?endif?>
+        </td>
+    </tr>
+</table>
