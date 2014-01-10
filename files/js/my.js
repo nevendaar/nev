@@ -88,7 +88,7 @@ $(function () {
 
     // Подключаем ВКомментарии если нужно.
     var $vk_comm = $('#vk_comments');
-    if($vk_comm.length > 0 && $vk_comm.attr('data-uid')){
-        VK.Widgets.Comments("vk_comments", {limit: 10}, $vk_comm.attr('data-uid'));
+    if($vk_comm.length > 0 && ~~$vk_comm.attr('data-uid')){
+        VK.Widgets.Comments("vk_comments", {limit: 10}, ~~$vk_comm.attr('data-uid'));
     }
 });
