@@ -13,12 +13,12 @@ body, html {
     width: 100%;
     background: #13110e;
     scrollbar-face-color: #636363;
-	scrollbar-arrow-color: #898989;
-	scrollbar-highlight-color: #707070;
-	scrollbar-shadow-color: #555555;
-	scrollbar-darkshadow-color: #464646;
-	scrollbar-3dlight-color: #7d7d7d;
-	scrollbar-track-color: #252525;
+    scrollbar-arrow-color: #898989;
+    scrollbar-highlight-color: #707070;
+    scrollbar-shadow-color: #555555;
+    scrollbar-darkshadow-color: #464646;
+    scrollbar-3dlight-color: #7d7d7d;
+    scrollbar-track-color: #252525;
 }
 
 body, input, textarea, select, td {
@@ -34,7 +34,6 @@ hr {
     margin: 0.5em auto;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
     color: inherit;
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -42,13 +41,32 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     margin: 5px 0 8px;
 }
-h1 { font-size: 19pt; }
-h2 { font-size: 14pt; }
-h3 { font-size: 10pt; }
-h4 { font-size: 8pt; }
-h5 { font-size: 8pt; font-weight: 500; }
-h6 { font-size: 8pt; font-weight: 400; }
 
+h1 {
+    font-size: 19pt;
+}
+
+h2 {
+    font-size: 14pt;
+}
+
+h3 {
+    font-size: 10pt;
+}
+
+h4 {
+    font-size: 8pt;
+}
+
+h5 {
+    font-size: 8pt;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 8pt;
+    font-weight: 400;
+}
 
 a {
     text-decoration: none;
@@ -59,7 +77,7 @@ a:link, a:active, a:visited {
 }
 
 a:hover {
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 textarea, input {
@@ -92,15 +110,15 @@ input[type=checkbox], input[type=radio] {
 /* Text
 -----------------------------------------------------------------------------*/
 .text-left {
-  text-align: left;
+    text-align: left;
 }
 
 .text-right {
-  text-align: right;
+    text-align: right;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 /* Header
@@ -109,10 +127,10 @@ input[type=checkbox], input[type=radio] {
     height: 204px;
     margin: 0px -45px;
     position: relative;
-    background: scroll url(http://nevendaar.com/tmp/9_12.gif) right no-repeat,
-    scroll url(http://nevendaar.com/tmp/10_.gif) left no-repeat,
-    scroll url(http://nevendaar.com/tmp/11.gif) 357px 26px no-repeat,
-    scroll url(http://nevendaar.com/tmp/2.gif) top repeat-x;
+    background: scroll url(/tmp/9_12.gif) right no-repeat,
+    scroll url(/tmp/10_.gif) left no-repeat,
+    scroll url(/tmp/11.gif) 357px 26px no-repeat,
+    scroll url(/tmp/2.gif) top repeat-x;
 }
 
 .header a.logo {
@@ -129,8 +147,8 @@ input[type=checkbox], input[type=radio] {
     right: 27%;
 }
 
-.header .icon{
-    background: url(http://nevendaar.com/tmp/3.gif) no-repeat;
+.header .icon {
+    background: url(/tmp/3.gif) no-repeat;
     height: 25px;
     width: 25px;
     display: inline-block;
@@ -157,7 +175,7 @@ input[type=checkbox], input[type=radio] {
 
 .silver_line {
     height: 12px;
-    background: url('http://nevendaar.com/tmp/14.gif');
+    background: url('/tmp/14.gif');
 }
 
 /* Left Sidebar
@@ -172,22 +190,22 @@ input[type=checkbox], input[type=radio] {
 }
 
 .left-sidebar .control_box:before {
-	background: url(http://nevendaar.com/tmp/16.gif) no-repeat 50% 0%;
-	height: 31px;
+    background: url(/tmp/16.gif) no-repeat 50% 0%;
+    height: 31px;
     display: block;
     width: 210px;
-	text-align: center;
-	color: #000;
+    text-align: center;
+    color: #000;
     content: attr(data-title);
     margin: 0px -15px;
 }
 
 .left-sidebar .control_box {
-	background: url(http://nevendaar.com/tmp/18.gif) no-repeat 0% 100%,
-                url(http://nevendaar.com/tmp/17.gif) repeat-y 50% 0%;
-	margin-bottom: 15px;
+	background: url(/tmp/18.gif) no-repeat 0% 100%,
+                url(/tmp/17.gif) repeat-y 50% 0%;
+    margin-bottom: 15px;
     padding: 0px 15px 16px;
-	min-height: 16px;
+    min-height: 16px;
 }
 
 .left-sidebar .control_box ul.menu,
@@ -196,7 +214,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .left-sidebar .control_box ul.menu > li {
-    background: url("http://nevendaar.com/site/42.gif") no-repeat transparent;
+    background: url("/site/42.gif") no-repeat transparent;
     margin-bottom: 0.6em;
     padding-left: 17px;
     font-weight: 400;
@@ -215,9 +233,9 @@ input[type=checkbox], input[type=radio] {
 .footer {
     height: 190px;
     margin: 0px -45px;
-    background: scroll url(http://nevendaar.com/tmp/36.gif) left bottom no-repeat,
-                scroll url(http://nevendaar.com/site/40.gif) right bottom no-repeat,
-                scroll url(http://nevendaar.com/tmp/35.gif) bottom repeat-x;
+    background: scroll url(/tmp/36.gif) left bottom no-repeat,
+                scroll url(/site/40.gif) right bottom no-repeat,
+                scroll url(/tmp/35.gif) bottom repeat-x;
 }
 
 .footer > .copyright {
@@ -229,7 +247,7 @@ input[type=checkbox], input[type=radio] {
     color: #5C90A0;
     text-align: center;
     padding-top: 10px;
-    background: url(http://nevendaar.com/tmp/cp.gif) no-repeat 0% 0%;
+    background: url(/tmp/cp.gif) no-repeat 0% 0%;
 }
 
 /* Middle
@@ -256,33 +274,33 @@ input[type=checkbox], input[type=radio] {
 }
 
 .bordered {
-    background: url("http://nevendaar.com/site/born3.gif") #746F66;
+    background: url("/site/born3.gif") #746F66;
     border-top: 52px solid transparent;
-	border-bottom: 52px solid transparent;
-	border-left: 44px solid transparent;
-	border-right: 44px solid transparent;
-	border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
-	-moz-border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
-	-webkit-border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
-	-o-border-image: url(http://nevendaar.com/tmp/b.gif) 52 44 repeat;
+    border-bottom: 52px solid transparent;
+    border-left: 44px solid transparent;
+    border-right: 44px solid transparent;
+    border-image: url(/tmp/b.gif) 52 44 repeat;
+    -moz-border-image: url(/tmp/b.gif) 52 44 repeat;
+    -webkit-border-image: url(/tmp/b.gif) 52 44 repeat;
+    -o-border-image: url(/tmp/b.gif) 52 44 repeat;
 }
 
 .clearfix:before,
 .clearfix:after {
-  display: table;
-  content: " ";
+    display: table;
+    content: " ";
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
 .pull-right {
-  float: right !important;
+    float: right !important;
 }
 
 .pull-left {
-  float: left !important;
+    float: left !important;
 }
 
 .breadcrumb {
@@ -307,7 +325,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .material {
-    
+
 }
 
 .material > .title {
@@ -317,8 +335,7 @@ input[type=checkbox], input[type=radio] {
 .material > .title > h1,
 .material > .title > h2,
 .material > .title > h3,
-.material > .title > h4
-{
+.material > .title > h4 {
     display: inline-block;
 }
 
@@ -359,7 +376,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 }
