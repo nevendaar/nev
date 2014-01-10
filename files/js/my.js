@@ -1,21 +1,21 @@
-﻿function activate_menu(module_id, uri_id){
+﻿function activate_menu(module_id, uri_id) {
     $("#site_menu .slider").hide();
-    $("#site_menu .dropdown-link").click(function(){
+    $("#site_menu .dropdown-link").click(function () {
         $(this).parent().parent().children(".slider:first").slideToggle('fast');
         return false;
     });
-    var gen_href = function(){
-        if(uri_id == 'page1')              return '/';
-        else if(/^ldCat\d+$/.test(uri_id)) return '/load/'    + uri_id.substr(5);
-        else if(/^puCat\d+$/.test(uri_id)) return '/publ/'    + uri_id.substr(5);
-        else if(/^page\d+$/.test(uri_id))  return '/index/0-' + uri_id.substr(4);
+    var gen_href = function () {
+        if (uri_id == 'page1')              return '/';
+        else if (/^ldCat\d+$/.test(uri_id)) return '/load/'    + uri_id.substr(5);
+        else if (/^puCat\d+$/.test(uri_id)) return '/publ/'    + uri_id.substr(5);
+        else if (/^page\d+$/.test(uri_id))  return '/index/0-' + uri_id.substr(4);
         return null;
-    }
+    };
     var href;
-    if($.inArray(module_id, ['news', 'faq', 'photo', 'blog']) >= 0){
+    if ($.inArray(module_id, ['news', 'faq', 'photo', 'blog']) >= 0) {
         href = '/' + module_id;
     }
-    else{
+    else {
         var reserved = {
             page48: "/index/0-38",
             page49: "/index/0-38",
@@ -43,14 +43,14 @@
             puCat18: "/publ/11",
             puCat23: "/publ/13",
             puCat24: "/publ/10"
-        }
-        if((href = reserved[uri_id]) === undefined){
+        };
+        if ((href = reserved[uri_id]) === undefined) {
             href = gen_href();
-            if(href === null){
-                if(module_id == 'load'){
+            if (href === null) {
+                if (module_id == 'load') {
                     href = '/load/6';
                 }
-                else if(module_id == 'dir' && uri_id != 'drCat5'){
+                else if (module_id == 'dir' && uri_id != 'drCat5') {
                     href = '/dir/6';
                 }
                 //else default here
@@ -60,14 +60,21 @@
     var $link = $("#site_menu a[href='" + href + "']:first");
     var $blk;
     $link.parent().addClass('active');
-    if($link.hasClass('dropdown-link')){
+    if ($link.hasClass('dropdown-link')) {
         $blk = $link.parent().next('.slider');
     }
-    else{
+    else {
         $blk = $link.parent().parent().parent();
     }
-    if($blk.hasClass('slider')){
+    if ($blk.hasClass('slider')) {
         $blk.show();
         $blk.prev().addClass('active');
     }
 }
+
+$(function () {
+    // Подключаем VK_API если это нужно.
+    if ($('main.content').hasClass('vk-init')) {
+        VK.init({apiId: 2014686, onlyWidgets: true});
+    }
+});
