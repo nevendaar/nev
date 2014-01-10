@@ -88,7 +88,15 @@ $(function () {
 
     // Подключаем ВКомментарии если нужно.
     var $vk_comm = $('#vk_comments');
-    if($vk_comm.length > 0 && ~~$vk_comm.attr('data-uid')){
+    if ($vk_comm.length > 0 && ~~$vk_comm.attr('data-uid')) {
         VK.Widgets.Comments("vk_comments", {limit: 10}, ~~$vk_comm.attr('data-uid'));
     }
+
+    $('.comment .com_num').click(function () {
+        var $comment = $('#comEnt' + $(this).attr('name').substr(3));
+        if ($comment.length > 0) {
+            $('body').scrollTo({ top: $comment.offset().top - 22, left: 0}, 500);
+            return false;
+        }
+    });
 });

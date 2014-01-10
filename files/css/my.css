@@ -375,6 +375,10 @@ input[type=checkbox], input[type=radio] {
     margin: 10px;
 }
 
+.comment .com_num {
+    font-weight: bold;
+}
+
 .center-block {
     display: block;
     margin-right: auto;
