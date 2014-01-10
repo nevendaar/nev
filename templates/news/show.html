@@ -43,7 +43,7 @@
                                     <li>Добавил: <a href="$PROFILE_URL$">$USER$</a></li>
                                     <?if($RATING$)?><li>Рейтинг: <?$RSTARS$('12','/site/stars.png','1','float')?></li><?endif?>
                                     <li><div id="vk_like" style="float: left;"></div></li>
-                                    <li id="vk_share"><script>make_VK_share_btn('<?if($IMG_SMALL_URL1$)?>$IMG_SMALL_URL1$<?else?><?if($IMG_URL1$)?>$IMG_URL1$<?endif?><?endif?>');</script></li>
+                                    <li id="vk_share" data-img="<?if($IMG_SMALL_URL1$)?>$IMG_SMALL_URL1$<?else?>$IMG_URL1$<?endif?>"></li>
                                 </ul>
                                 <?if($TAGS$)?><div class="tags">Теги: <i>$TAGS$</i></div><?endif?>
                             </div>
@@ -64,8 +64,7 @@
                             </div>
 
                             <div class="text-center">$COM_PAGE_SELECTOR1$</div>
-                            <div class="VKborders"><div id="vk_comments"></div></div>
-                            <script type="text/javascript">(function(){VK.Widgets.Comments("vk_comments", {limit: 10}, <? 10000000000+$ID$ ?>);})();</script>
+                            <div class="VKborders"><div id="vk_comments" data-uid="<? 10000000000 + $ID$ ?>"></div></div>
                         <?endif?>
 
                     </main>

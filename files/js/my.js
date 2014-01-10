@@ -73,8 +73,22 @@
 }
 
 $(function () {
-    // Подключаем VK_API если это нужно.
+    // Подключаем VK_API если нужно.
     if ($('main.content').hasClass('vk-init')) {
         VK.init({apiId: 2014686, onlyWidgets: true});
+    }
+
+    // Подключаем кнопку VK-share если нужно.
+    var $vk_share_btn = $('#vk_share');
+    if ($vk_share_btn.length > 0) {
+        $vk_share_btn.html(
+            VK.Share.button({image: $vk_share_btn.attr('data-img') || '/site/NevVK.jpg'}, {type: "button_nocount", text: "Сохранить"})
+        );
+    }
+
+    // Подключаем ВКомментарии если нужно.
+    var $vk_comm = $('#vk_comments');
+    if($vk_comm.length > 0 && $vk_comm.attr('data-uid')){
+        VK.Widgets.Comments("vk_comments", {limit: 10}, $vk_comm.attr('data-uid'));
     }
 });
