@@ -1,45 +1,41 @@
-﻿<div class="comment">
-    <div class="clearfix">
-        <a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/dice/#$NUMBER$<?else?>#ent$ID$<?endif?>" class="com_num" name="ent$ID$">$NUMBER$</a>.
-        <b>$NAME$</b>
-        <?if($USERNAME$)?>(<a href="$PROFILE_URL$">$USERNAME$</a>)<?endif?>
-        <?if($EMAIL$)?><a href="$EMAIL_JS$" title="Email"><img src="http://src.ucoz.ru/t/601/e.gif" alt="email"></a><?endif?>
-        <?if($SITE$)?><a rel="nofollow" href="$SITE$" target="_blank" title="Site"><img src="http://src.ucoz.ru/t/601/h.gif" alt="site"></a><?endif?>
-        <?if($ENTRY_URL$)?>
-            [<a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank" title="Перейти на страницу материала">Материал</a>]
-        <?endif?>
-        <div class="pull-right">
-            $DATE$
-            <?if(substr($MESSAGE$,0,6)!='&DICE&')?>$MODER_PANEL$<?else?>$TIME$<?endif?>
-        </div>
-    </div>
-    <div class="body clearfix">
-        <?if($USER_AVATAR_URL$)?>
-            <a href="$PROFILE_URL$" title="$USERNAME$" class="pull-left"><img align="left" src="$USER_AVATAR_URL$" width="30"></a>
-        <?endif?>
-        <?if(substr($MESSAGE$,0,6)='&DICE&' && len($MESSAGE$)>=9)?>
-            <?if($ENTRY_URL$)?>
-                *бросает кость...*
-            <?else?>
-                <p><?substr($MESSAGE$,9)?></p>
-                Результат (<b><?substr($MESSAGE$,6,1)?></b> ступень)
-                <?if(substr($MESSAGE$,7,1))?>("Расчетливый бой")<?endif?>
-                <?if(substr($MESSAGE$,8,1))?>("Уворот")<?endif?>
-                :
-                <div class="dice dice<?(($TIMESTAMP$/$NUMBER$)^101)%6?>">
-                    <div class="res<?(($TIMESTAMP$/$NUMBER$)^101)%6?><?substr($MESSAGE$,6,3)?>"></div>
-                </div>
-            <?endif?>
-        <?else?>
-            $MESSAGE$
-        <?endif?>
-    </div>
-    <?if($ANSWER$ && substr($MESSAGE$,0,6)!='&DICE&')?>
-        <div class="answer"><b>Ответ</b>: $ANSWER$</div>
+﻿<div class="clearfix">
+    <span class="com_num">$NUMBER$</span>.
+    <b>$NAME$</b>
+    <?if($USERNAME$)?>(<a href="$PROFILE_URL$">$USERNAME$</a>)<?endif?>
+    <?if($USER_LOGGED_IN$ && $EMAIL$)?><a href="$EMAIL_JS$" title="Email"><img src="http://src.ucoz.ru/t/601/e.gif" alt="email"></a><?endif?>
+    <?if($SITE$)?><a rel="nofollow" href="$SITE$" target="_blank" title="Site"><img src="http://src.ucoz.ru/t/601/h.gif" alt="site"></a><?endif?>
+    <?if($ENTRY_URL$)?>
+        [<a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank" title="Перейти на страницу материала">Материал</a>]
     <?endif?>
-    <?if($ANSWER_URL$ && substr($MESSAGE$,0,6)!='&DICE&')?>
-        <div class="text-right" style="padding:4px 0; font-size:7pt;">
-            [<b><a href="$ANSWER_URL$">Ответить</a></b>]
-        </div>
+    <div class="time pull-right">
+        $DATE$ $TIME$
+        <?if(substr($MESSAGE$,0,6)!='&DICE&')?>$MODER_PANEL$<?endif?>
+    </div>
+</div>
+<div class="body clearfix">
+    <?if($USER_AVATAR_URL$)?>
+        <a href="$PROFILE_URL$" title="$USERNAME$" class="avatar pull-left"><img src="$USER_AVATAR_URL$" width="30"></a>
+    <?endif?>
+    <?if(substr($MESSAGE$,0,6)='&DICE&' && len($MESSAGE$)>=9)?>
+        <?if($ENTRY_URL$)?>
+            *бросает кость...*
+        <?else?>
+            <p><?substr($MESSAGE$,9)?></p>
+            Результат (<b><?substr($MESSAGE$,6,1)?></b> ступень)
+            <?if(substr($MESSAGE$,7,1))?>("Расчетливый бой")<?endif?>
+            <?if(substr($MESSAGE$,8,1))?>("Уворот")<?endif?>
+            :
+            <div class="dice dice<?(($TIMESTAMP$/$NUMBER$)^101)%6?>">
+                <div class="res<?(($TIMESTAMP$/$NUMBER$)^101)%6?><?substr($MESSAGE$,6,3)?>"></div>
+            </div>
+        <?endif?>
+    <?else?>
+        <p class="msg">$MESSAGE$</p>
+        <?if($ANSWER$ && substr($MESSAGE$,0,6)!='&DICE&')?>
+            <div class="answer pull-left">$ANSWER$</div>
+        <?endif?>
+        <?if($ANSWER_URL$ && substr($MESSAGE$,0,6)!='&DICE&')?>
+            <div class="reply pull-right"><a href="$ANSWER_URL$">Ответить</a></div>
+        <?endif?>
     <?endif?>
 </div>
