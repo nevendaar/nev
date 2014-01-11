@@ -1,11 +1,11 @@
 ﻿<header class="header">
     <a href="$HOME_PAGE_LINK$" class="logo" title="Всё о серии игр Disciples-I, II, III. Новости, скриншоты, карты и саги.">
-        <img src="/site/Disciples.gif" alt="DISCIPLES">
+        <img src="/site/logo.gif" alt="DISCIPLES">
     </a>
     <div class="topbar">
-        <a class="icon home_icon" href="$HOME_PAGE_LINK$" title="Главная"></a>
+        <a class="icon home_icon" href="/" title="Главная"></a>
         <?if($USER_LOGGED_IN$)?>
-            <a class="icon person_icon" href="$PERSONAL_PAGE_LINK$" title="Мой профиль"></a>
+            <a class="icon person_icon profile-link" href="/index/8-$USER_ID$" title="Мой профиль"></a>
             <a class="icon logout_icon" href="$LOGOUT_LINK$" title="Выход"></a>
         <?else?>
             <a class="icon reg_icon" href="$REGISTER_LINK$" title="Регистрация"></a>
@@ -13,7 +13,7 @@
         <?endif?>
     </div>
     <div class="infobar">
-        <?if($USER_LOGGED_IN$)?>Вы вошли как <a href="$PERSONAL_PAGE_LINK$"><b>$USERNAME$</b></a>
+        <?if($USER_LOGGED_IN$)?>Вы вошли как <a href="/index/8-$USER_ID$" class="profile-link"><b>$USERNAME$</b></a>
         <?else?>Приветствуем Вас, <b>$USERNAME$</b>
         <?endif?> | <a href="$RSS_LINK$">RSS</a>
     </div>

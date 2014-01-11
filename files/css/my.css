@@ -427,7 +427,3 @@ input[type=checkbox], input[type=radio] {
     margin: 5px;
     font-weight: bold;
 }
-
-#allEntries div[id^='comEnt'] .com_num {
-    font-weight: bold;
-}

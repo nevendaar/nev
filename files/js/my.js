@@ -73,6 +73,12 @@
 }
 
 $(function () {
+    // Ссылки на профили пользователей
+    $('.profile-link').click(function () {
+        window.open($(this).attr('href'), 'up1', 'scrollbars=1,top=0,left=0,resizable=1,width=680,height=350');
+        return false;
+    });
+
     // Подключаем VK_API если нужно.
     if ($('main.content').hasClass('vk-init')) {
         VK.init({apiId: 2014686, onlyWidgets: true});
@@ -91,12 +97,4 @@ $(function () {
     if ($vk_comm.length > 0 && ~~$vk_comm.attr('data-uid')) {
         VK.Widgets.Comments("vk_comments", {limit: 10}, ~~$vk_comm.attr('data-uid'));
     }
-
-    $('.comment .com_num').click(function () {
-        var $comment = $('#comEnt' + $(this).attr('name').substr(3));
-        if ($comment.length > 0) {
-            $('body').scrollTo({ top: $comment.offset().top - 22, left: 0}, 500);
-            return false;
-        }
-    });
 });
