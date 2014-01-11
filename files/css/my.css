@@ -21,10 +21,14 @@ body, html {
     scrollbar-track-color: #252525;
 }
 
-body, input, textarea, select, td {
+body, input, textarea, td {
     color: #F6C577;
     font-family: "verdana", "arial", "helvetica";
     font-size: 8pt;
+}
+
+textarea {
+    resize: none;
 }
 
 hr {
@@ -86,10 +90,14 @@ textarea, input {
     color: #A89D7B;
 }
 
-button, input[type=button], input[type=submit], input[type=file], input[type=reset] {
+button, input[type=button], input[type=submit], input[type=file], input[type=reset], .codeButtons {
     background: #856749;
     border: 1px outset #4A4842;
     color: #13110E;
+    padding: 1px;
+}
+
+button, input[type=button], input[type=submit], input[type=file], input[type=reset] {
     padding: 1px 8px;
 }
 
@@ -105,6 +113,15 @@ input[type=checkbox], input[type=radio] {
     padding: 0px 45px;
     background: scroll url(/site/13.gif) left repeat-y,
                 scroll url(/site/15.gif) right repeat-y;
+}
+
+.codeButtons {
+    font-size: 7pt;
+}
+
+.smiles { 
+    background: #746F66;
+    border: 1px solid #4A4842;
 }
 
 /* Text
@@ -385,6 +402,18 @@ input[type=checkbox], input[type=radio] {
     font: 7pt;
 }
 
+.form-group { 
+    margin-bottom: 15px;
+}
+
+.sq_brackets:before {
+    content: "[";
+}
+
+.sq_brackets:after {
+    content: "]";
+}
+
 /* Comments */
 
 #allEntries div[id^='comEnt'] {
@@ -414,16 +443,50 @@ input[type=checkbox], input[type=radio] {
     font-weight: bold;
 }
 
-#allEntries div[id^='comEnt'] .reply:before {
-    content: "[";
-}
-
-#allEntries div[id^='comEnt'] .reply:after {
-    content: "]";
-}
-
 #allEntries div[id^='comEnt'] .reply {
     font-size: 7pt;
     margin: 5px;
     font-weight: bold;
+}
+
+/* Comment form */
+#acform {
+    background-color: rgba(125, 125, 125, 0.400);
+    border: 1px solid #4A4842;
+    padding: 6px;
+    margin-top: 15px !important;
+}
+
+#acform #message {
+    min-height: 120px;
+    float: left;
+    width: 89%;
+    resize: vertical;
+    background: url("/site/bkform.gif") #535048;
+    border: 1px solid #4A4842;
+    color: #FFFFFF;
+}
+
+#acform .smiles {
+    float: right;
+    width: 10%;
+    display: block;
+    min-width: 75px;
+}
+
+#acform label{
+    display: inline-block;
+    min-width: 75px;
+    text-align: right;
+    margin-right: 5px;
+    float: left;
+}
+
+label.required:after,
+input:required + label:after,
+select:required + label:after,
+textarea:required + label:after {
+    content: "*";
+    color: red;
+    margin-left: 3px;
 }

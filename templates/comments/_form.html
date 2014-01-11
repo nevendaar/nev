@@ -1,49 +1,30 @@
-﻿<table border="0" width="100%" cellspacing="1" cellpadding="2" class="commTable">
-    <tr><td class="commTd2" colspan="2">$ERROR$</td></tr>
-    <?if(!$USER_LOGGED_IN$)?>
-        <tr>
-            <td width="15%" class="commTd1" nowrap>Имя *:</td>
-            <td class="commTd2">
-                <input class="commFl" type="text" name="name" value="$NAME$" size="30" maxlength="60">
-            </td>
-        </tr>
-        <tr>
-            <td class="commTd1">Email:</td>
-            <td class="commTd2">
-                <input class="commFl" type="text" name="email" value="$EMAIL$" size="30" maxlength="60">
-            </td>
-        </tr>
-    <?endif?>
-    <tr>
-        <td class="commTd2" colspan="2">
-            <div style="padding-bottom:2px">$BBCODES$</div>
-            <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                    <td valign="top">
-                        <textarea class="commFl" style="height:135px;" rows="5" cols="50" name="message" id="message">$MESSAGE$</textarea>
-                    </td>
-                    <?if($SMILES$)?>
-                        <td width="5%" valign="top" align="center" valign="top" style="padding-left:3px;">$SMILES$</td>
-                    <?endif?>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <?if($SUBSCRIBE$)?>
-        <tr>
-            <td width="15%" class="commTd1" nowrap>Подписка:</td>
-            <td class="commTd2">$SUBSCRIBE$</td>
-        </tr>
-    <?endif?>
-    <?if($SECURITY_CODE$)?>
-        <tr>
-            <td class="commTd1" nowrap>Код *:</td>
-            <td class="commTd2">$SECURITY_CODE$</td>
-        </tr>
-    <?endif?>
-    <tr>
-        <td class="commTd2" colspan="2" align="center">
-            <input type="submit" class="commSbmFl" id="addcBut" name="submit" value="- Добавить комментарий -">
-        </td>
-    </tr>
-</table>
+﻿<div class="form-group clearfix">
+    <div class="bbcodes">$BBCODES$</div>
+    <textarea id="message" name="message">$MESSAGE$</textarea>
+    $SMILES$
+</div>
+<?if(!$USER_LOGGED_IN$)?>
+    <div class="form-group">
+        <input type="text" name="name" value="$NAME$" maxlength="30" required>
+        <label for="name">Имя</label>
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" value="$NAME$" maxlength="60">
+        <label for="email">Email</label>
+    </div>
+<?endif?>
+<?if($SUBSCRIBE$)?>
+    <div class="form-group">
+        $SUBSCRIBE$
+        <label for="subs">Подписка</label>
+    </div>
+<?endif?>
+<?if($SECURITY_CODE$)?>
+    <div class="form-group">
+        $SECURITY_CODE$
+        <label for="code" class="required">Код</label>
+    </div>
+<?endif?>
+<div class="text-center">
+    <input type="submit" name="submit" value="- Добавить комментарий -">
+</div>

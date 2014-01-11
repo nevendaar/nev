@@ -5,7 +5,9 @@
     <?if($USER_LOGGED_IN$ && $EMAIL$)?><a href="$EMAIL_JS$" title="Email"><img src="/site/e.gif" alt="email"></a><?endif?>
     <?if($SITE$)?><a rel="nofollow" href="$SITE$" target="_blank" title="Site"><img src="/site/h.gif" alt="site"></a><?endif?>
     <?if($ENTRY_URL$)?>
-        [<a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank">Материал</a>]
+        <span class="sq_brackets">
+            <a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank">Материал</a>
+        </span>
     <?endif?>
     <div class="time pull-right">
         $DATE$ $TIME$
@@ -35,7 +37,7 @@
             <div class="answer pull-left">$ANSWER$</div>
         <?endif?>
         <?if($ANSWER_URL$ && substr($MESSAGE$,0,6)!='&DICE&')?>
-            <div class="reply pull-right"><a href="$ANSWER_URL$">Ответить</a></div>
+            <div class="reply pull-right sq_brackets"><a href="$ANSWER_URL$">Ответить</a></div>
         <?endif?>
     <?endif?>
 </div>
