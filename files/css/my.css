@@ -250,7 +250,7 @@ input[type=checkbox], input[type=radio] {
 .footer {
     height: 190px;
     margin: 0px -45px;
-    background: url(/img/sbbl.gif) -175px bottom no-repeat,
+    background: url(/img/sbbl.gif) left   bottom no-repeat,
                 url(/img/sbbr.gif) right  bottom no-repeat,
                 url(/img/sbb.gif)  bottom repeat-x;
 }
