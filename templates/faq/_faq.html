@@ -1,0 +1,15 @@
+﻿<div class="material">
+    <div class="title clearfix">
+        <h2><a href="$ENTRY_DIRECT_URL$" name="$ID$" onclick="prompt('Question direct link:', '$ENTRY_DIRECT_URL$'); return false;">$TITLE$</a></h2>
+        <?if($MODER_PANEL$)?><div class="pull-right">$MODER_PANEL$</div><?endif?>
+    </div>
+    <div class="body">
+        $MESSAGE$
+        <div class="answer"><?if($ANSWER$)?>$ANSWER$<?else?><i>Еще нет ответа на этот вопрос.</i><?endif?></div>
+        <?if($NAME$ && ($CUR_GROUP_ID$=4||$CUR_GROUP_ID$=3||$CUR_GROUP_ID$=14))?>
+            Добавил: <a href="$EMAIL_JS$">$NAME$</a> <?if($USERNAME$)?>(<a href="$PROFILE_URL$">$USERNAME$</a>)<?endif?>
+        <?endif?>
+        <?if($RATING$)?><?$RSTARS$('12', '/img/stars.png', '1', 'float')?><?endif?>
+    </div>
+</div>
+<hr>
