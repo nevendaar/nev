@@ -70,9 +70,27 @@
         $blk.show();
         $blk.prev().addClass('active');
     }
+    if(uri_id == 'phMain')
+        $('#cid33').parent().hide();
+    else if(/^phCat(45|5[4-7]|67)$/.test(uri_id))
+        $('#cid54').parent().before('<tr><td id="cid33" class="catsTd"><a href="/photo/33">Анимации</a> [261]</td></tr>');
 }
 
 $(function () {
+    // Nevendaar FM
+    $('.nfm-link').click(function () {
+        window.open($(this).attr('href'), 'nfm', 'scrollbars=1,top=0,left=0,resizable=1,width=400,height=275');
+        return false;
+    });
+
+    // Блок меню: Новое на сайте
+    $('#menu_comm_link').click(function () {
+        var $this = $(this);
+        $('#menu_nots, #menu_comminf').slideToggle('slow');
+        $this.html($this.html() == 'Комментарии' ? 'Назад' : 'Комментарии');
+        return false;
+    });
+
     // Ссылки на профили пользователей
     $('.profile-link').click(function () {
         window.open($(this).attr('href'), 'up1', 'scrollbars=1,top=0,left=0,resizable=1,width=680,height=350');

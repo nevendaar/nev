@@ -1,7 +1,7 @@
 ﻿<aside class="left-sidebar">
 
     <!--NFM-->
-    <a title="Открыть в браузере" href="/NFM.html" onclick="window.open('/NFM.html','upp','scrollbars=1,top=0,left=0,resizable=1,width=400,height=275');return false;"><img alt="Невендаар FM" src="/chatbtn/NFM_mini.png"></a>
+    <a title="Открыть в браузере" href="/NFM.html" class="nfm-link"><img alt="Невендаар FM" src="/img/NFM_mini.png"></a>
     <!--/NFM-->
 
     <!--MENU-->
@@ -84,7 +84,7 @@
             <li><a href="/tests">Тесты</a></li>
         </ul>
     </div>
-    <script type="text/javascript">activate_menu("$MODULE_ID$", "$URI_ID$");</script>
+    <script>activate_menu("$MODULE_ID$", "$URI_ID$");</script>
     <!--/MENU-->
 
     <?if($SEARCH_FORM$)?>
@@ -94,22 +94,16 @@
     <?if($CATEGORIES$ && $MODULE_ID$!="dir" && $MODULE_ID$!="faq")?>
         <div class="control_box" data-title="<?if($MODULE_ID$="photo")?>Альбомы<?else?>Категории<?endif?>">
             $CATEGORIES$
-            <?if($URI_ID$='phMain')?><script type="text/javascript">$('#cid33').parent().hide();</script><?endif?>
-            <?if($URI_ID$='phCat45'||$URI_ID$='phCat54'||$URI_ID$='phCat55'||$URI_ID$='phCat56'||$URI_ID$='phCat57')?>
-                <script type="text/javascript">
-                    $('#cid54').parent().before('<tr><td style="width:100%" class="catsTd" id="cid33" valign="top"><a href="/photo/33" class="catName">Анимации</a> <span class="catNumData" style="unicode-bidi:embed;">[250]</span></td></tr>');
-                </script>
-            <?endif?>
         </div>
     <?endif?>
 
     <!--NEWS-->
     <div class="control_box" data-title="Новое на сайте">
-        <div id="nots">$MYINF_5$</div>
-        <div id="comminf" style="display:none;">$MYINF_4$</div>
+        <div id="menu_nots">$MYINF_5$</div>
+        <div id="menu_comminf" class="hide">$MYINF_4$</div>
         <div align="center" style="padding:5px 0;">
             [ <a href="/dir/5" target="_self">Архив</a> ]
-            [ <a id="lcomm" href="javascript://" rel="nofollow" onclick="$('#nots, #comminf').slideToggle('slow');if($('#lcomm').html()=='Комментарии'){$('#lcomm').html('Назад')}else{$('#lcomm').html('Комментарии')};return false;">Комментарии</a> ]
+            [ <a id="menu_comm_link" href="#">Комментарии</a> ]
         </div>
     </div>
     <!--/NEWS-->

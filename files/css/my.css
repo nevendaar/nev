@@ -111,8 +111,8 @@ input[type=checkbox], input[type=radio] {
 .wrapper {
     /* min-width: 800px; */
     padding: 0px 45px;
-    background: scroll url(/site/13.gif) left repeat-y,
-                scroll url(/site/15.gif) right repeat-y;
+    background: url(/img/sbl.gif) left  repeat-y,
+                url(/img/sbr.gif) right repeat-y;
 }
 
 .codeButtons {
@@ -144,10 +144,10 @@ input[type=checkbox], input[type=radio] {
     height: 204px;
     margin: 0px -45px;
     position: relative;
-    background: scroll url(/tmp/9_12.gif) right no-repeat,
-    scroll url(/tmp/10_.gif) left no-repeat,
-    scroll url(/tmp/11.gif) 357px 26px no-repeat,
-    scroll url(/tmp/2.gif) top repeat-x;
+    background: url(/img/sbtr.gif) right no-repeat,
+                url(/img/sbtl.gif) left  no-repeat,
+                url(/img/s_lg_bck.gif) 357px 26px no-repeat,
+                url(/img/sbt.gif)  top   repeat-x;
 }
 
 .header a.logo {
@@ -165,7 +165,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .header .icon {
-    background: url(/tmp/3.gif) no-repeat;
+    background: url(/img/btns.gif) no-repeat;
     height: 25px;
     width: 25px;
     display: inline-block;
@@ -192,7 +192,7 @@ input[type=checkbox], input[type=radio] {
 
 .silver_line {
     height: 12px;
-    background: url('/tmp/14.gif');
+    background: url('/img/silver_line.gif');
 }
 
 /* Left Sidebar
@@ -207,7 +207,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .left-sidebar .control_box:before {
-    background: url(/tmp/16.gif) no-repeat 50% 0%;
+    background: url(/img/smt.gif) no-repeat 50% 0%;
     height: 31px;
     display: block;
     width: 210px;
@@ -218,8 +218,8 @@ input[type=checkbox], input[type=radio] {
 }
 
 .left-sidebar .control_box {
-	background: url(/tmp/18.gif) no-repeat 0% 100%,
-                url(/tmp/17.gif) repeat-y 50% 0%;
+    background: url(/img/smb.gif) no-repeat 0% 100%,
+                url(/img/smm.gif) repeat-y 50% 0%;
     margin-bottom: 15px;
     padding: 0px 15px 16px;
     min-height: 16px;
@@ -231,7 +231,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .left-sidebar .control_box ul.menu > li {
-    background: url("/site/42.gif") no-repeat transparent;
+    background: url("/img/mp.gif") no-repeat transparent;
     margin-bottom: 0.6em;
     padding-left: 17px;
     font-weight: 400;
@@ -250,9 +250,9 @@ input[type=checkbox], input[type=radio] {
 .footer {
     height: 190px;
     margin: 0px -45px;
-    background: scroll url(/tmp/36.gif) left bottom no-repeat,
-                scroll url(/site/40.gif) right bottom no-repeat,
-                scroll url(/tmp/35.gif) bottom repeat-x;
+    background: url(/img/sbbl.gif) -175px bottom no-repeat,
+                url(/img/sbbr.gif) right  bottom no-repeat,
+                url(/img/sbb.gif)  bottom repeat-x;
 }
 
 .footer > .copyright {
@@ -264,7 +264,7 @@ input[type=checkbox], input[type=radio] {
     color: #5C90A0;
     text-align: center;
     padding-top: 10px;
-    background: url(/tmp/cp.gif) no-repeat 0% 0%;
+    background: url(/img/cp.gif) no-repeat 0% 0%;
 }
 
 /* Middle
@@ -291,15 +291,15 @@ input[type=checkbox], input[type=radio] {
 }
 
 .bordered {
-    background: url("/site/born3.gif") #746F66;
-    border-top: 52px solid transparent;
+    background: url("/img/back.gif") #746F66;
+    border-top:    52px solid transparent;
     border-bottom: 52px solid transparent;
-    border-left: 44px solid transparent;
-    border-right: 44px solid transparent;
-    border-image: url(/tmp/b.gif) 52 44 repeat;
-    -moz-border-image: url(/tmp/b.gif) 52 44 repeat;
-    -webkit-border-image: url(/tmp/b.gif) 52 44 repeat;
-    -o-border-image: url(/tmp/b.gif) 52 44 repeat;
+    border-left:   44px solid transparent;
+    border-right:  44px solid transparent;
+    border-image:         url(/img/b.gif) 52 44 repeat;
+    -o-border-image:      url(/img/b.gif) 52 44 repeat;
+    -moz-border-image:    url(/img/b.gif) 52 44 repeat;
+    -webkit-border-image: url(/img/b.gif) 52 44 repeat;
 }
 
 .clearfix:before,
@@ -462,7 +462,7 @@ input[type=checkbox], input[type=radio] {
     float: left;
     width: 89%;
     resize: vertical;
-    background: url("/site/bkform.gif") #535048;
+    background: url("/img/bkform.gif") #535048;
     border: 1px solid #4A4842;
     color: #FFFFFF;
 }
@@ -489,4 +489,21 @@ textarea:required + label:after {
     content: "*";
     color: red;
     margin-left: 3px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.hidden {
+    display:    none   !important;
+    visibility: hidden !important;
 }

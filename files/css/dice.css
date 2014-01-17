@@ -1,6 +1,6 @@
 .dice {
     display: inline-block;
-    background: scroll url(http://moitest.ucoz.ru/images/dices.gif) 0 0 no-repeat;
+    background: scroll url(/dice/dices.gif) 0 0 no-repeat;
     min-height: 20px;
     padding-left: 23px;
 }
