@@ -93,7 +93,7 @@ $(function () {
 
     // Ссылки на профили пользователей
     $('.profile-link').click(function () {
-        window.open($(this).attr('href'), 'up1', 'scrollbars=1,top=0,left=0,resizable=1,width=680,height=350');
+        window.open($(this).attr('href'), 'up1', 'scrollbars=1,top=0,left=0,resizable=1,width=750,height=420');
         return false;
     });
 

@@ -1,0 +1,251 @@
+﻿<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+        <title>Информация о пользователе</title>
+        <!-- Ucoz files above -->
+        <link href="/css/ajax_win.css" rel="stylesheet">
+        <link href="/css/my.css" rel="stylesheet">
+        <link href="/css/ranks.css" rel="stylesheet">
+        <script src="/js/my.js"></script>
+    <?'</he'?>ad>
+    <body>
+        <main class="bordered">
+            <?substr($ADMIN_BAR$, 0, 0)?>
+            <div class="text-center">
+                <h2>Информация о пользователе</h2>
+                <hr>
+            </div>
+            <div align="left">
+                <style type="text/css">
+                    .udtb {text-align: left; padding: 3px;}
+                    .udtlb {clear: left; float: left; width: 150px;}
+                    .profile-line {
+                        padding: 3px;
+                    }
+                    .profile-line .profile-label {
+                        width: 150px;
+                        display: inline-block;
+                    }
+                </style>
+                <div class="pull-right text-center">
+                    <?if($_MSN$)?>
+                        <span class="fraction-flag fflag$_MSN$"></span>
+                    <?endif?>
+                    $_AVATAR$
+                    <?if($MODER_PANEL$ && $UNET_ID$)?>
+                        <div>
+                            <a class="uid-link" href="$UNET_PROFILE_URL$" target="_blank">
+                                <img src="http://src.ucoz.net/img/ma/uid.gif" alt="uid">
+                            </a>
+                        </div>
+                    <?endif?>
+                    <?if($_CHANGE_DETAILS_URL$)?><div>[ <a href="$_CHANGE_DETAILS_URL$">Изменить данные</a> ]</div><?endif?>
+                    <?if($_PM_READ_URL$)?>
+                        <div>[ <a href="$_PM_READ_URL$">Читать ЛС <?if($UNREAD_PM$)?>(<b>$UNREAD_PM$</b>)<?endif?></a> ]</div>
+                    <?else?>
+                        <?if($_PM_SEND_URL$)?>
+                            <div>[ <a href="$_PM_SEND_URL$">Отправить ЛС</a> ]</div>
+                        <?endif?>
+                    <?endif?>
+                </div>
+                <div class="profile-line">
+                    <span class="profile-label">Пользователь</span>
+                    <a href="#" onclick="prompt('Адрес профиля данного пользователя', '$_PROFILE_URL$'); return false;"><b>$_USERNAME$</b></a>
+                    <?if($MODER_PANEL$)?>[id: <b>$_USER_ID$</b>]<?endif?>
+                    <?if($_RANK_NAME$)?>
+                        <span title="Ранг: $_RANK$">$_RANK_ICON$</span>
+                        <span class="sq_brackets">
+                            <span class="rank-$_RANK$-$_MSN$ <?if($_GENDER_ID$='2')?>rank-$_RANK$-$_MSN$-f<?endif?>"></span>
+                        </span>
+                    <?endif?>
+                </div>
+                <?if($_BANNED_TILL$)?>
+                    <div class="profile-line">
+                        <span class="profile-label"></span>
+                        <?if($_BANNED_TILL$="1")?>
+                            <b style="color:red;">Активность заблокирована навсегда!</b>
+                        <?else?>
+                            Активность заблокирована до <u style="color:red;">$_BANNED_TILL$</u>
+                        <?endif?>
+                    </div>
+                <?endif?>
+                <div class="profile-line">
+                    <span class="profile-label">Группа</span>
+                    <?if($MODER_PANEL$)?>
+                        $MODER_PANEL$
+                    <?else?>
+                        $_GROUP_NAME$ <?if($_GROUP_ICON$)?>$_GROUP_ICON$<?endif?>
+                    <?endif?>
+                </div>
+
+            <div id="block25" class="udtb">
+                <div class="udtlb"><!-- Награды / -->Инвентарь:</div>
+                <?if($AWARDS$='0')?>
+                    нет
+                <?else?>
+                    <a href="javascript://" onclick="new _uWnd('AwL','Список наград',380,200,{autosizeonimages:1,maxh:300,minh:100,closeonesc:1},'<div align=&#34;left&#34;><img alt=&#34;&#34; border=&#34;0&#34; src=&#34;http://s29.ucoz.net/.s/img/wd/6/ajax.gif&#34;></div>');replacer();return false;" title="Награды">Открыть список</a>
+                <?endif?> &nbsp; 
+                <?if($GROUP_ID$="4" || $GROUP_ID$="3" || $GROUP_ID$="14")?>
+                    <?if($AWARDS_DO_URL$)?>
+                        <span style="font-size:7pt">[<a href="$AWARDS_DO_URL$">Вручить награду</a>]</span>
+                    <?endif?>
+                <?endif?>
+            </div>
+
+            <?if($_GROUP_ID$=14)?>
+                <div id="block3" class="udtb"><div class="udtlb">Замечания:</div> IMMUNE
+            <?else?>
+                <?if($_BAN_READ_URL$)?>
+                    <div id="block3" class="udtb"><div class="udtlb">Замечания:</div> <a class="banPercent" title="Смотреть историю замечаний" href="$_BAN_READ_URL$">$_BAN_PERCENT$%</a>
+                    <?if($_BAN_DO_URL$)?>
+                        &nbsp; <a href="$_BAN_DO_URL$"><img title="Изменить уровень замечаний" src="http://src.ucoz.ru/img/fr/wm.gif" width="10" height="9" /></a><img style="margin:0;padding:0;border:0;" src="http://src.ucoz.ru/img/fr/w$_BAN_RATING$.gif" width="49" height="9" /><a href="$_BAN_DO_URL$"><img style="margin:0;padding:0;border:0;" title="Изменить уровень замечаний" src="http://src.ucoz.ru/img/fr/wp.gif" width="10" height="9" /></a>
+                    <?endif?>
+                <?endif?>
+                </div>
+            <?endif?>
+
+            <?if($_MSN$)?>
+                <div id="block15" class="udtb">
+                    <div class="udtlb">Фракция: </div>
+                    <?if($_MSN$="1")?>Имперец (Empire)<?endif?>
+                    <?if($_MSN$="2")?>Нежить (Undead)<?endif?>
+                    <?if($_MSN$="3")?>Еретик (Heretic)<?endif?>
+                    <?if($_MSN$="4")?>Горец (Clansman)<?endif?>
+                    <?if($_MSN$="5")?>Житель леса (Sylvanfolk)<?endif?>
+                    <?if($_MSN$="6")?>Зеленокожий (Greenskin)<?endif?>
+                    <?if($_MSN$="7")?>Змеекожий (Lizardmen)<?endif?>
+                    <?if($_MSN$="8")?>Морской житель (Merfolk)<?endif?>
+                    <?if($_MSN$="9")?>Варвар (Barbarian)<?endif?>
+                    <?if($_MSN$="10")?>Нейтральный наемник (Neutrals)<?endif?>
+                </div>
+            <?endif?>
+
+            <?if($_REP_READ_URL$)?>
+                <?if($_USER_ID$!='1249')?>
+                    <div id="block4" class="udtb">
+                        <div class="udtlb">Репутация:</div>
+                        <a title="Смотреть историю репутации" class="repHistory" href="$_REP_READ_URL$"><b>$_REPUTATION$</b></a>
+                        <?if($_REP_DO_URL$)?>
+                            &nbsp; <a href="$_REP_DO_URL$"><img title="Изменить репутацию" src="http://src.ucoz.ru/img/fr/wm.gif" width="10" height="9" /></a>
+                            <a href="$_REP_DO_URL$"><img title="Изменить репутацию" src="http://src.ucoz.ru/img/fr/wp.gif" width="10" height="9" /></a>
+                        <?endif?>
+                    </div>
+                <?endif?>
+            <?endif?>
+
+            <?if($_NAME$)?>
+                <div id="block5" class="udtb">
+                    <div class="udtlb">Имя:</div>
+                    $_NAME$ <?if($_GENDER_NAME$)?>[ $_GENDER_NAME$ ]<?endif?>
+                </div>
+            <?endif?>
+
+            <?if($_STATUS$)?>
+                <div id="block6" class="udtb"><div class="udtlb">Статус:</div> $_STATUS$</div>
+            <?endif?>
+
+            <?if($MODER_PANEL$)?>
+                <div id="block7" class="udtb">
+                    <div class="udtlb">Регистрационный IP:</div>
+                    <a href="http://www.ripe.net/perl/whois?$_IP_ADDRESS$" target="_blank">$_IP_ADDRESS$</a>
+                </div>
+            <?endif?>
+
+            <?if($_REG_TIME$)?>
+                <div id="block8" class="udtb">
+                    <div class="udtlb">Дата регистрации:</div> $_REG_TIME$
+                </div>
+            <?endif?>
+
+            <?if($_LOG_TIME$)?>
+            <div id="block9" class="udtb"><div class="udtlb">Дата входа:</div> $_LOG_TIME$</div>
+            <?endif?>
+
+            <?if($_BIRTHDAY$)?>
+            <div id="block10" class="udtb"><div class="udtlb">Дата рождения:</div> $_BIRTHDAY$ [ <b>$_AGE$</b> $_ZODIAC$ ]</div>
+            <?endif?>
+
+            <div id="block11" class="udtb"><div class="udtlb">E-mail:</div>
+            <?if($_IS_OWN_PROFILE$)?>
+            $_EMAIL$ <?if($_EMAIL_IS_HIDDEN$)?><span style="font-size:7pt">(Адрес скрыт)</span><?endif?>
+            <?else?>
+            <?if($MODER_PANEL$)?><a href="mailto:$_EMAIL$">$_EMAIL$</a> <?if(!$_EMAIL_IS_VERIFIED$)?><img alt="" style="vertical-align:1px;" src="http://s6.ucoz.net/img/ma/bn.gif" width="8" title="E-mail адрес не подтвержден"/><?endif?><?else?>
+            <?if($_SEND_EMAIL_URL$)?><a href="$_SEND_EMAIL_URL$">Написать письмо пользователю</a><?else?><i>Адрес скрыт</i><?endif?>
+            <?endif?>
+            <?endif?>
+            <?if($_EMAIL_VERIFICATION_URL$)?>[ <b><a href="$_EMAIL_VERIFICATION_URL$"><span style="color:red">Подтвердить e-mail</span></a></b> ]<?endif?></div>
+
+            <?if($_WWW$)?>
+            <div id="block12" class="udtb"><div class="udtlb">Сайт:</div> <a target="_blank" href="javascript://" onclick="prompt('Web-site','$_WWW$');return false;" rel="nofollow">$_WWW$</a></div>
+            <?endif?>
+
+            <?if($_ICQ$)?>
+            <div id="block13" class="udtb"><div class="udtlb">ICQ:</div> $_ICQ$</div>
+            <?endif?>
+
+            <?if($_AOL$)?>
+            <div id="block14" class="udtb"><div class="udtlb">AOL:</div> $_AOL$</div>
+            <?endif?>
+
+            <?if($_YAHOO$)?>
+            <div id="block16" class="udtb"><div class="udtlb">Yahoo:</div> $_YAHOO$</div>
+            <?endif?>
+
+            <?if($_COUNTRY$)?>
+            <div id="block18" class="udtb"><div class="udtlb">Страна:</div> $_COUNTRY$</div>
+            <?endif?>
+
+            <?if($_STATE$)?>
+            <div id="block19" class="udtb"><div class="udtlb">Штат:</div> $_STATE$</div>
+            <?endif?>
+
+            <?if($_CITY$)?>
+            <div id="block20" class="udtb"><div class="udtlb">Город:</div> $_CITY$</div>
+            <?endif?>
+
+            <?if($_SIGNATURE$)?>
+            <div id="block21" class="udtb"><div class="udtlb">Подпись:</div> $_SIGNATURE$</div>
+            <?endif?>
+
+            <?if($_IS_ACTIVITY$)?>
+            <div id="block25" class="udtb"><hr></div><div id="block22" class="udtb" style="text-align:center">
+            <?if($_COM_ENTRIES$)?> | <a href="$_COM_ACTIVITY_URL$" target="_blank">комментарии(<b>$_COM_ENTRIES$</b>)</a><?endif?>
+            <?if($_FORUM_ENTRIES$)?> | <a href="$_FORUM_ACTIVITY_URL$" target="_blank">форум(<b>$_FORUM_ENTRIES$</b>)</a><?endif?>
+            <?if($_BLOG_ENTRIES$)?> | <a href="$_BLOG_ACTIVITY_URL$" target="_blank">фан-творчество(<b>$_BLOG_ENTRIES$</b>)</a><?endif?>
+            <?if($_NEWS_ENTRIES$)?> | <a href="$_NEWS_ACTIVITY_URL$" target="_blank">новости(<b>$_NEWS_ENTRIES$</b>)</a><?endif?>
+            <?if($_PUBL_ENTRIES$)?> | <a href="$_PUBL_ACTIVITY_URL$" target="_blank">статьи(<b>$_PUBL_ENTRIES$</b>)</a><?endif?>
+            <?if($_LOAD_ENTRIES$)?> | <a href="$_LOAD_ACTIVITY_URL$" target="_blank">файлы(<b>$_LOAD_ENTRIES$</b>)</a><?endif?>
+            <?if($_DIR_ENTRIES$ && 0)?> | <a href="$_DIR_ACTIVITY_URL$" target="_blank">сайты(<b>$_DIR_ENTRIES$</b>)</a><?endif?>
+            <?if($_BOARD_ENTRIES$)?> | <a href="$_BOARD_ACTIVITY_URL$" target="_blank">объявления(<b>$_BOARD_ENTRIES$</b>)</a><?endif?>
+            <?if($_PHOTO_ENTRIES$)?> | <a href="$_PHOTO_ACTIVITY_URL$" target="_blank">изображения(<b>$_PHOTO_ENTRIES$</b>)</a><?endif?> |</div>
+            <?endif?>
+
+            <?if($USERS_LIST_URL$)?>
+            <hr /><form method="post" action="/index" name="fuser" style="margin:0px"><table border="0" cellpadding="4" cellspacing="1" width="100%" id="usch"><tr><td align="center"><input type="button" class="allUsersBtn" style="width:150px;" onclick="window.location.href='/index/15-1'" value="Список пользователей" />&nbsp;<input type="text" class="uSearchFl" name="user" style="width:240px;text-align:center;" size="20" value="Логин пользователя" onclick="if (this.value=='Логин пользователя'){this.value='';}" maxlength="25" /> <input type="submit" class="uSearchFlSbm" style="width:150px;" value="Найти пользователей" /></td></tr></table><input type="hidden" name="a" value="15" /></form>
+            <?endif?>
+        </div>
+            
+            <?if($AWARDS$ > 0)?>
+                <script type="text/javascript">
+                    function replacer(){
+                        $.get('/index/54-$_USER_ID$', function(data){//nevendaar.com
+                            cont=$('cmd:last', data).text().replace(/Предметы/ig, 'Инвентарь').replace(/Богатство/ig, 'Заклинания').replace(/AwL/ig, 'AwLD').replace(/\{url:'\/index\/54-$_USER_ID$-/ig, '\'<div align=&#34;left&#34;><img alt=&#34;&#34; border=&#34;0&#34; src=&#34;http://s29.ucoz.net/.s/img/wd/6/ajax.gif&#34;></div>\');set_content(').replace(/'\}\);/ig, ');');
+                            _uWnd.content('AwL',cont);
+                        });
+                    }
+                    function set_content(id){
+                        $.get('/index/54-$_USER_ID$-'+id, function(data){
+                            title=$('cmd:first', data).text();//nevendaar.com
+                            jscr='<script'+' type="text/javascript">'+$('cmd:eq(1)', data).text()+'</'+'script>';
+                            cont=$('cmd:last', data).text().replace(/Все награды/ig, '').replace(/>\[</ig, '><').replace(/>\]</ig, '><')<?if($GROUP_ID$!="4" && $GROUP_ID$!="3" && $GROUP_ID$!="14")?>.replace(/\[\/url\]/ig, '</a>').replace(/\[url=/ig, '<a target="_blank" href="').replace(/\]/ig, '">')<?endif?>;
+                            _uWnd.content('AwLD',cont+jscr);
+                            _uWnd.setTitle('AwLD',title);
+                        });
+                    }
+                </script>
+            <?endif?>
+            
+        </main>
+    </body>
+</html>
