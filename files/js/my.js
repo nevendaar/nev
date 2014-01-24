@@ -106,6 +106,14 @@ $(function () {
         return false;
     });
 
+    // Ссылки для копирования информации
+    $('.prompt-link').click(function () {
+        var $this = $(this);
+        prompt($this.attr('title'), $this.attr('href'));
+        return false;
+    });
+    
+
     // Подключаем VK_API если нужно.
     if ($('main.content').hasClass('vk-init')) {
         VK.init({apiId: 2014686, onlyWidgets: true});

@@ -12,9 +12,8 @@
     <body>
         <main class="bordered">
             <?substr($ADMIN_BAR$, 0, 0)?>
-            <div class="text-center">
+            <div class="text-center hr">
                 <h2>Информация о пользователе</h2>
-                <hr>
             </div>
             <div align="left">
                 <style type="text/css">
@@ -51,7 +50,7 @@
                 </div>
                 <div class="profile-line">
                     <span class="profile-label">Пользователь</span>
-                    <a href="#" onclick="prompt('Адрес профиля данного пользователя', '$_PROFILE_URL$'); return false;"><b>$_USERNAME$</b></a>
+                    <a href="$_PROFILE_URL$" title="Адрес профиля данного пользователя" class="prompt-link"><b>$_USERNAME$</b></a>
                     <?if($MODER_PANEL$)?>[id: <b>$_USER_ID$</b>]<?endif?>
                     <?if($_RANK_NAME$)?>
                         <span title="Ранг: $_RANK$">$_RANK_ICON$</span>
@@ -262,8 +261,7 @@
                 <?endif?>
                 
                 <?if($_IS_ACTIVITY$)?>
-                    <hr>
-                    <div class="text-center">
+                    <div class="text-center top-hr">
                         <?if($_COM_ENTRIES$)?> | <a href="$_COM_ACTIVITY_URL$" target="_blank">комментарии (<b>$_COM_ENTRIES$</b>)</a><?endif?>
                         <?if($_FORUM_ENTRIES$)?> | <a href="$_FORUM_ACTIVITY_URL$" target="_blank">форум (<b>$_FORUM_ENTRIES$</b>)</a><?endif?>
                         <?if($_BLOG_ENTRIES$)?> | <a href="$_BLOG_ACTIVITY_URL$" target="_blank">фан-творчество (<b>$_BLOG_ENTRIES$</b>)</a><?endif?>
@@ -277,8 +275,7 @@
                 <?endif?>
 
                 <?if($USERS_LIST_URL$)?>
-                    <div class="text-center">
-                        <hr>
+                    <div class="text-center top-hr">
                         <form method="post" action="/index" name="fuser" style="margin:0px">
                             <input type="button" class="allUsersBtn" style="width:150px;" onclick="window.location.href='/index/15-1'" value="Список пользователей">&nbsp;
                             <input type="text" class="uSearchFl" name="user" style="width:240px;text-align:center;" size="20" value="Логин пользователя" onclick="if (this.value=='Логин пользователя'){this.value='';}" maxlength="25">

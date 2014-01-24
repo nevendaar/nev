@@ -39,13 +39,13 @@ hr {
 }
 
 .hr {
-    border-bottom: 3px double #AAAAAA;
+    border-bottom: 3px double #AAA;
     margin-bottom: 0.5em;
     padding-bottom: 0.5em;
 }
 
 .top-hr {
-    border-top: 3px double #AAAAAA;
+    border-top: 3px double #AAA;
     margin-top: 0.5em;
     padding-top: 0.5em;
 }
