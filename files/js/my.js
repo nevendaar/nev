@@ -76,6 +76,15 @@
         $('#cid54').parent().before('<tr><td id="cid33" class="catsTd"><a href="/photo/33">Анимации</a> [261]</td></tr>');
 }
 
+// Заменяем MSN_ID на текстовые описания.
+function set_userlist_msn(){
+    $('tr td:nth-child(2)','.uTable').each(function(i){
+        var h = $(this).html();
+        if(h != '&nbsp;' && ~~h)
+            $(this).addClass('fraction-name' + h).html('&nbsp;');
+    });
+}
+
 $(function () {
     // Nevendaar FM
     $('.nfm-link').click(function () {

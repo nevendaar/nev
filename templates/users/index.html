@@ -4,29 +4,21 @@
         <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
         <title>Список пользователей</title>
         <!-- Ucoz files above -->
-        <link href="/css/ajax_win.css" rel="stylesheet">
+        <link href="/css/ranks.css" rel="stylesheet">
         <link href="/css/my.css" rel="stylesheet">
         <script src="/js/my.js"></script>
     <?'</he'?>ad>
     <body>
         <main class="bordered">
             <?substr($ADMIN_BAR$, 0, 0)?>
-            <div class="text-center"><b>Список пользователей</b><hr></div>
-            <div class="clearfix">
+            <div class="text-center hr"><b>Список пользователей</b></div>
+            <div class="clearfix hr">
                 Найдено <b>$NUM_ENTRIES$</b> пользователей
                 <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
             </div>
-            <hr>
             $BODY$
-            <hr>
-            <div class="text-center">$SEARCH_FORM$</div>
-            <script>
-            $('tr td:nth-child(2)','.uTable').each(function(i){
-                var h = $(this).html();
-                if(h != '&nbsp;')
-                    $(this).addClass('fraction-name' + h);
-            });
-            </script>
+            <div class="text-center top-hr">$SEARCH_FORM$</div>
+            <script>set_userlist_msn();</script>
         </main>
     </body>
 </html>

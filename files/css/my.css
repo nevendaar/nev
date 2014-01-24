@@ -38,6 +38,18 @@ hr {
     margin: 0.5em auto;
 }
 
+.hr {
+    border-bottom: 3px double #AAAAAA;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.top-hr {
+    border-top: 3px double #AAAAAA;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: inherit;
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
