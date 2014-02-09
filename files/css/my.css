@@ -138,6 +138,13 @@ input[type=checkbox], input[type=radio] {
 
 /* Text
 -----------------------------------------------------------------------------*/
+.bold {
+    font-weight: bold;
+}
+.small {
+    font-size: 7pt;
+}
+
 .text-left {
     text-align: left;
 }
