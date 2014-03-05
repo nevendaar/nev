@@ -1,6 +1,6 @@
 ﻿function replacer(){
     $.get('/index/54-$_USER_ID$', function(data){//nevendaar.com
-        cont=$('cmd:last', data).text().replace(/Предметы/ig, 'Инвентарь').replace(/Богатство/ig, 'Заклинания').replace(/AwL/ig, 'AwLD').replace(/\{url:'\/index\/54-$_USER_ID$-/ig, '\'<div align=&#34;left&#34;><img alt=&#34;&#34; src=&#34;http://s29.ucoz.net/.s/img/wd/6/ajax.gif&#34;></div>\');set_content(').replace(/'\}\);/ig, ');');
+        cont=$('cmd:last', data).text().replace(/Предметы/ig, 'Инвентарь').replace(/Богатство/ig, 'Заклинания').replace(/AwL/ig, 'AwLD').replace(/\{url:'\/index\/54-$_USER_ID$-/ig, '\'<div align="left"><img alt="" src="http://s29.ucoz.net/.s/img/wd/6/ajax.gif"></div>\');set_content(').replace(/'\}\);/ig, ');');
         _uWnd.content('AwL',cont);
     });
 }
