@@ -78,10 +78,11 @@
 
 // Заменяем MSN_ID на текстовые описания.
 function set_userlist_msn(){
-    $('tr td:nth-child(2)','.uTable').each(function(i){
-        var h = $(this).html();
-        if(h != '&nbsp;' && ~~h)
-            $(this).addClass('fraction-name' + h).html('&nbsp;');
+    $('tr td:nth-child(2)', '.uTable').each(function(i){
+        var $this = $(this);
+        var h = $this.html();
+        if (~~h)
+            $this.addClass('fraction-name' + h).html('&nbsp;');
     });
 }
 
@@ -117,6 +118,12 @@ $(function () {
     // Подключаем VK_API если нужно.
     if ($('main.content').hasClass('vk-init')) {
         VK.init({apiId: 2014686, onlyWidgets: true});
+
+        // Подключаем ВКомментарии если нужно.
+        var vk_uid   = parseInt($('#vk_comments').attr('data-uid'));
+        if (vk_uid) {
+            VK.Widgets.Comments("vk_comments", {limit: 10}, vk_uid);
+        }
     }
 
     // Подключаем кнопку VK-share если нужно.
@@ -125,11 +132,5 @@ $(function () {
         $vk_share_btn.html(
             VK.Share.button({image: $vk_share_btn.attr('data-img') || '/site/NevVK.jpg'}, {type: "button_nocount", text: "Сохранить"})
         );
-    }
-
-    // Подключаем ВКомментарии если нужно.
-    var vk_uid   = parseInt($('#vk_comments').attr('data-uid'));
-    if (vk_uid) {
-        VK.Widgets.Comments("vk_comments", {limit: 10}, vk_uid);
     }
 });
