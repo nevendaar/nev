@@ -1,1 +1,57 @@
-﻿<!-- Old template -->
+﻿<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+        <title>$TITLE$</title>
+        $GLOBAL_AJAXJS$
+        <link href="/css/my.css" rel="stylesheet">
+        <script src="/js/my.js"></script>
+        <script type="text/javascript">
+            function Insert(text) {
+                if (text != "") {
+                    paste("[quote]" + text + "[/quote]\n", 0);
+                } else {
+                    _uWnd.alert('Выделите текст для цитирования', '', {w: 230, h: 80, tm: 1000});
+                }
+            }
+            function paste(text, flag) {
+                if ((document.selection) && (flag)) {
+                    document.addform.message.focus();
+                    document.addform.document.selection.createRange().text = text;
+                } else document.addform.message.value += text;
+            }
+            function get_selection() {
+                if (window.getSelection) {
+                    selection = window.getSelection().toString();
+                } else if (document.getSelection) {
+                    selection = document.getSelection();
+                } else {
+                    selection = document.selection.createRange().text;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <main class="bordered">
+            <?substr($ADMIN_BAR$, 0, 0)?>
+            <b>$TITLE$</b>
+            <hr>
+            $BODY$
+            <script type="text/javascript">
+                $('#bc18').html('<input type="button" title="Quote" value="quote" onclick="simpletag(&#34;quote&#34;,&#34;&#34;,&#34;&#34;,&#34;message&#34;,&#34;&#34;)" class="codeButtons" style="width:40px;" id="quote"/>');
+                $('#snewmes').before('<div align="right" id="squote" style="display:none;">[ <a href="javascript:Insert(selection);" onmouseover="get_selection()">Цитировать</a> ]</div>');
+                $('#snewmes').click(function () {
+                    setTimeout(function () {
+                        if ($('#newmess').css('display') != 'none') {
+                            $('#squote').show('medium');
+                        }
+                    }, 500);
+                });
+                $('input[type="reset"]').click(function () {
+                    $('#squote').hide('medium');
+                });
+                // $('#sbm').click(function(){});
+            </script>
+        </main>
+    </body>
+</html>
