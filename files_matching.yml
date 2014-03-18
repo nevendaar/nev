@@ -1,0 +1,99 @@
+---
+
+# Доска объявлений
+'templates/board/main.html':           'bd1.t' # Главная страница модуля
+'templates/board/index_section.html':  'bd2.t' # Страница со списком материалов раздела
+'templates/board/index_category.html': 'bd3.t' # Страница со списком материалов категории
+'templates/board/show.html':           'bd4.t' # Страница материала и комментариев к нему
+'templates/board/search.html':         'bd5.t' # Страница поиска и рейтинга материалов
+'templates/board/new_or_edit.html':    'bd6.t' # Страница добавления/редактирования материала
+'templates/board/_material.html':      'bd7.t' # Вид материалов
+
+# Блог (Фанфики)
+'templates/blog/main.html':  'bl1.t' # Главная страница дневника
+'templates/blog/index.html': 'bl2.t' # Страница архива материалов
+'templates/blog/show.html':  'bl3.t' # Страница материала и комментариев к нему
+'templates/blog/_post.html': 'bl4.t' # Вид материалов
+
+# Комментарии
+'templates/comments/_form.html': 'com.t' # Форма добавления комментариев
+
+# Каталог сайтов
+'templates/dir/main.html':           'dr1.t' # Главная страница каталога сайтов
+'templates/dir/index_section.html':  'dr2.t' # Страница со списком материалов раздела
+'templates/dir/index_category.html': 'dr3.t' # Страница со списком материалов категории
+'templates/dir/show.html':           'dr4.t' # Страница материала и комментариев к нему
+'templates/dir/search.html':         'dr5.t' # Страница поиска и рейтинга материалов
+'templates/dir/new_or_edit.html':    'dr6.t' # Страница добавления/редактирования материала
+'templates/dir/_site.html':          'dr7.t' # Вид материалов
+
+#'': 'fq1.t' #
+#'': 'fq2.t' #
+#
+#'': 'fr1.t' #
+#'': 'fr2.t' #
+#'': 'fr3.t' #
+#
+#'': 'i3' #
+#'': 'i4' #
+#'': 'i5' #
+#
+#'': 'ld1.t' #
+#'': 'ld2.t' #
+#'': 'ld3.t' #
+#'': 'ld4.t' #
+#'': 'ld5.t' #
+#'': 'ld6.t' #
+#'': 'ld7.t' #
+#
+#'': 'mc1.t' #
+#'': 'mc2.t' #
+#
+#'': 'mf1' #
+#'': 'mf2' #
+#
+#'': 'my.css' #
+#
+#'': 'new.t' #
+#
+#'': 'nw1.t' #
+#'': 'nw2.t' #
+#'': 'nw3.t' #
+#
+#'': 'ph1.t' #
+#'': 'ph2.t' #
+#'': 'ph3.t' #
+#'': 'ph4.t' #
+#'': 'ph5.t' #
+#'': 'ph6.t' #
+#'': 'ph7.t' #
+#'': 'ph8.t' #
+#
+#'': 'po1.t' #
+#
+#'': 'pu1.t' #
+#'': 'pu2.t' #
+#'': 'pu3.t' #
+#'': 'pu4.t' #
+#'': 'pu5.t' #
+#'': 'pu6.t' #
+#'': 'pu7.t' #
+#
+#'': 'se1.t' #
+#
+#'': 'si110' #
+#'': 'si.t' #
+#
+#'': 'temp' #
+#
+#'': 'ts1.t' #
+#
+#'': 'us10.t' #
+#'': 'us1.t' #
+#'': 'us2.t' #
+#'': 'us3.t' #
+#'': 'us5.t' #
+#'': 'us6.t' #
+#'': 'us7.t' #
+#'': 'us8.t' #
+#'': 'us9.t' #

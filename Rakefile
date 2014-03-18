@@ -1,20 +1,12 @@
 # -*- encoding : utf-8 -*-
 
-#require 'tempfile'
+require 'yaml'
 require 'zip'
 
 desc 'Make backup archive with templates.'
 task :archive do
 
-  files_matching = {
-      'templates/board/main.html'           => 'bd1.t',
-      'templates/board/index_section.html'  => 'bd2.t',
-      'templates/board/index_category.html' => 'bd3.t',
-      'templates/board/show.html'           => 'bd4.t',
-      'templates/board/search.html'         => 'bd5.t',
-      'templates/board/new_or_edit.html'    => 'bd6.t',
-      'templates/board/_material.html'      => 'bd7.t'
-  }
+  files_matching = YAML.load_file('files_matching.yml')
 
   zipfile_name = Time.now.to_i.to_s << '.zip'
 
