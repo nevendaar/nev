@@ -1,1 +1,32 @@
-﻿<!-- Old template -->
+﻿<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+        <title>$SITE_NAME$ - Доступ запрещен</title>
+        $GLOBAL_AJAXJS$
+        <link href="/css/ajax_win.css" rel="stylesheet">
+        <link href="/css/my.css" rel="stylesheet">
+        <script src="/js/my.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            $GLOBAL_HEADER$
+            <div class="middle">
+                <div class="container">
+                    <main class="content bordered text-center">
+                        <?if($USER_LOGGED_IN$)?>
+                            <br><br><br>Вы входите в группу пользователей, которым запрещено совершать данное действие.<br><br><br>
+                            По всем вопросам обращайтесь к администратору сайта.<br><br><br><br>
+                        <?endif?>
+                        <?if($LOGIN_FORM$)?>
+                            <br><br><br>Гостям запрещено просматривать данную страницу, пожалуйста войдите на сайт как пользователь.<br><br><br>
+                            <div style="width:200px">$LOGIN_FORM$</div><br><br><br><br>
+                        <?endif?>
+                    </main>
+                </div>
+                $GLOBAL_ASIDE$
+            </div>
+            $GLOBAL_FOOTER$
+        </div>
+    </body>
+</html>
