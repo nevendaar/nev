@@ -7,3 +7,6 @@
 # Ignore popular IDE local-settings.
 .idea/*
 .settings/*
+
+# Ignore backup archives.
+*.zip
