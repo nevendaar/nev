@@ -10,6 +10,10 @@ task :archive do
 
   zipfile_name = Time.now.to_i.to_s << '.zip'
 
+  Zip.setup do |config|
+    config.sort_entries = true
+  end
+
   Zip::File.open(zipfile_name, Zip::File::CREATE) do |ar|
     files_matching.each do |arch_name, filename|
       ar.add(filename, arch_name)
