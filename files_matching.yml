@@ -54,8 +54,6 @@
 #
 #'': 'my.css' #
 #
-#'': 'new.t' #
-#
 #'': 'nw1.t' #
 #'': 'nw2.t' #
 #'': 'nw3.t' #
@@ -87,13 +85,15 @@
 #'': 'temp' #
 #
 #'': 'ts1.t' #
-#
-#'': 'us10.t' #
-#'': 'us1.t' #
-#'': 'us2.t' #
-'templates/users/403.html': 'us3.t' # Страница "Доступ запрещен"
-#'': 'us5.t' #
-#'': 'us6.t' #
-#'': 'us7.t' #
-#'': 'us8.t' #
-#'': 'us9.t' #
+
+# Пользователи
+'templates/users/login.html':        'us1.t'  # Страница входа пользователей
+'templates/users/registration.html': 'us2.t'  # Страница регистрации пользователей
+'templates/users/403.html':          'us3.t'  # Страница "Доступ запрещен"
+'templates/users/show.html':         'us5.t'  # Персональная страница пользователя
+'templates/users/edit.html':         'us6.t'  # Страница редактирования данных пользователя
+'templates/users/index.html':        'us7.t'  # Страница со списком пользователей
+'templates/users/comments.html':     'us8.t'  # Страница со списком комментариев пользователя
+'templates/users/_reg_form.html':    'us9.t'  # Форма регистрации локальных пользователей
+'templates/users/_form.html':        'us10.t' # Форма редактирования персональной информации
+'templates/users/pm.html':           'new.t'  # Личные сообщения (ЛС)
