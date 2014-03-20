@@ -1,5 +1,11 @@
 ---
 
+# Глобальные блоки
+'templates/AJAXJS.html': 'AJAXJS' # Системные css и js файлы
+'templates/ASIDE.html':  'ASIDE'  # Меню сайта
+'templates/FOOTER.html': 'FOOTER' # Подвал
+'templates/HEADER.html': 'HEADER' # Шапка
+
 # Доска объявлений
 'templates/board/main.html':           'bd1.t' # Главная страница модуля
 'templates/board/index_section.html':  'bd2.t' # Страница со списком материалов раздела
@@ -54,7 +60,7 @@
 'templates/minichat/_message.html': 'mc1.t' # Вид материалов
 'templates/minichat/_form.html':    'mc2.t' # Форма добавления сообщений
 
-#
+# Формы обратной связи
 #'': 'mf1' #
 #'': 'mf2' #
 
