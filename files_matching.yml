@@ -43,9 +43,9 @@
 'templates/forum/_form.html': 'fr3.t' # Форма добавления сообщения
 
 # Информеры
-#'': 'i3' #
-#'': 'i4' #
-#'': 'i5' #
+'templates/informers/i3.html': 'i3' #
+'templates/informers/i4.html': 'i4' #
+'templates/informers/i5.html': 'i5' #
 
 # Каталог файлов
 'templates/load/main.html':           'ld1.t' # Главная страница каталога файлов

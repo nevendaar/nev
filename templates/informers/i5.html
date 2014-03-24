@@ -1,0 +1,26 @@
+<!-- Old template -->
+<table border="0" cellpadding="2" cellspacing="1" width="100%" class="infTable">
+    <tr>
+        <td class="infTitleT" width="70%">
+            <?if($TITLE$)?>
+                <a href="$SITE_URL$" target="_self">
+                    <?if(len($TITLE$) <= 20)?>
+                        $TITLE$
+                    <?else?>
+                        <?substr($TITLE$, 0, 20)?>...
+                    <?endif?>
+                </a>
+            <?endif?>
+        </td>
+        <td class="infTitleD" nowrap align="right">[$DATE$]</td>
+    </tr>
+    <tr>
+        <td class="infMes" colspan="2">
+            <?if(len($MESSAGE$) <= 200)?>
+                $MESSAGE$
+            <?else?>
+                <?substr($MESSAGE$, 0, 200)?>...
+            <?endif?>
+        </td>
+    </tr>
+</table>

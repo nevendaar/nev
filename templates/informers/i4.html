@@ -1,0 +1,22 @@
+<!-- Old template -->
+<div class="infTitleT"><a href="$ENTRY_URL$">$ENTRY_TITLE$</a> ($USERNAME$)</div>
+<div class="infMes">
+    <?if(strpos($MESSAGE$,'<div') < 0)?>
+        <?if(strrpos($MESSAGE$,'<img') > -1)?>
+            <?if(strrpos($MESSAGE$, '<a') > -1 && (strrpos($MESSAGE$, '<a') < strrpos($MESSAGE$, '<img')))?>
+                <?substr($MESSAGE$, 0, strrpos($MESSAGE$, '<a'))?> . . .
+            <?else?>
+                <?substr($MESSAGE$, 0, strrpos($MESSAGE$, '<img'))?> . . .
+            <?endif?>
+        <?else?>
+            <?if(len($MESSAGE$) <= 200)?>
+                $MESSAGE$
+            <?else?>
+                <?substr($MESSAGE$, 0, 200)?>...
+            <?endif?>
+        <?endif?>
+    <?else?>
+    . . .
+    <?endif?>
+</div>
+<hr>
