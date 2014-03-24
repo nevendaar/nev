@@ -145,10 +145,9 @@ input[type=checkbox], input[type=radio] {
 
 .bordered {
     background: url("/img/back.gif") #746F66;
-    border-top:    52px solid transparent;
-    border-bottom: 52px solid transparent;
-    border-left:   44px solid transparent;
-    border-right:  44px solid transparent;
+    border: 52px solid transparent;
+    border-right-width: 44px;
+    border-left-width: 44px;
     border-image:         url(/img/b.gif) 52 44 repeat;
     -o-border-image:      url(/img/b.gif) 52 44 repeat;
     -moz-border-image:    url(/img/b.gif) 52 44 repeat;
