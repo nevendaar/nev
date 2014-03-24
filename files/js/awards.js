@@ -4,6 +4,8 @@
         _uWnd.content('AwL',cont);
     });
 }
+
+/*
 function set_content(id){
     $.get('/index/54-$_USER_ID$-'+id, function(data){
         title=$('cmd:first', data).text();//nevendaar.com
@@ -13,6 +15,7 @@ function set_content(id){
         _uWnd.setTitle('AwLD',title);
     });
 }
+*/
 
 $(function () {
     // See awards link
