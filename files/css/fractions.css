@@ -1,0 +1,62 @@
+.fraction-flag {
+    background: url(/img/flags.gif) no-repeat;
+    width:  20px;
+    height: 60px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.fflag1 { /* Empire */
+    background-position: 0 0;
+    width:  12px;
+    height: 53px;
+}
+
+.fflag2 { /* Undead */
+    background-position: -12px 0;
+}
+
+.fflag3 { /* Demons */
+    background-position: -32px 0;
+    width:  21px;
+    height: 52px;
+}
+
+.fflag4 { /* Clans */
+    background-position: -53px 0;
+    height: 58px;
+}
+
+.fflag5 { /* Elfs */
+    background-position: -73px 0;
+    width:  16px;
+}
+
+.fflag6 { /* Greenskin */
+    background-position: -89px 0;
+    width:  17px;
+    height: 51px;
+}
+
+.fflag7 { /* Lizardmen */
+    background-position: -106px 0;
+    width:  21px;
+    height: 50px;
+}
+
+.fflag8 { /* Merfolk */
+    background-position: -127px 0;
+    width:  17px;
+    height: 48px;
+}
+
+.fflag9 { /* barbarian */
+    background-position: -144px 0;
+    height: 54px;
+}
+
+.fflag10 { /* neutral */
+    background-position: -164px 0;
+    width:  13px;
+    height: 49px;
+}
