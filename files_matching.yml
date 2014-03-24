@@ -107,8 +107,8 @@
 #
 #'': 'temp' #
 
-#
-#'': 'ts1.t' #
+# Тесты
+'templates/tests/main.html': 'ts1.t' #
 
 # Пользователи
 'templates/users/login.html':        'us1.t'  # Страница входа пользователей
