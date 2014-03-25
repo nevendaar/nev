@@ -41,7 +41,6 @@ task :archive do
 
   files_matching = YAML.load_file('files_matching.yml')
   zipfile_name   = Time.now.to_i.to_s << '.zip'
-  bom_token      = [0xef, 0xbb, 0xbf]                   # Byte Order Mark
 
   Zip.setup do |config|
     config.sort_entries = true
@@ -50,14 +49,30 @@ task :archive do
   Zip::File.open(zipfile_name, Zip::File::CREATE) do |ar|
     files_matching.each do |filename, arch_name|
       ar.get_output_stream(arch_name) do |stream|
-        bytes = Array.new
-        File.open(filename, 'r') { |f| bytes = f.read.bytes }
-        bytes.shift(3) if bytes[0..2] == bom_token
-        stream.write bytes.pack('c*')
+        str = ''
+        # TODO: make this better
+        if filename == 'templates/comments/_comment.html'
+          f1 = trim_utf8_file(filename).pack('c*').force_encoding('utf-8')
+          f2 = trim_utf8_file('templates/comments/_form.html').pack('c*').force_encoding('utf-8')
+          str << ('%05d' % f1.size) << (' ' * 5) << f1 << f2
+          LOGGER.warn "Size of #{filename} > 99999: this situation is not tested yet." if f1.size > 99999
+        else
+          str = trim_utf8_file(filename).pack('c*')
+        end
+        stream.write str
       end
     end
   end
 
-  puts "Created file #{zipfile_name}"
+  LOGGER.info "Created file #{zipfile_name}"
 
+end
+
+# Trim first 3 bytes from utf-file if needed and returning array of bytes
+def trim_utf8_file(filename)
+  bom_token = [0xef, 0xbb, 0xbf] # Byte Order Mark
+  bytes = Array.new
+  File.open(filename, 'r') { |f| bytes = f.read.bytes }
+  bytes.shift(3) if bytes[0..2] == bom_token
+  bytes
 end

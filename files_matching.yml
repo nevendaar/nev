@@ -22,7 +22,9 @@
 'templates/blog/_post.html': 'bl4.t' # Вид материалов
 
 # Комментарии
-'templates/comments/_form.html': 'com.t' # Форма добавления комментариев
+# Оба шаблона хранятся в одном файле: com.t (sic!)
+'templates/comments/_comment.html': 'com.t' # Вид комментариев
+#'templates/comments/_form.html':   'com.t' # Форма добавления комментариев
 
 # Каталог сайтов
 'templates/dir/main.html':           'dr1.t' # Главная страница каталога сайтов
