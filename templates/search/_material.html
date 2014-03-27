@@ -1,1 +1,16 @@
-﻿<!-- Old template -->
+﻿<div class="material">
+    <div class="title">
+        <a href="$ENTRY_URL$">$TITLE$</a>
+    </div>
+    <div class="body">
+        <?if($MODULE_ID$='shop')?>
+            <a class="pull-left" href="$ENTRY_URL$"><img alt="" src="$SMALL$" class="gphoto"></a>
+        <?endif?>
+        $MESSAGE$
+        <?if($ATTACHMENTS$)?><div class="attachments">Прикрепления: $ATTACHMENTS$</div><?endif?>
+        <div class="details">
+            $ENTRY_DEPTH$
+            <?if($SAVING_DATE$)?>- $SAVING_DATE$<?endif?>
+        </div>
+    </div>
+</div>

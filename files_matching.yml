@@ -100,7 +100,7 @@
 
 # Поиск по сайту
 'templates/search/main.html':      'se1.t' # Страница поиска
-#'templates/search/_material.html': '?.t'  # Вид материалов TODO: найди
+'templates/search/_material.html': 'se2.t' # Вид материалов
 
 # Редактор страниц
 'templates/pages/index.html':    'si.t'  # Страницы сайта
