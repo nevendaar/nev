@@ -62,7 +62,7 @@ task :archive do
         else
           str = trim_utf8_file(filename)
         end
-        stream.write str
+        stream.write str.gsub!(/ +/, ' ')
       end
     end
   end
