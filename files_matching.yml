@@ -1,125 +1,126 @@
 ---
 
 # Глобальные блоки
-'templates/AJAXJS.html': 'AJAXJS' # Системные css и js файлы
-'templates/ASIDE.html':  'ASIDE'  # Меню сайта
-'templates/FOOTER.html': 'FOOTER' # Подвал
-'templates/HEADER.html': 'HEADER' # Шапка
+'AJAXJS': 'templates/AJAXJS.html' # Системные css и js файлы
+'ASIDE': 'templates/ASIDE.html'   # Меню сайта
+'FOOTER': 'templates/FOOTER.html' # Подвал
+'HEADER': 'templates/HEADER.html' # Шапка
 
 # Доска объявлений
-'templates/board/main.html':           'bd1.t' # Главная страница модуля
-'templates/board/index_section.html':  'bd2.t' # Страница со списком материалов раздела
-'templates/board/index_category.html': 'bd3.t' # Страница со списком материалов категории
-'templates/board/show.html':           'bd4.t' # Страница материала и комментариев к нему
-'templates/board/search.html':         'bd5.t' # Страница поиска и рейтинга материалов
-'templates/board/new_or_edit.html':    'bd6.t' # Страница добавления/редактирования материала
-'templates/board/_material.html':      'bd7.t' # Вид материалов
+'bd1.t': 'templates/board/main.html'           # Главная страница модуля
+'bd2.t': 'templates/board/index_section.html'  # Страница со списком материалов раздела
+'bd3.t': 'templates/board/index_category.html' # Страница со списком материалов категории
+'bd4.t': 'templates/board/show.html'           # Страница материала и комментариев к нему
+'bd5.t': 'templates/board/search.html'         # Страница поиска и рейтинга материалов
+'bd6.t': 'templates/board/new_or_edit.html'    # Страница добавления/редактирования материала
+'bd7.t': 'templates/board/_material.html'      # Вид материалов
 
 # Блог (Фанфики)
-'templates/blog/main.html':  'bl1.t' # Главная страница дневника
-'templates/blog/index.html': 'bl2.t' # Страница архива материалов
-'templates/blog/show.html':  'bl3.t' # Страница материала и комментариев к нему
-'templates/blog/_post.html': 'bl4.t' # Вид материалов
+'bl1.t': 'templates/blog/main.html'  # Главная страница дневника
+'bl2.t': 'templates/blog/index.html' # Страница архива материалов
+'bl3.t': 'templates/blog/show.html'  # Страница материала и комментариев к нему
+'bl4.t': 'templates/blog/_post.html' # Вид материалов
 
 # Комментарии
 # Оба шаблона хранятся в одном файле: com.t (sic!)
-'templates/comments/_comment.html': 'com.t' # Вид комментариев
-#'templates/comments/_form.html':   'com.t' # Форма добавления комментариев
+'com.t':
+        - 'templates/comments/_comment.html' # Вид комментариев
+        - 'templates/comments/_form.html'    # Форма добавления комментариев
 
 # Каталог сайтов
-'templates/dir/main.html':           'dr1.t' # Главная страница каталога сайтов
-'templates/dir/index_section.html':  'dr2.t' # Страница со списком материалов раздела
-'templates/dir/index_category.html': 'dr3.t' # Страница со списком материалов категории
-'templates/dir/show.html':           'dr4.t' # Страница материала и комментариев к нему
-'templates/dir/search.html':         'dr5.t' # Страница поиска и рейтинга материалов
-'templates/dir/new_or_edit.html':    'dr6.t' # Страница добавления/редактирования материала
-'templates/dir/_site.html':          'dr7.t' # Вид материалов
+'dr1.t': 'templates/dir/main.html'           # Главная страница каталога сайтов
+'dr2.t': 'templates/dir/index_section.html'  # Страница со списком материалов раздела
+'dr3.t': 'templates/dir/index_category.html' # Страница со списком материалов категории
+'dr4.t': 'templates/dir/show.html'           # Страница материала и комментариев к нему
+'dr5.t': 'templates/dir/search.html'         # Страница поиска и рейтинга материалов
+'dr6.t': 'templates/dir/new_or_edit.html'    # Страница добавления/редактирования материала
+'dr7.t': 'templates/dir/_site.html'          # Вид материалов
 
 # FAQ (вопрос/ответ)
-'templates/faq/index.html': 'fq1.t' # Общий вид страниц FAQ'a
-'templates/faq/_faq.html':  'fq2.t' # Вид материалов
+'fq1.t': 'templates/faq/index.html' # Общий вид страниц FAQ'a
+'fq2.t': 'templates/faq/_faq.html'  # Вид материалов
 
 # Форум
-'templates/forum/main.html':  'fr1.t' # Общий вид страниц форума
-'templates/forum/_post.html': 'fr2.t' # Вид материалов
-'templates/forum/_form.html': 'fr3.t' # Форма добавления сообщения
+'fr1.t': 'templates/forum/main.html'  # Общий вид страниц форума
+'fr2.t': 'templates/forum/_post.html' # Вид материалов
+'fr3.t': 'templates/forum/_form.html' # Форма добавления сообщения
 
 # Информеры
-'templates/informers/i3.html': 'i3' #
-'templates/informers/i4.html': 'i4' #
-'templates/informers/i5.html': 'i5' #
+'i3': 'templates/informers/i3.html' #
+'i4': 'templates/informers/i4.html' #
+'i5': 'templates/informers/i5.html' #
 
 # Каталог файлов
-'templates/load/main.html':           'ld1.t' # Главная страница каталога файлов
-'templates/load/index_section.html':  'ld2.t' # Страница со списком материалов раздела
-'templates/load/index_category.html': 'ld3.t' # Страница со списком материалов категории
-'templates/load/show.html':           'ld4.t' # Страница материала и комментариев к нему
-'templates/load/search.html':         'ld5.t' # Страница поиска и рейтинга материалов
-'templates/load/new_or_edit.html':    'ld6.t' # Страница добавления/редактирования материала
-'templates/load/_material.html':      'ld7.t' # Вид материалов
+'ld1.t': 'templates/load/main.html'           # Главная страница каталога файлов
+'ld2.t': 'templates/load/index_section.html'  # Страница со списком материалов раздела
+'ld3.t': 'templates/load/index_category.html' # Страница со списком материалов категории
+'ld4.t': 'templates/load/show.html'           # Страница материала и комментариев к нему
+'ld5.t': 'templates/load/search.html'         # Страница поиска и рейтинга материалов
+'ld6.t': 'templates/load/new_or_edit.html'    # Страница добавления/редактирования материала
+'ld7.t': 'templates/load/_material.html'      # Вид материалов
 
 # Мини-чат
-'templates/minichat/_message.html': 'mc1.t' # Вид материалов
-'templates/minichat/_form.html':    'mc2.t' # Форма добавления сообщений
+'mc1.t': 'templates/minichat/_message.html' # Вид материалов
+'mc2.t': 'templates/minichat/_form.html'    # Форма добавления сообщений
 
 # Формы обратной связи
-#'': 'mf1' #
-#'': 'mf2' #
+#'mf1': '' #
+#'mf2': '' #
 
 # Общие шаблоны
-#'': 'my.css' # Таблица стилей (CSS)
+#'my.css': '' # Таблица стилей (CSS)
 
 # Новости сайта
-'templates/news/index.html': 'nw1.t' # Страница архива материалов
-'templates/news/show.html':  'nw2.t' # Страница материала и комментариев к нему
-'templates/news/_news.html': 'nw3.t' # Вид материалов
+'nw1.t': 'templates/news/index.html' # Страница архива материалов
+'nw2.t': 'templates/news/show.html'  # Страница материала и комментариев к нему
+'nw3.t': 'templates/news/_news.html' # Вид материалов
 
 # Фотоальбом
-'templates/photo/main.html':          'ph1.t'  # Главная страница фотоальбома
-'templates/photo/index_section.html': 'ph2.t'  # Страница со списком фотографий раздела
-'templates/photo/index_album.html':   'ph3.t'  # Страница со списком фотографий альбома
-#'':                                  'ph4.t'  # Страница с полной фотографией и комментариями
-'templates/photo/search.html':        'ph5.t'  # Страница рейтинга и поиска фотографий
-'templates/photo/new.html':           'ph6.t'  # Страница добавления фотографии
-'templates/photo/private_album.html': 'ph7.t'  # Страница входа в приватный альбом
-'templates/photo/_photo.html':        'ph8.t'  # Вид фотографий
-#'':                                  'ph9.t'  # Страница фотографии во всплывающем окне
-#'':                                  'ph10.t' # Таблица стилей (CSS)
+'ph1.t':  'templates/photo/main.html'          # Главная страница фотоальбома
+'ph2.t':  'templates/photo/index_section.html' # Страница со списком фотографий раздела
+'ph3.t':  'templates/photo/index_album.html'   # Страница со списком фотографий альбома
+#'ph4.t':  ''                                  # Страница с полной фотографией и комментариями
+'ph5.t':  'templates/photo/search.html'        # Страница рейтинга и поиска фотографий
+'ph6.t':  'templates/photo/new.html'           # Страница добавления фотографии
+'ph7.t':  'templates/photo/private_album.html' # Страница входа в приватный альбом
+'ph8.t':  'templates/photo/_photo.html'        # Вид фотографий
+#'ph9.t': ''                                   # Страница фотографии во всплывающем окне
+#'ph10.t': ''                                  # Таблица стилей (CSS)
 
 # Опросы
-'templates/polls/_form.html': 'po1.t' # Вид формы опросов
+'po1.t': 'templates/polls/_form.html' # Вид формы опросов
 
 # Каталог статей
-'templates/publ/main.html':           'pu1.t' # Главная страница каталога статей
-'templates/publ/index_section.html':  'pu2.t' # Страница со списком материалов раздела
-'templates/publ/index_category.html': 'pu3.t' # Страница со списком материалов категории
-'templates/publ/show.html':           'pu4.t' # Страница материала и комментариев к нему
-'templates/publ/search.html':         'pu5.t' # Страница поиска и рейтинга материалов
-'templates/publ/new_or_edit.html':    'pu6.t' # Страница добавления/редактирования материала
-'templates/publ/_article.html':       'pu7.t' # Вид материалов
+'pu1.t': 'templates/publ/main.html'           # Главная страница каталога статей
+'pu2.t': 'templates/publ/index_section.html'  # Страница со списком материалов раздела
+'pu3.t': 'templates/publ/index_category.html' # Страница со списком материалов категории
+'pu4.t': 'templates/publ/show.html'           # Страница материала и комментариев к нему
+'pu5.t': 'templates/publ/search.html'         # Страница поиска и рейтинга материалов
+'pu6.t': 'templates/publ/new_or_edit.html'    # Страница добавления/редактирования материала
+'pu7.t': 'templates/publ/_article.html'       # Вид материалов
 
 # Поиск по сайту
-'templates/search/main.html':      'se1.t' # Страница поиска
-'templates/search/_material.html': 'se2.t' # Вид материалов
+'se1.t': 'templates/search/main.html'      # Страница поиска
+'se2.t': 'templates/search/_material.html' # Вид материалов
 
 # Редактор страниц
-'templates/pages/index.html':    'si.t'  # Страницы сайта
-'templates/pages/minichat.html': 'si110' # MiniChat
+'si.t':  'templates/pages/index.html'     # Страницы сайта
+'si110': 'templates/pages/minichat.html'  # MiniChat
 
 #
-#'': 'temp' #
+#'temp': '' #
 
 # Тесты
-'templates/tests/main.html': 'ts1.t' #
+'ts1.t': 'templates/tests/main.html' #
 
 # Пользователи
-'templates/users/login.html':        'us1.t'  # Страница входа пользователей
-'templates/users/registration.html': 'us2.t'  # Страница регистрации пользователей
-'templates/users/403.html':          'us3.t'  # Страница "Доступ запрещен"
-'templates/users/show.html':         'us5.t'  # Персональная страница пользователя
-'templates/users/edit.html':         'us6.t'  # Страница редактирования данных пользователя
-'templates/users/index.html':        'us7.t'  # Страница со списком пользователей
-'templates/users/comments.html':     'us8.t'  # Страница со списком комментариев пользователя
-'templates/users/_reg_form.html':    'us9.t'  # Форма регистрации локальных пользователей
-'templates/users/_form.html':        'us10.t' # Форма редактирования персональной информации
-'templates/users/pm.html':           'new.t'  # Личные сообщения (ЛС)
+'us1.t':  'templates/users/login.html'        # Страница входа пользователей
+'us2.t':  'templates/users/registration.html' # Страница регистрации пользователей
+'us3.t':  'templates/users/403.html'          # Страница "Доступ запрещен"
+'us5.t':  'templates/users/show.html'         # Персональная страница пользователя
+'us6.t':  'templates/users/edit.html'         # Страница редактирования данных пользователя
+'us7.t':  'templates/users/index.html'        # Страница со списком пользователей
+'us8.t':  'templates/users/comments.html'     # Страница со списком комментариев пользователя
+'us9.t':  'templates/users/_reg_form.html'    # Форма регистрации локальных пользователей
+'us10.t': 'templates/users/_form.html'        # Форма редактирования персональной информации
+'new.t':  'templates/users/pm.html'           # Личные сообщения (ЛС)

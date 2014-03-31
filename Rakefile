@@ -50,19 +50,19 @@ task :archive do
   end
 
   Zip::File.open(zipfile_name, Zip::File::CREATE) do |ar|
-    files_matching.each do |filename, arch_name|
+    files_matching.each do |arch_name, filename|
       ar.get_output_stream(arch_name) do |stream|
         str = ''
-        # TODO: make this better
-        if filename == 'templates/comments/_comment.html'
-          f1 = trim_utf8_file(filename)
-          f2 = trim_utf8_file('templates/comments/_form.html')
+        if filename.kind_of? Array
+          raise 'Incorrect array in files_matching.yml' if filename.size != 2
+          f1 = trim_utf8_file(filename[0]).gsub!(/ +/, ' ')
+          f2 = trim_utf8_file(filename[1]).gsub!(/ +/, ' ')
           str << ('%05d' % f1.size) << (' ' * 5) << f1 << f2
-          LOGGER.warn "Size of #{filename} > 99999: this situation is not tested yet." if f1.size > 99999
+          LOGGER.warn "Size of #{arch_name} > 99999: this situation is not tested yet." if (f1.size + f2.size) > 99999
         else
-          str = trim_utf8_file(filename)
+          str << trim_utf8_file(filename).gsub!(/ +/, ' ')
         end
-        stream.write str.gsub!(/ +/, ' ')
+        stream.write str
       end
     end
   end
