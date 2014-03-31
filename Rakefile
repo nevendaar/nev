@@ -16,6 +16,9 @@ BUNDLES    = %w( app.css app.js )
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('files')
 
+# utf-8 Byte Order Mark
+BOM_TOKEN = "\xEF\xBB\xBF".freeze
+
 desc 'Compile assets.'
 task :compile do
   sprockets = Sprockets::Environment.new(ROOT) do |env|
@@ -52,12 +55,12 @@ task :archive do
         str = ''
         # TODO: make this better
         if filename == 'templates/comments/_comment.html'
-          f1 = trim_utf8_file(filename).pack('c*').force_encoding('utf-8')
-          f2 = trim_utf8_file('templates/comments/_form.html').pack('c*').force_encoding('utf-8')
+          f1 = trim_utf8_file(filename)
+          f2 = trim_utf8_file('templates/comments/_form.html')
           str << ('%05d' % f1.size) << (' ' * 5) << f1 << f2
           LOGGER.warn "Size of #{filename} > 99999: this situation is not tested yet." if f1.size > 99999
         else
-          str = trim_utf8_file(filename).pack('c*')
+          str = trim_utf8_file(filename)
         end
         stream.write str
       end
@@ -70,9 +73,6 @@ end
 
 # Trim first 3 bytes from utf-file if needed and returning array of bytes
 def trim_utf8_file(filename)
-  bom_token = [0xef, 0xbb, 0xbf] # Byte Order Mark
-  bytes = Array.new
-  File.open(filename, 'r') { |f| bytes = f.read.bytes }
-  bytes.shift(3) if bytes[0..2] == bom_token
-  bytes
+  str = File.open(filename, 'r') { |f| f.read }
+  str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
 end
