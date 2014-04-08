@@ -2,11 +2,13 @@
 
 require 'rubygems'
 require 'bundler'
+require 'erb'
 require 'yaml'
 require 'pathname'
 require 'logger'
 
 require 'zip'
+require_relative 'helper'
 
 Bundler.require
 
@@ -55,12 +57,12 @@ task :archive do
         str = ''
         if filename.kind_of? Array
           raise 'Incorrect array in files_matching.yml' if filename.size != 2
-          f1 = trim_utf8_file(filename[0]).gsub!(/ +/, ' ')
-          f2 = trim_utf8_file(filename[1]).gsub!(/ +/, ' ')
+          f1 = compile_template(filename[0])
+          f2 = compile_template(filename[1])
           str << ('%05d' % f1.size) << (' ' * 5) << f1 << f2
           LOGGER.warn "Size of #{arch_name} > 99999: this situation is not tested yet." if (f1.size + f2.size) > 99999
         else
-          str << trim_utf8_file(filename).gsub!(/ +/, ' ')
+          str << compile_template(filename)
         end
         stream.write str
       end
@@ -68,11 +70,18 @@ task :archive do
   end
 
   LOGGER.info "Created file #{zipfile_name}"
-
 end
 
-# Trim first 3 bytes from utf-file if needed and returning array of bytes
+# Trim first 3 bytes from utf-file if needed
 def trim_utf8_file(filename)
   str = File.open(filename, 'r') { |f| f.read }
   str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
+end
+
+def compile_template(filename)
+  str = trim_utf8_file(filename)
+  if filename[-4..-1] == '.erb'
+    str = ERB.new(str).result(Helper.new.get_binding)
+  end
+  str.gsub!(/ +/, ' ')
 end

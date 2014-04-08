@@ -1,12 +1,10 @@
 ﻿<html lang="ru">
     <head>
-        <meta charset="utf-8">
-        <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+        <%= charset_and_ie_support_tags %>
         <title>$SITE_NAME$ - $MODULE_NAME$</title>
         $GLOBAL_AJAXJS$
-        <link href="/css/ajax_win.css" rel="stylesheet">
-        <link href="/css/my.css" rel="stylesheet">
-        <script src="/js/my.js"></script>
+        <%= stylesheet_link_tag %>
+        <%= javascript_include_tag %>
     </head>
     <body>
         <div class="wrapper">
