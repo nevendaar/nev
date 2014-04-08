@@ -1,5 +1,7 @@
 ﻿<% template = layout do %>
     $CONTENT$
+    <%= Time.now.to_i %>
+    <%= binding.inspect %>
 <% end %>
 
 <%= template %>

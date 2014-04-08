@@ -85,7 +85,7 @@ end
 def compile_template(filename)
   str = trim_utf8_file(filename)
   if File.extname(filename) == '.erb'
-    str = ERB.new(str).result(Helper.new.to_binding)
+    str = ERB.new(str).result(Helper.new.get_binding)
   end
   str.gsub!(/ +/, ' ')
 end
