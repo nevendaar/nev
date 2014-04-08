@@ -72,6 +72,10 @@ task :archive do
   LOGGER.info "Created file #{zipfile_name}"
 end
 
+task :test do
+  puts compile_template('/home/kia84/projects/nev/templates/pages/index.html.erb')
+end
+
 # Trim first 3 bytes from utf-file if needed
 def trim_utf8_file(filename)
   str = File.open(filename, 'r') { |f| f.read }
@@ -80,8 +84,8 @@ end
 
 def compile_template(filename)
   str = trim_utf8_file(filename)
-  if filename[-4..-1] == '.erb'
-    str = ERB.new(str).result(Helper.new.get_binding)
+  if File.extname(filename) == '.erb'
+    str = ERB.new(str).result(Helper.new.to_binding)
   end
   str.gsub!(/ +/, ' ')
 end
