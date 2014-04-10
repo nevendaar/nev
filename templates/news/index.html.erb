@@ -1,0 +1,13 @@
+﻿<% @params[:title] = '$TITLE_BAR$ - $SITE_NAME$' %>
+<% @params[:meta][:description] = 'Новости мира Disciples' %>
+
+<% layout _erbout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li class="active">$DATE_BAR$</li>
+    </ol>
+    <?if($ADD_ENTRY_LINK$)?>
+        <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить новость</a> ]</div>
+    <?endif?>
+    $BODY$
+<% end %>

@@ -4,6 +4,7 @@ class Helper
 
   def initialize(hash = {})
     @params = hash
+    @params[:meta] = {}
   end
 
   def get_binding
@@ -15,7 +16,17 @@ class Helper
       <meta charset="utf-8">
       <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
     HTML
-    s.chomp
+    s.chomp!
+  end
+
+  def meta_tags
+    s = ''
+    @params[:meta].each do |name, content|
+      s << <<-HTML
+        <meta name="#{name}" content="#{content}">
+      HTML
+    end
+    s.chomp!
   end
 
   def stylesheet_link_tag
@@ -29,8 +40,7 @@ class Helper
   def layout(erbout)
     template = File.read('/home/kia84/projects/nev/templates/layouts/main.html.erb').chomp!
     pos = erbout.size
-    erb = ERB.new(template)
-    str = erb.result(binding)
+    str = ERB.new(template).result(binding)
     erbout.slice!(pos..erbout.size)
     erbout << str
   end

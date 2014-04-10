@@ -1,7 +1,8 @@
 <html lang="ru">
     <head>
         <%= charset_and_ie_support_tags %>
-        <title><%= @title || '$SITE_NAME$ - $MODULE_NAME$' %></title>
+        <title><%= @params[:title] || '$MODULE_NAME$ - $SITE_NAME$' %></title>
+        <%= meta_tags %>
         $GLOBAL_AJAXJS$
         <%= stylesheet_link_tag %>
         <%= javascript_include_tag %>
@@ -10,12 +11,12 @@
         <div class="wrapper">
             $GLOBAL_HEADER$
             <div class="middle">
-              <div class="container">
-                <main class="content bordered">
-                    <%= yield if block_given? %>
-                </main>
-              </div>
-              $GLOBAL_ASIDE$
+                <div class="container">
+                    <main class="content bordered">
+                        <%= yield if block_given? %>
+                    </main>
+                </div>
+                $GLOBAL_ASIDE$
             </div>
             $GLOBAL_FOOTER$
         </div>

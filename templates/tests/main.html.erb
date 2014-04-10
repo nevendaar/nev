@@ -1,0 +1,20 @@
+﻿<% @params[:title] = '<?if($TEST_NAME$)?>$TEST_NAME$ - <?endif?><?if($CAT_NAME$)?>$CAT_NAME$ - <?endif?>$MODULE_NAME$ - $SITE_NAME$' %>
+
+<% layout _erbout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <?if($CAT_NAME$ || $TEST_NAME$)?>
+            <li><a href="$MODULE_URL$">Тесты</a></li>
+            <?if($TEST_NAME$)?>
+                <?if($CAT_NAME$)?><li><a href="$CAT_URL$">$CAT_NAME$</a></li><?endif?>
+                <li class="active">$TEST_NAME$</li>
+            <?else?>
+                <li class="active">$CAT_NAME$</li>
+            <?endif?>
+        <?else?>
+            <li class="active">Тесты</li>
+        <?endif?>
+    </ol>
+    <?if($CATEGORIES$)?>$CATEGORIES$<hr/><?endif?>
+    $BODY$
+<% end %>
