@@ -26,8 +26,12 @@ class Helper
     '<script src="/js/app.js"></script>'
   end
 
-  def layout(name = nil, &block)
-    template = File.read('/home/kia84/projects/nev/templates/layouts/main.html.erb')
-    ERB.new(template).result(binding)
+  def layout(erbout)
+    template = File.read('/home/kia84/projects/nev/templates/layouts/main.html.erb').chomp!
+    pos = erbout.size
+    erb = ERB.new(template)
+    str = erb.result(binding)
+    erbout.slice!(pos..erbout.size)
+    erbout << str
   end
 end
