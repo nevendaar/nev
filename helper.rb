@@ -5,6 +5,7 @@ class Helper
   def initialize(hash = {})
     @params = hash
     @params[:meta] = {}
+    @_erbout = nil
   end
 
   def get_binding
@@ -37,11 +38,10 @@ class Helper
     '<script src="/js/app.js"></script>'
   end
 
-  def layout(erbout)
-    template = File.read('/home/kia84/projects/nev/templates/layouts/main.html.erb').chomp!
-    pos = erbout.size
-    str = ERB.new(template).result(binding)
-    erbout.slice!(pos..erbout.size)
-    erbout << str
+  def layout(template = :main)
+    template = File.read("templates/layouts/#{template}.html.erb").chomp!
+    erbout = @_erbout.dup
+    str = ERB.new(template, nil, nil, '@_erbout').result(binding)
+    @_erbout = erbout + str
   end
 end
