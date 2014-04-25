@@ -42,6 +42,6 @@ class Helper
     template = File.read("templates/layouts/#{template}.html.erb").chomp!
     erbout = @_erbout.dup
     str = ERB.new(template, nil, nil, '@_erbout').result(binding)
-    @_erbout = erbout + str
+    @_erbout = (erbout << str)
   end
 end
