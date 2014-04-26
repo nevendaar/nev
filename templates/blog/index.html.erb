@@ -1,0 +1,22 @@
+﻿<% layout do %>
+    <ol class="breadcrumb">
+        <li><a href="$MODULE_URL$">Главная</a></li>
+        <li class="active">$DATE_BAR$</li>
+    </ol>
+    <?if $PAGE_ID$='add'||$PAGE_ID$='edit'?>
+        <?substr($BODY$,0,strpos($BODY$,"m'}")+2)?>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<?substr($BODY$,strpos($BODY$,"m'}")+2)?>
+        <script type="text/javascript">
+            var str="";
+            <?if($GROUP_ID$=4 || $GROUP_ID$=3 || $GROUP_ID$=14)?>$('<input id="atsn" type="checkbox" checked="checked"/> <label for="atsn">Добавить запись в блок "Новое на сайте"?</label><br/>').insertBefore('#ispen');<?endif?>
+            function init(){str=<?if($PAGE_ID$='add')?>"$USERNAME$ поделил<?if($USER_GENDER_ID$==2)?>ась<?else?>ся<?endif?> творчеством "<?else?>"Обновлён материал "<?endif?>}
+            function addnn(url,t){<?if($GROUP_ID$=4 || $GROUP_ID$=3 || $GROUP_ID$=14)?>if(!$('#atsn').attr('checked')){_uWnd.content('addEnt',t)||$('input.manFlSbm').attr('disabled',0);return false}<?endif?>
+                $.post('/dir/',{jkd498:1,jkd428:1,ocat:5,title:$('#blF1').val(),slink:url,brief:(str+'"'+$('#blF1').val()+'" в разделе [i]'+($('select[name="cat"]').val()==0?'Фан-творчество':$('select[name="cat"] > option').eq($('select[name="cat"]').val()).text())+'[/i].'),edttbrief:2,format_brief:1,a:12,ssid:$('input[name="ssid"]').val(),numi:1},function(p,s){
+                    str=(s=='success' ? '<br/><br/>( Добавлена запись в список обновления материалов )' : '');
+                    _uWnd.content('addEnt',t+str)||$('input.manFlSbm').attr('disabled',0);init();})
+            }
+            init();
+        </script>
+    <?else?>
+        $BODY$
+    <?endif?>
+<% end %>

@@ -73,7 +73,8 @@ task :archive do
 end
 
 task :test do
-  puts compile_template('/home/kia84/projects/nev/templates/pages/index.html.erb')
+  path = ARGV[1] || 'templates/pages/index.html.erb'
+  puts compile_template(path, true)
 end
 
 # Trim first 3 bytes from utf-file if needed
@@ -82,10 +83,11 @@ def trim_utf8_file(filename)
   str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
 end
 
-def compile_template(filename)
+def compile_template(filename, dont_trim = false)
   str = trim_utf8_file(filename)
   if File.extname(filename) == '.erb'
     str = ERB.new(str, nil, nil, '@_erbout').result(Helper.new.get_binding)
   end
-  str.gsub!(/\n\s*\n+/, "\n").gsub!(/ {2,}/, ' ')
+  str.gsub!(/\n\s*\n+/, "\n")
+  dont_trim ? str : str.gsub!(/ {2,}/, ' ')
 end
