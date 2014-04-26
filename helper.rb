@@ -5,6 +5,7 @@ class Helper
   def initialize(hash = {})
     @params = hash
     @params[:meta] = {}
+    @params[:vk]   = {}
     @_erbout = nil
   end
 

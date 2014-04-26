@@ -1,1 +1,60 @@
-﻿<!-- Old template -->
+﻿<% @params[:title] = '$TITLE_BAR$ - $SITE_NAME$' %>
+<% @params[:meta][:title] = '$ENTRY_NAME$' %>
+<% @params[:meta][:description] = "<?substr($MESSAGE$, 0, strpos($MESSAGE$, '<'))?>..." %>
+<% @params[:vk][:init] = true %>
+
+<% layout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li>$DATE_BAR$</li>
+        <li class="active">$ENTRY_NAME$</li>
+    </ol>
+
+    <div class="material">
+        <div class="title clearfix">
+            <h2>$ENTRY_NAME$</h2>
+            <div class="time pull-right">
+                $ADD_TIME$ $MODER_PANEL$
+            </div>
+        </div>
+        <div class="body">
+            <div>
+                <?if($OTHER1$)?>Автор: $OTHER1$<?endif?><br/>
+                <?if($OTHER2$)?>Редактор: $OTHER2$<?endif?><br/>
+                <?if($OTHER3$)?>Жанр: $OTHER3$<?endif?><br/>
+                <?if($OTHER4$)?>Дисклеймер: $OTHER4$<?endif?><br/><br/>
+            </div>
+            $MESSAGE$
+            <?if($ATTACHMENTS$)?><div class="attachments">Прикрепления: $ATTACHMENTS$</div><?endif?>
+            <ul class="details">
+                <?if($CAT_NAME$)?><li>Категория: <a href="$CAT_URL$">$CAT_NAME$</a></li><?endif?>
+                <li>Просмотров: $READS$</li>
+                <li>Добавил: <a href="$PROFILE_URL$">$USER$</a></li>
+                <?if($RATING$)?><li>Рейтинг: <?$RSTARS$('12', '/img/stars.png', '1', 'float')?></li><?endif?>
+                <li><div id="vk_like" style="float: left;"></div></li>
+                <li id="vk_share" data-img="<?if($IMG_SMALL_URL1$)?>$IMG_SMALL_URL1$<?else?>$IMG_URL1$<?endif?>"></li>
+            </ul>
+            <?if($TAGS$)?><div class="tags">Теги: <i>$TAGS$</i></div><?endif?>
+        </div>
+    </div>
+
+    <?$RELATED_ENTRIES$(10)?>
+
+    <?if($COM_IS_ACTIVE$)?>
+        <div class="comment_box">
+            <div class="title clearfix">
+                Всего комментариев: <b>$COM_NUM_ENTRIES$</b>
+                <div style="float:right;">$COM_PAGE_SELECTOR$</div>
+            </div>
+            <div class="body">$COM_BODY$</div>
+            <?if($COM_CAN_ADD$)?>$COM_ADD_FORM$<?else?>
+                <?if(!$USER_LOGGED_IN$)?>
+                    <div class="text-center">Добавлять комментарии могут только зарегистрированные пользователи.<br />[ <a href="$REGISTER_LINK$">Регистрация</a> | <a href="$LOGIN_LINK$">Вход</a> ]</div>
+                <?endif?>
+            <?endif?>
+        </div>
+
+        <div class="text-center">$COM_PAGE_SELECTOR1$</div>
+        <div class="VKborders"><div id="vk_comments" data-uid="<? 20000000000 + $ID$ ?>"></div></div>
+    <?endif?>
+<% end %>

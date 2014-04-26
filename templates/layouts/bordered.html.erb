@@ -8,7 +8,7 @@
         <%= javascript_include_tag %>
     </head>
     <body>
-        <main class="bordered">
+        <main class="bordered<%= ' vk-init' if @params[:vk][:init] %>">
             <% yield if block_given? %>
         </main>
     </body>

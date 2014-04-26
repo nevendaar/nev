@@ -17,6 +17,7 @@ LOGGER     = Logger.new(STDOUT)
 BUNDLES    = %w( app.css app.js )
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('files')
+VENDOR_DIR = ROOT.join('vendor', 'assets')
 
 # utf-8 Byte Order Mark
 BOM_TOKEN = "\xEF\xBB\xBF".freeze
@@ -31,6 +32,7 @@ task :compile do
 
   sprockets.append_path(SOURCE_DIR.join('css').to_s)
   sprockets.append_path(SOURCE_DIR.join('js').to_s)
+  sprockets.append_path(VENDOR_DIR.join('javascripts').to_s)
 
   BUNDLES.each do |bundle|
     assets = sprockets.find_asset(bundle)
