@@ -79,6 +79,8 @@ task :test do
   puts compile_template(path, true)
 end
 
+task :default => :test
+
 # Trim first 3 bytes from utf-file if needed
 def trim_utf8_file(filename)
   str = File.open(filename, 'r') { |f| f.read }
