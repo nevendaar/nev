@@ -1,0 +1,27 @@
+﻿<% @params[:title] = '$SECTION_NAME$ - $MODULE_NAME$ - $SITE_NAME$' %>
+
+<% layout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a href="$MODULE_URL$">Файлы</a></li>
+        <li class="active">$SECTION_NAME$</li>
+    </ol>
+
+    <?if($ADD_ENTRY_LINK$)?>
+        <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить материал</a> ]</div>
+    <?endif?>
+
+    <div class="clearfix hr">
+        В разделе материалов: <b>$NUM_ENTRIES$</b>
+        <?if($NUM_SHOWN$)?><br/>Показано материалов: <b>$NUM_SHOWN$</b><?endif?>
+        <?if($PAGE_SELECTOR$)?>
+            <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
+        <?endif?>
+    </div>
+
+    $BODY$
+
+    <?if($PAGE_SELECTOR1$)?>
+        <div class="text-center top-hr">$PAGE_SELECTOR1$</div>
+    <?endif?>
+<% end %>
