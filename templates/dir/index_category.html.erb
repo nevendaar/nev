@@ -1,0 +1,37 @@
+﻿<% @params[:title] = "<?if($URI_ID$=='drCat5')?>Новое на сайте<?else?>$CAT_NAME$ <?if($SECTION_NAME$)?>- $SECTION_NAME$<?endif?> - $MODULE_NAME$<?endif?> - $SITE_NAME$" %>
+
+<% layout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <?if($URI_ID$=='drCat5')?>
+            <li class="active">Новое на сайте</li>
+        <?else?>
+            <?if($SECTION_NAME$)?>
+                <li><a href="$SECTION_URL$">Каталог сайтов</a></li>
+            <?endif?>
+            <li class="active">$CAT_NAME$</li>
+        <?endif?>
+    </ol>
+
+    <?if($ADD_ENTRY_LINK$ && ($URI_ID$!='drCat5' || $GROUP_ID$="4" || $GROUP_ID$="3" || $GROUP_ID$="14"))?>
+        <div class="text-right">
+            [ <a href="$ADD_ENTRY_LINK$">Добавить<?if($URI_ID$!='drCat5')?> сайт<?endif?></a> ]
+        </div>
+    <?endif?>
+
+    <div class="clearfix hr"><% # TODO: id="topsel" %>
+        <?if($URI_ID$=='drCat5')?>Всего записей<?else?>В категории материалов<?endif?>: <b>$NUM_ENTRIES$</b>
+        <?if($NUM_SHOWN$)?><br/>Показано материалов: <b>$NUM_SHOWN$</b><?endif?>
+        <?if($PAGE_SELECTOR$)?>
+            <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
+        <?endif?>
+    </div>
+
+    <?if($SORTING_MENU$ && $URI_ID$!='drCat5')?>Сортировать по: $SORTING_MENU$<hr><?endif?>
+
+    $BODY$
+
+    <?if($PAGE_SELECTOR1$)?>
+        <div class="text-center top-hr">$PAGE_SELECTOR1$</div>
+    <?endif?>
+<% end %>
