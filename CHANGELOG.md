@@ -1,9 +1,24 @@
 Changelog
 =========
 
+## Redirect with meta tag - 08.05.2014
+
+Добавлен хелпер `home_url`.
+
+Также добавлен хелпер для перенаправления, для использования нужно указать:
+```ruby
+@params[:redirect][:path] = '/dir/6'
+```
+
+Тогда в layout автоматически добавится следующее:
+```html
+<meta http-equiv="refresh" content="0; url=#{@params[:redirect][:path]}">
+<script type="text/javascript">location.replace("#{home_url}#{@params[:redirect][:path]}");</script>
+```
+
 ## ERB and layouts - 26.04.2014
 
-Поддержка ERB, использование хелперов, а также _layouts_ в шаблонах (во 
+Поддержка ERB, использование хелперов, а также _layouts_ в шаблонах (во
 избежание дублирования кода).
 
 ## Rake tasks and Sprockets - 31.03.2014

@@ -4,8 +4,9 @@ class Helper
 
   def initialize(hash = {})
     @params = hash
-    @params[:meta] = {}
-    @params[:vk]   = {}
+    @params[:meta]     = {}
+    @params[:vk]       = {}
+    @params[:redirect] = {}
     @_erbout = nil
   end
 
@@ -13,16 +14,28 @@ class Helper
     binding
   end
 
+  def home_url
+    'http://nevendaar.com'
+  end
+
   def charset_and_ie_support_tags
-    s = <<-HTML
+    <<-HTML.chomp!
       <meta charset="utf-8">
       <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
     HTML
-    s.chomp!
+  end
+
+  def meta_redirect_to
+    if @params[:redirect][:path]
+      <<-HTML
+        <meta http-equiv="refresh" content="0; url=#{@params[:redirect][:path]}">
+        <script type="text/javascript">location.replace("#{home_url}#{@params[:redirect][:path]}");</script>
+      HTML
+    end
   end
 
   def meta_tags
-    s = ''
+    s = meta_redirect_to.to_s
     @params[:meta].each do |name, content|
       s << <<-HTML
         <meta name="#{name}" content="#{content}">
