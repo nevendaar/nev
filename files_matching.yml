@@ -2,7 +2,7 @@
 
 # Глобальные блоки
 'AJAXJS': 'templates/AJAXJS.html' # Системные css и js файлы
-'ASIDE': 'templates/ASIDE.html'   # Меню сайта
+'ASIDE':  'templates/ASIDE.html'  # Меню сайта
 'FOOTER': 'templates/FOOTER.html' # Подвал
 'HEADER': 'templates/HEADER.html' # Шапка
 
@@ -16,10 +16,10 @@
 'bd7.t': 'templates/board/_material.html'      # Вид материалов
 
 # Блог (Фанфики)
-'bl1.t': 'templates/blog/main.html.erb' # Главная страница дневника
-'bl2.t': 'templates/blog/index.html'    # Страница архива материалов
-'bl3.t': 'templates/blog/show.html'     # Страница материала и комментариев к нему
-'bl4.t': 'templates/blog/_post.html'    # Вид материалов
+'bl1.t': 'templates/blog/main.html.erb'  # Главная страница дневника
+'bl2.t': 'templates/blog/index.html.erb' # Страница архива материалов
+'bl3.t': 'templates/blog/show.html.erb'  # Страница материала и комментариев к нему
+'bl4.t': 'templates/blog/_post.html'     # Вид материалов
 
 # Комментарии
 # Оба шаблона хранятся в одном файле: com.t (sic!)
@@ -28,13 +28,13 @@
         - 'templates/comments/_form.html'    # Форма добавления комментариев
 
 # Каталог сайтов
-'dr1.t': 'templates/dir/main.html'           # Главная страница каталога сайтов
-'dr2.t': 'templates/dir/index_section.html'  # Страница со списком материалов раздела
-'dr3.t': 'templates/dir/index_category.html' # Страница со списком материалов категории
-'dr4.t': 'templates/dir/show.html'           # Страница материала и комментариев к нему
-'dr5.t': 'templates/dir/search.html'         # Страница поиска и рейтинга материалов
-'dr6.t': 'templates/dir/new_or_edit.html'    # Страница добавления/редактирования материала
-'dr7.t': 'templates/dir/_site.html'          # Вид материалов
+'dr1.t': 'templates/dir/main.html.erb'           # Главная страница каталога сайтов
+'dr2.t': 'templates/dir/index_section.html.erb'  # Страница со списком материалов раздела
+'dr3.t': 'templates/dir/index_category.html.erb' # Страница со списком материалов категории
+'dr4.t': 'templates/dir/show.html'               # Страница материала и комментариев к нему
+'dr5.t': 'templates/dir/search.html.erb'         # Страница поиска и рейтинга материалов
+'dr6.t': 'templates/dir/new_or_edit.html'        # Страница добавления/редактирования материала
+'dr7.t': 'templates/dir/_site.html'              # Вид материалов
 
 # FAQ (вопрос/ответ)
 'fq1.t': 'templates/faq/index.html.erb' # Общий вид страниц FAQ'a
@@ -51,13 +51,13 @@
 'i5': 'templates/informers/i5.html' #
 
 # Каталог файлов
-'ld1.t': 'templates/load/main.html'           # Главная страница каталога файлов
-'ld2.t': 'templates/load/index_section.html'  # Страница со списком материалов раздела
-'ld3.t': 'templates/load/index_category.html' # Страница со списком материалов категории
-'ld4.t': 'templates/load/show.html'           # Страница материала и комментариев к нему
-'ld5.t': 'templates/load/search.html'         # Страница поиска и рейтинга материалов
-'ld6.t': 'templates/load/new_or_edit.html'    # Страница добавления/редактирования материала
-'ld7.t': 'templates/load/_material.html'      # Вид материалов
+'ld1.t': 'templates/load/main.html.erb'           # Главная страница каталога файлов
+'ld2.t': 'templates/load/index_section.html.erb'  # Страница со списком материалов раздела
+'ld3.t': 'templates/load/index_category.html.erb' # Страница со списком материалов категории
+'ld4.t': 'templates/load/show.html'               # Страница материала и комментариев к нему
+'ld5.t': 'templates/load/search.html.erb'         # Страница поиска и рейтинга материалов
+'ld6.t': 'templates/load/new_or_edit.html'        # Страница добавления/редактирования материала
+'ld7.t': 'templates/load/_material.html'          # Вид материалов
 
 # Мини-чат
 'mc1.t': 'templates/minichat/_message.html' # Вид материалов
@@ -71,9 +71,9 @@
 #'my.css': '' # Таблица стилей (CSS)
 
 # Новости сайта
-'nw1.t': 'templates/news/index.html' # Страница архива материалов
-'nw2.t': 'templates/news/show.html'  # Страница материала и комментариев к нему
-'nw3.t': 'templates/news/_news.html' # Вид материалов
+'nw1.t': 'templates/news/index.html.erb' # Страница архива материалов
+'nw2.t': 'templates/news/show.html'      # Страница материала и комментариев к нему
+'nw3.t': 'templates/news/_news.html'     # Вид материалов
 
 # Фотоальбом
 'ph1.t':  'templates/photo/main.html'          # Главная страница фотоальбома
@@ -100,7 +100,7 @@
 'pu7.t': 'templates/publ/_article.html'       # Вид материалов
 
 # Поиск по сайту
-'se1.t': 'templates/search/main.html'      # Страница поиска
+'se1.t': 'templates/search/main.html.erb'  # Страница поиска
 'se2.t': 'templates/search/_material.html' # Вид материалов
 
 # Редактор страниц
@@ -111,16 +111,16 @@
 #'temp': '' #
 
 # Тесты
-'ts1.t': 'templates/tests/main.html' #
+'ts1.t': 'templates/tests/main.html.erb' #
 
 # Пользователи
-'us1.t':  'templates/users/login.html'        # Страница входа пользователей
-'us2.t':  'templates/users/registration.html' # Страница регистрации пользователей
-'us3.t':  'templates/users/403.html'          # Страница "Доступ запрещен"
-'us5.t':  'templates/users/show.html'         # Персональная страница пользователя
-'us6.t':  'templates/users/edit.html'         # Страница редактирования данных пользователя
-'us7.t':  'templates/users/index.html'        # Страница со списком пользователей
-'us8.t':  'templates/users/comments.html'     # Страница со списком комментариев пользователя
-'us9.t':  'templates/users/_reg_form.html'    # Форма регистрации локальных пользователей
-'us10.t': 'templates/users/_form.html'        # Форма редактирования персональной информации
-'new.t':  'templates/users/pm.html'           # Личные сообщения (ЛС)
+'us1.t':  'templates/users/login.html.erb'        # Страница входа пользователей
+'us2.t':  'templates/users/registration.html.erb' # Страница регистрации пользователей
+'us3.t':  'templates/users/403.html.erb'          # Страница "Доступ запрещен"
+'us5.t':  'templates/users/show.html.erb'         # Персональная страница пользователя
+'us6.t':  'templates/users/edit.html.erb'         # Страница редактирования данных пользователя
+'us7.t':  'templates/users/index.html.erb'        # Страница со списком пользователей
+'us8.t':  'templates/users/comments.html.erb'     # Страница со списком комментариев пользователя
+'us9.t':  'templates/users/_reg_form.html'        # Форма регистрации локальных пользователей
+'us10.t': 'templates/users/_form.html'            # Форма редактирования персональной информации
+'new.t':  'templates/users/pm.html.erb'           # Личные сообщения (ЛС)

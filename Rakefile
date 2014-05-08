@@ -64,7 +64,7 @@ task :archive do
           str << ('%05d' % f1.size) << (' ' * 5) << f1 << f2
           LOGGER.warn "Size of #{arch_name} > 99999: this situation is not tested yet." if (f1.size + f2.size) > 99999
         else
-          str << compile_template(filename)
+          str << compile_template(filename).to_s
         end
         stream.write str
       end
@@ -88,10 +88,15 @@ def trim_utf8_file(filename)
 end
 
 def compile_template(filename, dont_trim = false)
+  unless File.exists?(filename)
+    LOGGER.warn "Cannot find file: #{filename}\nSkipping..."
+    return ''
+  end
   str = trim_utf8_file(filename)
   if File.extname(filename) == '.erb'
     str = ERB.new(str, nil, nil, '@_erbout').result(Helper.new.get_binding)
   end
   str.gsub!(/\n\s*\n+/, "\n")
-  dont_trim ? str : str.gsub!(/ {2,}/, ' ')
+  str.gsub!(/ {2,}/, ' ') unless dont_trim
+  str
 end
