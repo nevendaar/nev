@@ -21,7 +21,7 @@ class Helper
   def charset_and_ie_support_tags
     <<-HTML.chomp!
       <meta charset="utf-8">
-      <!--[if lt IE 9]><script src="/js/html5.js"></script><![endif]-->
+      <!--[if lt IE 9]><script src="/js/html5.min.js"></script><![endif]-->
     HTML
   end
 
