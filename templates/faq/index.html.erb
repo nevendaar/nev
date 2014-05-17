@@ -11,8 +11,8 @@
     <?if($ADD_ENTRY_LINK$)?>
         <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить вопрос</a> ]</div>
     <?endif?>
-    <?if($CATEGORIES$)?><hr>$CATEGORIES$<?endif?>
     <hr>
+    <?if($CATEGORIES$)?>$CATEGORIES$<hr><?endif?>
     <?if $PAGE_ID$='add'||$PAGE_ID$='edit'?>
         <?substr($BODY$,0,strpos($BODY$,"m'}")+2)?>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<?substr($BODY$,strpos($BODY$,"m'}")+2)?>
         <script>

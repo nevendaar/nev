@@ -5,18 +5,13 @@
         <li><a href="/">Главная</a></li>
         <li class="active">Комментарии пользователя [$USER$]</li>
     </ol>
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tbody>
-            <tr>
-                <td width="60%">
-                    Найдено комментариев: <b>$NUM_ENTRIES$</b>
-                    <?if($NUM_SHOWN$)?><br>Показано комментариев: <b>$NUM_SHOWN$</b><?endif?>
-                </td>
-                <td align="right"><?if($PAGE_SELECTOR$)?>Страницы: $PAGE_SELECTOR$<?endif?></td>
-            </tr>
-        </tbody>
-    </table>
-    <hr>
+    <div class="clearfix hr">
+        Найдено комментариев: <b>$NUM_ENTRIES$</b>
+        <?if($NUM_SHOWN$)?><br>Показано комментариев: <b>$NUM_SHOWN$</b><?endif?>
+        <?if($PAGE_SELECTOR$)?>
+            <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
+        <?endif?>
+    </div>
     $BODY$
     <?if($PAGE_SELECTOR1$)?><div class="text-center">$PAGE_SELECTOR1$</div><?endif?>
 <% end %>

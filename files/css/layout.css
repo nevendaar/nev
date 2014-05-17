@@ -31,23 +31,15 @@ textarea {
     resize: none;
 }
 
-hr {
-    color: #160D0B;
+hr, .hr:after, .top-hr:before {
     height: 1px;
-    border: 1px inset #CCC;
+    border: 1px inset #160D0B;
     margin: 0.5em auto;
+    display: block;
 }
 
-.hr {
-    border-bottom: 3px double #AAA;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
-}
-
-.top-hr {
-    border-top: 3px double #AAA;
-    margin-top: 0.5em;
-    padding-top: 0.5em;
+.hr:after, .top-hr:before {
+    content: '';
 }
 
 h1, h2, h3, h4, h5, h6 {
