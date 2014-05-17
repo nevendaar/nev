@@ -91,13 +91,13 @@
 'po1.t': 'templates/polls/_form.html' # Вид формы опросов
 
 # Каталог статей
-'pu1.t': 'templates/publ/main.html'           # Главная страница каталога статей
-'pu2.t': 'templates/publ/index_section.html'  # Страница со списком материалов раздела
-'pu3.t': 'templates/publ/index_category.html' # Страница со списком материалов категории
-'pu4.t': 'templates/publ/show.html'           # Страница материала и комментариев к нему
-'pu5.t': 'templates/publ/search.html'         # Страница поиска и рейтинга материалов
-'pu6.t': 'templates/publ/new_or_edit.html'    # Страница добавления/редактирования материала
-'pu7.t': 'templates/publ/_article.html'       # Вид материалов
+'pu1.t': 'templates/publ/main.html.erb'           # Главная страница каталога статей
+'pu2.t': 'templates/publ/index_section.html.erb'  # Страница со списком материалов раздела
+'pu3.t': 'templates/publ/index_category.html.erb' # Страница со списком материалов категории
+'pu4.t': 'templates/publ/show.html'               # Страница материала и комментариев к нему
+'pu5.t': 'templates/publ/search.html.erb'         # Страница поиска и рейтинга материалов
+'pu6.t': 'templates/publ/new_or_edit.html'        # Страница добавления/редактирования материала
+'pu7.t': 'templates/publ/_article.html'           # Вид материалов
 
 # Поиск по сайту
 'se1.t': 'templates/search/main.html.erb'  # Страница поиска
