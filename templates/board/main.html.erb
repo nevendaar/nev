@@ -1,0 +1,20 @@
+﻿<% @params[:vk][:init] = true %>
+
+<% layout do %>
+    <?if($GROUP_ID$="4" || $GROUP_ID$="3" || $GROUP_ID$="14")?>
+        <ol class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li class="active">Доска объявлений (<b>$NUM_ENTRIES$</b>)</li>
+        </ol>
+        <?if($ADD_ENTRY_LINK$)?>
+            <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить материал</a> ]</div>
+        <?endif?>
+        <div class="VKborders"><div id="vk_comments" data-uid="90000000000"></div></div>
+        <?if($CATEGORIES$)?>
+            <div class="hr top-hr">$CATEGORIES$</div>
+        <?endif?>
+        $BODY$
+    <?else?>
+        <script>document.location.href = "/";</script>
+    <?endif?>
+<% end %>

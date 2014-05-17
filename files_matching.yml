@@ -7,13 +7,13 @@
 'HEADER': 'templates/HEADER.html' # Шапка
 
 # Доска объявлений
-'bd1.t': 'templates/board/main.html'           # Главная страница модуля
-'bd2.t': 'templates/board/index_section.html'  # Страница со списком материалов раздела
-'bd3.t': 'templates/board/index_category.html' # Страница со списком материалов категории
-'bd4.t': 'templates/board/show.html'           # Страница материала и комментариев к нему
-'bd5.t': 'templates/board/search.html'         # Страница поиска и рейтинга материалов
-'bd6.t': 'templates/board/new_or_edit.html'    # Страница добавления/редактирования материала
-'bd7.t': 'templates/board/_material.html'      # Вид материалов
+'bd1.t': 'templates/board/main.html.erb'           # Главная страница модуля
+'bd2.t': 'templates/board/index_section.html'      # Страница со списком материалов раздела
+'bd3.t': 'templates/board/index_category.html'     # Страница со списком материалов категории
+'bd4.t': 'templates/board/show.html'               # Страница материала и комментариев к нему
+'bd5.t': 'templates/board/search.html'             # Страница поиска и рейтинга материалов
+'bd6.t': 'templates/board/new_or_edit.html'        # Страница добавления/редактирования материала
+'bd7.t': 'templates/board/_material.html'          # Вид материалов
 
 # Блог (Фанфики)
 'bl1.t': 'templates/blog/main.html.erb'  # Главная страница дневника
@@ -72,7 +72,7 @@
 
 # Новости сайта
 'nw1.t': 'templates/news/index.html.erb' # Страница архива материалов
-'nw2.t': 'templates/news/show.html'      # Страница материала и комментариев к нему
+'nw2.t': 'templates/news/show.html.erb'  # Страница материала и комментариев к нему
 'nw3.t': 'templates/news/_news.html'     # Вид материалов
 
 # Фотоальбом
