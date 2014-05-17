@@ -175,8 +175,8 @@ input[type=checkbox], input[type=radio] {
 .wrapper {
     /* min-width: 800px; */
     padding: 0 45px;
-    background: url(/img/sbl.gif) left  repeat-y,
-                url(/img/sbr.gif) right repeat-y;
+    background: url(/img/sbl.gif) left  0% repeat-y,
+                url(/img/sbr.gif) right 0% repeat-y;
 }
 
 .hide {
