@@ -44,7 +44,7 @@
         <div class="comment_box">
             <div class="title clearfix">
                 Всего комментариев: <b>$COM_NUM_ENTRIES$</b>
-                <div style="float:right;">$COM_PAGE_SELECTOR$</div>
+                <div class="pull-right">$COM_PAGE_SELECTOR$</div>
             </div>
             <div class="body">$COM_BODY$</div>
             <?if($COM_CAN_ADD$)?>$COM_ADD_FORM$<?else?>
@@ -55,6 +55,6 @@
         </div>
 
         <div class="text-center">$COM_PAGE_SELECTOR1$</div>
-        <div class="VKborders"><div id="vk_comments" data-uid="<? 20000000000 + $ID$ ?>"></div></div>
+        <%= vk_comments_box '<? 20000000000 + $ID$ ?>' %>
     <?endif?>
 <% end %>

@@ -9,7 +9,7 @@
         <?if($ADD_ENTRY_LINK$)?>
             <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить материал</a> ]</div>
         <?endif?>
-        <div class="VKborders"><div id="vk_comments" data-uid="90000000000"></div></div>
+        <%= vk_comments_box 90000000000 %>
         <?if($CATEGORIES$)?>
             <div class="hr top-hr">$CATEGORIES$</div>
         <?endif?>
