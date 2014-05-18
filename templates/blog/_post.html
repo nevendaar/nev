@@ -1,1 +1,27 @@
-﻿<!-- Old template -->
+﻿<div class="material hr">
+    <div class="title clearfix">
+        <h2><a href="$ENTRY_URL$">$TITLE$</a></h2>
+        <?if($MODER_PANEL$)?><div class="pull-right">$MODER_PANEL$</div><?endif?>
+    </div>
+    <div class="body">
+        <?if($MESSAGE$)?>
+            <div>
+                <?if($OTHER1$)?>Автор: $OTHER1$<?endif?><br/>
+                <?if($OTHER2$)?>Редактор: $OTHER2$<?endif?><br/>
+                <?if($OTHER3$)?>Жанр: $OTHER3$<?endif?><br/>
+                <?if($OTHER4$)?>Дисклеймер: $OTHER4$<?endif?><br/><br/>
+            </div>
+            $MESSAGE$
+        <?endif?>
+        <?if($ATTACHMENTS$)?><div class="attachments">Прикрепления: $ATTACHMENTS$</div><?endif?>
+        <ul class="details">
+            <?if($CATEGORY_NAME$)?><li>Категория: <a href="$CATEGORY_URL$">$CATEGORY_NAME$</a></li><?endif?>
+            <li>Просмотров: $READS$</li>
+            <?if($USERNAME$)?><li>Добавил: <a href="$PROFILE_URL$">$USERNAME$</a></li><?endif?>
+            <li>Дата: $DATE$</li>
+            <?if($RATING$)?><li>Рейтинг: $RATING$/$RATED$</li><?endif?>
+            <?if($COMMENTS_URL$)?><li><a href="$COMMENTS_URL$">Комментарии ($COMMENTS_NUM$)</a></li><?endif?>
+        </ul>
+        <!--<?if($TAGS$)?><div class="tags">Теги: <i>$TAGS$</i></div><?endif?>-->
+    </div>
+</div>
