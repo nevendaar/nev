@@ -120,17 +120,9 @@ $(function () {
         VK.init({apiId: 2014686, onlyWidgets: true});
 
         // Подключаем ВКомментарии если нужно.
-        var vk_uid   = parseInt($('#vk_comments').attr('data-uid'));
+        var vk_uid = parseInt($('#vk_comments').attr('data-uid'));
         if (vk_uid) {
             VK.Widgets.Comments("vk_comments", {limit: 10}, vk_uid);
         }
-    }
-
-    // Подключаем кнопку VK-share если нужно.
-    var $vk_share_btn = $('#vk_share');
-    if ($vk_share_btn.length > 0) {
-        $vk_share_btn.html(
-            VK.Share.button({image: $vk_share_btn.attr('data-img') || '/site/NevVK.jpg'}, {type: "button_nocount", text: "Сохранить"})
-        );
     }
 });

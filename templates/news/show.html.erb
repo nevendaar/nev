@@ -26,8 +26,7 @@
                 <li>Просмотров: $READS$</li>
                 <li>Добавил: <a href="$PROFILE_URL$">$USER$</a></li>
                 <?if($RATING$)?><li>Рейтинг: <?$RSTARS$('12', '/img/stars.png', '1', 'float')?></li><?endif?>
-                <li><div id="vk_like" class="pull-left"></div></li>
-                <li id="vk_share" data-img="<?if($IMG_SMALL_URL1$)?>$IMG_SMALL_URL1$<?else?>$IMG_URL1$<?endif?>"></li>
+                <li><%= vk_like_btn %></li>
             </ul>
             <?if($TAGS$)?><div class="tags">Теги: <i>$TAGS$</i></div><?endif?>
         </div>

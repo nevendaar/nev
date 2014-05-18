@@ -52,6 +52,10 @@ class Helper
     '<script src="/js/app.js"></script>'
   end
 
+  def vk_like_btn
+    '<div id="vk_like" class="pull-left"></div>'
+  end
+
   def vk_comments_box(uid)
     "<div class=\"VKborders\"><div id=\"vk_comments\" data-uid=\"#{uid}\"></div></div>"
   end
