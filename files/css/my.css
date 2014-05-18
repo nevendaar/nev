@@ -28,140 +28,10 @@
     text-align: center;
 }
 
-/* Header
------------------------------------------------------------------------------*/
-.header {
-    height: 204px;
-    margin: 0px -45px;
-    position: relative;
-    background: url(/img/sbtr.gif) right no-repeat,
-                url(/img/sbtl.gif) left  no-repeat,
-                url(/img/s_lg_bck.gif) 357px 26px no-repeat,
-                url(/img/sbt.gif)  top   repeat-x;
-}
-
-.header a.logo {
-    font-size: 20pt;
-    letter-spacing: 6pt;
-    position: absolute;
-    top: 50%;
-    left: 35%;
-}
-
-.header > .topbar {
-    height: 26px;
-    position: absolute;
-    right: 27%;
-}
-
-.header .icon {
-    background: url(/img/btns.gif) no-repeat;
-    height: 25px;
-    width: 25px;
-    display: inline-block;
-    margin-right: 5px;
-    border-bottom: 1px solid #13110E;
-    box-shadow: 10px 0px 10px -5px #000;
-}
-.header .home_icon{        background-position: 0    0;}
-.header .home_icon:hover{  background-position: 100% 0;}
-.header .reg_icon{         background-position: 0    -25px;}
-.header .reg_icon:hover{   background-position: 100% -25px;}
-.header .login_icon{       background-position: 0    -50px;}
-.header .login_icon:hover{ background-position: 100% -50px;}
-.header .logout_icon{      background-position: 0    -75px;}
-.header .logout_icon:hover{background-position: 100% -75px;}
-.header .person_icon{      background-position: 0    -100px;}
-.header .person_icon:hover{background-position: 100% -100px;}
-
-.header > .infobar {
-    position: absolute;
-    right: 80px;
-    bottom: 2px;
-}
-
-.silver_line {
-    height: 12px;
-    background: url('/img/silver_line.gif');
-}
-
-/* Left Sidebar
------------------------------------------------------------------------------*/
-.left-sidebar {
-    float: left;
-    left: 8px;
-    top: 12px;
-    width: 210px;
-    margin-left: -100%;
-    position: relative;
-}
-
-.left-sidebar .control_box:before {
-    background: url(/img/smt.gif) no-repeat 50% 0%;
-    height: 31px;
-    display: block;
-    width: 210px;
-    text-align: center;
-    color: #000;
-    content: attr(data-title);
-    margin: 0px -15px;
-}
-
-.left-sidebar .control_box {
-    background: url(/img/smb.gif) no-repeat 0% 100%,
-                url(/img/smm.gif) repeat-y 50% 0%;
-    margin-bottom: 15px;
-    padding: 0px 15px 16px;
-    min-height: 16px;
-}
-
-.left-sidebar .control_box ul.menu,
-.left-sidebar .control_box ul.submenu {
-    list-style: none outside none;
-}
-
-.left-sidebar .control_box ul.menu > li {
-    background: url("/img/mp.gif") no-repeat transparent;
-    margin-bottom: 0.6em;
-    padding-left: 17px;
-    font-weight: 400;
-}
-
-.left-sidebar .control_box ul.menu > li.slider {
-    background: none;
-}
-
-.left-sidebar .control_box ul.menu li.active {
-    font-weight: 700;
-}
-
-/* Footer
------------------------------------------------------------------------------*/
-.footer {
-    height: 190px;
-    margin: 0px -45px;
-    background: url(/img/sbbl.gif) left   bottom no-repeat,
-                url(/img/sbbr.gif) right  bottom no-repeat,
-                url(/img/sbb.gif)  bottom repeat-x;
-}
-
-.footer > .copyright {
-    position: relative;
-    top: 45%;
-    margin: 0px auto;
-    width: 348px;
-    height: 44px;
-    color: #5C90A0;
-    text-align: center;
-    padding-top: 10px;
-    background: url(/img/cp.gif) no-repeat 0% 0%;
-}
-
 .breadcrumb {
-    padding: 0px 5px 10px;
+    padding: 0 5px 10px;
     margin-bottom: 20px;
     list-style: none;
-    border-bottom: 1px inset #CCC;
     /*background-color: #f5f5f5;*/
 }
 
@@ -170,7 +40,7 @@
 }
 
 .breadcrumb > li + li:before {
-    padding: 0px 2px;
+    padding: 0 2px;
     content: "»\00a0";
 }
 
