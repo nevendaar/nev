@@ -1,8 +1,8 @@
 .dice {
-    display: inline-block;
-    background: scroll url(/dice/dices.gif) 0 0 no-repeat;
-    min-height: 20px;
-    padding-left: 23px;
+  display: inline-block;
+  background: scroll url(/dice/dices.gif) 0 0 no-repeat;
+  min-height: 20px;
+  padding-left: 23px;
 }
 
 .dice0 { background-position: 0 0;}
@@ -12,56 +12,58 @@
 .dice4 { background-position: 0 -80px;}
 .dice5 { background-position: 0 -100px;}
 
-.dice div[class^='res']:before {
+.dice div[class^='res'] {
+  &:before {
     content: "Итог: ";
     display: inline;
-}
-
-.dice div[class^='res']:after {
+  }
+  &:after {
     display: inline;
+  }
 }
 
 .res1100:after, .res1101:after, .res1110:after, .res1111:after, .res1200:after,
 .res1201:after, .res1211:after, .res1301:after, .res2100:after, .res2101:after,
 .res2111:after, .res2201:after, .res3101:after {
-    content: "промах!";
-    color: #bbb;
+  content: "промах!";
+  color: #bbb;
 }
+
 .res1210:after, .res1300:after, .res1311:after, .res2110:after, .res2200:after,
 .res2210:after, .res2211:after, .res2301:after, .res3100:after, .res3110:after,
 .res3111:after, .res3200:after, .res3201:after, .res3211:after, .res4100:after,
 .res4101:after, .res4111:after {
-    content: "легкое ранение.";
-    color: #f6c577;
+  content: "легкое ранение.";
+  color: #f6c577;
 }
 
 .res1310:after, .res2300:after, .res2310:after, .res2311:after, .res3210:after,
 .res3301:after, .res4110:after, .res4200:after, .res4201:after, .res4210:after,
 .res4211:after, .res5100:after, .res5101:after, .res5110:after, .res5111:after {
-    content: "среднее ранение.";
-    color: #efd334;
+  content: "среднее ранение.";
+  color: #efd334;
 }
 
 .res0100:after, .res0101:after, .res0110:after, .res0111:after, .res3300:after,
 .res3310:after, .res3311:after, .res4301:after, .res5200:after, .res5201:after,
 .res5210:after, .res5211:after {
-    content: "тяжёлое ранение.";
-    color: #ffa500;
+  content: "тяжёлое ранение.";
+  color: #ffa500;
 }
 
 .res4300:after, .res4310:after, .res4311:after, .res5301:after {
-    content: "калечащее ранение.";
-    color: #ff4f00;
+  content: "калечащее ранение.";
+  color: #ff4f00;
 }
 
 .res0200:after, .res0201:after, .res0210:after, .res0211:after, .res0301:after,
 .res5300:after, .res5310:after, .res5311:after {
-    content: "смертельное ранение.";
-    color: #800;
+  content: "смертельное ранение.";
+  color: #800;
 }
 
 .res0300:after, .res0310:after, .res0311:after {
-    content: "убийство!";
-    color: #000;
-    font-weight: bold;
+  content: "убийство!";
+  color: #000;
+  font-weight: bold;
 }

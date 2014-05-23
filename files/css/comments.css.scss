@@ -1,0 +1,59 @@
+#allEntries > div[id^='comEnt'] {
+  background-color: rgba(125, 125, 125, 0.4);
+  border: 1px solid #4A4842;
+  padding: 3px;
+  > .body {
+    padding: 2px 0;
+    > {
+      .avatar {
+        margin: 1px 4px;
+      }
+      .msg {
+        margin: 0 5px;
+      }
+      .answer {
+        margin: 5px;
+        &:before {
+          content: "Ответ: ";
+          font-weight: bold;
+        }
+      }
+      .reply {
+        font-size: 7pt;
+        margin: 5px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* Comment form */
+
+#acform {
+  background-color: rgba(125, 125, 125, 0.4);
+  border: 1px solid #4A4842;
+  padding: 6px;
+  margin-top: 15px !important;
+  #message {
+    min-height: 120px;
+    float: left;
+    width: 89%;
+    resize: vertical;
+    background: url("/img/bkform.gif") #535048;
+    border: 1px solid #4A4842;
+    color: #FFFFFF;
+  }
+  .smiles {
+    float: right;
+    width: 10%;
+    display: block;
+    min-width: 75px;
+  }
+  label {
+    display: inline-block;
+    min-width: 75px;
+    text-align: right;
+    margin-right: 5px;
+    float: left;
+  }
+}

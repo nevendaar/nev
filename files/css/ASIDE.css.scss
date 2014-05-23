@@ -1,47 +1,44 @@
 .left-sidebar {
-    float: left;
-    left: 8px;
-    top: 12px;
-    width: 210px;
-    margin-left: -100%;
-    position: relative;
-}
-
-.left-sidebar .control_box:before {
-    background: url(/img/smt.gif) no-repeat 50% 0;
-    height: 31px;
-    display: block;
-    width: 210px;
-    text-align: center;
-    color: #000;
-    content: attr(data-title);
-    margin: 0 -15px;
-}
-
-.left-sidebar .control_box {
+  float: left;
+  left: 8px;
+  top: 12px;
+  width: 210px;
+  margin-left: -100%;
+  position: relative;
+  .control_box {
+    &:before {
+      background: url(/img/smt.gif) no-repeat 50% 0;
+      height: 31px;
+      display: block;
+      width: 210px;
+      text-align: center;
+      color: #000;
+      content: attr(data-title);
+      margin: 0 -15px;
+    }
     background: url(/img/smb.gif) no-repeat 0 100%,
                 url(/img/smm.gif) repeat-y 50% 0;
     margin-bottom: 15px;
     padding: 0 15px 16px;
     min-height: 16px;
-}
-
-.left-sidebar .control_box ul.menu,
-.left-sidebar .control_box ul.submenu {
-    list-style: none outside none;
-}
-
-.left-sidebar .control_box ul.menu > li {
-    background: url("/img/mp.gif") no-repeat transparent;
-    margin-bottom: 0.6em;
-    padding-left: 17px;
-    font-weight: 400;
-}
-
-.left-sidebar .control_box ul.menu > li.slider {
-    background: none;
-}
-
-.left-sidebar .control_box ul.menu li.active {
-    font-weight: 700;
+    ul {
+      &.menu, &.submenu {
+        list-style: none outside none;
+      }
+      &.menu {
+        > li {
+          background: url("/img/mp.gif") no-repeat transparent;
+          margin-bottom: 0.6em;
+          padding-left: 17px;
+          font-weight: 400;
+          &.slider {
+            background: none;
+          }
+        }
+        li.active {
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,16 @@
+.mc_post > {
+  .avatar {
+    float: left;
+    width: 25px;
+    > img {
+      vertical-align: -2px;
+      max-height: 25px;
+    }
+  }
+  .top > .mc_username {
+    font-weight: bold;
+  }
+  .msg {
+    margin-left: 25px;
+  }
+}

@@ -1,0 +1,130 @@
+﻿.codeButtons {
+  font-size: 7pt;
+}
+
+.smiles {
+  background: #746F66;
+  border: 1px solid #4A4842;
+}
+
+/* Text
+-----------------------------------------------------------------------------*/
+.bold {
+  font-weight: bold;
+}
+
+.small {
+  font-size: 7pt;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.breadcrumb {
+  padding: 0 5px 10px;
+  margin-bottom: 20px;
+  list-style: none;
+  /*background-color: #f5f5f5;*/
+  > {
+    li {
+      display: inline-block;
+      + li:before {
+        padding: 0 2px;
+        content: "»\00a0";
+      }
+    }
+    .active {
+      color: #F6C577;
+    }
+  }
+}
+
+.material > {
+  .title {
+    vertical-align: middle;
+    > {
+      h1, h2, h3, h4 {
+        display: inline-block;
+      }
+      .time {
+        height: 100%;
+      }
+    }
+  }
+  .body {
+    padding: 0 5px 3px;
+    > .details {
+      margin: 10px 0px;
+      list-style: none;
+      > li {
+        display: inline-block;
+        + li:before {
+          padding: 0px 2px;
+          content: "|\00a0";
+        }
+      }
+    }
+  }
+}
+
+.uRelatedEntries {
+  padding-left: 15px;
+  list-style: none;
+  &:before {
+    content: "Также смотрите:";
+    margin-left: -10px;
+  }
+}
+
+.comment_box {
+  margin: 10px;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.time {
+  font: 7pt;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+// TODO: remove it
+.sq_brackets {
+  &:before {
+    content: "[";
+  }
+  &:after {
+    content: "]";
+  }
+}
+
+label.required:after,
+input:required + label:after,
+select:required + label:after,
+textarea:required + label:after {
+  content: "*";
+  color: red;
+  margin-left: 3px;
+}
+
+/* User profile */
+
+.user_avatar {
+  margin: 15px 15px 15px 0px;
+  display: inline-block;
+}
