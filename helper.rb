@@ -45,7 +45,7 @@ class Helper
   end
 
   def stylesheet_link_tag
-    '<link href="/css/app.css" rel="stylesheet">'
+    '<link href="/css/app.min.css" rel="stylesheet">'
   end
 
   def javascript_include_tag

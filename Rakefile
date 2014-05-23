@@ -13,7 +13,10 @@ Bundler.require
 
 ROOT       = Pathname(File.dirname(__FILE__))
 LOGGER     = Logger.new(STDOUT)
-BUNDLES    = %w( app.css app.js )
+BUNDLES    = {
+    :'app.css' => 'app.min.css',
+    :'app.js'  => 'app.js'
+}
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('files')
 VENDOR_DIR = ROOT.join('vendor', 'assets')
@@ -25,7 +28,7 @@ desc 'Compile assets.'
 task :compile do
   sprockets = Sprockets::Environment.new(ROOT) do |env|
     #env.js_compressor  = :uglify
-    #env.css_compressor = :scss
+    env.css_compressor = :scss
     env.logger = LOGGER
   end
 
@@ -33,12 +36,12 @@ task :compile do
   sprockets.append_path(SOURCE_DIR.join('js').to_s)
   sprockets.append_path(VENDOR_DIR.join('javascripts').to_s)
 
-  BUNDLES.each do |bundle|
-    assets = sprockets.find_asset(bundle)
-    prefix, basename = assets.pathname.to_s.split('/')[-2..-1]
+  BUNDLES.each do |bundle, out_filename|
+    assets = sprockets.find_asset(bundle.to_s)
+    prefix = assets.pathname.to_s.split('/')[-2]
     FileUtils.mkpath BUILD_DIR.join(prefix)
 
-    assets.write_to(BUILD_DIR.join(prefix, basename))
+    assets.write_to(BUILD_DIR.join(prefix, out_filename))
   end
 end
 

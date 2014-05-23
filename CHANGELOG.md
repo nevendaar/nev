@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## SASS - 23.05.2014
+
+* Используем [SASS](http://sass-lang.com/) для стилей!
+
 ## VK helpers - 18.05.2014
 
 * Добавлен хелпер `vk_like_btn`.

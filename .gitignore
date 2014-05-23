@@ -10,3 +10,9 @@
 
 # Ignore backup archives.
 *.zip
+
+# Ignore sass cache
+.sass-cache/*
+
+# Ignore minified styles and JS
+build/*

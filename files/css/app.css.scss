@@ -1,0 +1,25 @@
+/*
+* This is a manifest file that'll be compiled into app.css, which will include all the files listed below.
+*/
+
+// Styles for ajax windows
+@import "ajax_win";
+
+// Base styles
+@import "layout";
+
+// Global blocks
+@import "ASIDE";
+@import "HEADER";
+@import "FOOTER";
+
+// Template groups
+@import "comments";
+@import "minichat";
+
+// Specific styles
+@import "dice";
+@import "fractions";
+
+// Temporary file TODO: remove it!
+@import "my";
