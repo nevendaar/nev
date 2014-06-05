@@ -1,0 +1,35 @@
+﻿<% @params[:title] = '$FORUM_TITLE$' %>
+<% @params[:meta][:description] = 'Новости мира Disciples' %>
+
+<% layout do %>
+    <div align="center">
+        <script type="text/javascript">
+            google_ad_client = "pub-5758500168024279";
+            /* Для форума */
+            google_ad_slot = "3410590148";
+            google_ad_width = 728;
+            google_ad_height = 90;
+        </script>
+        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+    </div>
+    <div class="text-right">
+        [
+        <?if($USER_LOGGED_IN$)?>
+            <a id="upml" href="$PM_URL$" class="profile-link">
+                <img border="0" src="http://src.ucoz.ru/img/fr/<?if($UNREAD_PM$ != 0)?>n<?endif?>pm.gif" width="18" height="17" title="Личные сообщения ($UNREAD_PM$)">
+            </a> ·
+        <?endif?>
+        <a class="fNavLink" href="$RECENT_POSTS_LINK$" rel="nofollow">Новые сообщения</a> ·
+        <a class="fNavLink" href="$MEMBERS_LIST_LINK$" rel="nofollow">Участники</a> ·
+        <a class="fNavLink" href="$BOARD_RULES_LINK$" rel="nofollow">Правила форума</a> ·
+        <a class="fNavLink" href="$SEARCH_PAGE_LINK$" rel="nofollow">Поиск</a> ·
+        <a class="fNavLink" href="$BOARD_RSS_LINK$" rel="nofollow">RSS</a>
+        ]
+    </div>
+    <div>
+        $BODY$
+        <?if($URI_ID$='frTread693')?><div id="dice_form" style="width:100%;">Если что-то не грузится, включите поддержку JavaScript.</div><?endif?>
+        <script type="text/javascript" src="/rtr/1-1"></script>
+    </div>
+    <?if($URI_ID$!='frPostsReplace')?>$GLOBAL_MCHAT$<?endif?>
+<% end %>

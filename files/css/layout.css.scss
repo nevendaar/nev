@@ -135,8 +135,12 @@ input {
   overflow: hidden;
 }
 
+.content, .wide_content {
+  margin: 10px 8px 0;
+}
+
 .content {
-  margin: 10px 8px 0 230px;
+  margin-left: 230px;
 }
 
 .bordered {
