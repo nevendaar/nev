@@ -1,0 +1,135 @@
+﻿<!-- Old template -->
+<table class=postTable cellSpacing=1 cellPadding=2 width="100%" border=0>
+    <?if(<%= not_new_on_the_site_tread %>)?>
+        <tr>
+            <?if(!(<%= role_game_section %>) || <%= not_first_post %>)?>
+                <td class=postTdTop align=middle width="23%">
+                    <a class=postUser onclick="emoticon('[b]$USERNAME$[/b],');return false;" href="javascript://">$USERNAME$</a>
+                </td>
+            <?endif?>
+            <td class=postTdTop>Дата: $WDAY$, $DATE$, $TIME$ | Сообщение # $NUMBER$ </td>
+        </tr>
+    <?endif?>
+    <tr>
+        <?if(!(<%= role_game_section %>) && <%= not_new_on_the_site_tread %> || <%= not_first_post %>)?>
+            <td class=postTdInfo vAlign=top>
+                <?if($AVATAR_URL$)?><img class=userAvatar title=$USERNAME$ src="$AVATAR_URL$" border=0><?endif?>
+                <?if($MSN$)?><span class="fraction-flag fflag$MSN$"></span><?endif?>
+                <div class="postRankName">
+                    <?if($USER_TITLE$)?>
+                        $USER_TITLE$
+                    <?else?>
+                        <%# TODO: если нет в классах выводить: $USER_RANK_NAME$ %>
+                        <span class="rank-<%= user_rank %>-$MSN$ <?if($GENDER_ID$='2')?>rank-<%= user_rank %>-$MSN$-f<?endif?>"></span>
+                    <?endif?>
+                </div>
+                <?if($GROUP_ICON$)?>
+                    <div class=postRankIco>$GROUP_ICON$</div>
+                <?else?>
+                    <div class="postRankIco">$USER_RANK_ICON$</div>
+                <?endif?>
+                <?if($GROUP_NAME$)?>
+                    <div class=postUserGroup>Группа: $GROUP_NAME$</div>
+                <?endif?>
+                <?if($POSTS$)?>
+                    <div class=numposts>Сообщений: <span class="UNP">$POSTS$</span></div>
+                <?endif?>
+
+                <?if($READ_REP_URL$)?>
+                    <div class=reputation>
+                        Репутация:
+                        <a class=repHistory title="Смотреть историю репутации" href="$READ_REP_URL$">
+                            <span class=repNums>$REP_RATING$</span>
+                        </a>
+                        <?if($DO_REP_URL$)?>
+                            &nbsp;<a class=reputationDo title="Изменить репутацию" href="$DO_REP_URL$">±</a>
+                        <?else?>
+                            <br/>
+                        <?endif?>
+                    </div>
+                <?endif?>
+                <?if(<%= group_is('$GROUP_ID$', :master) %>)?>
+                    <div class=userBan>Замечания: IMMUNE</div>
+                <?else?>
+                    <?if($READ_BAN_URL$)?>
+                        <div class=userBan>
+                            Замечания:
+                            <a class=banPercent title="Смотреть историю замечаний" href="$READ_BAN_URL$">$BAN_RATING$</a>
+                            <?if($DO_BAN_URL$)?>
+                                &nbsp;<a class=banDo title="Изменить уровень замечаний" href="$DO_BAN_URL$">±</a>
+                            <?endif?>
+                        </div>
+                    <?endif?>
+                <?endif?>
+                <?if($USER_STATUS$)?>
+                    <div class=statusBlock>Статус: $USER_STATUS$</div>
+                <?endif?>
+            </td>
+        <?endif?>
+        <td class=posttdMessage vAlign=top style="background: url(/site/bottomleft.gif) #000 no-repeat bottom left; padding:0;">
+            <div style="min-height:139px; padding:10px; background: url(/site/topright.gif) no-repeat top right;">
+                <div id="frmmsg$ID$">$MESSAGE$</div>
+                <?if($ATTACHMENT$)?>
+                    <div class=eAttach align=left>Прикрепления: $ATTACHMENT$</div>
+                <?endif?>
+                <?if($TID$!='704' && !(<%= role_game_section %>) && $FID$!='13' && $FID$!='24' && <%= not_new_on_the_site_tread %>)?>
+                    <?if($SIGNATURE$)?>
+                        <hr class=signatureHr align=left width=150 size=1>
+                        <span class=signatureView>$SIGNATURE$</span>
+                    <?endif?>
+                <?endif?>
+                <?if($EDITEDBY$)?>
+                    <?if(<%= group_is('$GROUP_ID$', :user, :banned) %> && (<%= moder_names %>))?>
+                        <br><br>
+                        <div class=edited>Сообщение активировал $EDITEDBY$</div>
+                    <?else?>
+                        <?if(<%= moder_names %>)?>
+                        <?else?>
+                            <br><br>
+                            <div class=edited>Сообщение отредактировал<?if($GENDER_ID$='2')?>а<?endif?> $EDITEDBY$</div>
+                        <?endif?>
+                    <?endif?>
+                <?endif?>
+                <?if((<%= role_game_section %>) && <%= first_post %>)?>
+                    <div align="right">
+                        <a href="/map/#$TID$" target="_blank" title="Посмотреть на карте"><img border="0" src="/map/seemap.gif"></a>
+                    </div>
+                <?endif?>
+            </div>
+        </td>
+    </tr>
+    <?if(<%= not_new_on_the_site_tread %>)?>
+        <tr>
+            <?if(!(<%= role_game_section %>) || <%= not_first_post %>)?>
+                <td class=postBottom align=middle>
+                    <?if($USER_IP$)?>
+                        <div class=postip>[ $USER_IP$ ]</div>
+                    <?else?>
+                        &nbsp;
+                    <?endif?>
+                </td>
+            <?endif?>
+            <td class=postBottom>
+                <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <tbody>
+                        <tr>
+                            <td>$USER_DETAILS_ICON_BAR$</td>
+                            <td style="padding-right: 15px" align=right>
+                                <?if(<%= not_lucky_pub_tread %> || $CUR_GROUP_ID$=14)?>
+                                    $ENTRY_MANAGE_ICON_BAR$
+                                <?else?>
+                                    <?if($USER_LOGGED_IN$)?>
+                                        <a href="$QUOTE_URL$" class="postQuote">
+                                            <img alt="" style="margin:0;padding:0;border:0;" src="/Forumdata/Buttons/p_quote.gif" title="Цитировать">
+                                        </a>
+                                    <?endif?>
+                                <?endif?>
+                            </td>
+                            <td noWrap align=right width="2%">$ON_TOP_ICON$ $DEL_ENTRY_FIELD$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    <?endif?>
+</table>
