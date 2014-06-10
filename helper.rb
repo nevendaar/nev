@@ -69,14 +69,18 @@ class Helper
     "<div class=\"VKborders\"><div id=\"vk_comments\" data-uid=\"#{uid}\"></div></div>"
   end
 
-  def group_is(code, key_or_group, *groups)
-    not_flag = (key_or_group == :not)
+  def code_is(code, key_or_value, *values)
+    not_flag = (key_or_value == :not)
     operator = not_flag ? '!=' : '='
-    l_groups = not_flag ? groups : [key_or_group].push(*groups)
-    result = l_groups.each_with_object([]) do |group, arr|
-      arr << "#{code}#{operator}#{USER_GROUPS[group.to_sym]}"
+    l_groups = not_flag ? values : [key_or_value].push(*values)
+    result = l_groups.each_with_object([]) do |val, arr|
+      arr << "#{code}#{operator}#{block_given? ? yield(val) : val}"
     end.join(not_flag ? ' && ' : ' || ')
     l_groups.size > 1 ? "(#{result})" : result
+  end
+
+  def group_is(code, key_or_group, *groups)
+    code_is(code, key_or_group, *groups){|v| USER_GROUPS[v.to_sym] }
   end
 
   # Вырезаем из строки ранг и проводим к целому.
@@ -85,26 +89,24 @@ class Helper
     "<? 0 + substr($USER_RANK_ICON$, #{home_url.size + RANK_DIR.size + 48}, 2) ?>"
   end
 
-  def first_post
-    "substr($NUMBER$,-6,3)='>1<'"
-  end
-
-  def not_first_post
-    "substr($NUMBER$,-6,3)!='>1<'"
+  def first_post(_not = nil)
+    vals = ["'>1<'"]
+    vals.unshift(_not) if _not == :not
+    code_is('substr($NUMBER$,-6,3)', *vals)
   end
 
   def not_new_on_the_site_tread
-    '$TID$!=1647'
+    code_is '$TID$', :not, 1647
   end
 
   def not_lucky_pub_tread
-    '$TID$!=699'
+    code_is '$TID$', :not, 699
   end
 
-  def role_game_section
-    %w[6 8 9 10 11 12 31].each_with_object([]) do |id, arr|
-      arr << "$FID$=#{id}"
-    end.join(' || ')
+  def role_game_section(_not = nil)
+    ids = %w[6 8 9 10 11 12 31]
+    ids.unshift(_not) if _not == :not
+    code_is('$FID$', *ids)
   end
 
   def moder_names

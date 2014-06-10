@@ -2,7 +2,7 @@
 <table class=postTable cellSpacing=1 cellPadding=2 width="100%" border=0>
     <?if(<%= not_new_on_the_site_tread %>)?>
         <tr>
-            <?if(!(<%= role_game_section %>) || <%= not_first_post %>)?>
+            <?if(<%= role_game_section(:not) %> || <%= first_post(:not) %>)?>
                 <td class=postTdTop align=middle width="23%">
                     <a class=postUser onclick="emoticon('[b]$USERNAME$[/b],');return false;" href="javascript://">$USERNAME$</a>
                 </td>
@@ -11,7 +11,7 @@
         </tr>
     <?endif?>
     <tr>
-        <?if(!(<%= role_game_section %>) && <%= not_new_on_the_site_tread %> || <%= not_first_post %>)?>
+        <?if(<%= role_game_section(:not) %> && <%= not_new_on_the_site_tread %> || <%= first_post(:not) %>)?>
             <td class=postTdInfo vAlign=top>
                 <?if($AVATAR_URL$)?><img class=userAvatar title=$USERNAME$ src="$AVATAR_URL$" border=0><?endif?>
                 <?if($MSN$)?><span class="fraction-flag fflag$MSN$"></span><?endif?>
@@ -72,7 +72,7 @@
                 <?if($ATTACHMENT$)?>
                     <div class=eAttach align=left>Прикрепления: $ATTACHMENT$</div>
                 <?endif?>
-                <?if($TID$!='704' && !(<%= role_game_section %>) && $FID$!='13' && $FID$!='24' && <%= not_new_on_the_site_tread %>)?>
+                <?if($TID$!='704' && <%= role_game_section(:not) %> && $FID$!='13' && $FID$!='24' && <%= not_new_on_the_site_tread %>)?>
                     <?if($SIGNATURE$)?>
                         <hr class=signatureHr align=left width=150 size=1>
                         <span class=signatureView>$SIGNATURE$</span>
@@ -90,7 +90,7 @@
                         <?endif?>
                     <?endif?>
                 <?endif?>
-                <?if((<%= role_game_section %>) && <%= first_post %>)?>
+                <?if(<%= role_game_section %> && <%= first_post %>)?>
                     <div align="right">
                         <a href="/map/#$TID$" target="_blank" title="Посмотреть на карте"><img border="0" src="/map/seemap.gif"></a>
                     </div>
@@ -100,7 +100,7 @@
     </tr>
     <?if(<%= not_new_on_the_site_tread %>)?>
         <tr>
-            <?if(!(<%= role_game_section %>) || <%= not_first_post %>)?>
+            <?if(<%= role_game_section(:not) %> || <%= first_post(:not) %>)?>
                 <td class=postBottom align=middle>
                     <?if($USER_IP$)?>
                         <div class=postip>[ $USER_IP$ ]</div>
