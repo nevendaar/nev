@@ -48,18 +48,18 @@
                         <?endif?>
                     </div>
                 <?endif?>
-                <?if(<%= group_is('$GROUP_ID$', :master) %>)?>
-                    <div class=userBan>Замечания: IMMUNE</div>
-                <?else?>
-                    <?if($READ_BAN_URL$)?>
-                        <div class=userBan>
-                            Замечания:
+                <?if($READ_BAN_URL$)?>
+                    <div class=userBan>
+                        Замечания:
+                        <?if(<%= group_is('$GROUP_ID$', :master) %>)?>
+                            IMMUNE
+                        <?else?>
                             <a class=banPercent title="Смотреть историю замечаний" href="$READ_BAN_URL$">$BAN_RATING$</a>
                             <?if($DO_BAN_URL$)?>
                                 &nbsp;<a class=banDo title="Изменить уровень замечаний" href="$DO_BAN_URL$">±</a>
                             <?endif?>
-                        </div>
-                    <?endif?>
+                        <?endif?>
+                    </div>
                 <?endif?>
                 <?if($USER_STATUS$)?>
                     <div class=statusBlock>Статус: $USER_STATUS$</div>
@@ -72,19 +72,16 @@
                 <?if($ATTACHMENT$)?>
                     <div class=eAttach align=left>Прикрепления: $ATTACHMENT$</div>
                 <?endif?>
-                <?if($TID$!='704' && <%= role_game_section(:not) %> && $FID$!='13' && $FID$!='24' && <%= not_new_on_the_site_tread %>)?>
-                    <?if($SIGNATURE$)?>
-                        <hr class=signatureHr align=left width=150 size=1>
-                        <span class=signatureView>$SIGNATURE$</span>
-                    <?endif?>
+                <?if($SIGNATURE$ && $TID$!='704' && <%= role_game_section(:not) %> && <%= code_is('$FID$', :not, 13, 24) %> && <%= not_new_on_the_site_tread %>)?>
+                    <hr class=signatureHr align=left width=150 size=1>
+                    <span class=signatureView>$SIGNATURE$</span>
                 <?endif?>
                 <?if($EDITEDBY$)?>
                     <?if(<%= group_is('$GROUP_ID$', :user, :banned) %> && (<%= moder_names %>))?>
                         <br><br>
                         <div class=edited>Сообщение активировал $EDITEDBY$</div>
                     <?else?>
-                        <?if(<%= moder_names %>)?>
-                        <?else?>
+                        <?ifnot(<%= moder_names %>)?>
                             <br><br>
                             <div class=edited>Сообщение отредактировал<?if($GENDER_ID$='2')?>а<?endif?> $EDITEDBY$</div>
                         <?endif?>
@@ -104,8 +101,6 @@
                 <td class=postBottom align=middle>
                     <?if($USER_IP$)?>
                         <div class=postip>[ $USER_IP$ ]</div>
-                    <?else?>
-                        &nbsp;
                     <?endif?>
                 </td>
             <?endif?>
@@ -115,7 +110,7 @@
                         <tr>
                             <td>$USER_DETAILS_ICON_BAR$</td>
                             <td style="padding-right: 15px" align=right>
-                                <?if(<%= not_lucky_pub_tread %> || $CUR_GROUP_ID$=14)?>
+                                <?if(<%= not_lucky_pub_tread %> || <%= group_is('$CUR_GROUP_ID$', :master) %>)?>
                                     $ENTRY_MANAGE_ICON_BAR$
                                 <?else?>
                                     <?if($USER_LOGGED_IN$)?>

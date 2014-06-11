@@ -32,9 +32,10 @@ module ForumHelper
 
   def moder_names
     nicks = %w(Вансан Гангрен vertus SoCrat Пророк Вильгельм Sqwall Hierophant FairYng Inno Mystique Химера Город)
-    nicks.each_with_object([]) do |name, arr|
+    result = nicks.each_with_object([]) do |name, arr|
       str = "#{name}<"
       arr << "substr($EDITEDBY$,23,#{str.size})='#{str}'"
     end.join(' || ')
+    nicks.size > 1 ? "(#{result})" : result
   end
 end

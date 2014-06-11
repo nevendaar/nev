@@ -75,11 +75,11 @@ class Helper
   def code_is(code, key_or_value, *values)
     not_flag = (key_or_value == :not)
     operator = not_flag ? '!=' : '='
-    l_groups = not_flag ? values : [key_or_value].push(*values)
-    result = l_groups.each_with_object([]) do |val, arr|
+    l_values = not_flag ? values : [key_or_value].push(*values)
+    result = l_values.each_with_object([]) do |val, arr|
       arr << "#{code}#{operator}#{block_given? ? yield(val) : val}"
     end.join(not_flag ? ' && ' : ' || ')
-    l_groups.size > 1 ? "(#{result})" : result
+    l_values.size > 1 ? "(#{result})" : result
   end
 
   def group_is(code, key_or_group, *groups)
