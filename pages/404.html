@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head lang="ru">
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex,nofollow">
+        <title>HTTP 404 Не найдено</title>
+        <style>
+            html, body {
+                height: 100% !important;
+            }
+
+            body {
+                background-color: #000;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow: hidden;
+                color: #f6c577;
+                font-size: 12pt;
+                font-family: sans-serif;
+            }
+
+            a {
+                text-decoration: none;
+                color: #ffba4b;
+                font-size: 13pt;
+            }
+
+            .brand {
+                display: inline-block;
+                margin-top: 50px;
+                color: #daa520;
+                font-size: 40pt;
+                font-family: Monotype Corsiva, sans-serif;
+            }
+
+            div {
+                height: 100%;
+                width: 100%;
+                padding: 0;
+
+            }
+
+            .dragons {
+                background: url(/site/404/dragon1.gif) top right no-repeat,
+                url(/site/404/dragon.gif) top left no-repeat,
+                url(/site/404/low.gif) bottom right no-repeat,
+                url(/site/404/low1.gif) bottom left no-repeat,
+                url(/site/404/def.jpg) top center no-repeat;
+                text-align: center;
+            }
+
+            .lead {
+                font-size: 17pt;
+                height: auto;
+                margin: 185px 0 35px;
+            }
+
+            span {
+                margin-bottom: 50px;
+                display: block;
+            }
+        </style>
+        <script src="http://s6.ucoz.net/src/u.js?2"></script>
+    </head>
+    <body>
+        <div class="dragons">
+            <a href="/" class="brand">DISCIPLES</a>
+
+            <div class="lead">Страница не найдена.</div>
+            <span id="404text">Возможно, она была удалена, переименована, или её и вовсе не было.</span>
+            <a href="/forum/7-5-0-17">Написать гневное письмо!</a>
+            <script type="text/javascript">
+                str = ["Ибо Всевышний низверг её в бездну.", "Вы уверены, что Мортис тоже это нужно?", "Вероятно, Бетрезен не создавал такого в Невендааре.", "Скорее всего, Вотан забросил её на солнце.", "Возможно, Галлеан приказал эльфам захватить и уничтожить эту страницу."];
+                $('#404text').html(str[Math.round(Math.random() * 4)]);
+            </script>
+        </div>
+    </body>
+</html>
