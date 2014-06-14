@@ -64,7 +64,7 @@
                 <?else?>
                     <a id="see_user_awards" href="#" title="Награды">Открыть список</a>
                 <?endif?>
-                <?if($GROUP_ID$="4" || $GROUP_ID$="3" || $GROUP_ID$="14")?>
+                <?if(<%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>)?>
                     <?if($AWARDS_DO_URL$)?>
                         <span class="small sq_brackets"><a href="$AWARDS_DO_URL$">Вручить награду</a></span>
                     <?endif?>
@@ -73,7 +73,7 @@
         <?endif?>
         <div class="profile-line">
             <span class="profile-label">Замечания</span>
-            <?if($_GROUP_ID$=14)?>
+            <?if(<%= group_is('$_GROUP_ID$', :master) %>)?>
                 IMMUNE
             <?else?>
                 <?if($_BAN_READ_URL$)?>

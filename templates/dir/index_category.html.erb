@@ -13,7 +13,7 @@
         <?endif?>
     </ol>
 
-    <?if($ADD_ENTRY_LINK$ && ($URI_ID$!='drCat5' || $GROUP_ID$="4" || $GROUP_ID$="3" || $GROUP_ID$="14"))?>
+    <?if($ADD_ENTRY_LINK$ && ($URI_ID$!='drCat5' || <%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>))?>
         <div class="text-right">
             [ <a href="$ADD_ENTRY_LINK$">Добавить<?if($URI_ID$!='drCat5')?> сайт<?endif?></a> ]
         </div>

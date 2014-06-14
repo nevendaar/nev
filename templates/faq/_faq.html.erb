@@ -6,7 +6,7 @@
     <div class="body">
         $MESSAGE$
         <div class="answer"><?if($ANSWER$)?>$ANSWER$<?else?><i>Еще нет ответа на этот вопрос.</i><?endif?></div>
-        <?if($NAME$ && ($CUR_GROUP_ID$=4||$CUR_GROUP_ID$=3||$CUR_GROUP_ID$=14))?>
+        <?if($NAME$ && <%= group_is('$CUR_GROUP_ID$', :moderator, :admin, :master) %>)?>
             Добавил: <a href="$EMAIL_JS$">$NAME$</a> <?if($USERNAME$)?>(<a href="/index/8-$UID$" class="profile-link">$USERNAME$</a>)<?endif?>
         <?endif?>
         <?if($RATING$)?><?$RSTARS$('12', '/img/stars.png', '1', 'float')?><?endif?>

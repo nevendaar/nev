@@ -1,7 +1,7 @@
 ﻿<% @params[:vk][:init] = true %>
 
 <% layout do %>
-    <?if($GROUP_ID$="4" || $GROUP_ID$="3" || $GROUP_ID$="14")?>
+    <?if(<%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>)?>
         <ol class="breadcrumb">
             <li><a href="/">Главная</a></li>
             <li class="active">Доска объявлений (<b>$NUM_ENTRIES$</b>)</li>

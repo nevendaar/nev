@@ -17,14 +17,14 @@
         <?substr($BODY$,0,strpos($BODY$,"m'}")+2)?>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<?substr($BODY$,strpos($BODY$,"m'}")+2)?>
         <script>
             var str="";
-            <?if($GROUP_ID$=4 || $GROUP_ID$=3 || $GROUP_ID$=14)?>
+            <?if(<%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>)?>
                 $('<input id="atsn" type="checkbox" checked="checked"/> <label for="atsn">Добавить запись в блок "Новое на сайте"?</label><br/>').insertBefore('#ispen');
             <?endif?>
             function init(){
                 str = <?if($PAGE_ID$='add')?>"$USERNAME$ задал<?if($USER_GENDER_ID$==2)?>а<?endif?> вопрос: "<?else?>($('#message').val() == '' ? "Дан ответ на вопрос: " : "Обновлён ответ на вопрос: ")<?endif?>
             }
             function addnn(url, t){
-                <?if($GROUP_ID$=4 || $GROUP_ID$=3 || $GROUP_ID$=14)?>
+                <?if(<%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>)?>
                     if(!$('#atsn').attr('checked')){
                         _uWnd.content('addEnt', t) || $('input.manFlSbm').attr('disabled', 0);
                         return false
