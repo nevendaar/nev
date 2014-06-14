@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Nevendaar FM</title>
+        <link type="text/css" rel="StyleSheet" href="/_st/my.css" />
+        <link type="text/css" rel="StyleSheet" href="http://s6.ucoz.net/src/layer6.css" />
+        <script type="text/javascript" src="http://s6.ucoz.net/src/u.js"></script>
+    </head>
+
+    <body style="background: #010A11; margin: 0px; padding: 0px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="30" height="30">
+                    <img src="/site/19b.gif" border="0">
+                </td>
+                <td align="left" width="100%" height="30" style="background:url('/site/20b.gif');">
+                    <img src="/site/21b.gif" border="0">
+                </td>
+                <td width="30" height="30"><img src="/site/23b.gif" border="0"></td>
+            </tr>
+            <tr>
+                <td valign="top" style="background:url('/site/24b.gif');">
+                    <img src="/site/25b.gif" border="0">
+                </td>
+                <td rowspan="2" style="background:#000; color:#f6c577;" align="center">
+                    <a href="/" target="_blank">
+                        <img alt="NEVENDAAR" src="/site/Disciples.gif" border="0">
+                    </a>
+                    <hr width="300" />
+                    <a id="dj_for" href="/forum/7-915" target="_blank">Форум</a>
+                    <a id="playlink" href="javascript://" style="display:none;">[Прямая ссылка]</a>
+                    <br/>
+                    <noembed>Ваш браузер не поддерживает работу с плагинами!<br/></noembed>
+                    <noscript>Необходимо включить javascript.</noscript>
+                    <div id="radio_player" align="center" style="display:none;">
+                        <script type="text/javascript">window.resizeTo(400, 275);</script>
+                        <object id="NSPlay"  width="285" height="72"
+                                classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
+                                codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"
+                                standby="Loading Microsoft Windows Media Player components..."
+                                type="application/x-oleobject">
+                            <param name="FileName" id="rurl1" value="http://nevendaar.zapto.org:8000/" />
+                            <param name="ShowControls" value="1" />
+                            <param name="ShowDisplay" value="0" />
+                            <param name="ShowStatusBar" value="1" />
+                            <param name="autoStart" id="start" value="0" />
+                            <param name="AutoSize" value="false" />
+                            <param name="ShowPositionControls" value="0" />
+                            <param name="ShowTracker" value="0" />
+                            <param name="Volume" value="0" />
+                            <embed id="rurl2" type="application/x-mplayer2"
+                                   pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/Products/MediaPlayer/"
+                                   filename="http://nevendaar.zapto.org:8000/"
+                                   src="http://nevendaar.zapto.org:8000/"
+                                   width="285"
+                                   height="72"
+                                   showcontrols="1"
+                                   showdisplay="0"
+                                   showstatusbar="1"
+                                   volume="0"></embed>
+                        </object>
+                    </div>
+                    <div id="offline" align="center" style="display:none;">
+                        <br/><br/>Нету диджея на месте...<br/>
+                        <img src="/Smiley/pardon.gif" border="0">
+                    </div>
+                    <div id="radcontent" style="display:none;"></div>
+                </td>
+                <td valign="top" style="background:url('/site/26b.gif');">
+                    <img src="/site/27b.gif" border="0">
+                </td>
+            </tr>
+            <tr>
+                <td height="22" style="background:url('/site/24b.gif');" valign="bottom">
+                    <img src="/site/28b.gif" border="0">
+                </td>
+                <td height="22" valign="bottom" style="background:url('/site/26b.gif');">
+                    <img src="/site/29b.gif" border="0">
+                </td>
+            </tr>
+            <tr>
+                <td width="30" height="30">
+                    <img src="/site/30b.gif" border="0">
+                </td>
+                <td align="left" height="30" style="background:url('/site/31b.gif');">
+                    <img src="/site/32b.gif" border="0">
+                </td>
+                <td width="30" height="30">
+                    <img src="/site/34b.gif" border="0">
+                </td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            $.get('/index/9-1249', function (data) {
+                cont = $('cmd[p=content]', data).text();
+                cont = $('table:eq(0)', cont).html();
+                data = $('div:eq(1)', cont).html();
+                data = data.split(' ', 3);
+                if (data[0] != "_") {
+                    dj = data[0];
+                } else {
+                    dj = $('b:first', cont).html();
+                }
+                if (data[1] != "_") {
+                    color = data[1];
+                } else {
+                    color = "orange"
+                }
+                href = data[2];
+                if (dj != "off" && dj != "offline") {
+                    $('#dj_for').html('DJ ' + dj);
+                    $('#dj_for').css('color', color);
+                    $('#dj_for').attr('href', '/index/8-0-' + dj);
+                    $('#rurl1').val(href);
+                    $('#rurl2').attr("filename", href);
+                    $('#rurl2').attr("src", href);
+                    $('#radio_player').show();
+                    $('#start').val("1");
+                    $('#playlink').attr("href", href);
+                    $('#playlink').attr("onclick", "prompt('Прямая ссылка на вещание','" + href + "');return false;");
+                    $('#playlink').show();
+                } else {
+                    $('#offline').show();
+                }
+            });
+        </script>
+    </body>
+</html>
