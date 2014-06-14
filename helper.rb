@@ -7,11 +7,15 @@ class Helper
   include ForumHelper
 
   USER_GROUPS = {
-      :master    => 14,
-      :admin     => 4,
-      :moderator => 3,
-      :banned    => 255,
-      :user      => 1
+      :user       => 1,
+      :trusted    => 2,
+      :moderator  => 3,
+      :admin      => 4,
+      :hex_studio => 13,
+      :master     => 14,
+      :imp_form   => 15,
+      :lord       => 251,
+      :banned     => 255
   }
 
   def initialize(hash = {})
@@ -83,7 +87,7 @@ class Helper
   end
 
   def group_is(code, key_or_group, *groups)
-    code_is(code, key_or_group, *groups){|v| USER_GROUPS[v.to_sym] }
+    code_is(code, key_or_group, *groups) { |v| USER_GROUPS[v.to_sym] }
   end
 
   def layout(template = :main)
