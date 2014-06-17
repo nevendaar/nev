@@ -34,7 +34,7 @@
 'dr4.t': 'templates/dir/show.html'               # Страница материала и комментариев к нему
 'dr5.t': 'templates/dir/search.html.erb'         # Страница поиска и рейтинга материалов
 'dr6.t': 'templates/dir/new_or_edit.html'        # Страница добавления/редактирования материала
-'dr7.t': 'templates/dir/_site.html'              # Вид материалов
+'dr7.t': 'templates/dir/_site.html.erb'          # Вид материалов
 
 # FAQ (вопрос/ответ)
 'fq1.t': 'templates/faq/index.html.erb' # Общий вид страниц FAQ'a

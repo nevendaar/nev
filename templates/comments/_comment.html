@@ -5,9 +5,7 @@
     <?if($USER_LOGGED_IN$ && $EMAIL$)?><a href="$EMAIL_JS$" title="Email"><img src="/site/e.gif" alt="email"></a><?endif?>
     <?if($SITE$)?><a rel="nofollow" href="$SITE$" target="_blank" title="Site"><img src="/site/h.gif" alt="site"></a><?endif?>
     <?if($ENTRY_URL$)?>
-        <span class="sq_brackets">
-            <a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank">Материал</a>
-        </span>
+        [ <a href="<?if(substr($MESSAGE$,0,6)='&DICE&')?>/forum/24-693-1<?else?>$ENTRY_URL$<?endif?>" target="_blank">Материал</a> ]
     <?endif?>
     <div class="time pull-right">
         $DATE$ $TIME$
