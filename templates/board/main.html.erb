@@ -1,20 +1,20 @@
 ﻿<% @params[:vk][:init] = true %>
 
 <% layout do %>
-    <?if(<%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>)?>
+    <% ucoz_if(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
         <ol class="breadcrumb">
             <li><a href="/">Главная</a></li>
             <li class="active">Доска объявлений (<b>$NUM_ENTRIES$</b>)</li>
         </ol>
-        <?if($ADD_ENTRY_LINK$)?>
+        <% ucoz_if('$ADD_ENTRY_LINK$') { %>
             <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить материал</a> ]</div>
-        <?endif?>
+        <% }.endif! %>
         <%= vk_comments_box 90000000000 %>
-        <?if($CATEGORIES$)?>
+        <% ucoz_if('$CATEGORIES$') { %>
             <div class="hr top-hr">$CATEGORIES$</div>
-        <?endif?>
+        <% }.endif! %>
         $BODY$
-    <?else?>
+    <% }.else { %>
         <script>document.location.href = "/";</script>
-    <?endif?>
+    <% }.endif! %>
 <% end %>
