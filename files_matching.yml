@@ -19,7 +19,7 @@
 'bl1.t': 'templates/blog/main.html.erb'  # Главная страница дневника
 'bl2.t': 'templates/blog/index.html.erb' # Страница архива материалов
 'bl3.t': 'templates/blog/show.html.erb'  # Страница материала и комментариев к нему
-'bl4.t': 'templates/blog/_post.html'     # Вид материалов
+'bl4.t': 'templates/blog/_post.html.erb' # Вид материалов
 
 # Комментарии
 # Оба шаблона хранятся в одном файле: com.t (sic!)
