@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-require_relative '../lib/ucoz_condition_statement'
+require_relative '../ucoz_condition_statement'
 
 module BaseHelper
 

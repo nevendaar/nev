@@ -7,7 +7,7 @@ require 'yaml'
 require 'pathname'
 require 'logger'
 
-require_relative 'helper'
+require_relative 'lib/helper'
 
 Bundler.require
 
