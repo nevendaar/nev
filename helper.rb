@@ -14,6 +14,7 @@ class Helper
     @params[:vk]       = {}
     @params[:redirect] = {}
     @_erbout = nil
+    @cond_operators = []
   end
 
   def get_binding

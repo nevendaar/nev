@@ -12,7 +12,7 @@ require_relative 'helper'
 Bundler.require
 
 ROOT       = Pathname(File.dirname(__FILE__))
-LOGGER     = Logger.new(STDOUT)
+LOGGER     = Logger.new(STDERR)
 BUNDLES    = {
     :'app.css' => 'app.min.css',
     :'app.js'  => 'app.js'
@@ -94,9 +94,16 @@ def compile_template(filename, dont_trim = false)
     LOGGER.warn "Cannot find file: #{filename}\nSkipping..."
     return ''
   end
+  LOGGER.debug "Compile file: #{filename}"
   str = trim_utf8_file(filename)
   if File.extname(filename) == '.erb'
-    str = ERB.new(str, nil, nil, '@_erbout').result(Helper.new.get_binding)
+    helper = Helper.new
+    str = ERB.new(str, nil, nil, '@_erbout').result(helper.get_binding)
+    unclosed_conditions = helper.unclosed_conditions
+    if unclosed_conditions > 0
+      LOGGER.error "Template have #{unclosed_conditions} unclosed 'if' ('ifnot') operator#{'s' if unclosed_conditions > 1}"
+      raise RuntimeError # TODO: create error class
+    end
   end
   str.gsub!(/\n\s*\n+/, "\n")
   str.gsub!(/ {2,}/, ' ') unless dont_trim

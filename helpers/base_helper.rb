@@ -76,15 +76,20 @@ module BaseHelper
     code_is(code, key_or_group, *groups) { |v| USER_GROUPS[v.to_sym] }
   end
 
-  def ucoz_if(condition)
-    statement = UcozConditionStatement.new(condition, @_erbout)
-    yield if block_given?
+  # TODO: multiple conditions
+  def ucoz_if(condition, &block)
+    statement = UcozConditionStatement.new(condition, @_erbout, &block)
+    @cond_operators << statement
     statement
   end
 
-  def ucoz_ifnot(condition)
-    statement = UcozConditionStatement.new(condition, @_erbout, :not)
-    yield if block_given?
+  def ucoz_ifnot(condition, &block)
+    statement = UcozConditionStatement.new(condition, @_erbout, :not, &block)
+    @cond_operators << statement
     statement
+  end
+
+  def unclosed_conditions
+    @cond_operators.count { |c| !c.closed? }
   end
 end
