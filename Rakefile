@@ -15,7 +15,7 @@ ROOT       = Pathname(File.dirname(__FILE__))
 LOGGER     = Logger.new(STDERR)
 BUNDLES    = {
     :'app.css' => 'app.min.css',
-    :'app.js'  => 'app.js'
+    :'app.js'  => 'app.min.js'
 }
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('files')
@@ -27,7 +27,7 @@ BOM_TOKEN = "\xEF\xBB\xBF".freeze
 desc 'Compile assets.'
 task :compile do
   sprockets = Sprockets::Environment.new(ROOT) do |env|
-    #env.js_compressor  = :uglify
+    env.js_compressor  = :uglify
     env.css_compressor = :scss
     env.logger = LOGGER
   end
