@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## Use Uglifier - 21.06.2014
+
+* Используем гем [uglifier](https://github.com/lautis/uglifier), для минификации JS.
+
 ## Condition statements - 19.06.2014
 
 * Добавлен специальный класс для юкозовских условных операторов.
