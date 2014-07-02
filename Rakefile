@@ -18,7 +18,7 @@ BUNDLES    = {
     :'app.js'  => 'app.min.js'
 }
 BUILD_DIR  = ROOT.join('build')
-SOURCE_DIR = ROOT.join('files')
+SOURCE_DIR = ROOT.join('assets')
 VENDOR_DIR = ROOT.join('vendor', 'assets')
 
 # utf-8 Byte Order Mark
@@ -32,8 +32,8 @@ task :compile do
     env.logger = LOGGER
   end
 
-  sprockets.append_path(SOURCE_DIR.join('css').to_s)
-  sprockets.append_path(SOURCE_DIR.join('js').to_s)
+  sprockets.append_path(SOURCE_DIR.join('stylesheets').to_s)
+  sprockets.append_path(SOURCE_DIR.join('javascripts').to_s)
   sprockets.append_path(VENDOR_DIR.join('javascripts').to_s)
 
   BUNDLES.each do |bundle, out_filename|
