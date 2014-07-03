@@ -7,7 +7,7 @@ require 'yaml'
 require 'pathname'
 require 'logger'
 
-require_relative 'lib/helper'
+require_relative 'lib/template_compiler'
 
 Bundler.require
 
@@ -22,9 +22,6 @@ BUNDLES    = {
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('assets')
 VENDOR_DIR = ROOT.join('vendor', 'assets')
-
-# utf-8 Byte Order Mark
-BOM_TOKEN = "\xEF\xBB\xBF".freeze
 
 desc 'Compile assets.'
 task :compile do
@@ -87,29 +84,10 @@ RSpec::Core::RakeTask.new
 task :test => :spec
 task :default => :spec
 
-# Trim first 3 bytes from utf-file if needed
-def trim_utf8_file(filename)
-  str = File.open(filename, 'r') { |f| f.read }
-  str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
-end
-
 def compile_template(filename, dont_trim = false)
   unless File.exists?(filename)
     LOGGER.warn "Cannot find file: #{filename}\nSkipping..."
     return ''
   end
-  LOGGER.debug "Compile file: #{filename}"
-  str = trim_utf8_file(filename)
-  if File.extname(filename) == '.erb'
-    helper = Helper.new
-    str = ERB.new(str, nil, nil, '@_erbout').result(helper.get_binding)
-    unclosed_conditions = helper.unclosed_conditions
-    if unclosed_conditions > 0
-      LOGGER.error "Template have #{unclosed_conditions} unclosed 'if' ('ifnot') operator#{'s' if unclosed_conditions > 1}"
-      raise RuntimeError # TODO: create error class
-    end
-  end
-  str.gsub!(/\n\s*\n+/, "\n")
-  str.gsub!(/ {2,}/, ' ') unless dont_trim
-  str
+  TemplateCompiler.compile(filename, dont_trim)
 end
