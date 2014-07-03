@@ -1,0 +1,31 @@
+﻿<% @params[:title] = '$SECTION_NAME$ - $MODULE_NAME$ - $SITE_NAME$' %>
+
+<% layout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a id="dircat" href="$MODULE_URL$">Каталог сайтов</a></li>
+        <li class="active">$SECTION_NAME$</li>
+    </ol>
+
+    <% ucoz_if('$ADD_ENTRY_LINK$') { %>
+        <div class="text-right">
+            [ <a id="diradd" href="$ADD_ENTRY_LINK$">Добавить сайт</a> ]
+        </div>
+    <% }.endif! %>
+
+    <div class="clearfix top-hr">
+        <?substr($BODY$,0,strpos($BODY$,"m'}")+2)?>,success:function(a){var a=$(a);!a.text().match('myWinError')?location.href=a.text().match(/href="(.*)"\s/)[1]:_uWnd.content('addEnt',a.text().match(/<div[^<>]*>(.+)<\/div>/i)[0])||$('input.manFlSbm').attr('disabled',0)}<?substr($BODY$,strpos($BODY$,"m'}")+2)?>
+        <script type="text/javascript">
+            $('#cus5').hide();
+            $('#cus5').next().hide();
+            if($('#catSelector9').val() == 'Site'){
+                $('#drM52,#drM53,#drM23,#drM24,#drM26,#drM27,#tagsTd1,#tagsTd2,.manTdSep:first,.manTdSep:eq(4)<?if($PAGE_ID$='add')?>,.manTdSep:eq(5)<?endif?>').hide();
+                $('#dircat').attr('href','/dir/5').html('Новое на сайте');
+                $('#drM4').html($('#drM4').html().replace('Название сайта', 'Заголовок'));
+                $('#drM7').html($('#drM7').html().replace(' на сайт', ''));
+                $('#drM9').html($('#drM9').html().replace(' сайта', ''));
+                <?if($ADD_ENTRY_LINK$)?>$('#diradd').html('Добавить');<?endif?>
+            }
+        </script>
+    </div>
+<% end %>
