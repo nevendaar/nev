@@ -14,3 +14,6 @@ gem 'sprockets-sass'
 
 # Use uglifier as js compressor
 gem 'uglifier', '>= 2.5.1'
+
+# Use rspec for testing
+gem 'rspec', '>= 3.0.0'

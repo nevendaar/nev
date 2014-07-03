@@ -11,6 +11,8 @@ require_relative 'lib/helper'
 
 Bundler.require
 
+require 'rspec/core/rake_task'
+
 ROOT       = Pathname(File.dirname(__FILE__))
 LOGGER     = Logger.new(STDERR)
 BUNDLES    = {
@@ -76,12 +78,14 @@ task :archive do
   LOGGER.info "Created file #{zipfile_name}"
 end
 
-task :test do
+task :show do
   path = ARGV[1] || 'templates/pages/index.html.erb'
   puts compile_template(path, true)
 end
 
-task :default => :test
+RSpec::Core::RakeTask.new
+task :test => :spec
+task :default => :spec
 
 # Trim first 3 bytes from utf-file if needed
 def trim_utf8_file(filename)
