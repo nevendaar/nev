@@ -1,6 +1,9 @@
 Changelog
 =========
 
+## RSpec - 03.07.2014
+* Да здравствуют тесты!
+
 ## Use Uglifier - 21.06.2014
 
 * Используем гем [uglifier](https://github.com/lautis/uglifier), для минификации JS.

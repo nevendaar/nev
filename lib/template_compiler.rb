@@ -38,8 +38,13 @@ class TemplateCompiler
     binding
   end
 
+  # template - Symbol (template name) or String (path to file)
   def layout(template = :main)
-    template = File.read("templates/layouts/#{template}.html.erb").chomp!
+    if template.instance_of? Symbol
+      template = File.read("templates/layouts/#{template}.html.erb").chomp!
+    else # template is a path
+      template = File.read(template).chomp!
+    end
     erbout = @_erbout.dup
     str = ERB.new(template, nil, nil, '@_erbout').result(binding)
     @_erbout = (erbout << str)
