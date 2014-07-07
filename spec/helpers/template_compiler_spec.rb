@@ -65,7 +65,7 @@ describe TemplateCompiler do
     it 'trim whitespaces by default' do
       trimmed_html = SIMPLE_HTML.dup
       trimmed_html.gsub!(/\n\s*\n+/, "\n") # Trim multiple "\n"
-      trimmed_html.gsub!(/ {2,}/, ' ') # Trim whitespaces
+      trimmed_html.gsub!(/ {2,}/, ' ')     # Trim whitespaces
       @tempfile.write "#{SIMPLE_HTML}#{"\n" * 5}"
       @tempfile.close
       expect(TemplateCompiler.compile(@tempfile.path)).to eq(trimmed_html)
