@@ -4,7 +4,7 @@
         <li class="active">$DATE_BAR$</li>
     </ol>
     <% ucoz_if(code_is('$PAGE_ID$', "'add'", "'edit'")) { %>
-        <?substr($BODY$,0,strpos($BODY$,"m'}")+2)?>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<?substr($BODY$,strpos($BODY$,"m'}")+2)?>
+        <%= i("substr($BODY$,0,strpos($BODY$,\"m'}\")+2)") %>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<%= i("substr($BODY$,strpos($BODY$,\"m'}\")+2)") %>
         <script type="text/javascript">
             var str="";
             <% ucoz_if(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
@@ -12,8 +12,7 @@
             <% }.endif! %>
             function init(){
                 <% ucoz_if("$PAGE_ID$='add'") { %>
-                    <%# TODO: add inline ucoz_if() %>
-                    str = "$USERNAME$ поделил<?if($USER_GENDER_ID$==2)?>ась<?else?>ся<?endif?> творчеством ";
+                    str = "<%= c('$USERNAME$') %> поделил<% inline_if('$USER_GENDER_ID$=2') { %>ась<% }.else { %>ся<% }.endif! %> творчеством ";
                 <% }.else { %>
                     str = "Обновлён материал ";
                 <%}.endif!%>
@@ -48,6 +47,6 @@
             init();
         </script>
     <% }.else { %>
-        $BODY$
+        <%= c('$BODY$') %>
     <% }.endif! %>
 <% end %>

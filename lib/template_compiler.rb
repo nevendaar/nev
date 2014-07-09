@@ -1,11 +1,13 @@
 # -*- encoding : utf-8 -*-
 
 require_relative 'helpers/base_helper'
+require_relative 'helpers/ucoz_helper'
 require_relative 'helpers/forum_helper'
 
 class TemplateCompiler
 
   include BaseHelper
+  include UcozHelper
   include ForumHelper
 
   def self.compile(filename, dont_trim = false)

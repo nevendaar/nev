@@ -3,6 +3,9 @@
 # A sample Gemfile
 source 'https://rubygems.org'
 
+#ruby=ruby-2.0.0-p0
+ruby '2.0.0'
+
 gem 'rake', '>= 10.0.0'
 
 gem 'rubyzip', '>= 1.1.0', :require => 'zip'
