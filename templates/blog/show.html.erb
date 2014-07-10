@@ -19,25 +19,26 @@
         </div>
         <div class="body">
             <div>
-                <?if($OTHER1$)?>Автор: $OTHER1$<?endif?><br/>
-                <?if($OTHER2$)?>Редактор: $OTHER2$<?endif?><br/>
-                <?if($OTHER3$)?>Жанр: $OTHER3$<?endif?><br/>
-                <?if($OTHER4$)?>Дисклеймер: $OTHER4$<?endif?><br/><br/>
+                <% inline_if('$OTHER1$') { %>Автор: $OTHER1$<br><% }.endif! %>
+                <% inline_if('$OTHER2$') { %>Редактор: $OTHER2$<br><% }.endif! %>
+                <% inline_if('$OTHER3$') { %>Жанр: $OTHER3$<br><% }.endif! %>
+                <% inline_if('$OTHER4$') { %>Дисклеймер: $OTHER4$<br><% }.endif! %>
+                <br>
             </div>
-            $MESSAGE$
-            <?if($ATTACHMENTS$)?><div class="attachments">Прикрепления: $ATTACHMENTS$</div><?endif?>
+            <%= c('$MESSAGE$') %>
+            <% inline_if('$ATTACHMENTS$') { %><div class="attachments">Прикрепления: $ATTACHMENTS$</div><% }.endif! %>
             <ul class="details">
-                <?if($CAT_NAME$)?><li>Категория: <a href="$CAT_URL$">$CAT_NAME$</a></li><?endif?>
+                <% inline_if('$CAT_NAME$') { %><li>Категория: <a href="$CAT_URL$">$CAT_NAME$</a></li><% }.endif! %>
                 <li>Просмотров: $READS$</li>
                 <li>Добавил: <a href="$PROFILE_URL$">$USER$</a></li>
-                <?if($RATING$)?><li>Рейтинг: <?$RSTARS$('12', '/img/stars.png', '1', 'float')?></li><?endif?>
+                <% inline_if('$RATING$') { %><li>Рейтинг: <%= i("$RSTARS$('12', '/img/stars.png', '1', 'float')") %></li><% }.endif! %>
                 <li><%= vk_like_btn %></li>
             </ul>
-            <?if($TAGS$)?><div class="tags">Теги: <i>$TAGS$</i></div><?endif?>
+            <% inline_if('$TAGS$') { %><div class="tags">Теги: <i><%= c('$TAGS$') %></i></div><% }.endif! %>
         </div>
     </div>
 
-    <?$RELATED_ENTRIES$(10)?>
+    <%= i('$RELATED_ENTRIES$(10)') %>
 
     <% ucoz_if('$COM_IS_ACTIVE$') { %>
         <div class="comment_box">

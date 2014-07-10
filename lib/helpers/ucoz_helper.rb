@@ -42,29 +42,23 @@ module UcozHelper
   end
   alias_method :i, :ucoz_injection
 
-  # TODO: multiple conditions
-  def ucoz_if(condition, &block)
-    statement = UcozConditionStatement.new(condition, @_erbout, &block)
+  def ucoz_if(*args, options: {}, &block)
+    conditions = args.flatten
+    statement = UcozConditionStatement.new(@_erbout, *conditions, options, &block)
     @cond_operators << statement
     statement
   end
 
-  def ucoz_ifnot(condition, &block)
-    statement = UcozConditionStatement.new(condition, @_erbout, :not_flag => true, &block)
-    @cond_operators << statement
-    statement
+  def ucoz_ifnot(*conditions, &block)
+    ucoz_if(*conditions, :options => {:not_flag => true}, &block)
   end
 
-  def inline_if(condition, &block)
-    statement = UcozConditionStatement.new(condition, @_erbout, :inline => true, &block)
-    @cond_operators << statement
-    statement
+  def inline_if(*conditions, &block)
+    ucoz_if(*conditions, :options => {:inline => true}, &block)
   end
 
-  def inline_ifnot(condition, &block)
-    statement = UcozConditionStatement.new(condition, @_erbout, :not_flag => true, :inline => true, &block)
-    @cond_operators << statement
-    statement
+  def inline_ifnot(*conditions, &block)
+    ucoz_if(*conditions, :options => {:not_flag => true, :inline => true}, &block)
   end
 
   def unclosed_conditions

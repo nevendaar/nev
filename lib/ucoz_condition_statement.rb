@@ -1,13 +1,14 @@
 # -*- encoding : utf-8 -*-
 
 class UcozConditionStatement
-  def initialize(condition, erb_out, not_flag: false, inline: false)
+  def initialize(erb_out, *conditions, not_flag: false, inline: false)
     @not_flag = !!not_flag
     @inline   = !!inline
     @erb_out = erb_out
     @closed = false # tag closed?
     @has_else = false
-    @erb_out << "<?if#{'not' if @not_flag}(#{condition.to_s})?>#{"\n" unless @inline}"
+    condition = conditions.flatten.join(@not_flag ? ' || ' : ' && ')
+    @erb_out << "<?if#{'not' if @not_flag}(#{condition})?>#{"\n" unless @inline}"
     yield if block_given?
   end
 

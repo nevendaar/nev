@@ -3,7 +3,7 @@
 # A sample Gemfile
 source 'https://rubygems.org'
 
-#ruby=ruby-2.0.0-p0
+#ruby=ruby-2.0.0-p481
 ruby '2.0.0'
 
 gem 'rake', '>= 10.0.0'
@@ -18,7 +18,8 @@ gem 'sprockets-sass'
 # Use uglifier as js compressor
 gem 'uglifier', '>= 2.5.1'
 
-
+# Use V8 as js interpreter
 gem 'therubyracer', '~> 0.12.1'
+
 # Use rspec for testing
 gem 'rspec', '>= 3.0.0'
