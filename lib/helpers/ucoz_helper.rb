@@ -64,4 +64,11 @@ module UcozHelper
   def unclosed_conditions
     @cond_operators.count { |c| !c.closed? }
   end
+
+  def check_conditions!
+    if unclosed_conditions > 0
+      LOGGER.error "Template have #{unclosed_conditions} unclosed 'if' ('ifnot') operator#{'s' if unclosed_conditions > 1}"
+      raise RuntimeError # TODO: create error class
+    end
+  end
 end

@@ -16,11 +16,7 @@ class TemplateCompiler
     if File.extname(filename) == '.erb'
       helper = self.new
       str = ERB.new(str, nil, nil, '@_erbout').result(helper.get_binding)
-      unclosed_conditions = helper.unclosed_conditions
-      if unclosed_conditions > 0
-        LOGGER.error "Template have #{unclosed_conditions} unclosed 'if' ('ifnot') operator#{'s' if unclosed_conditions > 1}"
-        raise RuntimeError # TODO: create error class
-      end
+      helper.check_conditions!
     end
     str.gsub!(/\n\s*\n+/, "\n")
     str.gsub!(/ {2,}/, ' ') unless dont_trim
@@ -29,9 +25,9 @@ class TemplateCompiler
 
   def initialize(hash = {})
     @params = hash
-    @params[:meta]     = {}
-    @params[:vk]       = {}
-    @params[:redirect] = {}
+    @params[:meta]     ||= {}
+    @params[:vk]       ||= {}
+    @params[:redirect] ||= {}
     @_erbout = nil
     @cond_operators = []
     @locals = {} # For partials
@@ -43,21 +39,21 @@ class TemplateCompiler
 
   # template - Symbol (partial name) or String (path to file)
   def render(partial, locals: {})
-    old_locals = @locals.dup
-    @locals = locals
     path = partial
     path = "templates/layouts/partials/_#{partial}.html.erb" if partial.instance_of? Symbol
     template = File.read(path).chomp!
-    erbout = @_erbout.dup
+
+    helper = self.class.new(Marshal.load(Marshal.dump(@params)))
+    helper.instance_variable_set(:@locals, locals)
 
     last_line = @_erbout.split("\n").last
     indent_level = last_line ? last_line[/\A */].size : 0
 
-    str = ERB.new(template, nil, nil, '@_erbout').result(binding)
-    str.gsub!("\n", "\n#{' ' * indent_level}")
+    str = ERB.new(template, nil, nil, '@_erbout').result(helper.get_binding)
+    helper.check_conditions!
 
-    @locals = old_locals
-    @_erbout = (erbout << str)
+    str.gsub!("\n", "\n#{' ' * indent_level}")
+    str
   end
 
   # template - Symbol (template name) or String (path to file)
