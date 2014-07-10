@@ -47,7 +47,7 @@ end
 desc 'Make backup archive with templates.'
 task :archive do
 
-  files_matching = YAML.load_file('files_matching.yml')
+  files_matching = YAML.load_file('config/files_matching.yml')
   zipfile_name   = Time.now.to_i.to_s << '.zip'
 
   Zip.setup do |config|
@@ -72,7 +72,7 @@ task :archive do
     end
   end
 
-  LOGGER.info "Created file #{zipfile_name}"
+  LOGGER.info "Created file: #{zipfile_name}"
 end
 
 task :show do
