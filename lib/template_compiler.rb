@@ -34,19 +34,37 @@ class TemplateCompiler
     @params[:redirect] = {}
     @_erbout = nil
     @cond_operators = []
+    @locals = {} # For partials
   end
 
   def get_binding
     binding
   end
 
+  # template - Symbol (partial name) or String (path to file)
+  def render(partial, locals: {})
+    old_locals = @locals.dup
+    @locals = locals
+    path = partial
+    path = "templates/layouts/partials/_#{partial}.html.erb" if partial.instance_of? Symbol
+    template = File.read(path).chomp!
+    erbout = @_erbout.dup
+
+    last_line = @_erbout.split("\n").last
+    indent_level = last_line ? last_line[/\A */].size : 0
+
+    str = ERB.new(template, nil, nil, '@_erbout').result(binding)
+    str.gsub!("\n", "\n#{' ' * indent_level}")
+
+    @locals = old_locals
+    @_erbout = (erbout << str)
+  end
+
   # template - Symbol (template name) or String (path to file)
   def layout(template = :main)
-    if template.instance_of? Symbol
-      template = File.read("templates/layouts/#{template}.html.erb").chomp!
-    else # template is a path
-      template = File.read(template).chomp!
-    end
+    path = template
+    path = "templates/layouts/#{template}.html.erb" if template.instance_of? Symbol
+    template = File.read(path).chomp!
     erbout = @_erbout.dup
     str = ERB.new(template, nil, nil, '@_erbout').result(binding)
     @_erbout = (erbout << str)
@@ -59,7 +77,7 @@ class TemplateCompiler
 
   # Trim first 3 bytes from utf-file if needed
   def self.trim_utf8_file(filename)
-    str = File.open(filename, 'r') { |f| f.read }
+    str = File.read(filename)
     str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
   end
 end

@@ -32,21 +32,7 @@
         </div>
     </div>
 
-    <?$RELATED_ENTRIES$(10)?>
+    <%= i '$RELATED_ENTRIES$(10)' %>
 
-    <?if($COM_IS_ACTIVE$)?>
-        <div class="comment_box">
-            <div class="title clearfix">
-                Всего комментариев: <b>$COM_NUM_ENTRIES$</b>
-                <div class="pull-right">$COM_PAGE_SELECTOR$</div>
-            </div>
-            <div class="body">$COM_BODY$</div>
-            <?if($COM_CAN_ADD$)?>$COM_ADD_FORM$<?else?>
-                <?if(!$USER_LOGGED_IN$)?><div class="text-center">Добавлять комментарии могут только зарегистрированные пользователи.<br />[ <a href="$REGISTER_LINK$">Регистрация</a> | <a href="$LOGIN_LINK$">Вход</a> ]</div><?endif?>
-            <?endif?>
-        </div>
-
-        <div class="text-center">$COM_PAGE_SELECTOR1$</div>
-        <%= vk_comments_box '<? 10000000000 + $ID$ ?>' %>
-    <?endif?>
+    <%= render :comment_box, :locals => {:vk_uid => 10000000000} %>
 <% end %>
