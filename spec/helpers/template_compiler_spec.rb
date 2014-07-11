@@ -51,5 +51,18 @@ describe TemplateCompiler do
       result_html = arr.join("\n") << "\n"
       expect(TemplateCompiler.compile(template_path, true)).to eq(result_html)
     end
+
+    it 'can render partial' do
+      partial_path = 'spec/fixtures/_partial.html.erb'
+      partial = File.read(partial_path).gsub!(/<%= @locals.* %>/, 'PARTIAL CONTENT')
+      partial.chomp!.gsub!("\n", "\n#{' ' * 8}")
+
+      template_path = 'spec/fixtures/template_with_partial.html.erb'
+      template_html = File.read(template_path)
+
+      arr = template_html.split(/<%= render .* %>/)
+      result_html = [arr[0], partial, arr[1]].join
+      expect(TemplateCompiler.compile(template_path, true)).to eq(result_html)
+    end
   end
 end
