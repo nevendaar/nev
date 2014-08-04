@@ -3,11 +3,11 @@
 module BaseHelper
 
   def home_url
-    'http://nevendaar.com'
+    config.home_url.dup
   end
 
   def charset_and_ie_support_tags
-    <<-HTML.chomp!
+    wrap_whitespaces! <<-HTML.gsub!(/^\s*/, '').chomp!
       <meta charset="utf-8">
       <!--[if lt IE 9]><script src="/js/html5.min.js"></script><![endif]-->
     HTML
@@ -15,7 +15,7 @@ module BaseHelper
 
   def meta_redirect_to
     if @params[:redirect][:path]
-      <<-HTML
+      wrap_whitespaces! <<-HTML.gsub!(/^\s*/, '').chomp!
         <meta http-equiv="refresh" content="0; url=#{@params[:redirect][:path]}">
         <script type="text/javascript">location.replace("#{home_url}#{@params[:redirect][:path]}");</script>
       HTML
@@ -29,7 +29,7 @@ module BaseHelper
         <meta name="#{name}" content="#{content}">
       HTML
     end
-    s.chomp!
+    s.chomp! || s
   end
 
   def stylesheet_link_tag

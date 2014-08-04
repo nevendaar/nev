@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 
+require_relative '../config/application'
 require_relative 'helpers/base_helper'
 require_relative 'helpers/ucoz_helper'
 require_relative 'helpers/forum_helper'
@@ -9,6 +10,10 @@ class TemplateCompiler
   include BaseHelper
   include UcozHelper
   include ForumHelper
+
+  def self.config
+    AppConfig.config
+  end
 
   def self.compile(filename, dont_trim = false)
     LOGGER.debug "Compile file: #{filename}"
@@ -33,6 +38,10 @@ class TemplateCompiler
     @locals = {} # For partials
   end
 
+  def config
+    self.class.config
+  end
+
   def get_binding
     binding
   end
@@ -46,14 +55,11 @@ class TemplateCompiler
     helper = self.class.new(Marshal.load(Marshal.dump(@params)))
     helper.instance_variable_set(:@locals, locals)
 
-    last_line = @_erbout.split("\n").last
-    indent_level = last_line ? last_line[/\A */].size : 0
-
-    str = ERB.new(template, nil, nil, '@_erbout').result(helper.get_binding)
-    helper.check_conditions!
-
-    str.gsub!("\n", "\n#{' ' * indent_level}")
-    str
+    wrap_whitespaces! do
+      str = ERB.new(template, nil, nil, '@_erbout').result(helper.get_binding)
+      helper.check_conditions!
+      str
+    end
   end
 
   # template - Symbol (template name) or String (path to file)
@@ -75,5 +81,13 @@ class TemplateCompiler
   def self.trim_utf8_file(filename)
     str = File.read(filename)
     str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
+  end
+
+  def wrap_whitespaces!(arg = '')
+    last_line = @_erbout.split("\n").last
+    indent_level = last_line ? last_line[/\A */].size : 0
+    str = block_given? ? yield : arg
+    str.gsub!("\n", "\n#{' ' * indent_level}")
+    str
   end
 end
