@@ -22,6 +22,10 @@ task :archive do
           LOGGER.warn "Size of #{arch_name} > 99999: this situation is not tested yet." if (f1.size + f2.size) > 99999
         else
           str << compile_template(filename).to_s
+          if str.size > 99999
+            LOGGER.error "Size of #{arch_name} > 99999"
+            raise 'Too big template.'
+          end
         end
         stream.write str
       end

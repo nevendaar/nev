@@ -14,7 +14,7 @@ module UcozHelper
       :imp_form   => 15,
       :lord       => 251,
       :banned     => 255
-  }
+  }.freeze
 
   def code_is(code, key_or_value, *values)
     not_flag = (key_or_value == :not)
