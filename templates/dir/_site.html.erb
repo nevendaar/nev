@@ -1,42 +1,45 @@
-﻿<?if($ID$!=38 || <%= group_is('$CUR_GROUP_ID$', :admin, :master) %>)?>
+﻿<%# TODO: id 38 ? %>
+<% ucoz_if("#{code_is '$ID$', :not, 38} || #{group_is '$CUR_GROUP_ID$', :admin, :master}") { %>
     <div class="material hr">
         <div class="title clearfix">
-            <a target="<?if($CID$==5)?>_self<?else?>_blank<?endif?>" href="$SITE_URL$">$TITLE$</a>
-            <?if($MODER_PANEL$)?><div class="pull-right">$MODER_PANEL$</div><?endif?>
+            <%# TODO: cid 5 ? %>
+            <a target="<% inline_if(code_is '$CID$', 5) { %>_self<% }.else { %>_blank<% }.endif! %>" href="<%= c '$SITE_URL$' %>"><%= c '$TITLE$' %></a>
+            <% inline_if('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
         </div>
         <div class="body">
-            <?if($MESSAGE$)?>
+            <% ucoz_if('$MESSAGE$') { %>
                 <div class="eMessage" style="padding-top:2px; padding-bottom:2px;">
-                    $MESSAGE$
+                    <%= c '$MESSAGE$' %>
                 </div>
-            <?endif?>
+            <% }.endif! %>
             <ul class="details">
-                <?if($RATING$)?><li><?$RSTARS$('12','/site/stars.png','1','float')?></li><?endif?>
-                <?if($CID$!=5)?>
-                    <?if($CATEGORY_NAME$)?><li>Категория: <a href="$CATEGORY_URL$">$CATEGORY_NAME$</a></li><?endif?>
-                    <li>Переходов: $REDIRECTS$</li>
-                    <li>
-                        Добавил:
-                        <a href="<?if($AUTHOR_EMAIL_JS$)?>$AUTHOR_EMAIL_JS$<?else?>$PROFILE_URL$<?endif?>">
-                            <?if($AUTHOR_NAME$)?>$AUTHOR_NAME$<?else?>$USERNAME$<?endif?>
-                        </a>
-                    </li>
-                <?else?>
-                    <?if($READS$ || $REDIRECTS$)?>
+                <% inline_if('$RATING$') { %><li><%= i "$RSTARS$('12','/site/stars.png','1','float')" %></li><% }.endif! %>
+                <%# TODO: cid 5 ? %>
+                <% ucoz_if(code_is '$CID$', 5) { %>
+                    <% ucoz_if('$READS$ || $REDIRECTS$') { %>
                         <li>
                             Просмотров:
-                            <?if($REDIRECTS$ > $READS$)?>$REDIRECTS$<?else?>$READS$<?endif?>
-                            <?if(<%= group_is('$CUR_GROUP_ID$', :admin, :master) %>)?>
-                                ($READS$|$REDIRECTS$)
-                            <?endif?>
+                            <% inline_if('$REDIRECTS$ > $READS$') { %>$REDIRECTS$<% }.else { %><%= c '$READS$' %><% }.endif! %>
+                            <% ucoz_if(group_is '$CUR_GROUP_ID$', :admin, :master) { %>
+                                (<%= c '$READS$' %>|<%= c '$REDIRECTS$' %>)
+                            <% }.endif! %>
                         </li>
-                    <?endif?>
-                    <?if($COMMENTS_NUM$)?>
-                        <li><a href="$COMMENTS_URL$">Комментарии: ($COMMENTS_NUM$)</a></li>
-                    <?endif?>
-                <?endif?>
-                <li>Дата: $DATE$</li>
+                    <% }.endif! %>
+                    <% ucoz_if('$COMMENTS_NUM$') { %>
+                        <li><a href="<%= c '$COMMENTS_URL$' %>">Комментарии: (<%= c '$COMMENTS_NUM$' %>)</a></li>
+                    <% }.endif! %>
+                <% }.else { %>
+                    <% inline_if('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
+                    <li>Переходов: <%= c '$REDIRECTS$' %></li>
+                    <li>
+                        Добавил:
+                        <a href="<% inline_if('$AUTHOR_EMAIL_JS$') { %><%= c '$AUTHOR_EMAIL_JS$' %><% }.else { %><%= c '$PROFILE_URL$' %><% }.endif! %>">
+                            <% inline_if('$AUTHOR_NAME$') { %><%= c '$AUTHOR_NAME$' %><% }.else { %><%= c '$USERNAME$' %><% }.endif! %>
+                        </a>
+                    </li>
+                <% }.endif! %>
+                <li>Дата: <%= c '$DATE$' %></li>
             </ul>
         </div>
     </div>
-<?endif?>
+<% }.endif! %>
