@@ -12,6 +12,8 @@
             <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
         <?endif?>
     </div>
+
     $BODY$
-    <?if($PAGE_SELECTOR1$)?><div class="text-center">$PAGE_SELECTOR1$</div><?endif?>
+
+    <%= render :btm_page_selector %>
 <% end %>
