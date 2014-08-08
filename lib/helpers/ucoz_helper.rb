@@ -48,18 +48,12 @@ module UcozHelper
     @cond_operators << statement
     statement
   end
+  alias_method :uif, :ucoz_if
 
   def ucoz_ifnot(*conditions, &block)
     ucoz_if(*conditions, :options => {:not_flag => true}, &block)
   end
-
-  def inline_if(*conditions, &block)
-    ucoz_if(*conditions, :options => {:inline => true}, &block)
-  end
-
-  def inline_ifnot(*conditions, &block)
-    ucoz_if(*conditions, :options => {:not_flag => true, :inline => true}, &block)
-  end
+  alias_method :uifnot, :ucoz_ifnot
 
   def unclosed_conditions
     @cond_operators.count { |c| !c.closed? }

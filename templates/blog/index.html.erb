@@ -12,7 +12,7 @@
             <% }.endif! %>
             function init(){
                 <% ucoz_if("$PAGE_ID$='add'") { %>
-                    str = "<%= c('$USERNAME$') %> поделил<% inline_if('$USER_GENDER_ID$=2') { %>ась<% }.else { %>ся<% }.endif! %> творчеством ";
+                    str = "<%= c('$USERNAME$') %> поделил<% uif('$USER_GENDER_ID$=2') { %>ась<% }.else { %>ся<% }.endif! %> творчеством ";
                 <% }.else { %>
                     str = "Обновлён материал ";
                 <%}.endif!%>

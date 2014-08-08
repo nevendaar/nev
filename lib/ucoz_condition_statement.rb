@@ -1,14 +1,13 @@
 # -*- encoding : utf-8 -*-
 
 class UcozConditionStatement
-  def initialize(erb_out, *conditions, not_flag: false, inline: false)
+  def initialize(erb_out, *conditions, not_flag: false)
     @not_flag = !!not_flag
-    @inline   = !!inline
     @erb_out = erb_out
     @closed = false # tag closed?
     @has_else = false
     condition = conditions.flatten.join(@not_flag ? ' || ' : ' && ')
-    @erb_out << "<?if#{'not' if @not_flag}(#{condition})?>#{"\n" unless @inline}"
+    @erb_out << "<?if#{'not' if @not_flag}(#{condition})?>"
     yield if block_given?
   end
 
@@ -19,7 +18,7 @@ class UcozConditionStatement
     end
     @has_else = true
     LOGGER.warn 'ifnot used with else' if @not_flag
-    @erb_out << "<?else?>#{"\n" unless @inline}"
+    @erb_out << '<?else?>'
     yield if block_given?
     self
   end
@@ -30,7 +29,7 @@ class UcozConditionStatement
       raise RuntimeError # TODO: create error class
     end
     @closed = true
-    @erb_out << "<?endif?>#{"\n" unless @inline}"
+    @erb_out << '<?endif?>'
     nil
   end
 

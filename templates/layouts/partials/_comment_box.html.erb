@@ -8,7 +8,7 @@
         <% ucoz_if('$COM_CAN_ADD$') { %>
             <%= c '$COM_ADD_FORM$' %>
         <% }.else { %>
-            <% ucoz_ifnot('$USER_LOGGED_IN$') { %>
+            <% uifnot('$USER_LOGGED_IN$') { %>
                 <div class="text-center">
                     Добавлять комментарии могут только зарегистрированные пользователи.<br>
                     [ <a href="$REGISTER_LINK$">Регистрация</a> |

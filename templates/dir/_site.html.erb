@@ -3,8 +3,8 @@
     <div class="material hr">
         <div class="title clearfix">
             <%# TODO: cid 5 ? %>
-            <a target="<% inline_if(code_is '$CID$', 5) { %>_self<% }.else { %>_blank<% }.endif! %>" href="<%= c '$SITE_URL$' %>"><%= c '$TITLE$' %></a>
-            <% inline_if('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
+            <a target="<% uif(code_is '$CID$', 5) { %>_self<% }.else { %>_blank<% }.endif! %>" href="<%= c '$SITE_URL$' %>"><%= c '$TITLE$' %></a>
+            <% uif('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
         </div>
         <div class="body">
             <% ucoz_if('$MESSAGE$') { %>
@@ -13,13 +13,13 @@
                 </div>
             <% }.endif! %>
             <ul class="details">
-                <% inline_if('$RATING$') { %><li><%= i "$RSTARS$('12','/site/stars.png','1','float')" %></li><% }.endif! %>
+                <% uif('$RATING$') { %><li><%= i "$RSTARS$('12','/site/stars.png','1','float')" %></li><% }.endif! %>
                 <%# TODO: cid 5 ? %>
                 <% ucoz_if(code_is '$CID$', 5) { %>
                     <% ucoz_if('$READS$ || $REDIRECTS$') { %>
                         <li>
                             Просмотров:
-                            <% inline_if('$REDIRECTS$ > $READS$') { %>$REDIRECTS$<% }.else { %><%= c '$READS$' %><% }.endif! %>
+                            <% uif('$REDIRECTS$ > $READS$') { %>$REDIRECTS$<% }.else { %><%= c '$READS$' %><% }.endif! %>
                             <% ucoz_if(group_is '$CUR_GROUP_ID$', :admin, :master) { %>
                                 (<%= c '$READS$' %>|<%= c '$REDIRECTS$' %>)
                             <% }.endif! %>
@@ -29,12 +29,12 @@
                         <li><a href="<%= c '$COMMENTS_URL$' %>">Комментарии: (<%= c '$COMMENTS_NUM$' %>)</a></li>
                     <% }.endif! %>
                 <% }.else { %>
-                    <% inline_if('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
+                    <% uif('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
                     <li>Переходов: <%= c '$REDIRECTS$' %></li>
                     <li>
                         Добавил:
-                        <a href="<% inline_if('$AUTHOR_EMAIL_JS$') { %><%= c '$AUTHOR_EMAIL_JS$' %><% }.else { %><%= c '$PROFILE_URL$' %><% }.endif! %>">
-                            <% inline_if('$AUTHOR_NAME$') { %><%= c '$AUTHOR_NAME$' %><% }.else { %><%= c '$USERNAME$' %><% }.endif! %>
+                        <a href="<% uif('$AUTHOR_EMAIL_JS$') { %><%= c '$AUTHOR_EMAIL_JS$' %><% }.else { %><%= c '$PROFILE_URL$' %><% }.endif! %>">
+                            <% uif('$AUTHOR_NAME$') { %><%= c '$AUTHOR_NAME$' %><% }.else { %><%= c '$USERNAME$' %><% }.endif! %>
                         </a>
                     </li>
                 <% }.endif! %>

@@ -9,32 +9,18 @@ describe UcozConditionStatement do
     it "add 'if' statement to out" do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true')
-      expect(outstr).to eq "content<?if(true)?>\n"
+      expect(outstr).to eq 'content<?if(true)?>'
     end
 
     it 'support multiple conditions' do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true', 'false')
-      expect(outstr).to eq "content<?if(true && false)?>\n"
-    end
-
-    it 'can be inline' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :inline => true)
-      expect(outstr).to eq 'content<?if(true)?>'
+      expect(outstr).to eq 'content<?if(true && false)?>'
     end
 
     it 'yield given block' do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true') { outstr << 'SECRET' }
-      expect(outstr).to eq "content<?if(true)?>\nSECRET"
-    end
-
-    it 'can be inline with block' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :inline => true) do
-        outstr << 'SECRET'
-      end
       expect(outstr).to eq 'content<?if(true)?>SECRET'
     end
 
@@ -49,32 +35,18 @@ describe UcozConditionStatement do
     it "add 'ifnot' statement to out" do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true', :not_flag => true)
-      expect(outstr).to eq "content<?ifnot(true)?>\n"
+      expect(outstr).to eq 'content<?ifnot(true)?>'
     end
 
     it 'support multiple conditions' do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true', 'false', :not_flag => true)
-      expect(outstr).to eq "content<?ifnot(true || false)?>\n"
-    end
-
-    it 'can be inline' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :not_flag => true, :inline => true)
-      expect(outstr).to eq 'content<?ifnot(true)?>'
+      expect(outstr).to eq 'content<?ifnot(true || false)?>'
     end
 
     it 'yield given block' do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true', :not_flag => true) { outstr << 'SECRET' }
-      expect(outstr).to eq "content<?ifnot(true)?>\nSECRET"
-    end
-
-    it 'can be inline with block' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :not_flag => true, :inline => true) do
-        outstr << 'SECRET'
-      end
       expect(outstr).to eq 'content<?ifnot(true)?>SECRET'
     end
 
@@ -101,30 +73,12 @@ describe UcozConditionStatement do
     it "add 'else' statement to out" do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true') { outstr << 'SECRET' }.else
-      expect(outstr).to eq "content<?if(true)?>\nSECRET<?else?>\n"
-    end
-
-    it 'can be inline' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :inline => true) do
-        outstr << 'SECRET'
-      end.else
       expect(outstr).to eq 'content<?if(true)?>SECRET<?else?>'
     end
 
     it 'yield given block' do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true') {
-        outstr << 'SECRET'
-      }.else {
-        outstr << 'ELSE_SECRET'
-      }
-      expect(outstr).to eq "content<?if(true)?>\nSECRET<?else?>\nELSE_SECRET"
-    end
-
-    it 'can be inline with block' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :inline => true) {
         outstr << 'SECRET'
       }.else {
         outstr << 'ELSE_SECRET'
@@ -159,30 +113,12 @@ describe UcozConditionStatement do
     it "add 'endif' statement to out" do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true') { outstr << 'SECRET' }.endif!
-      expect(outstr).to eq "content<?if(true)?>\nSECRET<?endif?>\n"
-    end
-
-    it 'can be inline' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :inline => true) do
-        outstr << 'SECRET'
-      end.endif!
       expect(outstr).to eq 'content<?if(true)?>SECRET<?endif?>'
     end
 
     it 'work with else() too' do
       outstr = 'content'
       UcozConditionStatement.new(outstr, 'true') {
-        outstr << 'SECRET'
-      }.else {
-        outstr << 'ELSE_SECRET'
-      }.endif!
-      expect(outstr).to eq "content<?if(true)?>\nSECRET<?else?>\nELSE_SECRET<?endif?>\n"
-    end
-
-    it 'work with inline else() too' do
-      outstr = 'content'
-      UcozConditionStatement.new(outstr, 'true', :inline => true) {
         outstr << 'SECRET'
       }.else {
         outstr << 'ELSE_SECRET'
