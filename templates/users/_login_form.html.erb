@@ -1,0 +1,44 @@
+﻿<%# Old template %>
+<% uif(code_is('$PAGE_ID$', '"login"')) { %><div style="width:180px;"><% }.endif! %>
+<table border="0" cellspacing="1" cellpadding="0" width="100%">
+    <% uif('$ERROR$') { %>
+        <td colspan="2" style="color:red; text-align:center;"><%= c '$ERROR$' %></td>
+    <% }.endif! %>
+    <tr>
+        <td width="20%" nowrap="nowrap">E-mail:<%= c '$UID_ICON$' %></td>
+        <td>
+            <input class="loginField" type="text" name="user" value="" size="20" style="width:100%;" maxlength="50"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Пароль:</td>
+        <td>
+            <input class="loginField" type="password" name="password" size="20" style="width:100%" maxlength="15"/>
+        </td>
+    </tr>
+</table>
+<table border="0" cellspacing="1" cellpadding="0" width="100%">
+    <tr>
+        <td nowrap>
+            <input id="rem<%= c '$PAGE_ID$' %>" type="checkbox" name="rem" value="1" checked="checked"/>
+            <label for="rem<%= c '$PAGE_ID$' %>">запомнить</label>
+            <% uif("#{code_is('$PAGE_ID$', '"login"')} && $HIDDEN_ALLOWED$") { %>
+                <br>
+                <input id="hid<%= c '$PAGE_ID$' %>" type="checkbox" name="hidden" value="1" />
+                <label for="hid<%= c '$PAGE_ID$' %>">скрытый</label>
+            <% }.endif! %>
+        </td>
+        <td align="right" valign="top">
+            <input class="loginButton" name="sbm" type="submit" value="Вход"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div style="font-size:7pt;text-align:center;">
+                <a href="<%= c '$REMINDER_LINK$' %>">Забыл пароль</a> |
+                <a href="<%= c '$REGISTER_LINK$' %>">Регистрация</a>
+            </div>
+        </td>
+    </tr>
+</table>
+<% uif(code_is('$PAGE_ID$', '"login"')) { %></div><% }.endif! %>
