@@ -19,7 +19,7 @@ class TemplateCompiler
     LOGGER.debug "Compile file: #{filename}"
     str = trim_utf8_file(filename)
     if File.extname(filename) == '.erb'
-      helper = self.new
+      helper = self.new(:module_name => get_module_name(filename))
       str = ERB.new(str, nil, nil, '@_erbout').result(helper.get_binding)
       helper.check_conditions!
     end
@@ -36,6 +36,7 @@ class TemplateCompiler
     @_erbout = nil
     @cond_operators = []
     @locals = {} # For partials
+    @module_name = @params[:module_name]
   end
 
   def config
@@ -81,6 +82,10 @@ class TemplateCompiler
   def self.trim_utf8_file(filename)
     str = File.read(filename)
     str.byteslice(0..2) == BOM_TOKEN ? str.byteslice(3..-1) : str
+  end
+
+  def self.get_module_name(path)
+    path.split('/', 3)[1]
   end
 
   # TODO: add tests!
