@@ -14,9 +14,11 @@ module AppConfig
   end
 
   class Configuration #:nodoc:
-    attr_accessor :home_url
+    attr_accessor :env,
+                  :home_url
 
     def initialize
+      @env      = :development
       @home_url = 'http://0.0.0.0'
     end
   end
