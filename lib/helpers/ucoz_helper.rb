@@ -31,8 +31,26 @@ module UcozHelper
   end
 
   def ucoz_code(code)
-    # TODO: if environment == :test
-    code
+    if config.env == :test
+      paths = %W[
+        spec/fixtures/#{@module_name}/#{code}.html.erb
+        spec/fixtures/globals/#{code}.html.erb
+        spec/fixtures/defaults/#{code}.html.erb
+      ]
+      result = nil
+      paths.each do |path|
+        if File.exist?(path)
+          result = render path
+          break
+        end
+      end
+      if result.nil?
+        LOGGER.warn "Cannot find fixture for given code. Searched in:\n#{paths.inspect}"
+      end
+      result || code
+    else
+      code
+    end
   end
   alias_method :c, :ucoz_code
 
