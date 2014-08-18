@@ -1,0 +1,15 @@
+<% poll_id = rand(100..999) %>
+<script type="text/javascript">
+    function pollnow<%= poll_id %>(){
+        document.getElementById('PlBtn<%= poll_id %>').disabled=true;
+        _uPostForm('pollform<%= poll_id %>',{url:'/poll/',type:'POST'});
+    }
+    function polll<%= poll_id %>(id,i){
+        _uPostForm('',{url:'/poll/'+id+'-1-'+i+'-<%= poll_id %>',type:'GET'});
+    }
+</script>
+<div id="pollBlock<%= poll_id %>">
+    <form id="pollform<%= poll_id %>" onsubmit="pollnow<%= poll_id %>();return false;">
+        <%= render 'templates/polls/_form.html.erb' %>
+    </form>
+</div>

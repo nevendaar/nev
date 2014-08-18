@@ -2,7 +2,7 @@
 
 # Глобальные блоки
 'AJAXJS': 'templates/AJAXJS.html.erb' # Системные css и js файлы
-'ASIDE':  'templates/ASIDE.html'      # Меню сайта
+'ASIDE':  'templates/ASIDE.html.erb'  # Меню сайта
 'FOOTER': 'templates/FOOTER.html.erb' # Подвал
 'HEADER': 'templates/HEADER.html.erb' # Шапка
 
@@ -88,7 +88,7 @@
 #'ph10.t': ''                                  # Таблица стилей (CSS)
 
 # Опросы
-'po1.t': 'templates/polls/_form.html' # Вид формы опросов
+'po1.t': 'templates/polls/_form.html.erb' # Вид формы опросов
 
 # Каталог статей
 'pu1.t': 'templates/publ/main.html.erb'           # Главная страница каталога статей

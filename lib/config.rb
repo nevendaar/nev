@@ -15,11 +15,13 @@ module AppConfig
 
   class Configuration #:nodoc:
     attr_accessor :env,
-                  :home_url
+                  :home_url,
+                  :ucoz_url
 
     def initialize
       @env      = :development
       @home_url = 'http://0.0.0.0'
+      @ucoz_url = @home_url
     end
   end
 end

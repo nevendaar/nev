@@ -84,23 +84,23 @@
             <li><a href="/tests">Тесты</a></li>
         </ul>
     </div>
-    <script>activate_menu("$MODULE_ID$", "$URI_ID$");</script>
+    <script>activate_menu("<%= c '$MODULE_ID$' %>", "<%= c '$URI_ID$' %>");</script>
     <!--/MENU-->
 
-    <?if($SEARCH_FORM$)?>
+    <% uif('$SEARCH_FORM$') { %>
         <div class="control_box" data-title="Поиск">$SEARCH_FORM$</div>
-    <?endif?>
+    <% }.endif! %>
 
-    <?if($CATEGORIES$ && $MODULE_ID$!="dir" && $MODULE_ID$!="faq")?>
-        <div class="control_box" data-title="<?if($MODULE_ID$="photo")?>Альбомы<?else?>Категории<?endif?>">
-            $CATEGORIES$
+    <% uif('$CATEGORIES$', code_is('$MODULE_ID$', :not, '"dir"', '"faq"')) { %>
+        <div class="control_box" data-title="<% uif('$MODULE_ID$="photo"') { %>Альбомы<% }.else { %>Категории<% }.endif! %>">
+            <%= c '$CATEGORIES$' %>
         </div>
-    <?endif?>
+    <% }.endif! %>
 
     <!--NEWS-->
     <div class="control_box" data-title="Новое на сайте">
-        <div id="menu_nots">$MYINF_5$</div>
-        <div id="menu_comminf" class="hide">$MYINF_4$</div>
+        <div id="menu_nots"><%= c '$MYINF_5$' %></div>
+        <div id="menu_comminf" class="hide"><%= c '$MYINF_4$' %></div>
         <div align="center" style="padding:5px 0;">
             [ <a href="/dir/5" target="_self">Архив</a> ]
             [ <a id="menu_comm_link" href="#">Комментарии</a> ]
@@ -108,13 +108,13 @@
     </div>
     <!--/NEWS-->
 
-    <?if($LOGIN_FORM$)?>
-        <div class="control_box" data-title="Форма входа">$LOGIN_FORM$</div>
-    <?endif?>
+    <% uif('$LOGIN_FORM$') { %>
+        <div class="control_box" data-title="Форма входа"><%= c '$LOGIN_FORM$' %></div>
+    <% }.endif! %>
 
-    <?if($POLL$)?>
-        <div class="control_box" data-title="Наш опрос">$POLL$</div>
-    <?endif?>
+    <% uif('$POLL$') { %>
+        <div class="control_box" data-title="Наш опрос"><%= c '$POLL$' %></div>
+    <% }.endif! %>
 
     <!--FRIENDS-->
     <div class="control_box" data-title="Друзья сайта">
@@ -131,8 +131,8 @@
     </div>
     <!--/FRIENDS-->
 
-    <?if($COUNTER$)?>
-        <div class="control_box center" data-title="Статистика">$COUNTER$</div>
-    <?endif?>
+    <% uif('$COUNTER$') { %>
+        <div class="control_box center" data-title="Статистика"><%= c '$COUNTER$' %></div>
+    <% }.endif! %>
 
 </aside>

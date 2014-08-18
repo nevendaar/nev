@@ -1,0 +1,79 @@
+<div id="uidLogForm" align="center">
+    <div id="uidLogButton">
+        <p>
+            <button class="loginButton" onclick="window.open('http://login.uid.me/?site=4nevendaar&amp;ref='+escape(window.location.href),'unetLoginWnd','width=500,height=350,resizable=yes,titlebar=yes')">
+                Войти через uID
+            </button>
+        </p>
+        <a href="javascript://" onclick="return uSocialLogin('vkontakte');" id="login-with-vkontakte" class="login-with vkontakte" title="Войти через ВКонтакте"><i></i></a>
+        <a href="javascript://" onclick="return uSocialLogin('facebook');" id="login-with-facebook" class="login-with facebook" title="Войти через Facebook"><i></i></a>
+        <a href="javascript://" onclick="return uSocialLogin('yandex');" id="login-with-yandex" class="login-with yandex" title="Войти через Яндекс"><i></i></a>
+        <a href="javascript://" onclick="return uSocialLogin('google');" id="login-with-google" class="login-with google" title="Войти через Google+"><i></i></a>
+        <a href="javascript://" onclick="return uSocialLogin('twitter');" id="login-with-twitter" class="login-with twitter" title="Войти через Twitter"><i></i></a>
+        <div>
+            <a href="javascript://" class="noun" onclick="document.getElementById('uidLogButton').style.display='none';document.getElementById('baseLogForm').style.display='';" title="Используйте, если окно авторизации через uID не открывается">
+                Старая форма входа
+            </a>
+        </div>
+    </div>
+    <div id="baseLogForm" style="display:none">
+        <script type="text/javascript">
+            sendFrm549330 = function () {
+                var o = $('#frmLg549330')[0], pos = _uGetOffset(o), o2 = $('#blk549330')[0];
+                document.body.insertBefore(o2, document.body.firstChild);
+                $(o2).css({top: (pos['top']) + 'px', left: (pos['left']) + 'px', width: o.offsetWidth + 'px', height: o.offsetHeight + 'px', display: ''}).html('<div align="left" style="padding:5px;"><div class="myWinLoad"></div></div>');
+                _uPostForm('frmLg549330', {type: 'POST', url: '/index/sub/', error: function () {
+                    $('#blk549330').html('<div align="left" style="padding:10px;"><div class="myWinLoadSF" title="Невозможно выполнить запрос, попробуйте позже"></div></div>');
+                    _uWnd.alert('<div class="myWinError">Невозможно выполнить запрос, попробуйте позже</div>', '', {w: 250, h: 90, tm: 3000, pad: '15px'});
+                    setTimeout("$('#blk549330').css('display','none');", '1500');
+                }});
+            }
+        </script>
+        <div id="blk549330" style="border:1px solid #CCCCCC;position:absolute;z-index:82;background:url('http://s6.ucoz.net/img/fr/g.gif');display:none;"></div>
+        <form id="frmLg549330" action="/index/sub/" method="post" style="margin:0" onsubmit="sendFrm549330();return false;">
+            <table border="0" cellspacing="1" cellpadding="0" width="100%">
+                <tr>
+                    <td width="20%" nowrap="nowrap">
+                        E-mail:
+                            <a href="javascript://" rel="nofollow" onclick="new _uWnd('HelpWd','Помощник',360,150,{align:'justify',closeonesc:1},{url:'/index/90-7'});return false;" class="noun">
+                                <img alt="" title="uID поддержка" src="http://s6.ucoz.net/img/ma/uid.gif" style="border:0;vertical-align:-4px;">
+                            </a>
+                    </td>
+                    <td>
+                        <input class="loginField" type="text" name="user" value="" size="20" style="width:100%;" maxlength="50"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Пароль:</td>
+                    <td>
+                        <input class="loginField" type="password" name="password" size="20" style="width:100%" maxlength="15"/>
+                    </td>
+                </tr>
+            </table>
+            <table border="0" cellspacing="1" cellpadding="0" width="100%">
+                <tr>
+                    <td nowrap>
+                        <input id="remsitePage1" type="checkbox" name="rem" value="1" checked="checked"/>
+                        <label for="remsitePage1">запомнить</label>
+                    </td>
+                    <td align="right" valign="top">
+                        <input class="loginButton" name="sbm" type="submit" value="Вход"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div style="font-size:7pt;text-align:center;">
+                            <a href="javascript://" rel="nofollow" onclick="new _uWnd('Prm','Напоминание пароля',300,130,{autosize:1,closeonesc:1},{url:'/index/5'});return false;">
+                                Забыл пароль
+                            </a> |
+                            <a href="/register">Регистрация</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="a" value="2"/>
+            <input type="hidden" name="ajax" value="1"/>
+            <input type="hidden" name="rnd" value="330"/>
+        </form>
+    </div>
+</div>
