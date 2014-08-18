@@ -9,14 +9,14 @@
     </head>
     <body>
         <div class="wrapper">
-            $GLOBAL_HEADER$
+            <%= c '$GLOBAL_HEADER$' %>
             <div class="middle">
                 <div class="container">
                     <main class="content bordered<%= ' vk-init' if @params[:vk][:init] %>">
                         <% yield if block_given? %>
                     </main>
                 </div>
-                $GLOBAL_ASIDE$
+                <%= c '$GLOBAL_ASIDE$' %>
             </div>
             <%= c '$GLOBAL_FOOTER$' %>
         </div>

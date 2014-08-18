@@ -45,7 +45,8 @@ module UcozHelper
         end
       end
       if result.nil?
-        LOGGER.warn "Cannot find fixture for given code. Searched in:\n#{paths.inspect}"
+        LOGGER.warn "Cannot find fixture for code: '#{code}'."
+        LOGGER.debug { "Searched in:\n#{paths.inspect}" }
       end
       result || code
     else

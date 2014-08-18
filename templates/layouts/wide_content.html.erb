@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="wrapper">
-            $GLOBAL_HEADER$
+            <%= c '$GLOBAL_HEADER$' %>
             <div class="middle">
                 <main class="wide_content bordered<%= ' vk-init' if @params[:vk][:init] %>">
                     <% yield if block_given? %>

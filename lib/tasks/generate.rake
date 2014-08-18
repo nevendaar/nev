@@ -6,7 +6,7 @@ task :generate do
   end
   path = ARGV[1] || 'templates/pages/index.html.erb'
   doctype = "<!DOCTYPE html>\n"
-  puts doctype << compile_template(path, true)
+  puts "\n" << doctype << compile_template(path, true)
 end
 
 task :g => :generate

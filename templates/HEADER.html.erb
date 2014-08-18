@@ -1,0 +1,24 @@
+﻿<header class="header">
+    <a href="<%= c '$HOME_PAGE_LINK$' %>" class="logo" title="Всё о серии игр Disciples-I, II, III. Новости, скриншоты, карты и саги.">
+        <img src="/site/logo.gif" alt="DISCIPLES">
+    </a>
+    <div class="topbar">
+        <a class="icon home_icon" href="/" title="Главная"></a>
+        <% uif('$USER_LOGGED_IN$') { %>
+            <a class="icon person_icon profile-link" href="/index/8-<%= c '$USER_ID$' %>" title="Мой профиль"></a>
+            <a class="icon logout_icon" href="<%= c '$LOGOUT_LINK$' %>" title="Выход"></a>
+        <% }.else { %>
+            <a class="icon reg_icon" href="<%= c '$REGISTER_LINK$' %>" title="Регистрация"></a>
+            <a class="icon login_icon" href="<%= c '$LOGIN_LINK$' %>" title="Вход"></a>
+        <% }.endif! %>
+    </div>
+    <div class="infobar">
+        <% uif('$USER_LOGGED_IN$') { %>
+            Вы вошли как <a href="/index/8-<%= c '$USER_ID$' %>" class="profile-link"><b><%= c '$USERNAME$' %></b></a>
+        <% }.else { %>
+            Приветствуем Вас, <b><%= c '$USERNAME$' %></b>
+        <% }.endif! %>
+        | <a href="<%= c '$RSS_LINK$' %>">RSS</a>
+    </div>
+</header>
+<div class="silver_line"></div>
