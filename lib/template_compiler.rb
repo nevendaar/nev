@@ -88,7 +88,6 @@ class TemplateCompiler
     path.split('/', 3)[1]
   end
 
-  # TODO: add tests!
   def wrap_whitespaces!(arg = '')
     last_line = @_erbout.split("\n").last
     indent_level = last_line ? last_line[/\A */].size : 0

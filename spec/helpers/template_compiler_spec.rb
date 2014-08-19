@@ -65,4 +65,34 @@ describe TemplateCompiler do
       expect(TemplateCompiler.compile(template_path, true)).to eq(result_html)
     end
   end
+
+  describe 'wrap_whitespaces!' do
+
+    before :each do
+      @compiler = TemplateCompiler.new
+      @compiler.instance_variable_set :@_erbout, '  text'
+    end
+
+    context 'with string' do
+      it 'should keep indentation level' do
+        str = @compiler.send :wrap_whitespaces!, "\nTEXT\n"
+        expect(str).to eq "\n  TEXT\n  "
+      end
+      it 'not modify @_erbout' do
+        @compiler.send :wrap_whitespaces!, "\nTEXT\n"
+        expect(@compiler.instance_variable_get(:@_erbout)).to eq '  text'
+      end
+    end
+
+    context 'with block' do
+      it 'should keep indentation level' do
+        str = @compiler.send(:wrap_whitespaces!) { "\nTEXT\n" }
+        expect(str).to eq "\n  TEXT\n  "
+      end
+      it 'not modify @_erbout' do
+        @compiler.send(:wrap_whitespaces!) { "\nTEXT\n" }
+        expect(@compiler.instance_variable_get(:@_erbout)).to eq '  text'
+      end
+    end
+  end
 end
