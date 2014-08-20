@@ -1,0 +1,14 @@
+<table border="0" cellspacing="1" cellpadding="0" width="100%" class="catsTable">
+    <% 3.times do |index| %>
+    <% index += 1 %>
+    <tr>
+        <td style="width:100%" class="catsTd" valign="top">
+            <a href="<%= home_url %>/news/1-0-<%= index %>" class="catName">
+                Категория #<%= index %>
+            </a>
+            <span class="catNumData" style="unicode-bidi:embed;">[<%= rand(500) %>]</span>
+            <div class="catDescr">Описание категории #<%= index %></div>
+        </td>
+    </tr>
+    <% end %>
+</table>
