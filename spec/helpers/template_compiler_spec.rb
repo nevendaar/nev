@@ -14,16 +14,17 @@ describe TemplateCompiler do
     end
 
     it 'compile html file' do
-      expect(TemplateCompiler.compile(@path, true)).to eq(@plain_html)
+      expect(TemplateCompiler.compile(@path, true)).to eq(@plain_html.byteslice(3..-1))
     end
 
     it 'trim utf-8 BOM' do
       token = TemplateCompiler.const_get(:BOM_TOKEN)
+      expect(@plain_html.start_with?(token)).to eq(true)
       expect(TemplateCompiler.compile(@path, true).start_with?(token)).to eq(false)
     end
 
     it 'trim whitespaces by default' do
-      trimmed_html = @plain_html.dup
+      trimmed_html = @plain_html.byteslice(3..-1)
       trimmed_html.gsub!(/ {2,}/, ' ') # Trim whitespaces
       expect(TemplateCompiler.compile(@path)).to eq(trimmed_html)
     end
