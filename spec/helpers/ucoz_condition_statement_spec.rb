@@ -87,7 +87,7 @@ describe UcozConditionStatement do
     end
 
     it 'should print WARN log with ifnot()' do
-      expect(LOGGER).to receive(:warn).with('ifnot used with else')
+      expect(LOGGER).to receive(:warn).with(UcozConditionStatement::PROG_NAME)
       UcozConditionStatement.new('', 'true', :not_flag => true).else
     end
 
@@ -97,7 +97,7 @@ describe UcozConditionStatement do
     end
 
     it 'raise error with two else()' do
-      expect(LOGGER).to receive(:error).with('if operator have multiple else blocks!')
+      expect(LOGGER).to receive(:error).with(UcozConditionStatement::PROG_NAME)
       statement = UcozConditionStatement.new('', 'true').else
       expect { statement.else }.to raise_error(RuntimeError)
     end
@@ -133,7 +133,7 @@ describe UcozConditionStatement do
     end
 
     it 'raise error with two endif!()' do
-      expect(LOGGER).to receive(:error).with('if operator already closed!')
+      expect(LOGGER).to receive(:error).with(UcozConditionStatement::PROG_NAME)
       statement = UcozConditionStatement.new('', 'true')
       statement.endif!
       expect { statement.endif! }.to raise_error(RuntimeError)

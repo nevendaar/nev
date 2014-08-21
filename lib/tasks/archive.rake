@@ -19,11 +19,15 @@ task :archive do
           f1 = compile_template(filename[0])
           f2 = compile_template(filename[1])
           str << ('%05d' % f1.size) << (' ' * 5) << f1 << f2
-          LOGGER.warn "Size of #{arch_name} > 99999: this situation is not tested yet." if (f1.size + f2.size) > 99999
+          if (f1.size + f2.size) > 99999
+            LOGGER.warn('rake') do
+              "Size of #{arch_name} > 99999: this situation is not tested yet."
+            end
+          end
         else
           str << compile_template(filename).to_s
           if str.size > 99999
-            LOGGER.error "Size of #{arch_name} > 99999"
+            LOGGER.error('rake') { "Size of #{arch_name} > 99999" }
             raise 'Too big template.'
           end
         end
@@ -32,5 +36,5 @@ task :archive do
     end
   end
 
-  LOGGER.info "Created file: #{zipfile_name}"
+  LOGGER.info('rake') { "Created file: #{zipfile_name}" }
 end

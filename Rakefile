@@ -5,9 +5,9 @@ require 'bundler'
 require 'erb'
 require 'yaml'
 require 'pathname'
-require 'logger'
 
 require_relative 'lib/template_compiler'
+require_relative 'lib/log_formatter'
 
 Bundler.require
 
@@ -15,6 +15,7 @@ require 'rspec/core/rake_task'
 
 ROOT       = Pathname(File.dirname(__FILE__))
 LOGGER     = Logger.new(STDERR)
+LOGGER.formatter = LogFormatter.new
 BUNDLES    = {
     :'app.css' => 'app.min.css',
     :'app.js'  => 'app.min.js'
@@ -29,7 +30,7 @@ task :default => :spec
 
 def compile_template(filename, dont_trim = false)
   unless File.exists?(filename)
-    LOGGER.warn "Cannot find file: #{filename}\nSkipping..."
+    LOGGER.warn('rake') { "Cannot find file: #{filename}\nSkipping..." }
     return ''
   end
   TemplateCompiler.compile(filename, dont_trim)

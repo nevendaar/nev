@@ -45,8 +45,8 @@ module UcozHelper
         end
       end
       if result.nil?
-        LOGGER.warn "Cannot find fixture for code: '#{code}'."
-        LOGGER.debug { "Searched in:\n#{paths.inspect}" }
+        LOGGER.warn('ucoz_code') { "Cannot find fixture for code: '#{code}'." }
+        LOGGER.debug('ucoz_code') { "Searched in:\n#{paths.inspect}" }
       end
       result || code
     else
@@ -79,8 +79,11 @@ module UcozHelper
   end
 
   def check_conditions!
-    if unclosed_conditions > 0
-      LOGGER.error "Template have #{unclosed_conditions} unclosed 'if' ('ifnot') operator#{'s' if unclosed_conditions > 1}"
+    count = unclosed_conditions
+    if count > 0
+      LOGGER.error('template_compiler') do
+        "Template have #{count} unclosed 'if' ('ifnot') operator#{'s' if count > 1}"
+      end
       raise RuntimeError # TODO: create error class
     end
   end

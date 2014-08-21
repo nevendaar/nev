@@ -2,10 +2,13 @@
 
 desc 'Compile assets.'
 task :compile do
+  logger = LOGGER.dup
+  logger.progname = 'Sprockets'
+
   sprockets = Sprockets::Environment.new(ROOT) do |env|
     env.js_compressor  = :uglify
     env.css_compressor = :scss
-    env.logger = LOGGER
+    env.logger = logger
   end
 
   sprockets.append_path(SOURCE_DIR.join('stylesheets').to_s)

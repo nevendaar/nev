@@ -16,7 +16,7 @@ class TemplateCompiler
   end
 
   def self.compile(filename, dont_trim = false)
-    LOGGER.debug "Compile file: #{filename}"
+    LOGGER.debug('template_compiler') { "Compile file: #{filename}" }
     str = trim_utf8_file(filename)
     if File.extname(filename) == '.erb'
       helper = self.new(:module_name => get_module_name(filename))
