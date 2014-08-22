@@ -29,7 +29,7 @@ task :test => :spec
 task :default => :spec
 
 def compile_template(filename, dont_trim = false)
-  unless File.exists?(filename)
+  unless File.exist?(filename)
     LOGGER.warn('rake') { "Cannot find file: #{filename}\nSkipping..." }
     return ''
   end
