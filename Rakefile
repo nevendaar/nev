@@ -19,7 +19,7 @@ LOGGER.formatter = LogFormatter.new
 BUNDLES    = {
     :'app.css' => 'app.min.css',
     :'app.js'  => 'app.min.js'
-}
+}.each{|k, v| v.freeze}.freeze
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('assets')
 VENDOR_DIR = ROOT.join('vendor', 'assets')

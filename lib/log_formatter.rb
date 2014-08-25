@@ -3,15 +3,15 @@
 require 'logger'
 
 class LogFormatter < Logger::Formatter
-  FORMAT = "%s, [%s#%d] %s -- %s: %s\n"
+  FORMAT = "%s, [%s#%d] %s -- %s: %s\n".freeze
 
   SEVERITY_TO_COLOR_MAP = {
       'DEBUG' => '0;37', 'INFO'  => '32',   'WARN' => '33',
       'ERROR' => '31',   'FATAL' => '1;31', 'ANY'  => '41;37'
-  }.freeze
+  }.each{|k, v| v.freeze}.freeze
 
   def initialize
-    @datetime_format = '%Y-%m-%d %H:%M:%S.%6N '
+    @datetime_format = '%Y-%m-%d %H:%M:%S.%6N '.freeze
   end
 
   def call(severity, time, progname, msg)

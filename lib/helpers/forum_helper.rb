@@ -2,12 +2,12 @@
 
 module ForumHelper
 
-  RANK_DIR = '/Forumdata/Rank/Ranks'.freeze
+  RANK_DIR = '/Forumdata/Rank/Ranks'.freeze # TODO: move to config
 
   # Вырезаем из строки ранг и проводим к целому.
   def user_rank
     # $USER_RANK_ICON$ = '<img alt="" name="rankimg" border="0" src="http://nevendaar.com/Forumdata/Rank/Ranks/rank10.gif" align="absmiddle" />'
-    "<? 0 + substr($USER_RANK_ICON$, #{home_url.size + RANK_DIR.size + 48}, 2) ?>"
+    ucoz_injection "0 + substr($USER_RANK_ICON$, #{home_url.size + RANK_DIR.size + 48}, 2)"
   end
 
   def first_post(_not = nil)
