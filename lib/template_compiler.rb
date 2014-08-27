@@ -47,11 +47,11 @@ class TemplateCompiler
     binding
   end
 
-  # template - Symbol (partial name) or String (path to file)
+  # partial - Symbol (partial name) or String (path to file)
   def render(partial, locals: {})
     path = partial
     path = "templates/layouts/partials/_#{partial}.html.erb" if partial.instance_of? Symbol
-    template = File.read(path).chomp!
+    template = self.class.trim_utf8_file(path).chomp
 
     helper = self.class.new(Marshal.load(Marshal.dump(@params)))
     helper.instance_variable_set(:@locals, locals)

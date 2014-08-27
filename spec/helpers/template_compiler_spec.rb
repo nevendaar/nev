@@ -67,6 +67,34 @@ describe TemplateCompiler do
     end
   end
 
+  describe 'render' do
+    before :all do
+      @compiler = TemplateCompiler.new
+      @compiler.instance_variable_set :@_erbout, '  text'
+    end
+
+    it "shouldn't modify self @_erbout" do
+      erbout = @compiler.instance_variable_get(:@_erbout).dup
+      @compiler.render(:comment_box)
+      expect(@compiler.instance_variable_get(:@_erbout)).to eq erbout
+    end
+
+    it 'can work with symbols' do
+      expect(@compiler.render(:comment_box)).to be_a String
+    end
+
+    it 'can work with path' do
+      expect(@compiler.render('templates/layouts/partials/_comment_box.html.erb')).to be_a String
+    end
+
+    it 'should trim utf-8 BOM' do
+      token = TemplateCompiler.const_get(:BOM_TOKEN)
+      template_path = 'spec/fixtures/plain.html'
+      expect(File.read(template_path).start_with?(token)).to eq(true)
+      expect(@compiler.render(template_path).start_with?(token)).to eq(false)
+    end
+  end
+
   describe 'wrap_whitespaces!' do
 
     before :each do
