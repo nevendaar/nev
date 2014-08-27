@@ -1,0 +1,252 @@
+<div class="com-order-block">
+    <label class="com-order-wrap">
+        <span class="com-order-title">Порядок вывода комментариев:</span>
+        <select class="com-order-select">
+            <option selected="selected" value="">По умолчанию</option>
+            <option value="desc">Сначала новые</option>
+            <option value="asc">Сначала старые</option>
+        </select>
+    </label>
+</div>
+<script type="text/javascript">
+    setTimeout(function () {
+        $('.com-order-select').change(function () {
+            var elem = $(this);
+            var oldValue = ( /4nevendaarcomOrder=(asc|desc)/.exec(document.cookie) || {} )[1] || '';
+            var newValue = elem.val();
+            console.log(oldValue, newValue);
+            if (newValue == oldValue) {
+                return;
+            };
+            document.cookie = '4nevendaarcomOrder=' + encodeURIComponent(newValue) + '; path=/; expires=' + (new Date((new Date).getTime() + 1000 * 60 * 60 * 24 * 365)).toGMTString();
+            window.console && console.info && console.info('comment order changed: "' + oldValue + '" >> "' + newValue + '"');
+            // elem.parents('.com-order-wrap').eq(0).find('.com-order-apply').fadeIn().removeClass('com-order-apply-hidden').addClass('com-order-apply-visible');
+            newValue = newValue || 'default';
+            location.search = location.search
+                    ? /[?&]comments_order=([^&]*)/.test(location.search)
+                    ? location.search.replace(/comments_order=([^&]*)/, 'comments_order=' + newValue)
+                    : location.search + '&comments_order=' + newValue
+                    : '?comments_order=' + newValue;
+        });
+    }, 100);
+</script>
+
+<script type="text/javascript">
+    function ban_item(id) {
+        if (confirm('Вы действительно хотите активировать данный материал?')) {
+            var img = document.getElementById('bi' + id);
+            img.src = 'http://s6.ucoz.net/img/fr/EmnAjax.gif';
+            _uPostForm('', {url: '<%= home_url %>/index/86-' + id + '-1'});
+        }
+    }
+    function del_soc_item(id, as_spam) {
+        if (confirm('Вы подтверждаете удаление?')) {
+            var img = document.getElementById('di' + id);
+            img.src = 'http://s6.ucoz.net/img/fr/EmnAjax.gif';
+            _uPostForm('', {url: '<%= home_url %>/index/', type: 'POST', data: {ssid: 'SESSIONID', a: '38', s: id, soc_type: scurrent, sdata: ssdata[scurrent], as_spam: (as_spam ? 1 : 0) }});
+        }
+    }
+    function del_item(id, as_spam) {
+        if (confirm('Вы подтверждаете удаление?')) {
+            var img = document.getElementById('di' + id);
+            img.src = 'http://s6.ucoz.net/img/fr/EmnAjax.gif';
+            _uPostForm('', {url: '<%= home_url %>/index/', type: 'POST', data: {ssid: 'SESSIONID', a: '38', s: id, as_spam: (as_spam ? 1 : 0)}});
+        }
+    }
+</script>
+
+<div style="display:none;" id="myGrid">
+    <div style="position:fixed;width:100%;text-align:center;padding-top:250px;">
+        <img style="border:0;width:220px;height:19px;" src="http://s6.ucoz.net/img/ma/m/i3.gif" alt="">
+    </div>
+</div>
+<script type="text/javascript">
+    function spages(p) {
+        if (0) {
+            document.location.href = '/' + 'news' + '/' + '2014-08-26-457-0-' + p + '-' + location.hash;
+            return;
+        }
+        try {
+            document.getElementById('myGrid').style.cssText = 'position:absolute; z-index:8; top:0;left:0; display:normal; background: url(\'http://s6.ucoz.net/img/fr/g.gif\'); text-align:center; width:' + document.body.scrollWidth + 'px; height:' + document.body.scrollHeight + 'px;';
+        } catch (e) {
+        };
+        _uPostForm('', {url: '/news/2014-08-26-457-987-' + p + '-', type: 'POST'});
+    }
+</script>
+
+<a name="comments"></a>
+
+<div id="newEntryT"></div>
+<div id="allEntries">
+    <% 1.upto(3) do |index| %>
+        <% indent_level = (index == 2 ? 2 : 1) %>
+        <div style="<%= "width:auto;*width:100%;margin-left:#{20 * indent_level}px;" if indent_level > 1 %> " id="comEnt<%= index %>" class="comEnt report-spam-target ">
+            <%= render 'templates/comments/_comment.html' %>
+        </div>
+        <div id="appEntry<%= index %>" style="width:auto;*width:100%;margin-left:<%= 20 * indent_level %>px;"><b></b></div>
+    <% end %>
+</div>
+<div id="newEntryB"></div>
+
+<script type="text/javascript">
+
+    if( !window.uCoz ) window.uCoz = {};
+    if( !uCoz.spam ) uCoz.spam = {};
+    if( !uCoz.spam.sign ) uCoz.spam.sign = {};
+
+    if( !uCoz.spam.config ) uCoz.spam.config = {};
+
+    uCoz.spam.config.scopeID  = 0;
+    uCoz.spam.config.idPrefix = 'comEnt';
+
+    uCoz.spam.sign.spam            = 'Спам';
+    uCoz.spam.sign.notSpam         = 'Не спам';
+    uCoz.spam.sign.hidden          = 'Спам-сообщение скрыто.';
+    uCoz.spam.sign.shown           = 'Спам-сообщение показано.';
+    uCoz.spam.sign.show            = 'Показать';
+    uCoz.spam.sign.hide            = 'Скрыть';
+    uCoz.spam.sign.admSpam         = 'Разрешить жалобы';
+    uCoz.spam.sign.admSpamTitle    = 'Разрешить пользователям сайта помечать это сообщение как спам';
+    uCoz.spam.sign.admNotSpam      = 'Это не спам';
+    uCoz.spam.sign.admNotSpamTitle = 'Пометить как не-спам, запретить пользователям жаловаться на это сообщение';
+
+    uCoz.spam.moderPanelNotSpamClick = function(elem) {
+        var waitImg = $('<img align="absmiddle" src="/.s/img/fr/EmnAjax.gif">');
+        var elem = $(elem);
+        elem.find('img').hide();
+        elem.append(waitImg);
+        var messageID = elem.attr('data-message-id');
+        var notSpam   = elem.attr('data-not-spam') ? 0 : 1; // invert - 'data-not-spam' should contain CURRENT 'notspam' status!
+        $.post('/index/', {
+            a          : 101,
+            scope_id   : uCoz.spam.config.scopeID,
+            message_id : messageID,
+            not_spam   : notSpam
+        }).then(function(response) {
+            waitImg.remove();
+            elem.find('img').show();
+            if( response.error ) {
+                alert(response.error);
+                return;
+            };
+            if( response.status == 'admin_message_not_spam' ) {
+                elem.attr('data-not-spam', true).find('img').attr('src', '/.s/img/spamfilter/notspam-active.gif');
+                $('#del-as-spam-' + messageID).hide();
+            } else {
+                elem.removeAttr('data-not-spam').find('img').attr('src', '/.s/img/spamfilter/notspam.gif');
+                $('#del-as-spam-' + messageID).show();
+            };
+            console.log(response);
+        });
+        return false;
+    };
+
+    uCoz.spam.report = function(scopeID, messageID, notSpam, callback, context) {
+        return $.post('/index/', {
+            a: 101,
+            scope_id   : scopeID,
+            message_id : messageID,
+            not_spam   : notSpam
+        }).then(function(response) {
+            if( callback ) {
+                callback.call(context || window, response, context);
+            } else {
+                window.console && console.log && console.log('uCoz.spam.report: message #' + messageID, response);
+            };
+        });
+    };
+
+    uCoz.spam.reportDOM = function(event) {
+        if( event.preventDefault ) event.preventDefault();
+        var elem      = $(this);
+        if( elem.hasClass('spam-report-working') ) return false;
+        var scopeID   = uCoz.spam.config.scopeID;
+        var messageID = elem.attr('data-message-id');
+        var notSpam   = elem.attr('data-not-spam');
+        var target    = elem.parents('.report-spam-target').eq(0);
+        var height    = target.outerHeight(true);
+        var margin    = target.css('margin-left');
+        elem.html('<img src="/.s/img/wd/1/ajaxs.gif">').addClass('report-spam-working');
+        uCoz.spam.report(scopeID, messageID, notSpam, function(response, context) {
+            context.elem.text('').removeClass('report-spam-working');
+            window.console && console.log && console.log(response); // DEBUG
+            response.warning && window.console && console.warn && console.warn( 'uCoz.spam.report: warning: ' + response.warning, response );
+            if( response.warning && !response.status ) {
+                // non-critical warnings, may occur if user reloads cached page:
+                if( response.warning == 'already_reported' ) response.status = 'message_spam';
+                if( response.warning == 'not_reported'     ) response.status = 'message_not_spam';
+            };
+            if( response.error ) {
+                context.target.html('<div style="height: ' + context.height + 'px; line-height: ' + context.height + 'px; color: red; font-weight: bold; text-align: center;">' + response.error + '</div>');
+            } else if( response.status ) {
+                if( response.status == 'message_spam' ) {
+                    context.elem.text(uCoz.spam.sign.notSpam).attr('data-not-spam', '1');
+                    var toggle = $('#report-spam-toggle-wrapper-' + response.message_id);
+                    if( toggle.length ) {
+                        toggle.find('.report-spam-toggle-text').text(uCoz.spam.sign.hidden);
+                        toggle.find('.report-spam-toggle-button').text(uCoz.spam.sign.show);
+                    } else {
+                        toggle = $('<div id="report-spam-toggle-wrapper-' + response.message_id + '" class="report-spam-toggle-wrapper" style="' + (context.margin ? 'margin-left: ' + context.margin : '') + '"><span class="report-spam-toggle-text">' + uCoz.spam.sign.hidden + '</span> <a class="report-spam-toggle-button" data-target="#' + uCoz.spam.config.idPrefix + response.message_id + '" href="javascript://">' + uCoz.spam.sign.show + '</a></div>').hide().insertBefore(context.target);
+                        uCoz.spam.handleDOM(toggle);
+                    };
+                    context.target.addClass('report-spam-hidden').fadeOut('fast', function() {
+                        toggle.fadeIn('fast');
+                    });
+                } else if( response.status == 'message_not_spam' ) {
+                    context.elem.text(uCoz.spam.sign.spam).attr('data-not-spam', '0');
+                    $('#report-spam-toggle-wrapper-' + response.message_id).fadeOut('fast');
+                    $('#' + uCoz.spam.config.idPrefix + response.message_id).removeClass('report-spam-hidden').show();
+                } else if( response.status == 'admin_message_not_spam' ) {
+                    elem.text(uCoz.spam.sign.admSpam).attr('title', uCoz.spam.sign.admSpamTitle).attr('data-not-spam', '0');
+                } else if( response.status == 'admin_message_spam' ) {
+                    elem.text(uCoz.spam.sign.admNotSpam).attr('title', uCoz.spam.sign.admNotSpamTitle).attr('data-not-spam', '1');
+                } else {
+                    alert('uCoz.spam.report: unknown status: ' + response.status);
+                };
+            } else {
+                context.target.remove(); // no status returned by the server - remove message (from DOM).
+            };
+        }, { elem: elem, target: target, height: height, margin: margin });
+        return false;
+    };
+
+    uCoz.spam.handleDOM = function(within) {
+        within = $(within || 'body');
+        within.find('.report-spam-wrap').each(function() {
+            var elem = $(this);
+            elem.parent().prepend(elem);
+        });
+        within.find('.report-spam-toggle-button').not('.report-spam-handled').click(function(event) {
+            if( event.preventDefault ) event.preventDefault();
+            var elem    = $(this);
+            var wrapper = elem.parents('.report-spam-toggle-wrapper');
+            var text    = wrapper.find('.report-spam-toggle-text');
+            var target  = elem.attr('data-target');
+            target      = $(target);
+            target.slideToggle('fast', function() {
+                if( target.is(':visible') ) {
+                    wrapper.addClass('report-spam-toggle-shown');
+                    text.text(uCoz.spam.sign.shown);
+                    elem.text(uCoz.spam.sign.hide);
+                } else {
+                    wrapper.removeClass('report-spam-toggle-shown');
+                    text.text(uCoz.spam.sign.hidden);
+                    elem.text(uCoz.spam.sign.show);
+                };
+            });
+            return false;
+        }).addClass('report-spam-handled');
+        within.find('.report-spam-remove').not('.report-spam-handled').click(function(event) {
+            if( event.preventDefault ) event.preventDefault();
+            var messageID = $(this).attr('data-message-id');
+            del_item(messageID, 1);
+            return false;
+        }).addClass('report-spam-handled');
+        within.find('.report-spam-btn').not('.report-spam-handled').click(uCoz.spam.reportDOM).addClass('report-spam-handled');
+        window.console && console.log && console.log('uCoz.spam.handleDOM: done.');
+        try { if (uCoz.manageCommentControls) { uCoz.manageCommentControls() } } catch(e) { window.console && console.log && console.log('manageCommentControls: fail.'); }
+        return this;
+    };
+
+    uCoz.spam.handleDOM();
+</script>

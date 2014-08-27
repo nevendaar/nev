@@ -1,0 +1,45 @@
+<script type="text/javascript">
+    function addcom(f) {
+        if (document.getElementById('addcBut')) {
+            document.getElementById('addcBut').disabled = true;
+        } else {
+            try {
+                document.addform.submit.disabled = true;
+            } catch (e) {}
+        }
+        if (document.getElementById('eMessage')) {
+            document.getElementById('eMessage').innerHTML = '<span style="color:#8B8B8B"><img src="http://s6.ucoz.net/img/ma/m/i2.gif" border="0" align="absmiddle" width="13" height="13"> Идет передача данных...</span>';
+        }
+        _uPostForm('acform', {type: 'POST', url: '<%= "#{home_url}/index/" %>'});
+    }
+    var _y8M = '';
+    function _dS(s) {
+        var i;
+        var r = "";
+        var l = s.length - 1;
+        var k = s.substr(l, 1);
+        for (i = 0; i < l; i++) {
+            c = s.charCodeAt(i) - k;
+            if (c < 32) {
+                c = 127 - (32 - c);
+            }
+            r += String.fromCharCode(c);
+        }
+        return r;
+    }
+    _y8M = _dS('<%= (0..54).each_with_object(''){|i, str| str << rand(33..126).chr } %>');
+</script>
+<div id="postFormContent" class="">
+    <form method="post" name="addform" id="acform" style="margin:0" action="<%= "#{home_url}/index/" %>" onsubmit="addcom(); return false;">
+        <script type="text/javascript">
+            document.write(_y8M)
+        </script>
+        <%= render 'templates/comments/_form.html' %>
+        <input type="hidden" name="ssid" value="SESSIONID" />
+        <input type="hidden" name="a" value="36" />
+        <input type="hidden" name="m" value="2" />
+        <input type="hidden" name="id" value="457" />
+        <input id="csoc_type" type="hidden" name="soc_type"/>
+        <input id="cdata" type="hidden" name="data"/>
+    </form>
+</div>

@@ -1,18 +1,18 @@
 <% ucoz_if('$COM_IS_ACTIVE$') { %>
     <div class="comment_box">
         <div class="title clearfix">
-            Всего комментариев: <b>$COM_NUM_ENTRIES$</b>
-            <div class="pull-right">$COM_PAGE_SELECTOR$</div>
+            Всего комментариев: <b><%= c '$COM_NUM_ENTRIES$' %></b>
+            <div class="pull-right"><%= c '$COM_PAGE_SELECTOR$' %></div>
         </div>
-        <div class="body">$COM_BODY$</div>
+        <div class="body"><%= c '$COM_BODY$' %></div>
         <% ucoz_if('$COM_CAN_ADD$') { %>
             <%= c '$COM_ADD_FORM$' %>
         <% }.else { %>
             <% uifnot('$USER_LOGGED_IN$') { %>
                 <div class="text-center">
                     Добавлять комментарии могут только зарегистрированные пользователи.<br>
-                    [ <a href="$REGISTER_LINK$">Регистрация</a> |
-                    <a href="$LOGIN_LINK$">Вход</a> ]
+                    [ <a href="<%= c '$REGISTER_LINK$' %>">Регистрация</a> |
+                    <a href="<%= c '$LOGIN_LINK$' %>">Вход</a> ]
                 </div>
             <% }.endif! %>
         <% }.endif! %>
