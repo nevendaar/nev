@@ -31,6 +31,10 @@ module UcozHelper
   end
 
   def ucoz_code(code)
+    message = config.deprecated_codes[code]
+    LOGGER.warn('ucoz_code') do
+      "Code '#{code}' is deprecated.\n#{message.chomp}"
+    end if message
     if config.env == :test
       paths = %W[
         spec/fixtures/#{@module_name}/#{code}.html.erb
@@ -46,7 +50,7 @@ module UcozHelper
       end
       if result.nil?
         LOGGER.warn('ucoz_code') { "Cannot find fixture for code: '#{code}'." }
-        LOGGER.debug('ucoz_code') { "Searched in:\n#{paths.inspect}" }
+        LOGGER.debug('ucoz_code') { "Searched in:\n#{paths.join("\n")}" }
       end
       result || code
     else

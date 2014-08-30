@@ -53,12 +53,14 @@ class TemplateCompiler
     path = "templates/layouts/partials/_#{partial}.html.erb" if partial.instance_of? Symbol
     template = self.class.trim_utf8_file(path).chomp
 
+    LOGGER.debug('render') { "Rendering: #{path}" }
     helper = self.class.new(Marshal.load(Marshal.dump(@params)))
     helper.instance_variable_set(:@locals, locals)
 
     wrap_whitespaces! do
       str = ERB.new(template, nil, nil, '@_erbout').result(helper.get_binding)
       helper.check_conditions!
+      LOGGER.debug('render') { "Done: #{path}" }
       str
     end
   end
