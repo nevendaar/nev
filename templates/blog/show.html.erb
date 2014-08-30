@@ -1,36 +1,36 @@
-﻿<% @params[:title] = '$TITLE_BAR$ - $SITE_NAME$' %>
-<% @params[:meta][:title] = '$ENTRY_NAME$' %>
+﻿<% @params[:title] = "#{c '$TITLE_BAR$'} - #{c '$SITE_NAME$'}" %>
+<% @params[:meta][:title] = c '$ENTRY_NAME$' %>
 <% @params[:meta][:description] = "<?substr($MESSAGE$, 0, strpos($MESSAGE$, '<'))?>..." %>
 <% @params[:vk][:init] = true %>
 
 <% layout do %>
     <ol class="breadcrumb">
         <li><a href="/">Главная</a></li>
-        <li>$DATE_BAR$</li>
-        <li class="active">$ENTRY_NAME$</li>
+        <li><%= c '$DATE_BAR$' %></li>
+        <li class="active"><%= c '$ENTRY_NAME$' %></li>
     </ol>
 
     <div class="material">
         <div class="title clearfix">
-            <h2>$ENTRY_NAME$</h2>
+            <h2><%= c '$ENTRY_NAME$' %></h2>
             <div class="time pull-right">
-                $ADD_TIME$ $MODER_PANEL$
+                <%= c '$ADD_TIME$' %> <%= c '$MODER_PANEL$' %>
             </div>
         </div>
         <div class="body">
             <div>
-                <% uif('$OTHER1$') { %>Автор: $OTHER1$<br><% }.endif! %>
-                <% uif('$OTHER2$') { %>Редактор: $OTHER2$<br><% }.endif! %>
-                <% uif('$OTHER3$') { %>Жанр: $OTHER3$<br><% }.endif! %>
-                <% uif('$OTHER4$') { %>Дисклеймер: $OTHER4$<br><% }.endif! %>
+                <% uif('$OTHER1$') { %>Автор: <%= c '$OTHER1$' %><br><% }.endif! %>
+                <% uif('$OTHER2$') { %>Редактор: <%= c '$OTHER2$' %><br><% }.endif! %>
+                <% uif('$OTHER3$') { %>Жанр: <%= c '$OTHER3$' %><br><% }.endif! %>
+                <% uif('$OTHER4$') { %>Дисклеймер: <%= c '$OTHER4$' %><br><% }.endif! %>
                 <br>
             </div>
             <%= c('$MESSAGE$') %>
-            <% uif('$ATTACHMENTS$') { %><div class="attachments">Прикрепления: $ATTACHMENTS$</div><% }.endif! %>
+            <% uif('$ATTACHMENTS$') { %><div class="attachments">Прикрепления: <%= c '$ATTACHMENTS$' %></div><% }.endif! %>
             <ul class="details">
-                <% uif('$CAT_NAME$') { %><li>Категория: <a href="$CAT_URL$">$CAT_NAME$</a></li><% }.endif! %>
-                <li>Просмотров: $READS$</li>
-                <li>Добавил: <a href="$PROFILE_URL$">$USER$</a></li>
+                <% uif('$CAT_NAME$') { %><li>Категория: <a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li><% }.endif! %>
+                <li>Просмотров: <%= c '$READS$' %></li>
+                <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USER$' %></a></li>
                 <% uif('$RATING$') { %><li>Рейтинг: <%= i("$RSTARS$('12', '/img/stars.png', '1', 'float')") %></li><% }.endif! %>
                 <li><%= vk_like_btn %></li>
             </ul>

@@ -1,7 +1,7 @@
 ﻿<% layout do %>
     <ol class="breadcrumb">
-        <li><a href="$MODULE_URL$">Главная</a></li>
-        <li class="active">$DATE_BAR$</li>
+        <li><a href="<%= '$MODULE_URL$' %>">Главная</a></li>
+        <li class="active"><%= '$DATE_BAR$' %></li>
     </ol>
     <% ucoz_if(code_is('$PAGE_ID$', "'add'", "'edit'")) { %>
         <%= i("substr($BODY$,0,strpos($BODY$,\"m'}\")+2)") %>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<%= i("substr($BODY$,strpos($BODY$,\"m'}\")+2)") %>

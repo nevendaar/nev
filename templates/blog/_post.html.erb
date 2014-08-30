@@ -1,30 +1,30 @@
 ﻿<div class="material hr">
     <div class="title clearfix">
-        <h2><a href="$ENTRY_URL$">$TITLE$</a></h2>
+        <h2><a href="<%= c '$ENTRY_URL$' %>"><%= c '$TITLE$' %></a></h2>
         <% ucoz_if('$MODER_PANEL$') { %>
-            <div class="pull-right">$MODER_PANEL$</div>
+            <div class="pull-right"><%= c '$MODER_PANEL$' %></div>
         <% }.endif! %>
     </div>
     <div class="body">
         <% ucoz_if('$MESSAGE$') { %>
             <div>
-                <?if($OTHER1$)?>Автор: $OTHER1$<?endif?><br/>
-                <?if($OTHER2$)?>Редактор: $OTHER2$<?endif?><br/>
-                <?if($OTHER3$)?>Жанр: $OTHER3$<?endif?><br/>
-                <?if($OTHER4$)?>Дисклеймер: $OTHER4$<?endif?><br/><br/>
+                <% uif('$OTHER1$') { %>Автор: <%= c '$OTHER1$' %><% }.endif! %><br/>
+                <% uif('$OTHER2$') { %>Редактор: <%= c '$OTHER2$' %><% }.endif! %><br/>
+                <% uif('$OTHER3$') { %>Жанр: <%= c '$OTHER3$' %><% }.endif! %><br/>
+                <% uif('$OTHER4$') { %>Дисклеймер: <%= c '$OTHER4$' %><% }.endif! %><br/><br/>
             </div>
-            $MESSAGE$
+            <%= c '$MESSAGE$' %>
         <% }.endif! %>
         <% ucoz_if('$ATTACHMENTS$') { %>
-            <div class="attachments">Прикрепления: $ATTACHMENTS$</div>
+            <div class="attachments">Прикрепления: <%= c '$ATTACHMENTS$' %></div>
         <% }.endif! %>
         <ul class="details">
-            <?if($CATEGORY_NAME$)?><li>Категория: <a href="$CATEGORY_URL$">$CATEGORY_NAME$</a></li><?endif?>
-            <li>Просмотров: $READS$</li>
-            <?if($USERNAME$)?><li>Добавил: <a href="$PROFILE_URL$">$USERNAME$</a></li><?endif?>
-            <li>Дата: $DATE$</li>
-            <?if($RATING$)?><li>Рейтинг: $RATING$/$RATED$</li><?endif?>
-            <?if($COMMENTS_URL$)?><li><a href="$COMMENTS_URL$">Комментарии ($COMMENTS_NUM$)</a></li><?endif?>
+            <% uif('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
+            <li>Просмотров: <%= c '$READS$' %></li>
+            <% uif('$USERNAME$') { %><li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USERNAME$' %></a></li><% }.endif! %>
+            <li>Дата: <%= c '$DATE$' %></li>
+            <% uif('$RATING$') { %><li>Рейтинг: <%= c '$RATING$' %>/<%= c '$RATED$' %></li><% }.endif! %>
+            <% uif('$COMMENTS_URL$') { %><li><a href="<%= c '$COMMENTS_URL$' %>">Комментарии (<%= c '$COMMENTS_NUM$' %>)</a></li><% }.endif! %>
         </ul>
         <%# <?if(0 && $TAGS$)?><div class="tags">Теги: <i>$TAGS$</i></div><?endif?> %>
     </div>
