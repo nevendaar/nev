@@ -61,7 +61,6 @@
                 display: block;
             }
         </style>
-        <script src="http://s6.ucoz.net/src/u.js?2"></script>
     </head>
     <body>
         <div class="dragons">
@@ -72,7 +71,7 @@
             <a href="/forum/7-5-0-17">Написать гневное письмо!</a>
             <script type="text/javascript">
                 str = ["Ибо Всевышний низверг её в бездну.", "Вы уверены, что Мортис тоже это нужно?", "Вероятно, Бетрезен не создавал такого в Невендааре.", "Скорее всего, Вотан забросил её на солнце.", "Возможно, Галлеан приказал эльфам захватить и уничтожить эту страницу."];
-                $('#404text').html(str[Math.round(Math.random() * 4)]);
+                document.getElementById('404text').innerHTML = str[Math.round(Math.random() * 4)];
             </script>
         </div>
     </body>
