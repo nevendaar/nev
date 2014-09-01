@@ -1,7 +1,7 @@
 ﻿<% @params[:title] = 'Информация о пользователе' %>
 
 <% layout :bordered do %>
-    <?substr($ADMIN_BAR$, 0, 0)?>
+    <% remove_admin_bar! %>
     <div class="text-center hr">
         <h2>Информация о пользователе</h2>
     </div>

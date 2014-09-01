@@ -40,6 +40,13 @@ module BaseHelper
     '<script src="/js/app.js"></script>'
   end
 
+  # Bang method coz it modify @_erbout directly.
+  # For provide <%  %> without <%=  %>
+  def remove_admin_bar!
+    @_erbout << ucoz_injection('substr($ADMIN_BAR$, 0, 0)')
+    nil
+  end
+
   def vk_like_btn
     '<div id="vk_like" class="pull-left"></div>'
   end

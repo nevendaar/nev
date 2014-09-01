@@ -1,7 +1,7 @@
 ﻿<% @params[:title] = 'Список пользователей' %>
 
 <% layout :bordered do %>
-    <?substr($ADMIN_BAR$, 0, 0)?>
+    <% remove_admin_bar! %>
     <div class="text-center hr"><b>Список пользователей</b></div>
     <div class="clearfix hr">
         Найдено <b>$NUM_ENTRIES$</b> пользователей
