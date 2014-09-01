@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 
+require 'yaml'
+
 module AppConfig
   class << self
     attr_accessor :config
