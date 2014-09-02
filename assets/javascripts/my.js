@@ -30,11 +30,5 @@ $(function () {
         if ($vk_like_btn.length) {
             VK.Widgets.Like("vk_like", {type: "button", verb: 1});
         }
-
-        // Подключаем ВКомментарии если нужно.
-        var vk_uid = parseInt($('#vk_comments').attr('data-uid'));
-        if (vk_uid) {
-            VK.Widgets.Comments("vk_comments", {limit: 10}, vk_uid);
-        }
     }
 });

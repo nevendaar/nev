@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## Remove obsolete VK comments - 02.09.2014
+* ВКомментарии через ВКонтакте API больше не нужны.<br>
+  http://blog.ucoz.ru/blog/2014-06-16-329
+
 ## Remove admin bar - 01.09.2014
 * Добавлен хелпер `remove_admin_bar!`.<br>
   Он используется в шаблонах, где `$ADMIN_BAR$` не должен быть показан.<br>
