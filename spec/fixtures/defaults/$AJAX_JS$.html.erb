@@ -6,3 +6,39 @@
 <script type="text/javascript" src="http://s29.ucoz.net/src/ulightbox/ulightbox.js"></script>
 <script type="text/javascript" src="http://s29.ucoz.net/src/uwnd.js?2"></script>
 <style type="text/css">.UhideBlock {display:none}</style>
+<link type="text/css" rel="StyleSheet" href="http://s6.ucoz.net/src/socCom.css" />
+<script type="text/javascript" src="http://s6.ucoz.net/cgi/uutils.fcg?a=soc_comment_get_data&site=4nevendaar"></script>
+<script type="text/javascript" src="http://s6.ucoz.net/src/socCom.js"></script>
+<script type="text/javascript">
+    new Image().src = "http://counter.yadro.ru/hit;noadsru?r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random();
+</script>
+<% ya_id = rand(10000000..99999999) %>
+<script type="text/javascript">//<!--
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+        try {
+            w.yaCounter<%= ya_id %> = new Ya.Metrika({id: <%= ya_id %>, webvisor: true, clickmap: true, trackLinks: true, accurateTrackBounce: true});
+        } catch (e) {}
+    });
+    var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+        n.parentNode.insertBefore(s, n);
+    };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else {
+        f();
+    }
+})(document, window, "yandex_metrika_callbacks");
+function uSocialLogin(t) {
+    var params = { 'vkontakte': { 'width': 790, 'height': 400 }, 'facebook': { 'width': 950, 'height': 520 }, 'yandex': { 'width': 870, 'height': 515 }, 'google': { 'width': 700, 'height': 360 }, 'twitter': { 'width': 800, 'height': 400 } };
+    window.open('/' + t + '?ref=' + window.location.href, 'conwin', 'width=' + params[t].width + ',height=' + params[t].height + ',status=1,resizable=1,left=' + parseInt((screen.availWidth / 2) - (params[t].width / 2)) + ',top=' + parseInt((screen.availHeight / 2) - (params[t].height / 2) - 20) + 'screenX=' + parseInt((screen.availWidth / 2) - (params[t].width / 2)) + ',screenY=' + parseInt((screen.availHeight / 2) - (params[t].height / 2) - 20));
+    try {
+        yaCounter<%= ya_id %>.reachGoal(t);
+    } catch (e) {}
+    return false;
+}
+//--></script>
+<link type="text/css" rel="StyleSheet" href="http://s6.ucoz.net/src/social.css" />

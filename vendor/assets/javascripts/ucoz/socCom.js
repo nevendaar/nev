@@ -1,4 +1,5 @@
 // Original: http://s1.ucoz.net/src/socCom.js
+// Last check: 02.09.2014
 
 if (!window.uCoz) {window.uCoz = {};}
 uCoz.socialComments = (function() {
@@ -27,7 +28,7 @@ uCoz.socialComments = (function() {
 		};
 		return setTimeout(function() {
 			return timeWait(tryCount - 1, interval, testFunction, onSuccess, onFailure);
-		}, timeout);
+		}, interval);
 	};
 
 	var dontHandleLocationHash = false;
@@ -89,9 +90,11 @@ uCoz.socialComments = (function() {
 		init: function() {
 			handleLocationHash();
 			$(window).bind('hashchange', handleLocationHash);
-			if( /subscrOn=true/.test(document.cookie) ) {
-				var checkbox = $('input[name="subscribe"]');
-				checkbox.prop('checked', true).parents('.ucf-option-label').eq(0).addClass('ucf-option-checked');
+			if( /subscrOn=false/.test(document.cookie) ) {
+				$(function() {
+					var checkbox = $('input[name="subscribe"]');
+					checkbox.prop('checked', false).removeAttr('checked').parents('.ucf-option-label').eq(0).removeClass('ucf-option-checked');
+				});
 			};
 			var email = getCookieEmail();
 			var emailInput = $('#acform input[name=email]').filter(':visible');
@@ -140,6 +143,19 @@ uCoz.socialComments = (function() {
 						$(this).css('height',$(this).scrollTop() + $(this).outerHeight());
 					}
 				});
+
+				if( window.socialCommentsOnSubmit ) {
+					var submitButton = $('#acform button.uf-btn');
+					if( submitButton.length === 1 ) {
+						submitButton.removeAttr('onclick').click(function(event) {
+							event && event.preventDefault && event.preventDefault();
+							window.preSaveMessage && preSaveMessage();
+							window.socialCommentsOnSubmit && socialCommentsOnSubmit();
+							return false;
+						});
+					};
+				};
+
 			});
 		},
 

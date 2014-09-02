@@ -1,4 +1,5 @@
 /* Original: http://s1.ucoz.net/src/socCom.css */
+/* Last check: 02.09.2014 */
 
 /*-U_FORM
 --------------------------------------*/
@@ -26,59 +27,6 @@ ul.uf-form li:last-child {
 .uf-hidden {display: none;}
 
 .uauth-small-links {margin: 0 0 10px 60px;}
-.uauth-icon {
-	display: inline-block;
-	vertical-align: middle;
-	width: 32px;
-	height: 32px;
-	margin: 0 3px;
-	border-radius: 50%;
-	background: #ccc url(/.s/img/icon/social/uauth_icons_32x32.png) no-repeat;
-	cursor: pointer;
-	-webkit-transition: background-color .3s .05s ease-out, color .2s .05s ease-out;
-	transition: background-color .3s .05s ease-out, color .2s .05s ease-out;
-}
-/*---set-1-(no-class)---*/
-.uauth-uid {background-position: 0 0;}.uauth-uid:hover {background-color: #3498db;}
-.uauth-loc {background-position: 0 -160px;}.uauth-loc:hover {background-color: #6b6b6b;}
-.uauth-vk {background-position: 0 -32px;}.uauth-vk:hover {background-color: #2f6caa;}
-.uauth-fb {background-position: 0 -64px;}.uauth-fb:hover {background-color: #4862a5;}
-.uauth-gplus {background-position: 0 -96px;}.uauth-gplus:hover {background-color: #515151;}
-.uauth-twt {background-position: 0 -128px;}.uauth-twt:hover {background-color: #01a9d3;}
-/*---set-2---*/
-.uauth-links-set2 .uauth-icon {border: 1px solid #ccc;background-color: #fff;-webkit-transition-delay: 0;transition-delay: 0;}
-.uauth-links-set2 .uauth-icon:hover {border-color: transparent;}
-.uauth-links-set2 .uauth-uid {background-position: -32px 0;}.uauth-links-set2 .uauth-uid:hover {background-position: 0 0;background-color: #3498db;}
-.uauth-links-set2 .uauth-loc {background-position: -32px -160px;}.uauth-links-set2 .uauth-loc:hover {background-position: 0 -160px;background-color: #6b6b6b;}
-.uauth-links-set2 .uauth-vk {background-position: -32px -32px;}.uauth-links-set2 .uauth-vk:hover {background-position: 0 -32px;background-color: #2f6caa;}
-.uauth-links-set2 .uauth-fb {background-position: -32px -64px;}.uauth-links-set2 .uauth-fb:hover {background-position: 0 -64px;background-color: #4862a5;}
-.uauth-links-set2 .uauth-gplus {background-position: -32px -96px;}.uauth-links-set2 .uauth-gplus:hover {background-position: 0 -96px;background-color: #515151;}
-.uauth-links-set2 .uauth-twt {background-position: -32px -128px;}.uauth-links-set2 .uauth-twt:hover {background-position: 0 -128px;background-color: #01a9d3;}
-/*---set-3---*/
-.uauth-links-set3 .uauth-icon {border-radius: 3px;background-color: #333;}
-.uauth-links-set3 .uauth-uid {background-position: 0 0;}.uauth-links-set3 .uauth-uid:hover {background-color: #3498db;}
-.uauth-links-set3 .uauth-loc {background-position: 0 -160px;}.uauth-links-set3 .uauth-loc:hover {background-color: #6b6b6b;}
-.uauth-links-set3 .uauth-vk {background-position: 0 -32px;}.uauth-links-set3 .uauth-vk:hover {background-color: #2f6caa;}
-.uauth-links-set3 .uauth-fb {background-position: 0 -64px;}.uauth-links-set3 .uauth-fb:hover {background-color: #4862a5;}
-.uauth-links-set3 .uauth-gplus {background-position: 0 -96px;}.uauth-links-set3 .uauth-gplus:hover {background-color: #515151;}
-.uauth-links-set3 .uauth-twt {background-position: 0 -128px;}.uauth-links-set3 .uauth-twt:hover {background-color: #01a9d3;}
-/*---set-4---*/
-.uauth-links-set4 .uauth-icon {border-radius: 3px;background-color: #c9cbce;-webkit-transition-delay: 0;transition-delay: 0;}
-.uauth-links-set4 .uauth-uid {background-position: -64px 0;}.uauth-links-set4 .uauth-uid:hover {background-position: -96px 0;background-color: #3498db;}
-.uauth-links-set4 .uauth-loc {background-position: -64px -160px;}.uauth-links-set4 .uauth-loc:hover {background-position: -96px -160px;background-color: #6b6b6b;}
-.uauth-links-set4 .uauth-vk {background-position: -64px -32px;}.uauth-links-set4 .uauth-vk:hover {background-position: -96px -32px;background-color: #2f6caa;}
-.uauth-links-set4 .uauth-fb {background-position: -64px -64px;}.uauth-links-set4 .uauth-fb:hover {background-position: -96px -64px;background-color: #4862a5;}
-.uauth-links-set4 .uauth-gplus {background-position: -64px -96px;}.uauth-links-set4 .uauth-gplus:hover {background-position: -96px -96px;background-color: #515151;}
-.uauth-links-set4 .uauth-twt {background-position: -64px -128px;}.uauth-links-set4 .uauth-twt:hover {background-position: -96px -128px;background-color: #01a9d3;}
-/*-----------*/
-
-
-.uauth-title {
-	display: block;
-	overflow: hidden;
-	text-align: center;
-	cursor: pointer;
-}
 
 .uf-txt-input {
 	padding: 4px 10px !important;
