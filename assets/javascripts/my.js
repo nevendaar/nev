@@ -26,6 +26,11 @@ $(function () {
     if ($('main.content').hasClass('vk-init')) {
         VK.init({apiId: 2014686, onlyWidgets: true});
 
+        var $vk_like_btn = $('#vk_like');
+        if ($vk_like_btn.length) {
+            VK.Widgets.Like("vk_like", {type: "button", verb: 1});
+        }
+
         // Подключаем ВКомментарии если нужно.
         var vk_uid = parseInt($('#vk_comments').attr('data-uid'));
         if (vk_uid) {
