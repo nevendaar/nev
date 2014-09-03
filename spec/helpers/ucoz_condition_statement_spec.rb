@@ -105,9 +105,10 @@ describe UcozConditionStatement do
 
   context 'endif!()' do
 
-    it 'return nil' do
-      statement = UcozConditionStatement.new('', 'true').endif!
-      expect(statement).to be_nil
+    it 'return string' do
+      outstr = ''
+      statement = UcozConditionStatement.new(outstr, 'true').endif!
+      expect(statement).to be outstr # comparing objects here
     end
 
     it "add 'endif' statement to out" do

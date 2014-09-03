@@ -67,7 +67,8 @@ module UcozHelper
 
   def ucoz_if(*args, options: {}, &block)
     conditions = args.flatten
-    statement = UcozConditionStatement.new(@_erbout, *conditions, options, &block)
+    out_str = options.delete(:out_str) || @_erbout
+    statement = UcozConditionStatement.new(out_str, *conditions, options, &block)
     @cond_operators << statement
     statement
   end
@@ -77,6 +78,16 @@ module UcozHelper
     ucoz_if(*conditions, :options => {:not_flag => true}, &block)
   end
   alias_method :uifnot, :ucoz_ifnot
+
+  def ucoz_if_str(*conditions, &block)
+    ucoz_if(*conditions, :options => {:out_str => ''}, &block)
+  end
+  alias_method :uif_str, :ucoz_if_str
+
+  def ucoz_ifnot_str(*conditions, &block)
+    ucoz_if(*conditions, :options => {:out_str => '', :not_flag => true}, &block)
+  end
+  alias_method :uifnot_str, :ucoz_ifnot_str
 
   def unclosed_conditions
     @cond_operators.count { |c| !c.closed? }

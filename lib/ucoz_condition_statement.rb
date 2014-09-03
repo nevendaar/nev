@@ -10,7 +10,7 @@ class UcozConditionStatement
     @has_else = false
     condition = conditions.flatten.join(@not_flag ? ' || ' : ' && ')
     @erb_out << "<?if#{'not' if @not_flag}(#{condition})?>"
-    yield if block_given?
+    yield(@erb_out) if block_given?
   end
 
   def else
@@ -23,7 +23,7 @@ class UcozConditionStatement
     @has_else = true
     LOGGER.warn(PROG_NAME) { 'ifnot used with else' } if @not_flag
     @erb_out << '<?else?>'
-    yield if block_given?
+    yield(@erb_out) if block_given?
     self
   end
 
@@ -36,7 +36,6 @@ class UcozConditionStatement
     end
     @closed = true
     @erb_out << '<?endif?>'
-    nil
   end
 
   def closed?

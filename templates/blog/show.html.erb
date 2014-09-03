@@ -1,6 +1,6 @@
 ﻿<% @params[:title] = "#{c '$TITLE_BAR$'} - #{c '$SITE_NAME$'}" %>
 <% @params[:meta][:title] = c '$ENTRY_NAME$' %>
-<% @params[:meta][:description] = "<?substr($MESSAGE$, 0, strpos($MESSAGE$, '<'))?>..." %>
+<% @params[:meta][:description] = i("substr($MESSAGE$, 0, strpos($MESSAGE$, '<'))") << '...' %>
 <% @params[:vk][:init] = true %>
 
 <% layout do %>
@@ -40,5 +40,5 @@
 
     <%= i '$RELATED_ENTRIES$(10)' %>
 
-    <%= render :comment_box, :locals => {:vk_uid => 20000000000} %>
+    <%= render :comment_box %>
 <% end %>

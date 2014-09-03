@@ -5,22 +5,22 @@
     </ol>
 
     <% ucoz_if('$ADD_ENTRY_LINK$') { %>
-        <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить материал</a> ]</div>
+        <div class="text-right">[ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]</div>
     <% }.endif! %>
 
     <div class="hr top-hr">
-        $CATEGORIES$
+        <%= c '$CATEGORIES$' %>
     </div>
 
     <div class="clearfix hr">
-        В разделе материалов: <b>$NUM_ENTRIES$</b>
-        <?if($NUM_SHOWN$)?><br/>Показано материалов: <b>$NUM_SHOWN$</b><?endif?>
+        В разделе материалов: <b><%= c '$NUM_ENTRIES$' %></b>
+        <% uif('$NUM_SHOWN$') { %><br/>Показано материалов: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
         <% ucoz_if('$PAGE_SELECTOR$') { %>
-            <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
+            <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
         <% }.endif! %>
     </div>
 
-    $BODY$
+    <%= c '$BODY$' %>
 
     <%= render :btm_page_selector %>
 <% end %>
