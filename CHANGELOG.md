@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## Specify custom string for condition statements - 03.09.2014
+* Теперь `UcozConditionStatement` можно использовать для рендера в строку.<br>
+  Может быть полезно при объявлении переменных ([пример](https://github.com/korun/nev/blob/3bd15febf18aa7182ce8f0a1ef985ad95ef5d1cd/templates/dir/index_category.html.erb#L4-L10)).
+
 ## Remove obsolete VK comments - 02.09.2014
 * Комментарии через ВКонтакте API больше не нужны.<br>
   http://blog.ucoz.ru/blog/2014-06-16-329
