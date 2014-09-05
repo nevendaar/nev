@@ -14,6 +14,9 @@ end
 
 describe AppConfig do
   describe 'home_url' do
+    it_behaves_like 'config parameter', 'env',      :test
+    it_behaves_like 'config parameter', 'ucoz_url', 'http://example.3dn.com'
     it_behaves_like 'config parameter', 'home_url', 'http://example.com'
+    it_behaves_like 'config parameter', 'deprecated_codes', {:CODE => 'Text here.'}
   end
 end
