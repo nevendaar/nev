@@ -8,6 +8,7 @@ describe UcozHelper do
     @dummy_class = Class.new do
       extend UcozHelper
       @cond_operators = []
+      @_erbout = '  test'
     end
   end
 
@@ -56,6 +57,48 @@ describe UcozHelper do
         result = @dummy_class.send method_name, '$CODE$'
         expect(result).to eq('<?$CODE$?>')
       end
+    end
+  end
+
+  describe 'ucoz_if' do
+    it "add 'if' statement to self out" do
+      @dummy_class.ucoz_if('true')
+      out_str = @dummy_class.instance_variable_get(:@_erbout)
+      expect(out_str).to eq '  test<?if(true)?>'
+    end
+
+    it 'support multiple conditions' do
+      @dummy_class.ucoz_if('true', 'false')
+      out_str = @dummy_class.instance_variable_get(:@_erbout)
+      expect(out_str).to eq '  test<?if(true && false)?>'
+    end
+
+    it 'yield given block' do
+      out_str = @dummy_class.instance_variable_get(:@_erbout)
+      @dummy_class.ucoz_if('true') { out_str << 'SECRET' }
+      expect(out_str).to eq '  test<?if(true)?>SECRET'
+    end
+
+    it 'returns UcozConditionStatement' do
+      expect(@dummy_class.ucoz_if('true')).to be_a_kind_of UcozConditionStatement
+    end
+
+    it 'fill up @cond_operators array' do
+      statement = @dummy_class.ucoz_if('true')
+      cond_operators = @dummy_class.instance_variable_get(:@cond_operators)
+      expect(cond_operators.last).to be statement
+    end
+
+    it "can don't modify self out buffer" do
+      out_str = ''
+      self_buffer = @dummy_class.instance_variable_get(:@_erbout).dup
+      @dummy_class.ucoz_if('true', :options => {:out_str => out_str})
+      expect(out_str).to eq '<?if(true)?>'
+      expect(@dummy_class.instance_variable_get(:@_erbout)).to eq self_buffer
+    end
+
+    it 'have alias method #uif' do
+      expect(@dummy_class.method(:uif)).to eq @dummy_class.method(:ucoz_if)
     end
   end
 end
