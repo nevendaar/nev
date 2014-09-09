@@ -1,5 +1,5 @@
 // Original: http://s1.ucoz.net/src/socCom.js
-// Last check: 02.09.2014
+// Last check: 2014-09-09 10:25:00 +0400
 
 if (!window.uCoz) {window.uCoz = {};}
 uCoz.socialComments = (function() {

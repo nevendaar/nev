@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## rake vendor_update - 09.09.2014
+* Добавлена rake-задача для автоматического обновления vendor-файлов.<br>
+  Список этих файлов настраивается в конфиге: `config/vendor_files.yml`.
+
 ## Specify custom string for condition statements - 03.09.2014
 * Теперь `UcozConditionStatement` можно использовать для рендера в строку.<br>
   Может быть полезно при объявлении переменных ([пример](https://github.com/korun/nev/blob/3bd15febf18aa7182ce8f0a1ef985ad95ef5d1cd/templates/dir/index_category.html.erb#L4-L10)).

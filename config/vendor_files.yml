@@ -1,0 +1,9 @@
+---
+
+ucoz:
+  hostname: 's1.ucoz.net'
+  javascripts:
+    '/src/socCom.js': 'socCom.js'
+  stylesheets:
+    '/src/socCom.css': 'socCom.css'
+    '/src/social.css': 'social.css'
