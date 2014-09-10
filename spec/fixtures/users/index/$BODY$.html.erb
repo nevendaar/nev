@@ -1,0 +1,49 @@
+<script type="text/javascript">
+    function switchpage(n) {
+        document.memform.s.value = n;
+        document.memform.submit();
+    }
+</script>
+<table border="0" cellpadding="2" cellspacing="1" width="100%" class="uTable">
+    <tr>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Дата рождения (Date of birth)</td>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Фракция(Faction)</td>
+        <td class="uTopTd" style="font-weight:bold;height:20px;">Никнейм</td>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Ранг</td>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Группа</td>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Дата регистрации</td>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Сообщения</td>
+        <td class="uTopTd" align="center" style="font-weight:bold;height:20px;">Дата входа</td>
+    </tr>
+    <% 10.times do |index| %>
+        <tr>
+            <td class="uTd" align="center"><span title="30 (Близнецы)">01.01.1970</span></td>
+            <td class="uTd" align="center">&nbsp;</td>
+            <td class="uTd">
+                <% if index % 4 == 0 %>
+                    <img alt="" style="vertical-align:1px;" src="http://s6.ucoz.net/img/ma/bn.gif" width="8" border="0" title="E-mail адрес не подтвержден"/>
+                <% else %>
+                    <div style="float:right;">
+                        <a href="http://uid.me/" target="_blank">
+                            <img alt="" border="0" src="http://s6.ucoz.net/img/ma/uid.gif" align="absmiddle" title="uID профиль">
+                        </a>
+                    </div>
+                <% end %>
+                <a href="javascript://" rel="nofollow" onclick="window.open('<%= home_url %>/index/8-<%= index %>','up<%= index %>','scrollbars=1,top=0,left=0,resizable=1,width=680,height=350');return false;">
+                    Nickname #<%= index %>
+                </a>
+                <a class="uPM" href="<%= home_url %>/index/14-<%= index %>-0-1" title="Отправить Личное Сообщение">
+                    <img alt="" border="0" align="absmiddle" src="http://s6.ucoz.net/img/ma/e1.gif" width="12" height="13"/>
+                </a>
+            </td>
+            <td class="uTd" align="center">
+                <% rang = rand(1..10) %>
+                <img alt="" border="0" name="rankimg" src="<%= home_url %>/Forumdata/Rank/Ranks/rank<%= rang %>.gif" align="absmiddle" title="Ранг <%= rang %>"/>
+            </td>
+            <td class="uTd" align="center">Неофит (Neophyte)</td>
+            <td class="uTd" align="center"><span title="21:54">20.01.2011</span></td>
+            <td class="uTd" align="center"><%= rand(50) %></td>
+            <td class="uTd" align="center"><span title="21:54">20.01.2011</span></td>
+        </tr>
+    <% end %>
+</table>

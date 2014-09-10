@@ -1,0 +1,50 @@
+<form method="post" style="margin:0px" name="memform" action="/index/" onsubmit="this.subm.disabled=true;">
+    <input type="checkbox" name="ban" value="1" title="Только заблокированные пользователи" >
+    <input type="text" name="user" size="25" style="width:80px;" title="Имя пользователя (не обязательно)" value="" maxlength="25" />
+    <select size="1" name="w">
+        <option value="0" selected>Логин</option>
+        <option value="1">IP адрес</option>
+        <option value="2">E-mail адрес</option>
+    </select>
+    <select size="1" name="gender">
+        <option value="0">Пол</option>
+        <option value="0">------</option>
+        <option value="1">Мужчина</option>
+        <option value="2">Женщина</option>
+    </select>
+    <select size="1" name="group">
+        <option value="0">Все группы</option>
+        <option value="0">-------------------</option>
+        <option value="1">Неофит (Neophyte)</option>
+        <option value="2">Последователь (Disciple)</option>
+        <option value="3">Дракон (Dragon)</option>
+        <option value="4">Хранитель (Keeper)</option>
+        <option value="13">hex studio</option>
+        <option value="14">Хозяин</option>
+        <option value="15">Превращен в беса (Imp form)</option>
+        <option value="251">Лорд (Lord)</option>
+    </select>
+    <select size="1" name="sort">
+        <option value="0">Сортировать по</option>
+        <option value="0">-------------------</option>
+        <option value="1" selected>Логин</option>
+        <option value="15">Сообщения</option>
+        <option value="2">Ранг</option>
+        <option value="3">Группа</option>
+        <option value="4">Дата регистрации</option>
+        <option value="5">Дата входа</option>
+        <option value="6">Дата рождения (Date of birth)</option>
+        <option value="9">Фракция(Faction)</option>
+    </select>
+    <select size="1" name="res">
+        <option value="0">Кол.</option>
+        <option value="0">-----</option>
+        <option value="0" selected>10</option>
+        <% 1.upto(9) do |i| %>
+            <option value="<%= i %>"><%= (i + 1) * 10 %></option>
+        <% end %>
+    </select>
+    <input type="submit" value="Ok " name="subm" />
+    <input type="hidden" name="a" value="15" />
+    <input type="hidden" name="s" value="1" />
+</form>

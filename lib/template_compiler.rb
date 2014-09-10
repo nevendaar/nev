@@ -19,7 +19,7 @@ class TemplateCompiler
     LOGGER.debug('template_compiler') { "Compile file: #{filename}" }
     str = trim_utf8_file(filename)
     if File.extname(filename) == '.erb'
-      helper = self.new(:module_name => get_module_name(filename))
+      helper = self.new(:filename => filename)
       str = ERB.new(str, nil, nil, '@_erbout').result(helper.get_binding)
       helper.check_conditions!
     end
@@ -36,7 +36,9 @@ class TemplateCompiler
     @_erbout = nil
     @cond_operators = []
     @locals = {} # For partials
-    @module_name = @params[:module_name]
+    @filename    = @params[:filename] || ''
+    @template_name = File.basename(@filename, '.html.erb')
+    @module_name = self.class.get_module_name(@filename)
   end
 
   def config
@@ -87,7 +89,7 @@ class TemplateCompiler
   end
 
   def self.get_module_name(path)
-    path.split('/', 3)[1]
+    File.dirname(path).split('/').last
   end
 
   def wrap_whitespaces!(arg = '')
