@@ -1,4 +1,4 @@
-﻿<% @params[:title] = 'Доступ запрещен - $SITE_NAME$' %>
+﻿<% @params[:title] = 'Доступ запрещен - ' << c('$SITE_NAME$') %>
 <% layout do %>
     <div class="text-center">
         <br><br><br>
@@ -7,7 +7,7 @@
             По всем вопросам обращайтесь к администратору сайта.
         <% }.else { %>
             Гостям запрещено просматривать данную страницу, пожалуйста войдите на сайт как пользователь.<br><br><br>
-            <div style="width:200px">$LOGIN_FORM$</div>
+            <div style="width:200px"><%= c '$LOGIN_FORM$' %></div>
         <% }.endif! %>
         <br><br><br><br>
     </div>

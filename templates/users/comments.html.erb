@@ -1,19 +1,19 @@
-﻿<% @params[:title] = 'Комментарии пользователя [$USER$] - $SITE_NAME$' %>
+﻿<% @params[:title] = "Комментарии пользователя [#{c '$USER$'}] - #{c '$SITE_NAME$'}" %>
 
 <% layout do %>
     <ol class="breadcrumb">
         <li><a href="/">Главная</a></li>
-        <li class="active">Комментарии пользователя [$USER$]</li>
+        <li class="active">Комментарии пользователя [<%= c '$USER$' %>]</li>
     </ol>
     <div class="clearfix hr">
-        Найдено комментариев: <b>$NUM_ENTRIES$</b>
-        <?if($NUM_SHOWN$)?><br>Показано комментариев: <b>$NUM_SHOWN$</b><?endif?>
+        Найдено комментариев: <b><%= c '$NUM_ENTRIES$' %></b>
+        <?if($NUM_SHOWN$)?><br>Показано комментариев: <b><%= c '$NUM_SHOWN$' %></b><?endif?>
         <?if($PAGE_SELECTOR$)?>
-            <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
+            <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
         <?endif?>
     </div>
 
-    $BODY$
+    <%= c '$BODY$' %>
 
     <%= render :btm_page_selector %>
 <% end %>

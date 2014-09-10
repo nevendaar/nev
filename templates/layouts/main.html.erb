@@ -1,7 +1,7 @@
 <html lang="ru">
     <head>
         <%= charset_and_ie_support_tags %>
-        <title><%= @params[:title] || '$MODULE_NAME$ - $SITE_NAME$' %></title>
+        <title><%= @params[:title] || "#{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %></title>
         <%= meta_tags %>
         <%= c '$GLOBAL_AJAXJS$' %>
         <%= stylesheet_link_tag %>

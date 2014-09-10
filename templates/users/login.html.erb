@@ -1,5 +1,5 @@
-﻿<% @params[:title] = '$SITE_NAME$ - Страница входа' %>
+﻿<% @params[:title] = "#{c '$SITE_NAME$'} - Страница входа" %>
 
 <% layout do %>
-    $BODY$
+    <%= c '$BODY$' %>
 <% end %>

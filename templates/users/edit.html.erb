@@ -1,9 +1,9 @@
 ﻿<% @params[:title] = 'Изменение личной информации' %>
 
 <% layout do %>
-    <?substr($ADMIN_BAR$, 0, 0)?>
+    <% remove_admin_bar! %>
     <div class="text-center hr">
         <h2>Изменение личной информации</h2>
     </div>
-    $BODY$
+    <%= c '$BODY$' %>
 <% end %>

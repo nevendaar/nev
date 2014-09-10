@@ -4,10 +4,10 @@
     <% remove_admin_bar! %>
     <div class="text-center hr"><b>Список пользователей</b></div>
     <div class="clearfix hr">
-        Найдено <b>$NUM_ENTRIES$</b> пользователей
-        <div class="pull-right">Страницы: $PAGE_SELECTOR$</div>
+        Найдено <b><%= c '$NUM_ENTRIES$' %></b> пользователей
+        <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
     </div>
-    $BODY$
-    <div class="text-center top-hr">$SEARCH_FORM$</div>
+    <%= c '$BODY$' %>
+    <div class="text-center top-hr"><%= c '$SEARCH_FORM$' %></div>
     <script>set_userlist_msn();</script>
 <% end %>
