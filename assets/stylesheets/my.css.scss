@@ -103,16 +103,6 @@
   margin-bottom: 15px;
 }
 
-// TODO: remove it
-.sq_brackets {
-  &:before {
-    content: "[";
-  }
-  &:after {
-    content: "]";
-  }
-}
-
 label.required:after,
 input:required + label:after,
 select:required + label:after,
