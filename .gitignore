@@ -16,3 +16,6 @@
 
 # Ignore minified styles and JS
 build/*
+
+# Ignore secret FTP settings
+config/ftp.yml

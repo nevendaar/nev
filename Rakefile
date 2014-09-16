@@ -36,4 +36,4 @@ def compile_template(filename, dont_trim = false)
   TemplateCompiler.compile(filename, dont_trim)
 end
 
-Dir.glob('lib/tasks/*.rake').each { |task| load task }
+Dir.glob('lib/tasks/**/*.rake').each { |task| load task }

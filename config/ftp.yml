@@ -1,0 +1,6 @@
+---
+
+ftp:
+  host:     'localhost'
+  login:    'ftp_login'
+  password: 'secret_password'
