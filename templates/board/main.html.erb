@@ -1,18 +1,18 @@
 ﻿<% @params[:vk][:init] = true %>
 
 <% layout do %>
-    <% ucoz_if(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+    <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
         <ol class="breadcrumb">
             <li><a href="/">Главная</a></li>
-            <li class="active">Доска объявлений (<b>$NUM_ENTRIES$</b>)</li>
+            <li class="active">Доска объявлений (<b><%= c '$NUM_ENTRIES$' %></b>)</li>
         </ol>
-        <% ucoz_if('$ADD_ENTRY_LINK$') { %>
-            <div class="text-right">[ <a href="$ADD_ENTRY_LINK$">Добавить материал</a> ]</div>
+        <% uif('$ADD_ENTRY_LINK$') { %>
+            <div class="text-right">[ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]</div>
         <% }.endif! %>
-        <% ucoz_if('$CATEGORIES$') { %>
-            <div class="hr top-hr">$CATEGORIES$</div>
+        <% uif('$CATEGORIES$') { %>
+            <div class="hr top-hr"><%= c '$CATEGORIES$' %></div>
         <% }.endif! %>
-        $BODY$
+        <%= c '$BODY$' %>
     <% }.else { %>
         <script>document.location.href = "/";</script>
     <% }.endif! %>

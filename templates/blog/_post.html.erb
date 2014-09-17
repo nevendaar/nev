@@ -1,12 +1,12 @@
 ﻿<div class="material hr">
     <div class="title clearfix">
         <h2><a href="<%= c '$ENTRY_URL$' %>"><%= c '$TITLE$' %></a></h2>
-        <% ucoz_if('$MODER_PANEL$') { %>
+        <% uif('$MODER_PANEL$') { %>
             <div class="pull-right"><%= c '$MODER_PANEL$' %></div>
         <% }.endif! %>
     </div>
     <div class="body">
-        <% ucoz_if('$MESSAGE$') { %>
+        <% uif('$MESSAGE$') { %>
             <div>
                 <% uif('$OTHER1$') { %>Автор: <%= c '$OTHER1$' %><% }.endif! %><br/>
                 <% uif('$OTHER2$') { %>Редактор: <%= c '$OTHER2$' %><% }.endif! %><br/>
@@ -15,7 +15,7 @@
             </div>
             <%= c '$MESSAGE$' %>
         <% }.endif! %>
-        <% ucoz_if('$ATTACHMENTS$') { %>
+        <% uif('$ATTACHMENTS$') { %>
             <div class="attachments">Прикрепления: <%= c '$ATTACHMENTS$' %></div>
         <% }.endif! %>
         <ul class="details">

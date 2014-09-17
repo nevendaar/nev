@@ -4,7 +4,7 @@
         <li class="active">Каталог сайтов</li>
     </ol>
 
-    <% ucoz_if('$ADD_ENTRY_LINK$') { %>
+    <% uif('$ADD_ENTRY_LINK$') { %>
         <div class="text-right">[ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]</div>
     <% }.endif! %>
 
@@ -15,7 +15,7 @@
     <div class="clearfix hr">
         В разделе материалов: <b><%= c '$NUM_ENTRIES$' %></b>
         <% uif('$NUM_SHOWN$') { %><br/>Показано материалов: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
-        <% ucoz_if('$PAGE_SELECTOR$') { %>
+        <% uif('$PAGE_SELECTOR$') { %>
             <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
         <% }.endif! %>
     </div>

@@ -1,5 +1,5 @@
 ﻿<%# TODO: id 38 ? %>
-<% ucoz_if("#{code_is '$ID$', :not, 38} || #{group_is '$CUR_GROUP_ID$', :admin, :master}") { %>
+<% uif("#{code_is '$ID$', :not, 38} || #{group_is '$CUR_GROUP_ID$', :admin, :master}") { %>
     <div class="material hr">
         <div class="title clearfix">
             <%# TODO: cid 5 ? %>
@@ -7,7 +7,7 @@
             <% uif('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
         </div>
         <div class="body">
-            <% ucoz_if('$MESSAGE$') { %>
+            <% uif('$MESSAGE$') { %>
                 <div class="eMessage" style="padding-top:2px; padding-bottom:2px;">
                     <%= c '$MESSAGE$' %>
                 </div>
@@ -15,17 +15,17 @@
             <ul class="details">
                 <% uif('$RATING$') { %><li><%= i "$RSTARS$('12','/site/stars.png','1','float')" %></li><% }.endif! %>
                 <%# TODO: cid 5 ? %>
-                <% ucoz_if(code_is '$CID$', 5) { %>
-                    <% ucoz_if('$READS$ || $REDIRECTS$') { %>
+                <% uif(code_is '$CID$', 5) { %>
+                    <% uif('$READS$ || $REDIRECTS$') { %>
                         <li>
                             Просмотров:
                             <% uif('$REDIRECTS$ > $READS$') { %>$REDIRECTS$<% }.else { %><%= c '$READS$' %><% }.endif! %>
-                            <% ucoz_if(group_is '$CUR_GROUP_ID$', :admin, :master) { %>
+                            <% uif(group_is '$CUR_GROUP_ID$', :admin, :master) { %>
                                 (<%= c '$READS$' %>|<%= c '$REDIRECTS$' %>)
                             <% }.endif! %>
                         </li>
                     <% }.endif! %>
-                    <% ucoz_if('$COMMENTS_NUM$') { %>
+                    <% uif('$COMMENTS_NUM$') { %>
                         <li><a href="<%= c '$COMMENTS_URL$' %>">Комментарии: (<%= c '$COMMENTS_NUM$' %>)</a></li>
                     <% }.endif! %>
                 <% }.else { %>

@@ -1,24 +1,24 @@
 ﻿<% layout do %>
     <ol class="breadcrumb">
-        <li><a href="<%= '$MODULE_URL$' %>">Главная</a></li>
-        <li class="active"><%= '$DATE_BAR$' %></li>
+        <li><a href="<%= c '$MODULE_URL$' %>">Главная</a></li>
+        <li class="active"><%= c '$DATE_BAR$' %></li>
     </ol>
-    <% ucoz_if(code_is('$PAGE_ID$', "'add'", "'edit'")) { %>
+    <% uif(code_is('$PAGE_ID$', "'add'", "'edit'")) { %>
         <%= i("substr($BODY$,0,strpos($BODY$,\"m'}\")+2)") %>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<%= i("substr($BODY$,strpos($BODY$,\"m'}\")+2)") %>
         <script type="text/javascript">
             var str="";
-            <% ucoz_if(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+            <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
                 $('<input id="atsn" type="checkbox" checked="checked"/> <label for="atsn">Добавить запись в блок "Новое на сайте"?</label><br/>').insertBefore('#ispen');
             <% }.endif! %>
             function init(){
-                <% ucoz_if("$PAGE_ID$='add'") { %>
+                <% uif("$PAGE_ID$='add'") { %>
                     str = "<%= c('$USERNAME$') %> поделил<% uif('$USER_GENDER_ID$=2') { %>ась<% }.else { %>ся<% }.endif! %> творчеством ";
                 <% }.else { %>
                     str = "Обновлён материал ";
                 <%}.endif!%>
             }
             function addnn(url, t){
-                <% ucoz_if(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+                <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
                     if(!$('#atsn').attr('checked')){
                         _uWnd.content('addEnt', t) || $('input.manFlSbm').attr('disabled', 0);
                         return false;
