@@ -1,0 +1,342 @@
+<html>
+
+    <head>
+        <title>Nevendaar map</title>
+        <meta name="robots" content="noindex,nofollow">
+        <link type="text/css" rel="StyleSheet" href="/_st/my.css"/>
+        <script type="text/javascript" src="http://s6.ucoz.net/src/u.js"></script>
+        <style>
+            a {
+                z-index: 2;
+                position: absolute;
+            }
+
+            .Area {
+                display: none;
+                z-index: 0;
+                position: absolute;
+            }
+        </style>
+    </head>
+
+    <body style="background: #010a11; margin: 0; padding: 0;">
+
+        <div align="center">
+            <div style="background: url(/map/nevendaar.jpg); width:2000px; height:1915px; position: relative;">
+                <img id="ways" alt="" border="0" src="/map/ways.png" style="display:none;z-index:1; position: absolute; left:0px; top:0px;">
+
+                <div onclick="if ($('#ways').css('display')=='block') {$('#ways').hide()} else {$('#ways').show()}" style="z-index:5;position: fixed; background: #964b00; border:1px #000 solid; cursor:pointer; width:100px; left:0px; top:0px;" align="center">
+                    Показать<br/>пути
+                </div>
+
+                <!--Capitals-->
+                <a title="Альзония" href="/forum/10-1371-1" target="_blank" style="left:1114px; top:1177px;"><img id="1371" alt="Альзония" border="0" src="/map/Horses.gif"></a>
+                <a title="Кха Т'лек" href="/forum/11-1362-1" target="_blank" style="left:689px; top:1178px;"><img id="1362" alt="Кха Т'лек" border="0" src="/map/Legion.gif"></a>
+                <a title="Фергал" href="/forum/8-722-1" target="_blank" style="left:577px; top:754px;"><img id="722" alt="Фергал" border="0" src="/map/Empire.gif"></a>
+                <a title="Темперанс" href="/forum/12-799-1" target="_blank" style="left:816px; top:680px;"><img id="799" alt="Темперанс" border="0" src="/map/Elves.gif"></a>
+                <a title="Крисиэлль" href="/forum/12-1470-1" target="_blank" style="left:1469px; top:819px;"><img id="1470" alt="Крисиэлль" border="0" src="/map/Elves.gif"></a>
+                <a title="Альба" href="/forum/9-1547-1" target="_blank" style="left:1176px; top:629px;"><img id="1547" alt="Альба" border="0" src="/map/Clan.gif"></a>
+                <a title="Дакоам" href="/forum/6-1446-1" target="_blank" style="left:918px; top:1110px;"><img id="1446" alt="Дакоам" border="0" src="/map/Neutral.gif"></a>
+                <a title="Прауис" href="/forum/6-1441-1" target="_blank" style="left:1542px; top:645px;"><img id="1441" alt="Прауис" border="0" src="/map/Neutral.gif"></a>
+                <a title="Гордок" href="/forum/6-1433-1" target="_blank" style="left:1415px; top:520px;"><img id="1433" alt="Гордок" border="0" src="/map/Neutral.gif"></a>
+                <a title="Громдам" href="/forum/6-1429-1" target="_blank" style="left:534px; top:1330px;"><img id="1429" alt="Громдам" border="0" src="/map/Neutral.gif"></a>
+                <a title="Станица кочевников" href="/forum/6-812-1" target="_blank" style="left:839px; top:363px;"><img id="812" alt="Станица кочевников" border="0" src="/map/Neutral.gif"></a>
+
+                <!--Neutrals-->
+                <a title="Земли Западного королевства орков" href="/forum/6-1428-1" target="_blank" style="left:567px; top:1289px;" onmouseover="$('#1428img').show();" onmouseout="$('#1428img').hide();"><img id="1428" alt="Земли Западного королевства орков" border="0" src="/map/10.gif"></a>
+                <a title="Порченый лес тёмных эльфов" href="/forum/10-1373-1" target="_blank" style="left:1310px; top:1097px;" onmouseover="$('#1373img').show();" onmouseout="$('#1373img').hide();"><img id="1373" alt="Порченый лес тёмных эльфов" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Нифльхейм" href="/forum/6-1434-1" target="_blank" style="left:1140px; top:495px;" onmouseover="$('#1434img').show();" onmouseout="$('#1434img').hide();"><img id="1434" alt="Нифльхейм" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Южные земли варваров" href="/forum/6-1438-1" target="_blank" style="left:975px; top:435px;" onmouseover="$('#1438img').show();" onmouseout="$('#1438img').hide();"><img id="1438" alt="Южные земли варваров" border="0" src="/map/09.gif"></a>
+                <a title="Северные земли варваров" href="/forum/6-1435-1" target="_blank" style="left:1000px; top:230px;" onmouseover="$('#1435img').show();" onmouseout="$('#1435img').hide();"><img id="1435" alt="Северные земли варваров" border="0" src="/map/09.gif"></a>
+                <a title="Крайний северный берег" href="/forum/6-1437-1" target="_blank" style="left:975px; top:150px;" onmouseover="$('#1437img').show();" onmouseout="$('#1437img').hide();"><img id="1437" alt="Крайний северный берег" border="0" src="/map/09.gif"></a>
+                <a title="Норнден" href="/forum/6-1436-1" target="_blank" style="left:1070px; top:225px;"><img id="1436" alt="Норнден" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Одзарк" href="/forum/6-1439-1" target="_blank" style="left:951px; top:402px;"><img id="1439" alt="Одзарк" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Земли Каганата орков" href="/forum/6-1430-1" target="_blank" style="left:1460px; top:545px;" onmouseover="$('#1430img').show();" onmouseout="$('#1430img').hide();"><img id="1430" alt="Земли Каганата орков" border="0" src="/map/10.gif"></a>
+                <a title="Окрестности Прауиса" href="/forum/6-1440-1" target="_blank" style="left:1520px; top:645px;" onmouseover="$('#1440img').show();" onmouseout="$('#1440img').hide();"><img id="1440" alt="Окрестности Прауиса" border="0" src="/map/07.gif"></a>
+                <a title="Граница с Болотами" href="/forum/6-1443-1" target="_blank" style="left:1590px; top:650px;" onmouseover="$('#1443img').show();" onmouseout="$('#1443img').hide();"><img id="1443" alt="Граница с Болотами" border="0" src="/map/07.gif"></a>
+                <a title="Граница с Каганатом орков" href="/forum/6-1432-1" target="_blank" style="left:1568px; top:606px;" onmouseover="$('#1432img').show();" onmouseout="$('#1432img').hide();"><img id="1432" alt="Граница с Каганатом орков" border="0" src="/map/07.gif"></a>
+                <a title="Новый Битзаар" href="/forum/6-1447-1" target="_blank" style="left:874px; top:1118px;"><img id="1447" alt="Новый Битзаар" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Фениксия" href="/forum/10-1381-1" target="_blank" style="left:980px; top:1120px;" onmouseover="$('#1381img').show();" onmouseout="$('#1381img').hide();"><img id="1381" alt="Фениксия" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Границы Королевства Битзаар" href="/forum/6-1450-1" target="_blank" style="left:814px; top:990px;" onmouseover="$('#1450img').show();" onmouseout="$('#1450img').hide();"><img id="1450" alt="Границы Королевства Битзаар" border="0" src="/map/06.gif"></a>
+                <a title="Граница с Проклятыми" href="/forum/6-1449-1" target="_blank" style="left:780px; top:1040px;" onmouseover="$('#1449img').show();" onmouseout="$('#1449img').hide();"><img id="1449" alt="Граница с Проклятыми" border="0" src="/map/06.gif"></a>
+                <a title="Южный берег Битзаара" href="/forum/6-1448-1" target="_blank" style="left:943px; top:1127px;" onmouseover="$('#1448img').show();" onmouseout="$('#1448img').hide();"><img id="1448" alt="Южный берег Битзаара" border="0" src="/map/06.gif"></a>
+                <a title="Северный берег Битзаара" href="/forum/6-1445-1" target="_blank" style="left:835px; top:1040px;" onmouseover="$('#1445img').show();" onmouseout="$('#1445img').hide();"><img id="1445" alt="Северный берег Битзаара" border="0" src="/map/06.gif"></a>
+                <a title="Земли Королевства Битзаар" href="/forum/6-1444-1" target="_blank" style="left:857px; top:1078px;" onmouseover="$('#1444img').show();" onmouseout="$('#1444img').hide();"><img id="1444" alt="Земли Королевства Битзаар" border="0" src="/map/06.gif"></a>
+                <a title="Болота" href="/forum/6-1442-1" target="_blank" style="left:1710px; top:700px;" onmouseover="$('#1442img').show();" onmouseout="$('#1442img').hide();"><img id="1442" alt="Болота" border="0" src="/map/08.gif"></a>
+                <a title="Граница с Каганатом Орков" href="/forum/6-1431-1" target="_blank" style="left:1610px; top:580px;" onmouseover="$('#1431img').show();" onmouseout="$('#1431img').hide();"><img id="1431" alt="Граница с Каганатом Орков" border="0" src="/map/08.gif"></a>
+                <a title="Нейтральные Земли" href="/forum/6-823-1" target="_blank" style="left:810px; top:375px;" onmouseover="$('#823img').show();" onmouseout="$('#823img').hide();"><img id="823" alt="Нейтральные Земли" border="0" src="/map/11.gif"></a>
+                <a title="Арена боевого мастерства" href="/forum/6-819-1" target="_blank" style="left:875px; top:345px;"><img id="819" alt="Арена боевого мастерства" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Корчма «Харон, подавай!»" href="/forum/6-29-1" target="_blank" style="left:870px; top:390px;"><img id="29" alt="Корчма «Харон, подавай!»" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Серая Гильдия" href="/forum/6-179-1" target="_blank" style="left:906px; top:407px;"><img id="179" alt="Серая Гильдия" border="0" src="/map/gray_flag1.gif"></a>
+
+                <a title="Земли Черных королевств" href="/forum/6-1420-1" target="_blank" style="left:780px; top:1508px;" onmouseover="$('#1420img').show();" onmouseout="$('#1420img').hide();"><img id="1420" alt="Земли Черных королевств" border="0" src="/map/12.gif"></a>
+                <a title="Северо-восточная граница с Проклятыми" href="/forum/6-1423-1" target="_blank" style="left:865px; top:1403px;" onmouseover="$('#1423img').show();" onmouseout="$('#1423img').hide();"><img id="1423" alt="Северо-восточная граница с Проклятыми" border="0" src="/map/12.gif"></a>
+                <a title="Северо-западная граница с Королевством Орков" href="/forum/6-1422-1" target="_blank" style="left:715px; top:1468px;" onmouseover="$('#1422img').show();" onmouseout="$('#1422img').hide();"><img id="1422" alt="Северо-западная граница с Королевством Орков" border="0" src="/map/12.gif"></a>
+                <a title="Восточный берег" href="/forum/6-1425-1" target="_blank" style="left:943px; top:1468px;" onmouseover="$('#1425img').show();" onmouseout="$('#1425img').hide();"><img id="1425" alt="Восточный берег" border="0" src="/map/12.gif"></a>
+                <a title="Западный берег" href="/forum/6-1427-1" target="_blank" style="left:615px; top:1605px;" onmouseover="$('#1427img').show();" onmouseout="$('#1427img').hide();"><img id="1427" alt="Западный берег" border="0" src="/map/12.gif"></a>
+                <a title="Реффулия" href="/forum/6-1424-1" target="_blank" style="left:945px; top:1520px;"><img id="1424" alt="Реффулия" border="0" src="/map/gray_flag1.gif"></a>
+                <a title="Примера" href="/forum/6-1426-1" target="_blank" style="left:601px; top:1564px;"><img id="1426" alt="Примера" border="0" src="/map/gray_flag1.gif"></a>
+
+                <!--NArea-->
+                <img id="1373img" alt="" border="0" src="/map/area/UTL.png" class="Area" style="left:1237px; top:1046px;">
+                <img id="1381img" alt="" border="0" src="/map/area/BFN.png" class="Area" style="left:972px; top:1092px;">
+                <img id="1450img" alt="" border="0" src="/map/area/BGK.png" class="Area" style="left: 772px; top: 981px;"/>
+                <img id="1449img" alt="" border="0" src="/map/area/BGP.png" class="Area" style="left: 770px; top: 1055px;"/>
+                <img id="" alt="" border="0" src="/map/area/BOV.png" class="Area" style="left: 886px; top: 1026px;"/>
+                <img id="1445img" alt="" border="0" src="/map/area/BSB.png" class="Area" style="left: 819px; top: 996px;"/>
+                <img id="1444img" alt="" border="0" src="/map/area/BTZ.png" class="Area" style="left: 781px; top: 1002px;"/>
+                <img id="1448img" alt="" border="0" src="/map/area/BUB.png" class="Area" style="left: 819px; top: 1084px;"/>
+                <img id="1440img" alt="" border="0" src="/map/area/POK.png" class="Area" style="left: 1478px; top: 626px;">
+                <img id="1432img" alt="" border="0" src="/map/area/PGO.png" class="Area" style="left: 1555px; top: 617px;">
+                <img id="1443img" alt="" border="0" src="/map/area/PGB.png" class="Area" style="left: 1578px; top: 618px;">
+                <img id="1442img" alt="" border="0" src="/map/area/BLD.png" class="Area" style="left: 1579px; top: 579px;">
+                <img id="1431img" alt="" border="0" src="/map/area/BGO.png" class="Area" style="left: 1576px; top: 575px;">
+                <img id="1430img" alt="" border="0" src="/map/area/KOZ.png" class="Area" style="left: 1213px; top: 417px;">
+                <img id="1434img" alt="" border="0" src="/map/area/NFL.png" class="Area" style="left: 998px; top: 291px;">
+                <img id="1437img" alt="" border="0" src="/map/area/NKSB.png" class="Area" style="left: 916px; top: 138px;"/>
+                <img id="1435img" alt="" border="0" src="/map/area/NSZV.png" class="Area" style="left: 840px; top: 166px;"/>
+                <img id="1438img" alt="" border="0" src="/map/area/NUZV.png" class="Area" style="left: 933px; top: 270px;"/>
+                <img id="823img" alt="" border="0" src="/map/area/NUZZ.png" class="Area" style="left: 772px; top: 249px;"/>
+                <img id="1428img" alt="" border="0" src="/map/area/KOV.png" class="Area" style="left: 316px; top: 1087px;"/>
+                <img id="1422img" alt="" border="0" src="/map/area/BCGO.png" class="Area" style="left: 609px; top: 1453px;">
+                <img id="1423img" alt="" border="0" src="/map/area/BCGP.png" class="Area" style="left: 807px; top: 1381px;">
+                <img id="1425img" alt="" border="0" src="/map/area/BCVB.png" class="Area" style="left: 941px; top: 1383px;">
+                <img id="1420img" alt="" border="0" src="/map/area/BCZ.png" class="Area" style="left: 606px; top: 1396px;">
+                <img id="1427img" alt="" border="0" src="/map/area/BCZB.png" class="Area" style="left: 596px; top: 1509px;">
+
+                <!--Water-->
+                <a title="Восточный пролив" href="/forum/6-1506-1" target="_blank" style="left:890px; top:1150px;"><img id="1506" alt="Восточный пролив" border="0" src="/map/water_flag.gif"></a>
+                <a title="Безымянное море" href="/forum/31-1508-1" target="_blank" style="left:950px; top:1227px;"><img id="1508" alt="Безымянное море" border="0" src="/map/water_flag.gif"></a>
+                <a title="Внешнее море" href="/forum/6-1504-1" target="_blank" style="left:980px; top:1338px;"><img id="1504" alt="Внешнее море" border="0" src="/map/water_flag.gif"></a>
+                <a title="Внешнее море" href="/forum/6-1504-1" target="_blank" style="left:1667px; top:1188px;"><img alt="Внешнее море" border="0" src="/map/water_flag.gif"></a>
+                <a title="Внешнее море" href="/forum/6-1504-1" target="_blank" style="left:1417px; top:1395px;"><img alt="Внешнее море" border="0" src="/map/water_flag.gif"></a>
+
+                <!--Empire-->
+                <a title="Земли близ реки Луциан" href="/forum/8-868-1" target="_blank" style="left:610px; top:1020px;" onmouseover="$('#868img').show();" onmouseout="$('#868img').hide();"><img id="868" alt="Земли близ реки Луциан" border="0" src="/map/01.gif"></a>
+                <a title="Предгорье Дьявольского Хребта" href="/forum/8-1473-1" target="_blank" style="left:895px; top:545px;" onmouseover="$('#1473img').show();" onmouseout="$('#1473img').hide();"><img id="1473" alt="Предгорье Дьявольского Хребта" border="0" src="/map/01.gif"></a>
+                <a title="Императорский дворец" href="/forum/8-1398-1" target="_blank" style="left:588px; top:716px;"><img id="1398" alt="Императорский дворец" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Гильдия Высшего чародейства и Светлой магии" href="/forum/8-1477-1" target="_blank" style="left:562px; top:730px;"><img id="1477" alt="Гильдия Высшего чародейства и Светлой магии" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Крепость Гоенран" href="/forum/8-861-1" target="_blank" style="left:885px; top:934px;"><img id="861" alt="Крепость Гоенран" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Таверна «Бронзовый дракон»" href="/forum/8-456-1" target="_blank" style="left:608px; top:730px;"><img id="456" alt="Таверна «Бронзовый дракон»" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Старый охотничий дом" href="/forum/8-863-1" target="_blank" style="left:741px; top:810px;"><img id="863" alt="Старый охотничий дом" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Дорога на Фергал" href="/forum/8-1339-1" target="_blank" style="left:630px; top:781px;"><img id="1339" alt="Дорога на Фергал" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Храм сестер-милосердия" href="/forum/8-1397-1" target="_blank" style="left:606px; top:758px;"><img id="1397" alt="Храм сестер-милосердия" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Библиотека Высшего Чародейства" href="/forum/8-743-1" target="_blank" style="left:555px; top:760px;"><img id="743" alt="Библиотека Высшего Чародейства" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Великий западный лес" href="/forum/8-1399-1" target="_blank" style="left:355px; top:920px;" onmouseover="$('#1399img').show();" onmouseout="$('#1399img').hide();"><img id="1399" alt="Великий западный лес" border="0" src="/map/01.gif"></a>
+                <a title="Сатория" href="/forum/8-1400-1" target="_blank" style="left:386px; top:660px;"><img id="1400" alt="Сатория" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Озеро Коман Дун" href="/forum/8-1401-1" target="_blank" style="left:495px; top:940px;"><img id="1401" alt="Озеро Коман Дун" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Санкелан" href="/forum/8-1402-1" target="_blank" style="left:538px; top:866px;"><img id="1402" alt="Санкелан" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Порт Сатория" href="/forum/8-1407-1" target="_blank" style="left:416px; top:640px;"><img id="1407" alt="Порт Сатория" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Инквизиторская Капелла" href="/forum/8-721-1" target="_blank" style="left:542px; top:720px;"><img id="721" alt="Инквизиторская Капелла" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Южные рубежи" href="/forum/8-1475-1" target="_blank" style="left:435px; top:1050px;" onmouseover="$('#1475img').show();" onmouseout="$('#1475img').hide();"><img id="1475" alt="Южные рубежи" border="0" src="/map/01.gif"></a>
+                <a title="Форт Тарн" href="/forum/8-1476-1" target="_blank" style="left:852px; top:951px;"><img id="1476" alt="Форт Тарн" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Дельта реки Фергал" href="/forum/8-1478-1" target="_blank" style="left:419px; top:670px;" onmouseover="$('#1478img').show();" onmouseout="$('#1478img').hide();"><img id="1478" alt="Дельта реки Фергал" border="0" src="/map/01.gif"></a>
+                <a title="Крепость Норт" href="/forum/8-1482-1" target="_blank" style="left:745px; top:870px;"><img id="1482" alt="Крепость Норт" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Локслестер" href="/forum/8-1483-1" target="_blank" style="left:666px; top:648px;"><img id="1483" alt="Локслестер" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Центральные графства" href="/forum/8-1484-1" target="_blank" style="left:670px; top:781px;" onmouseover="$('#1484img').show();" onmouseout="$('#1484img').hide();"><img id="1484" alt="Центральные графства" border="0" src="/map/01.gif"></a>
+                <a title="Гулингем" href="/forum/8-1485-1" target="_blank" style="left:792px; top:442px;"><img id="1485" alt="Гулингем" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Трамория" href="/forum/8-1486-1" target="_blank" style="left:784px; top:843px;"><img id="1486" alt="Трамория" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Стена Богов" href="/forum/8-1489-1" target="_blank" style="left:578px; top:836px;" onmouseover="$('#1489img').show();" onmouseout="$('#1489img').hide();"><img id="1489" alt="Стена Богов" border="0" src="/map/01.gif"></a>
+                <a title="Священные земли" href="/forum/8-1490-1" target="_blank" style="left:655px; top:920px;" onmouseover="$('#1490img').show();" onmouseout="$('#1490img').hide();"><img id="1490" alt="Священные земли" border="0" src="/map/01.gif"></a>
+                <a title="Перевал Ангелов" href="/forum/8-1494-1" target="_blank" style="left:520px; top:838px;" onmouseover="$('#1494img').show();" onmouseout="$('#1494img').hide();"><img id="1494" alt="Перевал Ангелов" border="0" src="/map/01.gif"></a>
+                <a title="Северо-западный берег Торгового моря" href="/forum/8-1507-1" target="_blank" style="left:822px; top:950px;" onmouseover="$('#1507img').show();" onmouseout="$('#1507img').hide();"><img id="1507" alt="Северо-западный берег Торгового моря" border="0" src="/map/01.gif"></a>
+                <a title="Вдовье побережье" href="/forum/8-1487-1" target="_blank" style="left:625px; top:518px;" onmouseover="$('#1487img').show();" onmouseout="$('#1487img').hide();"><img id="1487" alt="Вдовье побережье" border="0" src="/map/01.gif"></a>
+                <a title="Северные пределы" href="/forum/8-1493-1" target="_blank" style="left:822px; top:502px;" onmouseover="$('#1493img').show();" onmouseout="$('#1493img').hide();"><img id="1493" alt="Северные пределы" border="0" src="/map/01.gif"></a>
+                <a title="Герцогство Локлестор" href="/forum/8-1492-1" target="_blank" style="left:600px; top:615px;" onmouseover="$('#1492img').show();" onmouseout="$('#1492img').hide();"><img id="1492" alt="Герцогство Локлестор" border="0" src="/map/01.gif"></a>
+                <a title="Долина Трамор" href="/forum/8-1491-1" target="_blank" style="left:824px; top:863px;" onmouseover="$('#1491img').show();" onmouseout="$('#1491img').hide();"><img id="1491" alt="Долина Трамор" border="0" src="/map/01.gif"></a>
+                <a title="Бесруния" href="/forum/8-1554-1" target="_blank" style="left:668px; top:1022px;"><img id="1554" alt="Бесруния" border="0" src="/map/blue_flag.gif"></a>
+                <a title="Речной" href="/forum/8-1557-1" target="_blank" style="left:962px; top:688px;"><img id="1557" alt="Речной" border="0" src="/map/blue_flag.gif"></a>
+                <!--EArea-->
+                <img id="1399img" alt="" border="0" src="/map/area/EZL.png" class="Area" style="left:123px; top:713px;"/>
+                <img id="1475img" alt="" border="0" src="/map/area/EUR.png" class="Area" style="left:241px; top:1012px;"/>
+                <img id="868img" alt="" border="0" src="/map/area/ERL.png" class="Area" style="left:538px; top:1034px;"/>
+                <img id="1490img" alt="" border="0" src="/map/area/ESZ.png" class="Area" style="left:501px; top:880px;"/>
+                <img id="1491img" alt="" border="0" src="/map/area/EDT.png" class="Area" style="left:742px; top:800px;"/>
+                <img id="1507img" alt="" border="0" src="/map/area/ETM.png" class="Area" style="left:796px; top:925px;"/>
+                <img id="1489img" alt="" border="0" src="/map/area/ESB.png" class="Area" style="left:370px; top:817px;"/>
+                <img id="1494img" alt="" border="0" src="/map/area/EPA.png" class="Area" style="left:512px; top:844px;"/>
+                <img id="1484img" alt="" border="0" src="/map/area/ECG.png" class="Area" style="left:378px; top:709px;"/>
+                <img id="1478img" alt="" border="0" src="/map/area/EDR.png" class="Area" style="left:345px; top:632px;"/>
+                <img id="1492img" alt="" border="0" src="/map/area/EGL.png" class="Area" style="left:443px; top:475px;"/>
+                <img id="1487img" alt="" border="0" src="/map/area/EVP.png" class="Area" style="left:460px; top:460px;"/>
+                <img id="1493img" alt="" border="0" src="/map/area/ESP.png" class="Area" style="left:715px; top:396px;"/>
+                <img id="1473img" alt="" border="0" src="/map/area/EPD.png" class="Area" style="left:868px; top:480px;"/>
+
+                <!--Legions-->
+                <a title="Пандемониум" href="/forum/11-810-1" target="_blank" style="left:708px; top:1148px;"><img id="810" alt="Пандемониум" border="0" src="/map/red_flag.gif"></a>
+                <a title="Пепельные пустоши. (Бывшее Герцогство Вудстокское)" href="/forum/11-1336-1" target="_blank" style="left:825px; top:1143px;" onmouseover="$('#1336img').show();" onmouseout="$('#1336img').hide();"><img id="1336" alt="Пепельные пустоши. (Бывшее Герцогство Вудстокское)" border="0" src="/map/04.gif"></a>
+                <a title="Озеро Лавы" href="/forum/11-1370-1" target="_blank" style="left:747px; top:1348px;"><img id="1370" alt="Озеро Лавы" border="0" src="/map/red_flag.gif"></a>
+                <a title="Восточный берег" href="/forum/11-1369-1" target="_blank" style="left:910px; top:1226px;" onmouseover="$('#1369img').show();" onmouseout="$('#1369img').hide();"><img id="1369" alt="Восточный берег" border="0" src="/map/04.gif"></a>
+                <a title="Южная граница с Королевством Орков" href="/forum/11-1368-1" target="_blank" style="left:793px; top:1370px;" onmouseover="$('#1368img').show();" onmouseout="$('#1368img').hide();"><img id="1368" alt="Южная граница с Королевством Орков" border="0" src="/map/04.gif"></a>
+                <a title="Юннен" href="/forum/11-1367-1" target="_blank" style="left:825px; top:1355px;"><img id="1367" alt="Юннен" border="0" src="/map/red_flag.gif"></a>
+                <a title="Юго-западная граница с Королевством Орков" href="/forum/11-1366-1" target="_blank" style="left:647px; top:1280px;" onmouseover="$('#1366img').show();" onmouseout="$('#1366img').hide();"><img id="1366" alt="Юго-западная граница с Королевством Орков" border="0" src="/map/04.gif"></a>
+                <a title="Северо-западная граница с Королевством Орков" href="/forum/11-1365-1" target="_blank" style="left:504px; top:1125px;" onmouseover="$('#1365img').show();" onmouseout="$('#1365img').hide();"><img id="1365" alt="Северо-западная граница с Королевством Орков" border="0" src="/map/04.gif"></a>
+                <a title="Ба'ал Ран'ук" href="/forum/11-1364-1" target="_blank" style="left:530px; top:1177px;"><img id="1364" alt="Ба'ал Ран'ук" border="0" src="/map/red_flag.gif"></a>
+                <a title="Алые земли" href="/forum/11-1363-1" target="_blank" style="left:783px; top:1250px;" onmouseover="$('#1363img').show();" onmouseout="$('#1363img').hide();"><img id="1363" alt="Алые земли" border="0" src="/map/04.gif"></a>
+                <a title="Пепельные пустоши" href="/forum/11-811-1" target="_blank" style="left:678px; top:1090px;" onmouseover="$('#811img').show();" onmouseout="$('#811img').hide();"><img id="811" alt="Пепельные пустоши" border="0" src="/map/04.gif"></a>
+                <a title="«На открытом огне»" href="/forum/11-809-1" target="_blank" style="left:638px; top:1098px;"><img id="809" alt="«На открытом огне»" border="0" src="/map/red_flag.gif"></a>
+                <!--LArea-->
+                <img id="1363img" alt="" border="0" src="/map/area/LAZ.png" class="Area" style="left:525px; top:1148px;"/>
+                <img id="1336img" alt="" border="0" src="/map/area/LGV.png" class="Area" style="left:787px; top:1118px;"/>
+                <img id="811img" alt="" border="0" src="/map/area/LPP.png" class="Area" style="left:456px; top:1046px;"/>
+                <img id="1365img" alt="" border="0" src="/map/area/LSZ.png" class="Area" style="left:437px; top:1080px;"/>
+                <img id="1368img" alt="" border="0" src="/map/area/LUG.png" class="Area" style="left:754px; top:1376px;"/>
+                <img id="1366img" alt="" border="0" src="/map/area/LUZ.png" class="Area" style="left:512px; top:1202px;"/>
+                <img id="1369img" alt="" border="0" src="/map/area/LVB.png" class="Area" style="left:856px; top:1164px;"/>
+
+                <!--Hordes-->
+                <a title="Собор Великой Мортис" href="/forum/10-817-1" target="_blank" style="left:1105px; top:1150px;"><img id="817" alt="Собор Великой Мортис" border="0" src="/map/green_flag.gif"></a>
+                <a title="Кладбище" href="/forum/10-814-1" target="_blank" style="left:1145px; top:1035px;" onmouseover="$('#814img').show();" onmouseout="$('#814img').hide();"><img id="814" alt="Кладбище" border="0" src="/map/03.gif"></a>
+                <a title="Река" href="/forum/10-1375-1" target="_blank" style="left:1530px; top:1197px;"><img id="1375" alt="Река" border="0" src="/map/green_flag.gif"></a>
+                <a title="Джунгли Ништру" href="/forum/10-1376-1" target="_blank" style="left:1560px; top:1210px;" onmouseover="$('#1376img').show();" onmouseout="$('#1376img').hide();"><img id="1376" alt="Джунгли Ништру" border="0" src="/map/03.gif"></a>
+                <a title="Пустыня Алкмаара" href="/forum/10-815-1" target="_blank" style="left:1220px; top:1180px;" onmouseover="$('#815img').show();" onmouseout="$('#815img').hide();"><img id="815" alt="Пустыня Алкмаара" border="0" src="/map/03.gif"></a>
+                <a title="Стеклянная пустошь" href="/forum/10-1378-1" target="_blank" style="left:1230px; top:1290px;" onmouseover="$('#1378img').show();" onmouseout="$('#1378img').hide();"><img id="1378" alt="Стеклянная пустошь" border="0" src="/map/03.gif"></a>
+                <a title="Западный берег Алкмаара" href="/forum/10-1383-1" target="_blank" style="left:1020px; top:1200px;" onmouseover="$('#1383img').show();" onmouseout="$('#1383img').hide();"><img id="1383" alt="Западный берег Алкмаара" border="0" src="/map/03.gif"></a>
+                <a title="Юго-восточный берег Торгового моря" href="/forum/10-1382-1" target="_blank" style="left:1010px; top:1070px;" onmouseover="$('#1382img').show();" onmouseout="$('#1382img').hide();"><img id="1382" alt="Юго-восточный берег Торгового моря" border="0" src="/map/03.gif"></a>
+                <a title="Неферис" href="/forum/10-1379-1" target="_blank" style="left:1294px; top:1327px;"><img id="1379" alt="Неферис" border="0" src="/map/green_flag.gif"></a>
+                <a title="Порт нежити" href="/forum/10-1380-1" target="_blank" style="left:1325px; top:1327px;"><img id="1380" alt="Порт нежити" border="0" src="/map/green_flag.gif"></a>
+                <a title="Мертвое озеро" href="/forum/10-1377-1" target="_blank" style="left:1310px; top:1220px;"><img id="1377" alt="Мертвое озеро" border="0" src="/map/green_flag.gif"></a>
+
+                <a title="Улваарские горы" href="/forum/10-1374-1" target="_blank" style="left:1480px; top:1210px;" onmouseover="$('#1374img').show();" onmouseout="$('#1374img').hide();"><img id="1374" alt="Улваарские горы" border="0" src="/map/03.gif"></a>
+                <a title="Улицы Альзонии" href="/forum/10-1372-1" target="_blank" style="left:1135px; top:1150px;"><img id="1372" alt="Улицы Альзонии" border="0" src="/map/green_flag.gif"></a>
+                <a title="Школа Некромантии" href="/forum/10-816-1" target="_blank" style="left:1145px; top:1173px;"><img id="816" alt="Школа Некромантии" border="0" src="/map/green_flag.gif"></a>
+                <!--HArea-->
+                <img id="815img" alt="" border="0" src="/map/area/UAL.png" class="Area" style="left:1006px; top:1076px;">
+                <img id="1376img" alt="" border="0" src="/map/area/UGN.png" class="Area" style="left:1469px; top:1130px;">
+                <img id="814img" alt="" border="0" src="/map/area/UGR.png" class="Area" style="left:1045px; top:1027px;">
+                <img id="1378img" alt="" border="0" src="/map/area/USP.png" class="Area" style="left:1125px; top:1278px;">
+                <img id="1374img" alt="" border="0" src="/map/area/UUG.png" class="Area" style="left:1418px; top:1118px;">
+                <img id="1382img" alt="" border="0" src="/map/area/UUV.png" class="Area" style="left:992px; top:1057px;">
+                <img id="1383img" alt="" border="0" src="/map/area/UZB.png" class="Area" style="left:975px; top:1140px;">
+
+                <!--Elves-->
+                <a title="Берег Внешнего моря" href="/forum/12-1468-1" target="_blank" style="left:1590px; top:1100px;" onmouseover="$('#1468img').show();" onmouseout="$('#1468img').hide();"><img id="1468" alt="Берег Внешнего моря" border="0" src="/map/05.gif"></a>
+                <a title="Фальген Хейм" href="/forum/12-1455-1" target="_blank" style="left:1187px; top:895px;" onmouseover="$('#1455img').show();" onmouseout="$('#1455img').hide();"><img id="1455" alt="Фальген Хейм" border="0" src="/map/05.gif"></a>
+                <a title="Лес Крагриэль" href="/forum/12-1454-1" target="_blank" style="left:1030px; top:855px;" onmouseover="$('#1454img').show();" onmouseout="$('#1454img').hide();"><img id="1454" alt="Лес Крагриэль" border="0" src="/map/05.gif"></a>
+                <a title="Шёлковый лес" href="/forum/12-1453-1" target="_blank" style="left:933px; top:765px;" onmouseover="$('#1453img').show();" onmouseout="$('#1453img').hide();"><img id="1453" alt="Шёлковый лес" border="0" src="/map/05.gif"></a>
+                <a title="Центральный Лес" href="/forum/12-1469-1" target="_blank" style="left:1525px; top:840px;" onmouseover="$('#1469img').show();" onmouseout="$('#1469img').hide();"><img id="1469" alt="Центральный Лес" border="0" src="/map/05.gif"></a>
+                <a title="Тела Мар" href="/forum/12-715-1" target="_blank" style="left:1511px; top:706px;"><img id="715" alt="Тела Мар" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Окрестности Тела Мар" href="/forum/12-1466-1" target="_blank" style="left:1481px; top:676px;" onmouseover="$('#1466img').show();" onmouseout="$('#1466img').hide();"><img id="1466" alt="Окрестности Тела Мар" border="0" src="/map/05.gif"></a>
+                <a title="Роща Галлеана" href="/forum/12-860-1" target="_blank" style="left:1430px; top:970px;"><img id="860" alt="Роща Галлеана" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="«Весёлый энт»" href="/forum/12-655-1" target="_blank" style="left:1400px; top:900px;"><img id="655" alt="«Весёлый энт»" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Северо-восточный берег Торгового Моря" href="/forum/12-1456-1" target="_blank" style="left:1025px; top:997px;" onmouseover="$('#1456img').show();" onmouseout="$('#1456img').hide();"><img id="1456" alt="Северо-восточный берег Торгового Моря" border="0" src="/map/05.gif"></a>
+                <a title="Северный берег Торгового Моря" href="/forum/12-1457-1" target="_blank" style="left:953px; top:915px;" onmouseover="$('#1457img').show();" onmouseout="$('#1457img').hide();"><img id="1457" alt="Северный берег Торгового Моря" border="0" src="/map/05.gif"></a>
+                <a title="Порт Эдрас" href="/forum/12-1458-1" target="_blank" style="left:953px; top:945px;"><img id="1458" alt="Порт Эдрас" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Фергальский лес" href="/forum/12-1459-1" target="_blank" style="left:758px; top:668px;" onmouseover="$('#1459img').show();" onmouseout="$('#1459img').hide();"><img id="1459" alt="Фергальский лес" border="0" src="/map/05.gif"></a>
+                <a title="Зиловерс" href="/forum/12-1462-1" target="_blank" style="left:1318px; top:1014px;"><img id="1462" alt="Зиловерс" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Триада" href="/forum/12-1463-1" target="_blank" style="left:1385px; top:1000px;" onmouseover="$('#1463img').show();" onmouseout="$('#1463img').hide();"><img id="1463" alt="Триада" border="0" src="/map/05.gif"></a>
+                <a title="Лес кентавров" href="/forum/12-1464-1" target="_blank" style="left:1648px; top:885px;" onmouseover="$('#1464img').show();" onmouseout="$('#1464img').hide();"><img id="1464" alt="Лес кентавров" border="0" src="/map/05.gif"></a>
+                <a title="Итла" href="/forum/12-1465-1" target="_blank" style="left:1568px; top:899px;"><img id="1465" alt="Итла" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Граница с Болотами" href="/forum/12-1467-1" target="_blank" style="left:1655px; top:800px;" onmouseover="$('#1467img').show();" onmouseout="$('#1467img').hide();"><img id="1467" alt="Граница с Болотами" border="0" src="/map/05.gif"></a>
+                <a title="Амнория" href="/forum/12-1471-1" target="_blank" style="left:1608px; top:965px;"><img id="1471" alt="Амнория" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Крайний лес" href="/forum/12-1460-1" target="_blank" style="left:1590px; top:1030px;" onmouseover="$('#1460img').show();" onmouseout="$('#1460img').hide();"><img id="1460" alt="Крайний лес" border="0" src="/map/05.gif"></a>
+                <a title="Королевский дворец" href="/forum/12-859-1" target="_blank" style="left:1498px; top:819px;"><img id="859" alt="Королевский дворец" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Сад Королевы" href="/forum/12-872-1" target="_blank" style="left:1495px; top:794px;"><img id="872" alt="Сад Королевы" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="Подземелья дворца" href="/forum/12-1298-1" target="_blank" style="left:1448px; top:795px;"><img id="1298" alt="Подземелья дворца" border="0" src="/map/yellow_flag.gif"></a>
+                <a title="«У короны»" href="/forum/12-1337-1" target="_blank" style="left:1443px; top:819px;"><img id="1337" alt="«У короны»" border="0" src="/map/yellow_flag.gif"></a>
+                <!--AArea-->
+                <img id="1468img" alt="" border="0" src="/map/area/ABV.png" class="Area" style="left:1505px; top:1020px;"/>
+                <img id="1469img" alt="" border="0" src="/map/area/ACL.png" class="Area" style="left:1160px; top:724px;"/>
+                <img id="1455img" alt="" border="0" src="/map/area/AFH.png" class="Area" style="left:1074px; top:856px;"/>
+                <img id="1459img" alt="" border="0" src="/map/area/AFL.png" class="Area" style="left:633px; top:588px;"/>
+                <img id="1467img" alt="" border="0" src="/map/area/AGB.png" class="Area" style="left:1597px; top:711px;"/>
+                <img id="1460img" alt="" border="0" src="/map/area/AKL.png" class="Area" style="left:1421px; top:982px;"/>
+                <img id="1464img" alt="" border="0" src="/map/area/ALC.png" class="Area" style="left:1619px; top:853px;"/>
+                <img id="1454img" alt="" border="0" src="/map/area/ALG.png" class="Area" style="left:980px; top:850px;"/>
+                <img id="1453img" alt="" border="0" src="/map/area/APL.png" class="Area" style="left:835px; top:685px;"/>
+                <img id="1457img" alt="" border="0" src="/map/area/ASB.png" class="Area" style="left:897px; top:923px;"/>
+                <img id="1456img" alt="" border="0" src="/map/area/ASV.png" class="Area" style="left:980px; top:938px;"/>
+                <img id="1466img" alt="" border="0" src="/map/area/ATM.png" class="Area" style="left:1401px; top:665px;"/>
+                <img id="1463img" alt="" border="0" src="/map/area/ATR.png" class="Area" style="left:1256px; top:947px;"/>
+
+                <!--Clans-->
+                <a title="Клаудкипер" href="/forum/9-1319-1" target="_blank" style="left:1312px; top:609px;"><img id="1319" alt="Клаудкипер" border="0" src="/map/white_flag.gif"></a>
+                <a title="Западные грифоновы горы" href="/forum/9-1391-1" target="_blank" style="left:1037px; top:752px;" onmouseover="$('#1391img').show();" onmouseout="$('#1391img').hide();"><img id="1391" alt="Западные грифоновы горы" border="0" src="/map/02.gif"></a>
+                <a title="Скаймайн" href="/forum/9-1392-1" target="_blank" style="left:1061px; top:627px;"><img id="1392" alt="Скаймайн" border="0" src="/map/white_flag.gif"></a>
+                <a title="Северная граница с землями варваров" href="/forum/9-1396-1" target="_blank" style="left:964px; top:480px;" onmouseover="$('#1396img').show();" onmouseout="$('#1396img').hide();"><img id="1396" alt="Северная граница с землями варваров" border="0" src="/map/02.gif"></a>
+                <a title="Спрингфрост" href="/forum/9-1404-1" target="_blank" style="left:1211px; top:762px;"><img id="1404" alt="Спрингфрост" border="0" src="/map/white_flag.gif"></a>
+                <a title="Сандерхаммер" href="/forum/9-1406-1" target="_blank" style="left:984px; top:523px;"><img id="1406" alt="Сандерхаммер" border="0" src="/map/white_flag.gif"></a>
+                <a title="Дьявольские горы" href="/forum/9-1408-1" target="_blank" style="left:974px; top:586px;" onmouseover="$('#1408img').show();" onmouseout="$('#1408img').hide();"><img id="1408" alt="Дьявольские горы" border="0" src="/map/02.gif"></a>
+                <a title="Севендаск" href="/forum/9-1409-1" target="_blank" style="left:1192px; top:547px;"><img id="1409" alt="Севендаск" border="0" src="/map/white_flag.gif"></a>
+                <a title="Флиндхайд" href="/forum/9-1410-1" target="_blank" style="left:1257px; top:529px;"><img id="1410" alt="Флиндхайд" border="0" src="/map/white_flag.gif"></a>
+                <a title="Граница с Каганатом Орков" href="/forum/9-1411-1" target="_blank" style="left:1380px; top:533px;" onmouseover="$('#1411img').show();" onmouseout="$('#1411img').hide();"><img id="1411" alt="Граница с Каганатом Орков" border="0" src="/map/02.gif"></a>
+                <a title="Даркстоун" href="/forum/9-1412-1" target="_blank" style="left:1434px; top:605px;"><img id="1412" alt="Даркстоун" border="0" src="/map/white_flag.gif"></a>
+                <a title="Граница с Прауисом" href="/forum/9-1413-1" target="_blank" style="left:1500px; top:620px;" onmouseover="$('#1413img').show();" onmouseout="$('#1413img').hide();"><img id="1413" alt="Граница с Прауисом" border="0" src="/map/02.gif"></a>
+                <a title="Юго-восточная граница с Альянсом" href="/forum/9-1414-1" target="_blank" style="left:1365px; top:740px;" onmouseover="$('#1414img').show();" onmouseout="$('#1414img').hide();"><img id="1414" alt="Юго-восточная граница с Альянсом" border="0" src="/map/02.gif"></a>
+                <a title="Кловерхорн" href="/forum/9-1415-1" target="_blank" style="left:1403px; top:680px;"><img id="1415" alt="Кловерхорн" border="0" src="/map/white_flag.gif"></a>
+                <a title="Грейхелм" href="/forum/9-1416-1" target="_blank" style="left:1261px; top:679px;"><img id="1416" alt="Грейхелм" border="0" src="/map/white_flag.gif"></a>
+                <a title="Граница с Центральным лесом" href="/forum/9-1417-1" target="_blank" style="left:1244px; top:798px;" onmouseover="$('#1417img').show();" onmouseout="$('#1417img').hide();"><img id="1417" alt="Граница с Центральным лесом" border="0" src="/map/02.gif"></a>
+                <a title="Фогфелл" href="/forum/9-1418-1" target="_blank" style="left:1083px; top:672px;"><img id="1418" alt="Фогфелл" border="0" src="/map/white_flag.gif"></a>
+                <a title="Готтер" href="/forum/9-1419-1" target="_blank" style="left:1033px; top:808px;"><img id="1419" alt="Готтер" border="0" src="/map/white_flag.gif"></a>
+                <a title="Юго-западная граница с Альянсом" href="/forum/9-1421-1" target="_blank" style="left:994px; top:755px;" onmouseover="$('#1421img').show();" onmouseout="$('#1421img').hide();"><img id="1421" alt="Юго-западная граница с Альянсом" border="0" src="/map/02.gif"></a>
+                <a title="Айронхилл" href="/forum/9-1332-1" target="_blank" style="left:1336px; top:555px;"><img id="1332" alt="Айронхилл" border="0" src="/map/white_flag.gif"></a>
+                <a title="Скалистый замок" href="/forum/9-1499-1" target="_blank" style="left:1034px; top:568px;"><img id="1499" alt="Скалистый замок" border="0" src="/map/white_flag.gif"></a>
+                <a title="Кузница Берина" href="/forum/9-876-1" target="_blank" style="left:1199px; top:605px;"><img id="876" alt="Кузница Берина" border="0" src="/map/white_flag.gif"></a>
+                <a title="Восточные грифоновы горы" href="/forum/9-1393-1" target="_blank" style="left:1332px; top:640px;" onmouseover="$('#1393img').show();" onmouseout="$('#1393img').hide();"><img id="1393" alt="Восточные грифоновы горы" border="0" src="/map/02.gif"></a>
+                <a title="Крэгвелл" href="/forum/9-1403-1" target="_blank" style="left:1115px; top:751px;"><img id="1403" alt="Крэгвелл" border="0" src="/map/white_flag.gif"></a>
+                <a title="Северные грифоновы горы" href="/forum/9-1395-1" target="_blank" style="left:1075px; top:568px;" onmouseover="$('#1395img').show();" onmouseout="$('#1395img').hide();"><img id="1395" alt="Северные грифоновы горы" border="0" src="/map/02.gif"></a>
+                <a title="Южные грифоновы горы" href="/forum/9-1394-1" target="_blank" style="left:1261px; top:730px;" onmouseover="$('#1394img').show();" onmouseout="$('#1394img').hide();"><img id="1394" alt="Южные грифоновы горы" border="0" src="/map/02.gif"></a>
+                <a title="Грифоновый пик" href="/forum/9-924-1" target="_blank" style="left:1129px; top:608px;" onmouseover="$('#924img').show();" onmouseout="$('#924img').hide();"><img id="924" alt="Грифоновый пик" border="0" src="/map/02.gif"></a>
+                <!--CArea-->
+                <img id="1408img" alt="" border="0" src="/map/area/CDG.png" class="Area" style="left:896px; top:482px;"/>
+                <img id="924img" alt="" border="0" src="/map/area/CGP.png" class="Area" style="left:1054px; top:554px;"/>
+                <img id="1394img" alt="" border="0" src="/map/area/CUG.png" class="Area" style="left:1050px; top:665px;"/>
+                <img id="1393img" alt="" border="0" src="/map/area/CVG.png" class="Area" style="left:1211px; top:509px;"/>
+                <img id="1417img" alt="" border="0" src="/map/area/CGCL.png" class="Area" style="left:1164px; top:777px;"/>
+                <img id="1411img" alt="" border="0" src="/map/area/CGKO.png" class="Area" style="left:1268px; top:510px;"/>
+                <img id="1413img" alt="" border="0" src="/map/area/CGSP.png" class="Area" style="left:1471px; top:622px;"/>
+                <img id="1414img" alt="" border="0" src="/map/area/CUVG.png" class="Area" style="left:1320px; top:657px;"/>
+                <img id="1391img" alt="" border="0" src="/map/area/CZG.png" class="Area" style="left:997px; top:638px;"/>
+                <img id="1395img" alt="" border="0" src="/map/area/CSG.png" class="Area" style="left:965px; top:463px;"/>
+                <img id="1396img" alt="" border="0" src="/map/area/CSGZV.png" class="Area" style="left:948px; top:482px;"/>
+                <img id="1421img" alt="" border="0" src="/map/area/CUZGA.png" class="Area" style="left:972px; top:763px;"/>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+            function questscrool() {
+                $('body').scrollTo({ top: $(quest).offset().top - 22, left: $(quest).offset().left + xcshift}, 800);
+            }
+
+            loc = window.location.hash;
+            quest = window.location.search.replace("?", "#");
+
+            if (loc != "" && loc != "#") {
+                $(loc).attr("src", "/map/youhere.gif");
+                $(loc).parent().attr("onmouseover", "");
+                $(loc).parent().attr("onmouseout", "");
+                $(loc).parent().attr("title", "Вы здесь");
+                $(loc + 'img').show();
+                xcshift = 0;
+                if ($(loc).offset().left > 800 && $(loc).offset().left < 1200) {
+                    xcshift = -100;
+                } else if ($(loc).offset().left < 800) {
+                    xcshift = -500
+                } else if ($(loc).offset().left > 1200) {
+                    xcshift = 500;
+                }
+                $('body').scrollTo({ top: $(loc).offset().top - 22, left: $(loc).offset().left + xcshift}, 650);
+                if (quest != "" && quest != "#") {
+                    $(quest).attr("src", "/map/target.gif");
+                    $(quest).parent().attr("onmouseover", "");
+                    $(quest).parent().attr("onmouseout", "");
+                    $(quest).parent().css("z-index", "3");
+                    $(quest).parent().css("top", $(quest).offset().top + 25);
+                    xcshift = 0;
+                    if ($(quest).offset().left > 800 && $(quest).offset().left < 1200) {
+                        xcshift = -300;
+                    } else if ($(quest).offset().left < 800) {
+                        xcshift = -200;
+                    } else if ($(quest).offset().left > 1200) {
+                        xcshift = 200;
+                    }
+                    $(quest + 'img').show();
+                    setTimeout("questscrool()", 1500);
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
