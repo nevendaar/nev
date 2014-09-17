@@ -76,7 +76,7 @@
 'nw3.t': 'templates/news/_news.html'     # Вид материалов
 
 # Фотоальбом
-'ph1.t':  'templates/photo/main.html'          # Главная страница фотоальбома
+'ph1.t':  'templates/photo/main.html.erb'      # Главная страница фотоальбома
 'ph2.t':  'templates/photo/index_section.html' # Страница со списком фотографий раздела
 'ph3.t':  'templates/photo/index_album.html'   # Страница со списком фотографий альбома
 #'ph4.t':  ''                                  # Страница с полной фотографией и комментариями

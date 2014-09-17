@@ -1,0 +1,16 @@
+﻿<%# Old template %>
+<% layout do %>
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="text-right">[ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить фотографию</a> ]</div>
+    <% }.endif! %>
+
+    <div class="clearfix hr">
+        В настоящий момент <b><%= c '$NUM_ENTRIES$' %></b> фотографий в <b><%= c '$NUM_CATEGORIES$' %></b> альбомах.
+    </div>
+
+    <div style="padding:3px 0 3px 0;border-top:1px dotted #a9b8c2;border-bottom:1px dotted #a9b8c2;">
+        Новые фотографии фотоальбома
+    </div>
+
+    <%= c '$BODY$' %>
+<% end %>
