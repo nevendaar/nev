@@ -11,6 +11,12 @@
                 position: absolute;
             }
 
+            body {
+                background: #010a11;
+                margin: 0;
+                padding: 0;
+            }
+
             .Area {
                 display: none;
                 z-index: 0;
@@ -19,7 +25,7 @@
         </style>
     </head>
 
-    <body style="background: #010a11; margin: 0; padding: 0;">
+    <body>
 
         <div align="center">
             <div style="background: url(/map/nevendaar.jpg); width:2000px; height:1915px; position: relative;">
@@ -295,46 +301,56 @@
 
         <script type="text/javascript">
 
-            function questscrool() {
-                $('body').scrollTo({ top: $(quest).offset().top - 22, left: $(quest).offset().left + xcshift}, 800);
+            function questscrool($quest, xcshift) {
+                $('body').scrollTo({ top: $quest.offset().top - 22, left: $quest.offset().left + xcshift}, 800);
             }
 
-            loc = window.location.hash;
-            quest = window.location.search.replace("?", "#");
-
-            if (loc != "" && loc != "#") {
-                $(loc).attr("src", "/map/youhere.gif");
-                $(loc).parent().attr("onmouseover", "");
-                $(loc).parent().attr("onmouseout", "");
-                $(loc).parent().attr("title", "Вы здесь");
-                $(loc + 'img').show();
-                xcshift = 0;
-                if ($(loc).offset().left > 800 && $(loc).offset().left < 1200) {
-                    xcshift = -100;
-                } else if ($(loc).offset().left < 800) {
-                    xcshift = -500
-                } else if ($(loc).offset().left > 1200) {
-                    xcshift = 500;
-                }
-                $('body').scrollTo({ top: $(loc).offset().top - 22, left: $(loc).offset().left + xcshift}, 650);
-                if (quest != "" && quest != "#") {
-                    $(quest).attr("src", "/map/target.gif");
-                    $(quest).parent().attr("onmouseover", "");
-                    $(quest).parent().attr("onmouseout", "");
-                    $(quest).parent().css("z-index", "3");
-                    $(quest).parent().css("top", $(quest).offset().top + 25);
+            $(function () {
+                var xcshift, l_offset,
+                        loc = window.location.hash,
+                        quest = window.location.search.replace("?", "#"),
+                        $loc = $(loc),
+                        $loc_img = $(loc + 'img'),
+                        $quest = $(quest),
+                        $quest_img = $(quest + 'img');
+                if ($loc.length) {
+                    $loc.attr("src", "/map/youhere.gif");
+                    $loc.parent().attr("onmouseover", "")
+                            .attr("onmouseout", "")
+                            .attr("title", "Вы здесь");
+                    $loc_img.show();
                     xcshift = 0;
-                    if ($(quest).offset().left > 800 && $(quest).offset().left < 1200) {
-                        xcshift = -300;
-                    } else if ($(quest).offset().left < 800) {
-                        xcshift = -200;
-                    } else if ($(quest).offset().left > 1200) {
-                        xcshift = 200;
+                    l_offset = $loc.offset().left;
+                    if (l_offset > 800 && l_offset < 1200) {
+                        xcshift = -100;
+                    } else if (l_offset < 800) {
+                        xcshift = -500
+                    } else if (l_offset > 1200) {
+                        xcshift = 500;
                     }
-                    $(quest + 'img').show();
-                    setTimeout("questscrool()", 1500);
+                    $('body').scrollTo({ top: $loc.offset().top - 22, left: l_offset + xcshift}, 650);
+                    if ($quest.length) {
+                        $quest.attr("src", "/map/target.gif");
+                        $quest.parent().attr("onmouseover", "")
+                                .attr("onmouseout", "")
+                                .css("z-index", "3")
+                                .css("top", $quest.offset().top + 25);
+                        xcshift = 0;
+                        l_offset = $quest.offset().left;
+                        if (l_offset > 800 && l_offset < 1200) {
+                            xcshift = -300;
+                        } else if (l_offset < 800) {
+                            xcshift = -200;
+                        } else if (l_offset > 1200) {
+                            xcshift = 200;
+                        }
+                        $quest_img.show();
+                        setTimeout(function () {
+                            questscrool($quest, xcshift)
+                        }, 1500);
+                    }
                 }
-            }
+            });
         </script>
 
     </body>
