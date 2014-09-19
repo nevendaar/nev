@@ -47,6 +47,10 @@ module BaseHelper
     nil
   end
 
+  def rating_stars
+    ucoz_injection "$RSTARS$('12', '/site/stars.png', '1', 'float')"
+  end
+
   def vk_like_btn
     '<div id="vk_like" class="pull-left"></div>'
   end

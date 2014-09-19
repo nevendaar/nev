@@ -13,7 +13,7 @@
                 </div>
             <% }.endif! %>
             <ul class="details">
-                <% uif('$RATING$') { %><li><%= i "$RSTARS$('12','/site/stars.png','1','float')" %></li><% }.endif! %>
+                <% uif('$RATING$') { %><li><%= rating_stars %></li><% }.endif! %>
                 <%# TODO: cid 5 ? %>
                 <% uif(code_is '$CID$', 5) { %>
                     <% uif('$READS$ || $REDIRECTS$') { %>

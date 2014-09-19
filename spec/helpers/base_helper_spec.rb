@@ -19,4 +19,8 @@ describe BaseHelper do
       expect(@compiler.remove_admin_bar!).to be_nil
     end
   end
+
+  describe 'rating_stars' do
+    pending ': write tests here!'
+  end
 end

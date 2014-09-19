@@ -9,6 +9,6 @@
         <?if($NAME$ && <%= group_is('$CUR_GROUP_ID$', :moderator, :admin, :master) %>)?>
             Добавил: <a href="$EMAIL_JS$">$NAME$</a> <?if($USERNAME$)?>(<a href="/index/8-$UID$" class="profile-link">$USERNAME$</a>)<?endif?>
         <?endif?>
-        <?if($RATING$)?><?$RSTARS$('12', '/img/stars.png', '1', 'float')?><?endif?>
+        <% uif('$RATING$') { %><%= rating_stars %><% }.endif! %>
     </div>
 </div>

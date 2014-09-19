@@ -31,7 +31,7 @@
                 <% uif('$CAT_NAME$') { %><li>Категория: <a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li><% }.endif! %>
                 <li>Просмотров: <%= c '$READS$' %></li>
                 <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USER$' %></a></li>
-                <% uif('$RATING$') { %><li>Рейтинг: <%= i("$RSTARS$('12', '/img/stars.png', '1', 'float')") %></li><% }.endif! %>
+                <% uif('$RATING$') { %><li>Рейтинг: <%= rating_stars %></li><% }.endif! %>
                 <li><%= vk_like_btn %></li>
             </ul>
             <% uif('$TAGS$') { %><div class="tags">Теги: <i><%= c('$TAGS$') %></i></div><% }.endif! %>
