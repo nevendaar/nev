@@ -77,7 +77,7 @@
 
 # Фотоальбом
 'ph1.t':  'templates/photo/main.html.erb'          # Главная страница фотоальбома
-'ph2.t':  'templates/photo/index_section.html' # Страница со списком фотографий раздела
+'ph2.t':  'templates/photo/index_section.html.erb' # Страница со списком фотографий раздела
 'ph3.t':  'templates/photo/index_album.html.erb'   # Страница со списком фотографий альбома
 #'ph4.t':  ''                                  # Страница с полной фотографией и комментариями
 'ph5.t':  'templates/photo/search.html'        # Страница рейтинга и поиска фотографий
