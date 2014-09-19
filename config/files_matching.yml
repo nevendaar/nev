@@ -80,7 +80,7 @@
 'ph2.t':  'templates/photo/index_section.html.erb' # Страница со списком фотографий раздела
 'ph3.t':  'templates/photo/index_album.html.erb'   # Страница со списком фотографий альбома
 #'ph4.t':  ''                                  # Страница с полной фотографией и комментариями
-'ph5.t':  'templates/photo/search.html'        # Страница рейтинга и поиска фотографий
+'ph5.t':  'templates/photo/search.html.erb'        # Страница рейтинга и поиска фотографий
 'ph6.t':  'templates/photo/new.html.erb'           # Страница добавления фотографии
 'ph7.t':  'templates/photo/private_album.html' # Страница входа в приватный альбом
 'ph8.t':  'templates/photo/_photo.html'        # Вид фотографий
