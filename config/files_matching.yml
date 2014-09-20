@@ -24,8 +24,8 @@
 # Комментарии
 # Оба шаблона хранятся в одном файле: com.t (sic!)
 'com.t':
-        - 'templates/comments/_comment.html' # Вид комментариев
-        - 'templates/comments/_form.html'    # Форма добавления комментариев
+        - 'templates/comments/_comment.html.erb' # Вид комментариев
+        - 'templates/comments/_form.html.erb'    # Форма добавления комментариев
 
 # Каталог сайтов
 'dr1.t': 'templates/dir/main.html.erb'           # Главная страница каталога сайтов

@@ -1,0 +1,109 @@
+﻿<%#
+    Структура комментария с костью: '&DICE&ABCTEXT'
+    Где:
+        &DICE& - ключевое слово;
+             A - ступень [1, 2, 3];
+             B - владеет ли бросающий навыком "Расчётливый бой"? [0, 1];
+             C - владеет ли противник навыком "Уворот"? [0, 1];
+          TEXT - произвольный комментарий.
+%>
+
+<% dice_post     = code_is('substr($MESSAGE$,0,6)', "'&DICE&'") %>
+<% not_dice_post = code_is('substr($MESSAGE$,0,6)', :not, "'&DICE&'") %>
+<% dice_number   = '(($TIMESTAMP$/$NUMBER$)^101)%6' %>
+
+<div class="uComment <%= c '$CLASS$' %>">
+    <span class="uc-avatar">
+        <% uif('$USER_AVATAR_URL$') { %>
+            <% uif('$SOC_LINK$') { %>
+                <a rel="nofollow" href="<%= c '$SOC_LINK$' %>" title="<%= c '$USERNAME$' %>">
+                    <img src="<%= c '$USER_AVATAR_URL$' %>" alt="avatar">
+                </a>
+            <% }.else { %>
+                <a href="/index/8-0-<%= c '$USERNAME$' %>" class="profile-link" title="<%= c '$USERNAME$' %>">
+                    <img src="<%= c '$USER_AVATAR_URL$' %>" alt="avatar">
+                </a>
+            <% }.endif! %>
+        <% }.else { %>
+            <img src="/.s/img/icon/social/noavatar.png" alt="avatar">
+        <% }.endif! %>
+    </span>
+    <div class="uc-content">
+        <div class="uc-top">
+            <div class="uc-top-right">
+                <% uif('$GOOD_COMMENT_URL$') { %>
+                    <a href="<%= c '$GOOD_COMMENT_URL$' %>">
+                        <img alt="" src="http://s6.ucoz.net/img/icon/thumbu2.png" title="Хороший пост" style="margin: 0 4px;vertical-align: middle;">
+                    </a>
+                    <%= c '$COMMENT_RATING$' %>
+                    <a href="<%= c '$BAD_COMMENT_URL$' %>">
+                        <img alt="" src="http://s6.ucoz.net/img/icon/thumbd2.png" title="Плохой пост" style="margin: 0 4px;vertical-align: middle;">
+                    </a>
+                <% }.else { %>
+                    <img alt="" src="http://s6.ucoz.net/img/icon/thumbu2_.png" title="Хороший пост" style="margin: 0 4px;vertical-align: middle;opacity: .5;">
+                    <%= c '$COMMENT_RATING$' %>
+                    <img alt="" src="http://s6.ucoz.net/img/icon/thumbd2_.png" title="Плохой пост" style="margin: 0 4px;vertical-align: middle;opacity: .5;">
+                <% }.endif! %>
+                <% uif('$MODER_PANEL$') { %><%= c '$MODER_PANEL$' %><% }.endif! %>
+            </div>
+            <div class="uc-top-left">
+                <a href="#ent<%= c '$ID$' %>" onclick="prompt('', location.protocol + '//' + location.hostname + location.pathname + '#comEnt<%= c '$ID$' %>'); if (document.getElementById('comEnt<%= c '$ID$' %>')){$('body').scrollTo( { top:$('#comEnt<%= c '$ID$' %>').offset().top-22, left:0}, 500 );return false;}" name="ent<%= c '$ID$' %>">
+                    <b><%= c '$NUMBER$' %></b>
+                </a>
+                <% uif('$SOC_TYPE$') { %>
+                    <img src="/.s/img/icon/social/16/<%= c '$SOC_TYPE$' %>.png" alt="" />
+                <% }.endif! %>
+                <% uif('$USERNAME$') { %>
+                    <a href="/index/8-0-<%= c '$USERNAME$' %>" class="profile-link uc-profile-link">
+                        <%= c '$USERNAME$' %>
+                    </a>
+                <% }.else { %>
+                    <% uif('$SOC_LINK$') { %>
+                        <a rel="nofollow" href="<%= c '$SOC_LINK$' %>" class="uc-profile-link">
+                            <%= c '$NAME$' %>
+                        </a>
+                    <% }.else { %>
+                        <%= c '$NAME$' %>
+                    <% }.endif! %>
+                <% }.endif! %>
+                <% uif('$USER_LOGGED_IN$', '$EMAIL$') { %>
+                    <a href="<%= c '$EMAIL_JS$' %>" title="Email">
+                        <img src="/site/e.gif" alt="email">
+                    </a>
+                <% }.endif! %>
+                <span class="uc-opacity">&#8226; <%= c '$TIME$' %>, <%= c '$DATE$' %></span>
+                <% uif('$ENTRY_URL$') { %>
+                    [ <a href="<% uif(dice_post) { %>/forum/24-693-1<% }.else { %><%= c '$ENTRY_URL$' %><% }.endif! %>" target="_blank">Материал</a> ]
+                <% }.endif! %>
+            </div>
+        </div>
+        <% uif(dice_post, 'len($MESSAGE$) >= 9') { %>
+            <% uif('$ENTRY_URL$') { %>
+                *бросает кость...*
+            <% }.else { %>
+                <p><%= i 'substr($MESSAGE$,9)' %></p>
+                Результат (<b><%= i 'substr($MESSAGE$,6,1)' %></b> ступень)
+                <% uif('substr($MESSAGE$,7,1)') { %>("Расчетливый бой")<% }.endif! %>
+                <% uif('substr($MESSAGE$,8,1)') { %>("Уворот")<% }.endif! %>
+                :
+                <div class="dice dice<%= i dice_number %>">
+                    <div class="res<%= i dice_number %><%= i 'substr($MESSAGE$,6,3)' %>"></div>
+                </div>
+            <% }.endif! %>
+        <% }.else { %>
+            <div class="uc-message cMessage">
+                <%= c '$MESSAGE$' %>
+            </div>
+            <% uif('$ANSWER$', not_dice_post) { %>
+                <div class="uc-answer cAnswer">
+                    <b>Ответ</b>: <%= c '$ANSWER$' %>
+                </div>
+            <% }.endif! %>
+            <% uif('$ANSWER_URL$', not_dice_post) { %>
+                <div class="uc-answer-link">
+                    <a href="<%= c '$ANSWER_URL$' %>">Ответить</a>
+                </div>
+            <% }.endif! %>
+      <% }.endif! %>
+    </div>
+</div>
