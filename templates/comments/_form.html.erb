@@ -1,0 +1,122 @@
+﻿<div class="uForm uComForm">
+    <% uif('$USER_LOGGED_IN$') { %>
+        <%= c '$ERROR$' %>
+        <% uif('$UNSUBSCRIBE_URL$') { %>
+            <div style="text-align: right; padding: 5px 0;">
+                <a target="_blank" href="<%= c '$UNSUBSCRIBE_URL$' %>">Отписаться от уведомлений</a>
+            </div>
+        <% }.endif! %>
+        <div class="uComForm-inner">
+            <span class="ucf-avatar uf-with-tooltip">
+                <% uif('$USER_AVATAR_URL$') { %>
+                    <img src="<%= c '$USER_AVATAR_URL$' %>" alt="avatar" />
+                <% }.else { %>
+                    <img src="/.s/img/icon/social/noavatar.png" alt="avatar" />
+                <% }.endif! %>
+                <span class="uf-tooltip">
+                    <% uif('$PROFILE_URL$') { %>
+                        <a class="uf-tt-item" href="<%= c '$PROFILE_URL$' %>" target="_blank">Профиль</a>
+                    <% }.else { %>
+                        <a class="uf-tt-item" href="#" target="_blank">Профиль</a>
+                    <% }.endif! %>
+                    <span class="uf-tt-hr"></span>
+                    <a class="uf-tt-item uf-tt-exit" href="#!">Выйти</a>
+                </span>
+            </span>
+            <div class="ucf-content">
+                <% uif('$USER_CAN_POST$') { %>
+                    <ul class="uf-form ucf-form">
+                        <% uif('$BBCODES$') { %><li class="ucf-bb"><%= c '$BBCODES$' %></li><% }.endif! %>
+                        <li>
+                            <table class="ucf-table">
+                                <tr>
+                                    <td class="ucf-message-wrap">
+                                        <textarea class="uf-txt-input commFl" style="height:135px;" rows="8" name="message" id="message" cols="50">
+                                            <%= c '$MESSAGE$' %>
+                                        </textarea>
+                                    </td>
+                                    <% uif('$SMILES$') { %>
+                                        <td class="ucf-smiles"><%= c '$SMILES$' %></td>
+                                    <% }.endif! %>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="ucf-options">
+                            <span class="uf-with-tooltip ucf-option">
+                                <label class="ucf-option-label ucf-option-share">
+                                    <input class="uf-checkbox js-ucf-option" type="checkbox" name="share" />
+                                </label>
+                                <span class="uf-tooltip">Публиковать в социальной сети</span>
+                            </span>
+                            <% uif('$ANONYMOUS_ALLOWED$') { %>
+                                <span class="uf-with-tooltip ucf-option">
+                                    <label class="ucf-option-label ucf-option-anonymous">
+                                        <input class="uf-checkbox js-ucf-option" type="checkbox" name="anonymous" />
+                                    </label>
+                                    <span class="uf-tooltip">Анонимно</span>
+                                </span>
+                            <% }.endif! %>
+                            <% uif('$SUBSCRIBE$') { %>
+                                <span class="uf-with-tooltip ucf-option">
+                                    <label class="ucf-option-label ucf-option-subscribe">
+                                        <input class="uf-checkbox js-ucf-option" type="checkbox" name="subscribe" <% uif('$SUBSCRIBE_BY_DEFAULT$') { %>checked<% }.endif! %>>
+                                    </label>
+                                    <span class="uf-tooltip">Подписаться на комментарии к материалу</span>
+                                </span>
+                            <% }.endif! %>
+                            <% uif(code_is('$MODULE_ID$', "'shop'")) { %>
+                                <span class="uf-with-tooltip ucf-option">
+                                    <label class="ucf-option-label ucf-option-additional" onclick="if($(this).hasClass('ucf-option-checked')){$(this).removeClass('ucf-option-checked');$('#ucf-details').hide();}else{$(this).addClass('ucf-option-checked');$('#ucf-details').fadeIn();}">
+                                        <input class="uf-checkbox" type="checkbox">
+                                    </label>
+                                    <span class="uf-tooltip">Дополнительные поля</span>
+                                </span>
+                            <% }.endif! %>
+                        </li>
+                        <li>
+                            <input <% uif('$EMAIL$') { %> style="display:none" <% }.endif! %> class="uf-txt-input commFl" type="text" name="email" value="<%= c '$EMAIL$' %>" size="30" maxlength="60" placeholder="your@email.com">
+                        </li>
+                        <% uif(code_is('$MODULE_ID$', "'shop'")) { %>
+                            <li id="ucf-details" class="uf-hidden">
+                                <ul class="uf-form ucf-form">
+                                    <li>
+                                        <textarea class="uf-txt-input prosFl" rows="3" name="pros" id="pros" placeholder="Плюсы"></textarea>
+                                    </li>
+                                    <li>
+                                        <textarea class="uf-txt-input consFl" rows="3" name="cons" id="cons" placeholder="Минусы"></textarea>
+                                    </li>
+                                </ul>
+                            </li>
+                        <% }.endif! %>
+                        <li>
+                            <input class="commSbmFl uf-btn" id="addcBut" type="submit" name="submit" value="Отправить" />
+                        </li>
+                    </ul>
+                <% }.else { %>
+                    <div class="myWinError" style="text-align: center; height: 50px; line-height: 50px;">
+                        Вы относитесь к группе пользователей, которым запрещено совершать данное действие.
+                    </div>
+                <% }.endif! %>
+            </div>
+        </div>
+    <% }.else { %>
+        <div class="uauth-small-links uauth-links-set<%= c '$IMAGE_SET$' %>">
+            Войдите: <%= c '$SOCIAL_BTNS$' %>
+        </div>
+        <div class="uComForm-inner">
+            <span class="ucf-avatar">
+                <img src="/.s/img/icon/social/noavatar.png" alt="avatar" />
+            </span>
+            <div class="ucf-content ucf-start-content">
+                <ul class="uf-form ucf-form">
+                    <li>
+                        <textarea class="uf-txt-input commFl js-start-txt" placeholder="Оставьте ваш комментарий..."></textarea>
+                    </li>
+                    <li>
+                        <button class="uf-btn" onclick="preSaveMessage();window.open('/index/800?ref='+window.location.href,'SocialLoginWnd','width=500,height=340,resizable=yes,titlebar=yes');">Отправить</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <% }.endif! %>
+</div>
