@@ -105,8 +105,8 @@
 'se2.t': 'templates/search/_material.html' # Вид материалов
 
 # Редактор страниц
-'si.t':  'templates/pages/index.html.erb' # Страницы сайта
-'si110': 'templates/pages/minichat.html'  # MiniChat
+'si.t':  'templates/pages/index.html.erb'    # Страницы сайта
+'si110': 'templates/pages/minichat.html.erb' # MiniChat
 
 #
 #'temp': '' #
