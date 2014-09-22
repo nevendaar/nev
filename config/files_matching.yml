@@ -5,6 +5,7 @@
 'ASIDE':  'templates/ASIDE.html.erb'  # Меню сайта
 'FOOTER': 'templates/FOOTER.html.erb' # Подвал
 'HEADER': 'templates/HEADER.html.erb' # Шапка
+'MCHAT':  'templates/MCHAT.html.erb'  # Мини-чат
 
 # Доска объявлений
 'bd1.t': 'templates/board/main.html.erb'           # Главная страница модуля
