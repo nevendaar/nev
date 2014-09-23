@@ -1,0 +1,169 @@
+﻿<%# Old template %>
+<div class="gDivLeft">
+    <div class="gDivRight">
+        <table class="gTable" id="frM53" border="0" cellpadding="0" cellspacing="1" width="100%">
+            <tbody>
+                <tr id="frM54">
+                    <td colspan="2" class="gTableTop" id="frM55">
+                        <div id="form_anketa"></div>
+                            <div style="float: right;" class="gTopCornerRight"></div>
+                            <a name="post">
+                                <%= c '$FORM_TITLE$' %>
+                                <%# <br><script type="text/javascript" src="/informer/2-1"></script><br><br> %>
+                            </a>
+                    </td>
+                </tr>
+                <% uif('$ERROR$') { %>
+                    <tr id="frM1">
+                        <td colspan="2" class="gTableError" id="frM2" align="center"><%= c '$ERROR$' %></td>
+                    </tr>
+                <% }.endif! %>
+                <% uif('$_USER$') { %>
+                    <tr id="frM3">
+                        <td class="gTableLeft" id="frM4">Имя:</td>
+                        <td class="gTableRight" id="frM5"><%= c '$_USER$' %></td>
+                    </tr>
+                <% }.endif! %>
+                <% uif('$_THREAD_NAME$') { %>
+                    <tr id="frM25">
+                        <td class="gTableLeft" id="frM26">Название темы:</td>
+                        <td class="gTableRight" id="frM27"><%= c '$_THREAD_NAME$' %></td>
+                    </tr>
+                    <tr id="frM28">
+                        <td class="gTableLeft" id="frM29">Описание темы:</td>
+                        <td class="gTableRight" id="frM30"><%= c '$_THREAD_DESCR$' %></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="gTableLeft">
+                            <div id="anketa" align="center" style="display: none;"></div>
+                            <div id="loading" align="center" style="display: none;">
+                                <hr>
+                                <img border="0" align="absmiddle" src="http://s6.ucoz.net/img/ma/m/i3.gif">
+                                <hr>
+                            </div>
+                        </td>
+                    </tr>
+                <% }.endif! %>
+                <% uif('$_POLL_QUESTION$') { %>
+                    <tr id="frM31">
+                        <td class="gTableRight" colspan="2" id="frM32">&nbsp;</td>
+                    </tr>
+                    <tr id="frM33">
+                        <td class="gTableLeft" id="frM34">Вопрос голосования:</td>
+                        <td class="gTableRight" id="frM35"><%= c '$_POLL_QUESTION$' %></td>
+                    </tr>
+                    <tr id="frM36">
+                        <td class="gTableLeft" id="frM37">
+                            Пункты опроса:
+                            <div class="pollHelp">Введите по одному ответу на строку. Максимум <b>10</b> ответов.</div>
+                        </td>
+                        <td class="gTableRight" id="frM38"><%= c '$_POLL_ANSWERS$' %></td>
+                    </tr>
+                    <tr id="frM40">
+                        <td class="gTableLeft" id="frM41">Опции опроса:</td>
+                        <td class="gTableRight" id="frM42">
+                            <%= c '$_POLL_ONLY_OPT$' %>
+                            <label for="pollonly">Только опрос (писать ответы в теме будет нельзя)</label>
+                            <br>
+                            <%= c '$_POLL_MULTI_OPT$' %>
+                            <label for="pollmulty">Включить возможность выбора нескольких вариантов ответов</label>
+                            <br>
+                            <%= c '$_POLL_PERIOD_OPT$' %> Период голосования (0 - без ограничений)
+                        </td>
+                    </tr>
+                    <tr id="frM43">
+                        <td class="gTableRight" colspan="2" id="frM44">&nbsp;</td>
+                    </tr>
+                <% }.endif! %>
+                <tr id="frM56">
+                    <td class="gTableLeft" id="frM57" valign="top" width="25%">
+                        Текст сообщения:
+                        <div class="smilesPart"><%= c '$SMILES$' %></div>
+                    </td>
+                    <td class="gTableRight" id="frM58">
+                        <%= c '$BBCODES$' %>
+                        <%= c '$_MESSAGE$' %>
+                    </td>
+                </tr>
+
+                <% uif('$_THREAD_NAME$') { %>
+                    <script type="text/javascript">
+                        if (document.location.href == '<%= home_url %>/forum/24-0-0-1-1#form_anketa') {
+                            $('#loading').show();
+                            $('#anketa').load('/Forumdata/rolaform.htm #rolaform', function () {
+                                $('#loading').hide();
+                                $('#anketa').slideToggle('medium');
+                            });
+                        }
+                    </script>
+                <% }.endif! %>
+
+                <% uif('$MESSAGE_OPTIONS_FLAG$') { %>
+                    <tr id="frM14">
+                        <td class="gTableLeft" id="frM15">Опции сообщения:</td>
+                        <td class="gTableRight" id="frM16">
+                            <% uif('$_HTML_OPT$') { %>
+                                <%= c '$_HTML_OPT$' %> <label for="ahtml">Включить HTML теги</label><br>
+                                <%= c '$_MAKE_BR_OPT$' %> <label for="frmt">Заменять переводы строк тегом <b>&lt;BR&gt;</b></label><br>
+                            <% }.endif! %>
+                            <% uif('$_EDITED_OPT$') { %>
+                                <%= c '$_EDITED_OPT$' %> <label for="edited">Добавить надпись "Отредактировано..." в это сообщение?</label><br>
+                            <% }.endif! %>
+                            <% uif('$_SMILES_OPT$') { %>
+                                <%= c '$_SMILES_OPT$' %> <label for="smon">Включить смайлы</label><br>
+                            <% }.endif! %>
+                            <% uif('$_SIGNATURE_OPT$') { %>
+                                <%= c '$_SIGNATURE_OPT$' %> <label for="sgon">Включить подпись</label><br>
+                            <% }.endif! %>
+                            <% uif('$_SUBSCRIBE_OPT$') { %>
+                                <%= c '$_SUBSCRIBE_OPT$' %> <label for="sbon">Включить уведомление на e-mail при ответах</label><br>
+                            <% }.endif! %>
+                        </td>
+                    </tr>
+                <% }.endif! %>
+
+                <% uif('$MODER_OPTIONS_FLAG$') { %>
+                    <tr id="frM6">
+                        <td class="gTableLeft" id="frM7">Опции темы:</td>
+                        <td class="gTableRight" id="frM8">
+                            <% uif('$_FIRSTONTOP_OPT$') { %>
+                                <%= c '$_FIRSTONTOP_OPT$' %> <label for="firstontop">Первое сообщение темы сделать шапкой (показывать на всех страницах)</label><br>
+                            <% }.endif! %>
+                            <% uif('$_ONTOP_OPT$') { %>
+                                <%= c '$_ONTOP_OPT$' %> <label for="isontop">Тема всегда сверху</label><br>
+                            <% }.endif! %>
+                            <% uif('$_CLOSED_OPT$') { %>
+                                <%= c '$_CLOSED_OPT$' %> <label for="isclosed">Закрытая тема</label>
+                            <% }.endif! %>
+                        </td>
+                    </tr>
+                <% }.endif! %>
+
+                <% uif('$_FILES_UPLOADER$') { %>
+                    <tr id="frM50">
+                        <td class="gTableLeft" id="frM51">
+                            Прикрепить файл: <span style="">(не более <b><%= c '$FILE_MAX_SIZE$' %></b>Kb)</span>
+                        </td>
+                        <td class="gTableRight" id="frM52"><%= c '$_FILES_UPLOADER$' %></td>
+                    </tr>
+                <% }.endif! %>
+                <% uif('$_SECURITY_CODE$') { %>
+                    <tr id="frM45">
+                        <td class="gTableLeft" id="frM46">Код безопасности:</td>
+                        <td class="gTableRight" id="frM47"><%= c '$_SECURITY_CODE$' %></td>
+                    </tr>
+                <% }.endif! %>
+                <tr id="frM59">
+                    <td class="gTableRight" colspan="2" id="frM60" align="center">
+                        <input style="width: 110px;" id="frF15" class="postPreview" value="Просмотреть" onclick="prepost();" type="button">
+                        <input id="frF16" name="sbm" style="width: 150px; font-weight: bold;" class="postSubmit" value="<%= c '$SUBMIT_SIGN$' %>" type="submit">
+                        <input style="width: 110px;" id="frF17" class="postReset" value="Отменить" type="reset">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="gDivBottomLeft"></div>
+<div class="gDivBottomCenter"></div>
+<div class="gDivBottomRight"></div>

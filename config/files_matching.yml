@@ -44,7 +44,7 @@
 # Форум
 'fr1.t': 'templates/forum/main.html.erb'  # Общий вид страниц форума
 'fr2.t': 'templates/forum/_post.html.erb' # Вид материалов
-'fr3.t': 'templates/forum/_form.html'     # Форма добавления сообщения
+'fr3.t': 'templates/forum/_form.html.erb' # Форма добавления сообщения
 
 # Информеры
 'i3': 'templates/informers/i3.html' #
