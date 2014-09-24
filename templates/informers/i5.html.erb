@@ -1,0 +1,26 @@
+<%# Old template %>
+<table border="0" cellpadding="2" cellspacing="1" width="100%" class="infTable">
+    <tr>
+        <td class="infTitleT" width="70%">
+            <% uif('$TITLE$') { %>
+                <a href="<%= c '$SITE_URL$' %>" target="_self">
+                    <% uif('len($TITLE$) <= 20') { %>
+                        <%= c '$TITLE$' %>
+                    <% }.else { %>
+                        <%= i 'substr($TITLE$, 0, 20)' %>...
+                    <% }.endif! %>
+                </a>
+            <% }.endif! %>
+        </td>
+        <td class="infTitleD" nowrap align="right">[<%= c '$DATE$' %>]</td>
+    </tr>
+    <tr>
+        <td class="infMes" colspan="2">
+            <% uif('len($MESSAGE$) <= 200') { %>
+                <%= c '$MESSAGE$' %>
+            <% }.else { %>
+                <%= i 'substr($MESSAGE$, 0, 200)' %>...
+            <% }.endif! %>
+        </td>
+    </tr>
+</table>

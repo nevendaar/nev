@@ -47,9 +47,9 @@
 'fr3.t': 'templates/forum/_form.html.erb' # Форма добавления сообщения
 
 # Информеры
-'i3': 'templates/informers/i3.html' #
-'i4': 'templates/informers/i4.html' #
-'i5': 'templates/informers/i5.html' #
+'i3': 'templates/informers/i3.html.erb' #
+'i4': 'templates/informers/i4.html.erb' #
+'i5': 'templates/informers/i5.html.erb' #
 
 # Каталог файлов
 'ld1.t': 'templates/load/main.html.erb'           # Главная страница каталога файлов

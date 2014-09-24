@@ -1,0 +1,25 @@
+<%# Old template %>
+<div class="infTitleT">
+    <a href="<%= c '$ENTRY_URL$' %>"><%= c '$ENTRY_TITLE$' %></a>
+    (<%= c '$USERNAME$' %>)
+</div>
+<div class="infMes">
+    <% uif("strpos($MESSAGE$, '<div') < 0") { %>
+        <% uif("strrpos($MESSAGE$, '<img') > -1") { %>
+            <% uif("strrpos($MESSAGE$, '<a') > -1", "strrpos($MESSAGE$, '<a') < strrpos($MESSAGE$, '<img')") { %>
+                <%= i "substr($MESSAGE$, 0, strrpos($MESSAGE$, '<a'))" %> . . .
+            <% }.else { %>
+                <%= i "substr($MESSAGE$, 0, strrpos($MESSAGE$, '<img'))" %> . . .
+            <% }.endif! %>
+        <% }.else { %>
+            <% uif('len($MESSAGE$) <= 200') { %>
+                <%= c '$MESSAGE$' %>
+            <% }.else { %>
+                <%= i 'substr($MESSAGE$, 0, 200)' %>...
+            <% }.endif! %>
+        <% }.endif! %>
+    <% }.else { %>
+    . . .
+    <% }.endif! %>
+</div>
+<hr>

@@ -1,0 +1,7 @@
+<%# Old template %>
+<a class="adiv" href="<%= c '$ENTRY_URL$' %>"><%= c '$TITLE$' %></a>
+<% uif(code_is('$COMMENTS_NUM$', :not, 0)) { %>
+    (<a href="<%= c '$COMMENTS_URL$' %>"><%= c '$COMMENTS_NUM$' %> комментари<% uif(code_is('$COMMENTS_NUM$', 1)) { %>й<% }.else { %><% uif('$COMMENTS_NUM$ >= 2', '$COMMENTS_NUM$ <= 4') { %>я<% }.else { %><% uif('$COMMENTS_NUM$ >= 5', '$COMMENTS_NUM$ <= 20') { %>ев<% }.else { %><% uif(code_is('$COMMENTS_NUM$ % 10', 1)) { %>й<% }.else { %><% uif('$COMMENTS_NUM$ % 10 >= 2', '$COMMENTS_NUM$ % 10 <= 4') { %>я<% }.else { %>ев<% }.endif! %><% }.endif! %><% }.endif! %><% }.endif! %><% }.endif! %></a>)
+<% }.endif! %>
+[<%= c '$DATE$' %>]
+<hr>
