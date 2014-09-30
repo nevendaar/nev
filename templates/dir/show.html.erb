@@ -1,0 +1,72 @@
+﻿<%# Old template %>
+
+<% @params[:title] = "#{c '$ENTRY_TITLE$'} - #{c '$CAT_NAME$'} " <<
+        uif_str('$SECTION_NAME$') { |s| s << "- #{c '$SECTION_NAME$'}" }.endif! <<
+        " - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+<% @params[:meta][:title] = c '$ENTRY_NAME$' %>
+<% @params[:meta][:description] = i("substr($BRIEF$, 0, strpos($BRIEF$, '<'))") << '...' %>
+
+<% layout do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a href="<%= c '$MODULE_URL$' %>">Файлы</a></li>
+        <% uif('$SECTION_NAME$') { %><li><a href="<%= c '$SECTION_URL$' %>"><%= c '$SECTION_NAME$' %></a></li><% }.endif! %>
+        <li class="active"><%= c '$CAT_NAME$' %></li>
+    </ol>
+
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="text-right">[ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]</div>
+    <% }.endif! %>
+
+    <div class="material">
+        <div class="title clearfix">
+            <h2><%= c '$ENTRY_NAME$' %> <%= c '$VERSION$' %> <%= c '$MODER_PANEL$' %></h2>
+            <div class="time pull-right">
+                <%= c '$ADD_DATE$' %>, <%= c '$ADD_TIME$' %> <%= c '$MODER_PANEL$' %>
+            </div>
+        </div>
+        <div class="body">
+            <% uif('$FILE_URL$ || $RFILE_URL$ || $SCREEN_URL$') { %>
+                <div>
+                    <b>[
+                        <% uif('$FILE_URL$') { %>
+                            <a href="<%= c('$FILE_URL$') %>">Скачать с сервера</a> (<%= c('$FILE_SIZE$') %>)
+                        <% }.endif! %>
+                        <% uif('$RFILE_URL$') { %>
+                            · <a href="<%= c('$RFILE_URL$') %>" target="_blank">Скачать удаленно</a> (<%= c('$RFILE_SIZE$') %>)
+                        <% }.endif! %>
+                        <% uif('$SCREEN_URL$') { %>
+                            · <a href="<%= c('$SCREEN_URL$') %>" target="_blank">Скриншот</a>
+                        <% }.endif! %>
+                    ]</b>
+                </div>
+            <% }.endif! %>
+        <%= c('$MESSAGE$') %>
+        <ul class="details">
+            <% uif('$CAT_NAME$') { %><li>Категория: <a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li><% }.endif! %>
+            <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USER$' %></a></li>
+            <% uif('$AUTHOR_NAME$') { %><li>Автор: <u>$AUTHOR_NAME$</u></li><% }.endif! %>
+            <% uif('$AUTHOR_EMAIL_JS$') { %>
+                <li>
+                    <a href="<%= c '$AUTHOR_EMAIL_JS$' %>">
+                        <img border="0" src="/site/e.gif" align="absmiddle" title="E-mail">
+                    </a>
+                </li>
+            <% }.endif! %>
+            <% uif('$AUTHOR_SITE$') { %>
+                <li>
+                    <a rel="nofollow" href="<%= c '$AUTHOR_SITE$' %>" target="_blank">
+                        <img border="0" src="http://src.ucoz.ru/t/0/h.gif" align="absmiddle" title="Home Page">
+                    </a>
+                </li>
+            <% }.endif! %>
+            <li>Просмотров: <%= c '$READS$' %></li>
+            <li>Загрузок: <%= c '$LOADS$' %></li>
+            <% uif('$RATING$') { %><li>Рейтинг: <%= rating_stars %></li><% }.endif! %>
+        </ul>
+        <% uif('$TAGS$') { %><div class="tags">Теги: <i><%= c('$TAGS$') %></i></div><% }.endif! %>
+      </div>
+    </div>
+
+    <%= render :comment_box %>
+<% end %>
