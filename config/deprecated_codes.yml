@@ -1,9 +1,13 @@
 ---
 
-'$HOME_PAGE_LINK$': "Use '/' instead." #
+'$BBCODES_URI$':    "Write normal js for this." # TODO
+'$HOME_PAGE_LINK$': "Use '/' instead."
 '$LOGIN_FORM$': >
                   This code generate too much HTML, avoid using it.
                   Give link to login page or login modal window instead.
+'$MSGCTRL_URI$':    "Write normal js for this." # TODO
 '$PROFILE_URL$': >
                   Use class='profile-link' and href='/index/8-$USER_ID$' or
                   href='/index/8-0-$USERNAME$' instead.
+'$RELOAD_URI$':     "Write normal js for this." # TODO
+'$SMILES_URI$':     "Write normal js for this." # TODO
