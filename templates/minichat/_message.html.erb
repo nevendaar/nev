@@ -1,0 +1,29 @@
+﻿<div class="mc_post">
+    <div class="avatar">
+        <% uif('$USERNAME$') { %>
+            <a href="/index/8-<%= c '$USER_ID$' %>" title="<%= c '$USERNAME$' %>">
+                <img src="<% uif('$CUSTOM1$') { %><%= c '$CUSTOM1$' %><% }.else { %>http://s6.ucoz.net/img/icon/profile.png<% }.endif! %>">
+            </a>
+        <% }.else { %>
+            <img src="http://s6.ucoz.net/img/icon/profile.png" alt="<%= c '$NAME$' %>">
+        <% }.endif! %>
+    </div>
+    <div class="top">
+        <a href="/index/8-<%= c '$USER_ID$' %>" title="Ответить" class="mc_username"><%= c '$NAME$' %></a>
+        <% uif('$EMAIL$') { %>
+            <a href="<%= c '$EMAIL_JS$' %>" title="<%= c '$STR_EMAIL$' %>">
+                <img src="http://s6.ucoz.net/t/601/e.gif">
+            </a>
+        <% }.endif! %>
+        <% uif('$SITE$') { %>
+            <a href="<%= c '$SITE$' %>" target="_blank" title="<%= c '$STR_URL$' %>" rel="nofollow">
+                <img src="http://s6.ucoz.net/t/601/h.gif">
+            </a>
+        <% }.endif! %>
+        <span class="pull-right" title="<%= c '$DATE$' %>"><%= c '$TIME$' %></span>
+    </div>
+    <div class="msg">
+        <%= c '$MESSAGE$' %>
+        <% uif('$CUSTOM2$') { %><br><%= c '$STR_CUSTOM2$' %>: <%= c '$CUSTOM2$' %><% }.endif! %>
+    </div>
+</div>

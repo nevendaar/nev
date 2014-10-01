@@ -61,7 +61,7 @@
 'ld7.t': 'templates/load/_material.html'          # Вид материалов
 
 # Мини-чат
-'mc1.t': 'templates/minichat/_message.html' # Вид материалов
+'mc1.t': 'templates/minichat/_message.html.erb' # Вид материалов
 'mc2.t': 'templates/minichat/_form.html'    # Форма добавления сообщений
 
 # Формы обратной связи
