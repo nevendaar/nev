@@ -1,0 +1,75 @@
+﻿<%# Old template %>
+<hr>
+<% uifnot('$CAN_ADD$') { %>
+    <div align="center">
+        <% uif('$LOGIN_LINK$') { %>
+            <a href="<%= c '$LOGIN_LINK$' %>">Для добавления необходима авторизация</a>
+        <% }.else { %>
+            Доступ запрещен
+        <% }.endif! %>
+    </div>
+<% }.else { %>
+    <table border="0" cellpadding="1" cellspacing="1" width="100%">
+        <tr>
+            <td><%= c '$FLD_AUTOUPD$' %></td>
+            <td width="70%" align="right">
+                <a href="<%= c '$RELOAD_URI$' %>" title="Обновить">
+                    <img border="0" align="absmiddle" src="/chatbtn/mcr.gif" width="32" height="35">
+                </a>
+                <% uif('$SMILES_URI$') { %>
+                    &nbsp;
+                    <a href="<%= c '$SMILES_URI$' %>" title="Вставить смайл">
+                        <img border="0" align="absmiddle" src="/chatbtn/mcs.gif" width="32" height="35">
+                    </a>
+                <% }.endif! %>
+                <% uif('$BBCODES_URI$') { %>
+                    &nbsp;
+                    <a href="<%= c '$BBCODES_URI$' %>" title="BB-Коды">
+                        <img border="0" align="absmiddle" src="/chatbtn/mcb.gif" width="32" height="35">
+                    </a>
+                <% }.endif! %>
+                <% uif('$MSGCTRL_URI$') { %>
+                    &nbsp;
+                    <a href="<%= c '$MSGCTRL_URI$' %>" title="Управление сообщениями">
+                        <img border="0" align="absmiddle" src="/chatbtn/mcm.gif" width="32" height="35">
+                    </a>
+                <% }.endif! %>
+                &nbsp;
+                <a id="changelink" href="/index/mchat/0-110" title="В новом окне">
+                    <img border="0" align="absmiddle" src="/chatbtn/mcw.gif" width="32" height="35">
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <% uifnot('$USER_LOGGED_IN$') { %>
+        <table border="0" cellpadding="1" cellspacing="1" width="100%">
+            <tr><td colspan="2"><%= c '$FLD_NAME$' %></td></tr>
+            <tr><td width="50%"><%= c '$FLD_EMAIL$' %></td><td><%= c '$FLD_URL$' %></td></tr>
+        </table>
+    <% }.endif! %>
+
+    <% uif('$FLD_CUSTOM1$ || $FLD_CUSTOM2$') { %>
+        <table border="0" cellpadding="1" cellspacing="1" width="100%">
+            <tr><td width="50%" style="display: none"><%= c '$FLD_CUSTOM1$' %></td><td><%= c '$FLD_CUSTOM2$' %></td></tr>
+        </table>
+    <% }.endif! %>
+
+    <% uif('$FLD_SECURE$') { %>
+        <table border="0" cellpadding="1" cellspacing="1" width="100%">
+            <tr><td width="50%"><%= c '$FLD_SECURE$' %></td><td align="right"><%= c '$IMG_SECURE$' %></td></tr>
+        </table>
+    <% }.endif! %>
+
+    <table border="0" cellpadding="1" cellspacing="1" width="100%">
+        <tr>
+            <td width="95%" rowspan="2"><%= c '$FLD_MESSAGE$' %></td>
+            <td align="center" valign="top">
+                <div style="font-size:10px;"><%= c '$LENGTH_COUNTER$' %></div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="bottom"><%= c '$SUBMIT$' %></td>
+        </tr>
+    </table>
+<% }.endif! %>

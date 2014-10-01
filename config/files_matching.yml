@@ -62,7 +62,7 @@
 
 # Мини-чат
 'mc1.t': 'templates/minichat/_message.html.erb' # Вид материалов
-'mc2.t': 'templates/minichat/_form.html'    # Форма добавления сообщений
+'mc2.t': 'templates/minichat/_form.html.erb'    # Форма добавления сообщений
 
 # Формы обратной связи
 #'mf1': '' #
