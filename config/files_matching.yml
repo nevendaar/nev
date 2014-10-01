@@ -32,7 +32,7 @@
 'dr1.t': 'templates/dir/main.html.erb'           # Главная страница каталога сайтов
 'dr2.t': 'templates/dir/index_section.html.erb'  # Страница со списком материалов раздела
 'dr3.t': 'templates/dir/index_category.html.erb' # Страница со списком материалов категории
-'dr4.t': 'templates/dir/show.html'               # Страница материала и комментариев к нему
+'dr4.t': 'templates/dir/show.html.erb'           # Страница материала и комментариев к нему
 'dr5.t': 'templates/dir/search.html.erb'         # Страница поиска и рейтинга материалов
 'dr6.t': 'templates/dir/new_or_edit.html.erb'    # Страница добавления/редактирования материала
 'dr7.t': 'templates/dir/_site.html.erb'          # Вид материалов
