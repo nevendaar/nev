@@ -58,7 +58,7 @@
 'ld4.t': 'templates/load/show.html'               # Страница материала и комментариев к нему
 'ld5.t': 'templates/load/search.html.erb'         # Страница поиска и рейтинга материалов
 'ld6.t': 'templates/load/new_or_edit.html'        # Страница добавления/редактирования материала
-'ld7.t': 'templates/load/_material.html'          # Вид материалов
+'ld7.t': 'templates/load/_material.html.erb'      # Вид материалов
 
 # Мини-чат
 'mc1.t': 'templates/minichat/_message.html.erb' # Вид материалов

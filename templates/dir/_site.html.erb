@@ -19,7 +19,7 @@
                     <% uif('$READS$ || $REDIRECTS$') { %>
                         <li>
                             Просмотров:
-                            <% uif('$REDIRECTS$ > $READS$') { %>$REDIRECTS$<% }.else { %><%= c '$READS$' %><% }.endif! %>
+                            <% uif('$REDIRECTS$ > $READS$') { %><%= c '$REDIRECTS$' %><% }.else { %><%= c '$READS$' %><% }.endif! %>
                             <% uif(group_is '$CUR_GROUP_ID$', :admin, :master) { %>
                                 (<%= c '$READS$' %>|<%= c '$REDIRECTS$' %>)
                             <% }.endif! %>
