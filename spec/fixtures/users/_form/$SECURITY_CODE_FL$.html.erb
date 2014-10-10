@@ -1,0 +1,4 @@
+<% secret_key = rand 9999999999999999999 %>
+<input class="securityCode" type="text" name="code" size="5" maxlength="5" />
+<input type="hidden" name="seckey" value="<%= secret_key %>" />
+<img alt="" style="margin:0;padding:0;border:0;cursor:pointer;" id="secuImg" align="absmiddle" title="Обновить код безопасности" onclick="this.src='<%= home_url %>/secure/?k=<%= secret_key %>;s=index;tm='+Math.random();" src="<%= home_url %>/secure/?k=<%= secret_key %>;s=index;tm=<%= Time.now.to_i %>" />

@@ -1,0 +1,54 @@
+<input type="checkbox" name="opt" value="1" id="op1" checked>
+<label for="op1">Скрывать e-mail адрес (Hide e-mail)</label>
+<br>
+<input type="checkbox" name="opt" value="8" id="op8" >
+<label for="op8">Скрывать телефон</label>
+<br>
+<input type="checkbox" name="opt" value="2" id="op2" checked>
+<label for="op2">I want to receive letters from other users</label>
+<br>
+<input type="checkbox" name="opt" value="3" id="op3" >
+<label for="op3">Don't show avatars in the Forum messages</label>
+<br>
+<input type="checkbox" name="opt" value="4" id="op4" >
+<label for="op4">Don't show signature in the Forum messages</label>
+<br>
+<input type="checkbox" name="opt" value="6" id="op6" >
+<label for="op6">Отключить прием уведомлений об изменении репутации</label>
+<br>
+<input type="checkbox" name="opt" value="7" id="op7" >
+<label for="op7">Отключить прием уведомлений о получении наград</label>
+<br>
+<input type="checkbox" name="opt" value="5" id="op5" checked>
+<label for="op5">I want to receive e-mail notifications concerning</label>
+<br>
+<div style="padding-left:24px;padding-top:4px;">
+    <a id="pmGrLnk" href="javascript://" rel="nofollow" onclick="showgrp();return false;">
+        I want to receive my personal messages from...
+    </a>
+</div>
+<div id="pmgrs" style="display:none;">
+    <input type="checkbox" id="ugrOAll" name="pmgrall" value="1000" onclick="checkAll();" checked>
+    <label for="ugrOAll"><b id="allGrps">Все группы</b></label>
+    <br>
+    <input type="checkbox" id="ugrO1" name="pmgr" onclick="checkcur();" value="1" checked>
+    <label for="ugrO1">Пользователь</label>
+    &nbsp;
+    <input type="checkbox" id="ugrO2" name="pmgr" onclick="checkcur();" value="2" checked>
+    <label for="ugrO2">Проверенный</label>
+    &nbsp;
+    <input type="checkbox" id="ugrO3" name="pmgr" onclick="checkcur();" value="3" checked>
+    <label for="ugrO3">Модератор</label>
+    &nbsp;
+    <br>
+    <input type="checkbox" id="ugrO4" name="pmgr" onclick="checkcur();" value="4" checked>
+    <label for="ugrO4">Администратор</label>
+    &nbsp;
+    <input type="checkbox" id="ugrO251" name="pmgr" onclick="checkcur();" value="251" checked>
+    <label for="ugrO251">Лорд (Lord)</label>
+    &nbsp;
+    <input type="checkbox" id="ugrO255" name="pmgr" onclick="checkcur();" value="255" >
+    <label for="ugrO255">Заблокированные</label>
+    &nbsp;
+    <br>
+</div>
