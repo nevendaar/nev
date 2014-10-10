@@ -123,5 +123,5 @@
 'us7.t':  'templates/users/index.html.erb'        # Страница со списком пользователей
 'us8.t':  'templates/users/comments.html.erb'     # Страница со списком комментариев пользователя
 'us9.t':  'templates/users/_reg_form.html'        # Форма регистрации локальных пользователей
-'us10.t': 'templates/users/_form.html'            # Форма редактирования персональной информации
+'us10.t': 'templates/users/_form.html.erb'        # Форма редактирования персональной информации
 'new.t':  'templates/users/pm.html.erb'           # Личные сообщения (ЛС)

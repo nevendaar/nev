@@ -1,0 +1,346 @@
+﻿<%# Old template %>
+<table border="0" cellspacing="1" cellpadding="2" width="100%" class="manTable" id="siM63">
+    <% uif('$ERROR$') { %>
+        <tr id="siM1">
+            <td colspan="2" align="center" class="manTdError" id="siM2">
+                <%= c '$ERROR$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$LOGIN_FL$') { %>
+        <tr id="siM42">
+            <td class="manTd1" width="35%" id="siM43">
+                <%= c '$LOGIN_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM44">
+                <%= c '$LOGIN_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$PASSWORD_FL$') { %>
+        <tr id="siM45">
+            <td class="manTd1" id="siM46">
+                <%= c '$PASSWORD_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM47">
+                <%= c '$PASSWORD_FL$' %>
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$PASSWORD1_FL$') { %>
+        <tr id="siM48">
+            <td class="manTd1" id="siM49">
+                <%= c '$PASSWORD1_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM50">
+                <%= c '$PASSWORD1_FL$' %>
+            </td>
+        </tr>
+    <% }.endif! %>
+    <tr>
+        <td height="10" class="manTdSep" colspan="2">
+            <hr class="manHr">
+        </td>
+    </tr>
+    <% uif('$GROUP_FL$') { %>
+        <tr id="siM70">
+            <td class="manTd1" id="siM71">
+                <%= c '$GROUP_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM72">
+                <%= c '$GROUP_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$NAME_FL$') { %>
+        <tr id="siM51">
+            <td class="manTd1" id="siM52">
+                <%= c '$NAME_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM53">
+                <%= c '$NAME_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$EMAIL_FL$') { %>
+        <tr id="siM54">
+            <td class="manTd1" id="siM55">
+                <%= c '$EMAIL_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM56">
+                <%= c '$EMAIL_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$WWW_FL$') { %>
+        <tr id="siM3">
+            <td class="manTd1" id="siM4">
+                <%= c '$WWW_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM5">
+                <%= c '$WWW_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$ICQ_FL$') { %>
+        <tr id="siM6">
+            <td class="manTd1" id="siM7">
+                <%= c '$ICQ_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM8">
+                <%= c '$ICQ_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$AOL_FL$') { %>
+        <tr id="siM9">
+            <td class="manTd1" id="siM10">
+                <%= c '$AOL_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM11">
+                <%= c '$AOL_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$MSN_FL$') { %>
+        <tr id="siM12">
+            <td class="manTd1" id="siM13">
+                <%= c '$MSN_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM14">
+                <div id="raceFldDiv" style="display:none;"><%= c '$MSN_FL$' %></div>
+                <select size="1" id="raceSelect" name="msn">
+                    <option value="">select</option>
+                    <option value="1">Имперец (Empire)</option>
+                    <option value="2">Нежить (Undead)</option>
+                    <option value="3">Еретик (Heretic)</option>
+                    <option value="4">Горец (Clansman)</option>
+                    <option value="5">Житель леса (Sylvanfolk)</option>
+                    <option value="6">Зеленокожий (Greenskin)</option>
+                    <option value="7">Обитатели болот (Marshdwellers)</option>
+                    <option value="8">Морской житель (Merfolk)</option>
+                    <option value="9">Варвар (Barbarian)</option>
+                    <option value="10">Нейтральный наемник (Neutrals)</option>
+                </select>
+                <script type="text/javascript">
+                    $('#raceSelect option[value="' + $('#siF4').parent().remove().end().val() + '"]').attr('selected', 'selected');
+                </script>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$YAHOO_FL$') { %>
+        <tr id="siM15">
+            <td class="manTd1" id="siM16">
+                <%= c '$YAHOO_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM17">
+                <%= c '$YAHOO_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$BIRTHDAY_FL$') { %>
+        <tr id="siM30">
+            <td class="manTd1" id="siM31">
+                <%= c '$BIRTHDAY_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM32">
+                <%= c '$BIRTHDAY_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$GENDER_FL$') { %>
+        <tr id="siM27">
+            <td class="manTd1" id="siM28">
+                <%= c '$GENDER_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM29">
+                <%= c '$GENDER_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$COUNTRY_FL$') { %>
+        <tr id="siM18">
+            <td class="manTd1" id="siM19">
+                <%= c '$COUNTRY_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM20">
+                <%= c '$COUNTRY_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$STATE_FL$') { %>
+        <tr id="siM21">
+            <td class="manTd1" id="siM22">
+                <%= c '$STATE_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM23">
+                <%= c '$STATE_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$CITY_FL$') { %>
+        <tr id="siM24">
+            <td class="manTd1" id="siM25">
+                <%= c '$CITY_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM26">
+                <%= c '$CITY_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$AVATAR_FL$') { %>
+        <tr id="siM36">
+            <td class="manTd1" valign="top" id="siM37">
+                <%= c '$AVATAR_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM38">
+                <%= c '$AVATAR_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$SIGNATURE_FL$') { %>
+        <tr id="siM33">
+            <td class="manTd1" id="siM34">
+                <%= c '$SIGNATURE_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM35">
+                <%= c '$SIGNATURE_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$SUBSCRIPTION_FL$') { %>
+        <tr id="siM39">
+            <td class="manTd1" id="siM40">
+                <%= c '$SUBSCRIPTION_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM41">
+                <%= c '$SUBSCRIPTION_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$OPTIONS_FL$') { %>
+        <tr id="siM63">
+            <td class="manTd1" id="siM64">
+                <%= c '$OPTIONS_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM65">
+                <%= c '$OPTIONS_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <% uif('$SECURITY_CODE_FL$') { %>
+        <tr id="siM60">
+            <td class="manTd1" id="siM61">
+                <%= c '$SECURITY_CODE_SIGN$' %>
+            </td>
+            <td class="manTd2" id="siM62">
+                <%= c '$SECURITY_CODE_FL$' %>
+            </td>
+        </tr>
+        <tr>
+            <td height="10" class="manTdSep" colspan="2">
+                <hr class="manHr">
+            </td>
+        </tr>
+    <% }.endif! %>
+    <tr id="siM64">
+        <td class="manTdBut" colspan="2" align="center" id="siM65">
+            <input class="manFlSbm" id="siF20" type="submit" name="sbm" value="$SUBMIT_SIGN$">
+        </td>
+    </tr>
+</table>
