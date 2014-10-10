@@ -1,1 +1,30 @@
-﻿<%# Old template %>
+<%# Old template %>
+<div style="font-family: Tahoma,Arial;">
+    <div style="font-size: 8pt; padding-top: 2px; text-align: left;">
+        <b><%= c '$QUESTION$' %></b>
+    </div>
+    <div style="font-size: 8pt; text-align: left;">
+        <%= c '$ANSWERS$' %>
+    </div>
+    <div style="padding-top: 4px; text-align: center;">
+        [
+        <a style="font-size: 7pt;" href="<%= c '$RESULTS_LINK$' %>">Результаты</a>
+        ·
+        <a style="font-size: 7pt;" href="<%= c '$ARCHIVE_LINK$' %>">Архив опросов</a>
+        ]
+    </div>
+    <div style="padding-top: 4px; font-size: 7pt; text-align: center;">
+        Всего ответов: <b><%= c '$TOTAL_VOTES$' %></b>
+        <br>
+        <br>
+        <script>
+            google_ad_client = 'pub-5758500168024279';
+            /* баннер для страниц сайта */
+            google_ad_slot = '6086756386';
+            google_ad_width = 120;
+            google_ad_height = 240;
+        </script>
+        <script src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+        <br>
+    </div>
+</div>
