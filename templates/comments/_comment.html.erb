@@ -44,7 +44,7 @@
                     <%= c '$COMMENT_RATING$' %>
                     <img alt="" src="http://s6.ucoz.net/img/icon/thumbd2_.png" title="Плохой пост" style="margin: 0 4px;vertical-align: middle;opacity: .5;">
                 <% }.endif! %>
-                <% uif('$MODER_PANEL$') { %><%= c '$MODER_PANEL$' %><% }.endif! %>
+                <%= c '$MODER_PANEL$' %>
             </div>
             <div class="uc-top-left">
                 <a href="#ent<%= c '$ID$' %>" onclick="prompt('', location.protocol + '//' + location.hostname + location.pathname + '#comEnt<%= c '$ID$' %>'); if (document.getElementById('comEnt<%= c '$ID$' %>')){$('body').scrollTo( { top:$('#comEnt<%= c '$ID$' %>').offset().top-22, left:0}, 500 );return false;}" name="ent<%= c '$ID$' %>">
