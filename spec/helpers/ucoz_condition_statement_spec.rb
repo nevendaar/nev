@@ -139,5 +139,12 @@ describe UcozConditionStatement do
       statement.endif!
       expect { statement.endif! }.to raise_error(RuntimeError)
     end
+
+    it 'check conditions, which can be simplified' do
+      expect(LOGGER).to receive(:warn).with(UcozConditionStatement::PROG_NAME)
+      statement = UcozConditionStatement.new('', '$CODE$'){ |s| s << "\n\t   $CODE$\n    " }
+      statement.endif!
+      expect(statement.instance_variable_get(:@can_simplify)).to eq true
+    end
   end
 end

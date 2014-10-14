@@ -8,9 +8,23 @@ class UcozConditionStatement
     @erb_out = erb_out
     @closed = false # tag closed?
     @has_else = false
-    condition = conditions.flatten.join(@not_flag ? ' || ' : ' && ')
-    @erb_out << "<?if#{'not' if @not_flag}(#{condition})?>"
-    yield(@erb_out) if block_given?
+    @if_content = ''
+    @can_simplify = false
+    conditions = conditions.flatten
+    condition = conditions.join(@not_flag ? ' || ' : ' && ')
+    @statement = "<?if#{'not' if @not_flag}(#{condition})?>"
+    @erb_out << @statement
+    if block_given?
+      block_code = yield(@erb_out).to_s
+      if conditions.size == 1
+        start_index = block_code.rindex(@statement)
+        if start_index
+          start_index += @statement.size
+          @if_content = block_code[start_index..-1].strip
+          @can_simplify = @if_content.empty? || @if_content == condition
+        end
+      end
+    end
   end
 
   def else
@@ -33,6 +47,13 @@ class UcozConditionStatement
         "if#{'not' if @not_flag} operator already closed!"
       end
       raise RuntimeError # TODO: create error class
+    end
+    if !@has_else && @can_simplify
+      LOGGER.warn(PROG_NAME) do
+        "Maybe expression can be simplified:\n"\
+        "`#{@statement}#{@if_content}<?endif?>`"\
+        " not the same as: `#{@if_content}`?"
+      end
     end
     @closed = true
     @erb_out << '<?endif?>'
