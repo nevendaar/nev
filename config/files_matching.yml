@@ -101,8 +101,8 @@
 'pu7.t': 'templates/publ/_article.html'           # Вид материалов
 
 # Поиск по сайту
-'se1.t': 'templates/search/main.html.erb'  # Страница поиска
-'se2.t': 'templates/search/_material.html' # Вид материалов
+'se1.t': 'templates/search/main.html.erb'      # Страница поиска
+'se2.t': 'templates/search/_material.html.erb' # Вид материалов
 
 # Редактор страниц
 'si.t':  'templates/pages/index.html.erb'    # Страницы сайта
