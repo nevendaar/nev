@@ -1,0 +1,20 @@
+﻿<div class="material hr">
+    <div class="title clearfix">
+        <h2><a href="<%= c '$ENTRY_URL$' %>"><%= c '$TITLE$' %></a></h2>
+        <% uif('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
+    </div>
+    <div class="body">
+        <%= c '$MESSAGE$' %>
+        <% uif('$ATTACHMENTS$') { %><div class="attachments">Прикрепления: <%= c '$ATTACHMENTS$' %></div><% }.endif! %>
+        <ul class="details">
+            <% uif('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
+            <li>Просмотров: <%= c '$READS$' %></li>
+            <% uif('$AUTHOR_NAME$') { %><li>Автор: <%= c '$AUTHOR_NAME$' %></li><% }.endif! %>
+            <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USERNAME$' %></a></li>
+            <li>Дата: <%= c '$DATE$' %></li>
+            <% uif('$RATING$') { %><li>Рейтинг: <%= c '$RATING$' %>/<%= c '$RATED$' %></li><% }.endif! %>
+            <% uif('$COMMENTS_URL$') { %><li><a href="<%= c '$COMMENTS_URL$' %>">Комментарии (<%= c '$COMMENTS_NUM$' %>)</a></li><% }.endif! %>
+        </ul>
+        <% uif('$TAGS$') { %><div class="tags">Теги: <i><%= c '$TAGS$' %></i></div><% }.endif! %>
+    </div>
+</div>

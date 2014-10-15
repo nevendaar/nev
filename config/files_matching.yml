@@ -98,7 +98,7 @@
 'pu4.t': 'templates/publ/show.html'               # Страница материала и комментариев к нему
 'pu5.t': 'templates/publ/search.html.erb'         # Страница поиска и рейтинга материалов
 'pu6.t': 'templates/publ/new_or_edit.html'        # Страница добавления/редактирования материала
-'pu7.t': 'templates/publ/_article.html'           # Вид материалов
+'pu7.t': 'templates/publ/_article.html.erb'       # Вид материалов
 
 # Поиск по сайту
 'se1.t': 'templates/search/main.html.erb'      # Страница поиска
