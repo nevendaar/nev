@@ -29,6 +29,8 @@
                 <% }.endif! %>
             }
             function addnn(url, t) {
+                var $cat_selector = $('#catSelector9'),
+                        $title_fld = $('#ldF1');
                 init();
                 <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
                     if (!$('#atsn').attr('checked')) {
@@ -40,18 +42,18 @@
                     jkd498: 1,
                     jkd428: 1,
                     ocat: 5,
-                    title: $('#ldF1').val(),
+                    title: $title_fld.val(),
                     slink: url,
                     brief: (
-                            str + '"' + $('#ldF1').val() +
+                            str + '"' + $title_fld.val() +
                                     '" в раздел<% uif(code_is '$PAGE_ID$', "'edit'") { %>е<% }.endif! %> [i]' +
-                                    $('#catSelector9').val() +
+                                    $cat_selector.val() +
                                     '[/i]' +
                                     <% uif(code_is '$PAGE_ID$', "'edit'") { %>
-                                        ' обновл' + ($('#catSelector9').val().indexOf('Карты') < 0 ? 'ён' : 'ена')
+                                        ' обновл' + ($cat_selector.val().indexOf('Карты') < 0 ? 'ён' : 'ена') +
                                     <% }.else { %>
-                                        ''
-                                    <% }.endif! %> +
+                                        '' +
+                                    <% }.endif! %>
                                     '.'
                             ),
                     edttbrief: 2,
