@@ -37,7 +37,7 @@ module BaseHelper
   end
 
   def javascript_include_tag
-    '<script src="/js/app.js"></script>'
+    '<script src="/js/app.min.js"></script>'
   end
 
   # Bang method coz it modify @_erbout directly.
