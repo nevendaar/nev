@@ -95,7 +95,7 @@
 'pu1.t': 'templates/publ/main.html.erb'           # Главная страница каталога статей
 'pu2.t': 'templates/publ/index_section.html.erb'  # Страница со списком материалов раздела
 'pu3.t': 'templates/publ/index_category.html.erb' # Страница со списком материалов категории
-'pu4.t': 'templates/publ/show.html'               # Страница материала и комментариев к нему
+'pu4.t': 'templates/publ/show.html.erb'           # Страница материала и комментариев к нему
 'pu5.t': 'templates/publ/search.html.erb'         # Страница поиска и рейтинга материалов
 'pu6.t': 'templates/publ/new_or_edit.html'        # Страница добавления/редактирования материала
 'pu7.t': 'templates/publ/_article.html.erb'       # Вид материалов
