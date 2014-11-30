@@ -1,0 +1,260 @@
+<% uif(code_is('$PAGE_ID$', "'forumsmembers'")) { %>
+    <script type="text/javascript">
+        var faction = $('tr td:nth-child(2)', '.uTable');
+        faction.each(function(i){
+            var elv = $(this).html();
+            if(elv != '&nbsp;'){
+                switch(elv){
+                    case '1': $(this).html('Имперец (Empire)');break;
+                    case '2': $(this).html('Нежить (Undead)');break;
+                    case '3': $(this).html('Еретик (Heretic)');break;
+                    case '4': $(this).html('Горец (Clansman)');break;
+                    case '5': $(this).html('Житель леса (Sylvanfolk)');break;
+                    case '6': $(this).html('Зеленокожий (Greenskin)');break;
+                    case '7': $(this).html('Змеекожий (Lizardmen)');break;
+                    case '8': $(this).html('Морской житель (Merfolk)');break;
+                    case '9': $(this).html('Варвар (Barbarian)');break;
+                    case '10': $(this).html('Нейтральный наемник (Neutrals)');break;
+                    default:break;
+                }
+            }
+        });
+    </script>
+<% }.endif! %>
+
+<% uif('0 && ' << code_is('$URI_ID$', "'addthread'")) { %>
+    <!-- add_to_site_news -->
+    <script type="text/javascript">
+        var str="";
+        <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
+            $('<input id="atsn" type="checkbox" checked="checked"/> <label for="atsn" style="color:#8BEEF7;">Добавить запись в блок "Новое на сайте"?</label><br/>').insertBefore('#smon');
+        <% }.endif! %>
+        function checksubmit(obj){
+            <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
+                if($('#atsn').attr('checked')){
+            <% }.endif! %>
+            $.post('/dir/',
+                    {
+                        jkd498: 1,
+                        jkd428: 1,
+                        ocat: 5,
+                        title: $('#frF3').val(),
+                        slink: url,
+                        brief: (str + '"' + $('#puF1').val() + '" в разделе [i]' + $('#catSelector9').val() + '[/i].'),
+                        edttbrief: 2,
+                        format_brief: 1,
+                        a: 12,
+                        ssid: $('input[name="ssid"]').val(),
+                        numi: 1
+                    },
+                    function(p, s) {
+                        str = (s == 'success' ? '<br/><br/>( Добавлена запись в список обновления материалов )' : '');
+                        _uWnd.content('addEnt', t + str) || $('input.manFlSbm').attr('disabled', 0);
+                        init();
+                    }
+            );
+            <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
+                }
+            <% }.endif! %>
+        }
+        function addnn(url, t) {}
+    </script>
+    <!-- /add_to_site_news -->
+<% }.endif! %>
+
+<% uif(code_is('$URI_ID$', "'frTread693'")) { %>
+    <script type="text/javascript">function spages(p){if (0){document.location.href='/dir/1-'+p+'-0-38-0-0-0-1302360057'; return;}try{document.getElementById('myGrid').style.cssText = 'position:absolute; z-index:8; top:0;left:0; display:normal; background: url(\'http://s6.ucoz.net/img/fr/g.gif\'); text-align:center; width:'+document.body.scrollWidth+'px; height:'+document.body.scrollHeight+'px;';}catch(e){}_uPostForm('',{url:'/dir/1-'+p+'-0-38-987-0-0-1302360057'});}</script>
+    <script type="text/javascript">function addcom(f){drop_dice();_uPostForm('acform',{type:'POST',url:'http://nevendaar.com/index/'});}</script>
+    <script type="text/javascript">
+        function drop_dice() {
+            $('#dice_message').val('&DICE&' + ($('#stage').val() == 'I' ? '1' : ($('#stage').val() == 'II' ? '2' : '3')) + ($('#calcfight').attr('checked') ? '1' : '0') + ($('#akro').attr('checked') ? '1' : '0') + $('#noticedice').val());
+        }
+        $('#dice_form').hide();
+        $('#dice_form').prev().hide();
+        $('#dice_form').load('/dir/1-1-0-38 #dice_comment', function (response, status, xhr) {
+            if (status == "error") {
+                $('#dice_form').html('Error:' + xhr.status + " " + xhr.statusText).show();
+            }
+            else {
+                $('.commTd1').hide();
+                $('.commTd2').hide();
+                $('#dice_form').html($('#dice_form').html().replace(/id="message"/ig, 'id="dice_message"'));
+                $('#addcBut').val('- Бросить кость -');
+                $('<div align="left" style="width:460px;"><span>Ступень: </span><select id="stage"><option>I</option><option>II</option><option>III</option></select><br/>' +
+                '<input id="calcfight" type="checkbox"/><label for="calcfight">Вы владеете навыком "Расчетливый бой" ?</label><br/>' +
+                '<input id="akro" type="checkbox"/><label for="akro">Противник владеет навыком "Спланированный бой" или "Акробатика" ?</label><br/>' +
+                '<textarea style="width:100%;" rows="2" id="noticedice"></textarea></div>').insertBefore('#addcBut');
+                $('#akro,#calcfight,#stage').attr('onchange', 'drop_dice();return false;');
+                $('#noticedice').keyup(function () {
+                    drop_dice();
+                });
+                $('.commTd2:last').show();
+                drop_dice();
+                $('#dice_form').show();
+            }
+        });
+    </script>
+<% }.endif! %>
+
+<% uif(code_is('$URI_ID$', "'frMain'")) { %>
+    <!--===================RADIO=====================-->
+    <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master) << ' || ' << code_is('$USER_ID$', 1950, 2092)) { %>
+        <% uif(code_is('$USER_ID$', 1472)) { %>
+            <div align="right">
+                <a title="Настройки" href="javascript://" rel="nofollow" onclick="new _uWnd('Rh',' ',400,250,{autosize:1,maxh:300,minh:100,closeonesc:1},{url:'/index/9-1249'});return false;">
+                    &nbsp;&nbsp;&nbsp;
+                    <img alt="i" border="0" src="http://s6.ucoz.net/img/icon/edt.png">
+                </a>
+            </div>
+        <% }.endif! %>
+    <a id="activate_r" style="display:none;" href="javascript://" rel="nofollow" onclick="new _uWnd('Radio','Радио',400,250,{autosize:1,maxh:300,minh:100,closeonesc:1},'<div align=&#34;left&#34;><img alt=&#34;&#34; border=&#34;0&#34; src=&#34;http://s29.ucoz.net/.s/img/wd/6/ajax.gif&#34;></div>');r_activate();return false;">
+        Включить радио
+    </a>
+    <a id="deactivate_r" style="display:none;" href="javascript://" rel="nofollow" onclick="r_deactivate();return false;">
+        Выключить радио
+    </a>
+    <br>
+    <% }.endif! %>
+    <div id="last_air" style="display:none;"></div>
+    <a title="Открыть в браузере" href="javascript://" rel="nofollow" onclick="window.open('http://nevendaar.com/NFM.html','upp','scrollbars=0,top=0,left=0,resizable=1,width=400,height=275');return false;">
+        <img alt="Невендаар FM" src="http://nevendaar.com/chatbtn/NFM.png" border="0">
+    </a>
+    <div id="online_div" style="display:none;">
+        <br>
+        <img alt="Online!" src="/chatbtn/online.gif" border="0" style="position: relative; top:-17px;">
+        <br>
+        <span id="dj" style="font-size:12px; color:orange; font-weight: bold; position: relative; top:-15px;">DJ</span>
+    </div>
+    <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master) << ' || ' << code_is('$USER_ID$', 1950, 2092)) { %>
+        <div id="turnoff" style="display:none;"></div>
+        <div id="updateform" style="display:none;">
+            <fieldset style="text-align: left;">
+                <legend><b>Никнейм ведущего</b></legend>
+                <input type="text" value="" style="color: orange;">
+            </fieldset>
+            <fieldset style="text-align: left;">
+                <legend><b>Цвет ника</b></legend>
+                <input type="text" value="" style="color: orange;">
+            </fieldset>
+            <fieldset>
+                <legend><b>Ссылка на вещание</b></legend>
+                <textarea style="height:36px;width:99%;"></textarea>
+            </fieldset>
+        </div>
+        <script type="text/javascript">
+            function r_activate() {
+                $.get('/index/23-1249', function (data) {
+                    cont = $('cmd[p=content]', data).text().replace(/<fieldset><legend><b>Комментарий/ig, '<fieldset style="display:none;"><legend><b>К').replace(/<div align=\"left\">\n<fieldset>/ig, '<div align="left"><fieldset style="display:none;">').replace(/<textarea/ig, '<textarea id="radiodata"').replace(/document.getElementById\('submfrm981'\).click\(\);/ig, "if($('#rddt').val()==''){_uWnd.alert('Не указана ссылка на вещание!','Info',{tm:3000});}else{add_rdata(); document.getElementById('submfrm981').click(); setTimeout(function(){_uWnd.close('Radio'); $('#activate_r').slideUp(); $('#deactivate_r').slideDown();_uWnd.alert('Радио работает!','Info',{tm:3000});}, 1300);}");
+                    cont = $('#updateform').html().replace(/ведущего<\/b><\/legend><input/ig, 'ведущего</b></legend><input id="djnick"').replace(/ника<\/b><\/legend><input/ig, 'ника</b></legend><input id="djcolor"').replace(/вещание<\/b><\/legend><textarea/ig, 'вещание</b></legend><textarea id="rddt"') + cont + '<script type=' + '"text/javascript">' + $('cmd[p=js]', data).text() + '</scr' + 'ipt>';
+                    _uWnd.content('Radio', cont);
+                });
+            }
+            function add_rdata() {
+                nick = "_";
+                dcolor = "_";
+                url = "_"
+                if ($('#djnick').val() != "") {
+                    nick = $('#djnick').val()
+                }
+                if ($('#djcolor').val() != "") {
+                    dcolor = $('#djcolor').val()
+                }
+                url = $('#rddt').val();
+                newval = nick + ' ' + dcolor + ' ' + url;
+                $('#radiodata').val(newval);
+            }
+            function r_deactivate() {
+                $.get('/index/23-1249', function (data) {
+                    cont = $('cmd[p=content]', data).text().replace(/<\/textarea>/ig, 'off</textarea>');
+                    cont += '<script type=' + '"text/javascript">' + $('cmd[p=js]', data).text() + '</scr' + 'ipt>';
+                    $('#turnoff').html(cont);
+                    $('#submfrm981').click();
+                    _uWnd.alert('Радио выключено!', 'Info', {tm: 3000});
+                    $('#activate_r').slideDown();
+                    $('#deactivate_r').slideUp();
+                    $('#online_div').slideUp();
+                });
+            }
+        </script>
+    <% }.endif! %>
+    <script type="text/javascript">
+        $.get('/index/9-1249', function (data) {
+            cont = $('cmd[p=content]', data).text();
+            cont_l = $('table:eq(0)', cont).html();
+            data_l = $('div:eq(1)', cont_l).html().split(' ', 3);
+            dj = (data_l[0] != "_" ? data_l[0] : $('b:first', cont_l).html());
+            if (dj != "off") {
+                color = (data_l[1] != "_" ? data_l[1] : "orange");
+                href = data_l[2];
+                $('#online_div').css("display", "inline");
+                link = '<a href="/index/8-0-' + dj + '" target="_blank" />';
+                $('#dj').html('DJ ' + dj).wrap(link);
+                $('#dj').css('color', color);
+                <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
+                    $('#deactivate_r').show();
+                <% }.endif! %>
+            } else {
+                <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
+                    $('#activate_r').show();
+                <% }.endif! %>
+                cont_p = $('table:eq(1)', cont).html();
+                data_p = $('div:eq(1)', cont_p).html().split(' ', 3);
+                dj = (data_p[0] != "_" ? data_p[0] : $('b:first', cont_p).html());
+                $('#last_air').html('Предыдущий эфир был: ' + $('td:eq(1)', cont_l).text() + '(DJ ' + dj + ')').slideDown();
+            }
+        });
+    </script>
+    <!--===================/RADIO====================-->
+<% }.endif! %>
+
+<% uif('0 && ' << code_is('$URI_ID$', "'frMain'")) { %>
+    <script type="text/javascript">
+        if ($('.lastUserLink').html() == 'Letov') {
+            $('.lastUserLink').html('')
+        }
+    </script> <!-- kill trololo -->
+<% }.endif! %>
+
+<% uif(code_is('$URI_ID$', "'frForum24'") << ' && $USER_LOGGED_IN$') { %>
+    <!-- anketa -->
+    <script type="text/javascript">
+        v = $('#frmButns83').html();
+        $('#frmButns83').html('<a href="/forum/24-0-0-1-1#form_anketa"><img alt="" style="margin:0;padding:0;border:0;" title="Составить анкету" src="/Forumdata/t_form.gif" /></a> ' + v);
+    </script>
+    <!-- /anketa -->
+<% }.endif! %>
+
+<% uif(code_is('$URI_ID$', "'frTread699'")) { %>
+    <!-- old dice -->
+    <script>
+        function checksubmit(obj) {
+            variant = 5; // количество сторон
+            priz = Math.round(Math.random() * variant);
+            obj.message.value = '[img]http://gangren.ucoz.ru/dice/cub' + priz + '.gif[/img] ' + obj.message.value
+        }
+    </script>
+    <!-- /old dice -->
+<% }.endif! %>
+
+<% uif(code_is('$PAGE_ID$', "'threadpage'", "'postedit'", "'addreply'")) { %>
+    <!-- new color -->
+    <script type="text/javascript" language="javascript">
+        (function () {
+            var colorID = document.addform.fcolor.options.length;
+
+            var colors = [], i;
+            colors[0] = ["Розовый", "#ff00ff", "color:#ff00ff"];
+            colors[1] = ["Небесный", "#8BEEF7", "color:#8BEEF7"];
+            colors[2] = ["Коричневый", "#672505", "color:#672505"];
+            colors[3] = ["Бордовый", "#9C1F22", "color:#9C1F22"];
+            colors[4] = ["Салатовый", "#49E250", "color:#49E250"];
+
+            for (i = 0; i < colors.length; i++) {
+                document.addform.fcolor.options[colorID] = new Option(colors[i][0], colors[i][1]);
+                document.addform.fcolor.options[colorID].setAttribute("style", colors[i][2]);
+                colorID++;
+            }
+        })();
+    </script>
+    <!-- /new color -->
+<% }.endif! %>

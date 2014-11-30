@@ -6,6 +6,7 @@
 'FOOTER': 'templates/FOOTER.html.erb' # Подвал
 'HEADER': 'templates/HEADER.html.erb' # Шапка
 'MCHAT':  'templates/MCHAT.html.erb'  # Мини-чат
+'FSCRIPT': 'templates/FSCRIPT.html.erb' # Скрипты для форума TODO: переписать
 
 # Доска объявлений
 'bd1.t': 'templates/board/main.html.erb'           # Главная страница модуля
