@@ -1,0 +1,124 @@
+/* Original: http://s1.ucoz.net/src/photo.css */
+/* Last check: 2014-12-11 17:36:25 +0300 */
+
+#dynPhoto {
+	padding: 0 10px;
+}
+#photoModalWrap, #photoModalWrap td {
+	font: 12px/1.5 'Arial';
+	color: #5d5d5d;
+}
+#photoModalWrap a {
+	color: #20a7fd;
+}
+#photoModalWrap a:hover {
+	color: #027fcf;
+}
+#photoModalWrap hr {
+	margin: 5px 0;
+	border: 0;
+	height: 2px;
+	overflow: hidden;
+	background: url(./../../img/photopage/hr.png) repeat-x;
+}
+#photoModalWrap .uphoto-entry {
+	margin-bottom: 20px;
+}
+#photoModalWrap input[type=text], #photoModalWrap input[type=password], #photoModalWrap textarea {
+	vertical-align: middle;
+	height: 24px;
+	margin: 3px 0;
+	padding: 2px 5px;
+	*padding: 0px;
+	font-family: 'Tahoma', 'Arial';
+	font-size: 13px;
+	line-height: 18px;
+	color: #000;
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	box-shadow: inset 0 1px 0 1px rgba(0, 0, 0, 0.03);
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#photoModalWrap input[type=text]:focus, #photoModalWrap input[type=password]:focus, #photoModalWrap textarea:focus {
+	border-color: #9c9c9c;
+}
+#photoModalWrap textarea {
+	padding: 3px 5px;
+	height: auto;
+	overflow: auto;
+	resize: none;
+}
+#photoModalWrap .securityCode {height: auto !important;}
+#photoModalWrap #message {
+	width: 100%;
+	height: 100px !important;
+}
+#photoModalWrap input[type=button], #photoModalWrap input[type=submit], #photoModalWrap input[type=reset], #photoModalWrap .button, #photoModalWrap select {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 20px;
+	padding: 0 10px;
+	text-align: center;
+	text-decoration: none !important;
+	font: 13px/31px 'Verdana', 'Arial';
+	height: 31px;
+	color: #777 !important;
+	text-shadow: 0 1px 0 #fffcf6;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	background-color: #fff;
+	background-image: -webkit-linear-gradient(bottom, rgba(85,85,85,.1), rgba(255,255,255,.1));
+	background-image: -moz-linear-gradient(bottom, rgba(85,85,85,.1), rgba(255,255,255,.1));
+	background-image: -o-linear-gradient(bottom, rgba(85,85,85,.1), rgba(255,255,255,.1));
+	background-image: -ms-linear-gradient(bottom, rgba(85,85,85,.1), rgba(255,255,255,.1));
+	background-image: linear-gradient(to top, rgba(85,85,85,.1), rgba(255,255,255,.1));
+	box-shadow: inset 0 0 1px #fff;
+	*display: inline; /*--FOR-IE--*/
+	overflow: visible;
+	zoom: 1; /*--FOR-IE--*/
+	cursor: pointer;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#photoModalWrap select {height: auto !important;}
+#photoModalWrap ::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+#photoModalWrap input[type=button]:hover, #photoModalWrap input[type=submit]:hover, #photoModalWrap input[type=reset]:hover, #photoModalWrap .button:hover {background-color: #fafafa;}
+#photoModalWrap input[type=button]:active, #photoModalWrap input[type=submit]:active, #photoModalWrap input[type=reset]:active, #photoModalWrap .button:active {background-color: #fafafa;box-shadow: inset 0 1px 2px rgba(0,0,0,.17);}
+#photoModalWrap .codeButtons {
+	min-width: 20px;
+	margin: 2px 1px !important;
+	padding: 1px 4px !important;
+	width: auto !important;
+	height: auto !important;
+	line-height: 1.4 !important;
+}
+#photoModalWrap .cBlock1, #photoModalWrap .cBlock2, #photoModalWrap .cBlock1 td, #photoModalWrap .cBlock2 td {
+	font-size: 11px;
+	font-family: 'Tahoma', 'Arial';
+}
+#photoModalWrap .cTop {
+	border: 0;
+}
+#photoModalWrap .cBlock1, #photoModalWrap .cBlock2, #photoModalWrap .cMessage {
+	border: 0 !important;
+	background: none !important;
+}
+#photoModalWrap .cBlock1, #photoModalWrap .cBlock2 {
+	border-top: 1px solid #e9edf1 !important;
+}
+#photoModalWrap .cMessage a:first-child img {
+	margin: 0 5px 2px;
+}
+#photoModalWrap #addform, #photoModalWrap .commTable, #photoModalWrap .smiles {
+	margin: 0 !important;
+	background: none !important;
+	border: 0 !important;
+}

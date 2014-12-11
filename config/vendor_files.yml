@@ -5,7 +5,9 @@ ucoz:
   javascripts:
     '/src/socCom.js': 'socCom.js'
   stylesheets:
-    '/src/base.css':   'base.css'
-    '/src/layer6.css': 'layer6.css'
-    '/src/socCom.css': 'socCom.css'
-    '/src/social.css': 'social.css'
+    '/src/base.css':      'base.css'
+    '/src/layer6.css':    'layer6.css'
+    '/src/socCom.css':    'socCom.css'
+    '/src/social.css':    'social.css'
+    '/src/photo.css':     'photo.css'
+    '/src/photopage.css': 'photopage.css'

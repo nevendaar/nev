@@ -1,0 +1,70 @@
+/* Original: http://s1.ucoz.net/src/photopage.css */
+/* Last check: 2014-12-11 17:36:25 +0300 */
+
+.u-center{text-align:center}
+#u-photo:before,#photo:after{content:"";display:table}
+#u-photo:after{clear:left}
+#u-photo{zoom:1}
+.uphoto{display:inline-block;vertical-align:middle;margin:10px;text-align:left}
+.photo-title{display:block;margin:0;padding:0 5px 5px 5px;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;-o-text-overflow:ellipsis;font:bold 12px/17px 'Arial';-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.photo-block,.photo-eblock{position:relative;display:inline-block;vertical-align:middle;padding:5px;font:12px/16px 'Arial';background:url(./../../img/photopage/opacity02.png);box-shadow:0 .5px 3px rgba(0,0,0,.37);border-radius:5px}
+.photo-block:after{display:block;content:"";position:absolute;top:100%;left:0;right:0;height:7px;background:url(./../../img/photopage/ph-shadow.png) no-repeat center top}
+.photo-block a span{cursor:pointer}
+.ph-wrap{display:block;position:relative;overflow:hidden}
+.ph-wrap img{vertical-align:middle;border:0}
+.ph-wrap .ph-link{display:block;position:absolute;left:0;top:0;right:0;bottom:0;text-align:center;text-decoration:none !important;background:rgba(255,255,255,.85);opacity:0;-webkit-transition:.5s .05s opacity ease;transition:.5s .05s opacity ease;filter:alpha(opacity=0);background:url(./../../img/photopage/opacity085.png)}
+.ph-wrap .ph-link:hover{opacity:1;filter:alpha(opacity=100)}
+.ph-tc{display:table-cell;*display:block;vertical-align:middle;text-align:center}
+.ph-data{display:inline-block}
+.ph-date{display:block;padding:2px 7px;font-weight:bold;color:#000 !important}
+.ph-descr{display:block;padding:5px 8px;font-style:italic;font-size:11px;line-height:14px;color:#464646 !important;text-shadow:0 1px 0 #fff}
+.ph-author{display:inline-block;vertical-align:middle;margin:2px 0 0 0;padding:0 0 0 18px;color:#464646 !important;text-shadow:0 1px 0 #fff;background:url(./../../img/photopage/uico-user.png) no-repeat left center}
+.ph-author:hover{text-decoration:underline}
+.ph-details{display:block;height:16px;margin:5px 0 0 0;text-align:center}
+.phd-views,.phd-comments,.phd-rating{display:inline-block;margin:0 10px 0 0;background:no-repeat left center;padding-left:20px}
+.phd-views{background-image:url(./../../img/photopage/uico-view.png)}
+.phd-comments{background-image:url(./../../img/photopage/uico-comment.png);padding-left:18px}
+.phd-rating{background-image:url(./../../img/photopage/uico-rating.png);padding-left:18px;margin-right:0;cursor:pointer;position:relative}
+.phd-dorating{display:none;vertical-align:middle;margin:1px 0 0 0;font-size:0;border-radius:3px;transition:all .15s ease;-webkit-transition:all .15s ease}
+.uphoto .phr-opened .phd-views,.uphoto .phr-opened .phd-comments,.uphoto .phr-opened .phd-rating{display:none}
+.phr-opened .phd-dorating{display:inline-block}
+.phd-dorating .u-current-rating{visibility:hidden}
+.ph-wrap img,.ph-data{*margin-top:expression((parentNode.offsetHeight - this.offsetHeight)<0 ? "0":(parentNode.offsetHeight - this.offsetHeight)/2+"px")}
+.uphoto-entry{margin-bottom:10px}
+.uphoto-entry .ph-wrap,.uphoto-entry .ph-tc{width:auto;height:auto}
+.uphoto-entry .photo-block{*display:inline;*zoom:1}
+.photo-etitle{margin:10px 0;text-align:center}
+.photo-edescr{margin:15px 0;text-align:justify}
+.photo-eblock{margin-bottom:10px;*display:inline;*zoom:1}
+.photo-expand{display:block;position:relative}
+.photo-expand img{max-width:100%}
+.photo-expand .dd-tip{position:absolute;display:block;bottom:-49px;left:0;width:100%;height:48px;text-align:center;background:url(./../../img/photopage/opacity085.png);font:12px/48px 'Arial' !important;text-decoration:none !important;color:#595959 !important;text-shadow:0 1px 0 #fff !important;-webkit-transition:bottom .2s .1s ease;transition:bottom .2s .1s ease;*display:none}
+.dd-tip:hover,#phtmDiv35:hover ~ .dd-tip,.hovered .dd-tip{bottom:0;*display:block}
+.expand-ico{display:inline-block;vertical-align:middle;margin:0 10px 0 0;width:24px;height:48px;background:url(./../../img/photopage/expand.png) no-repeat left center}
+.photo-hr{margin:5px 0;border:0;height:2px;overflow:hidden;background:url(./../../img/photopage/hr.png) repeat-x;*display:none}
+.photo-edetails,.photo-edetails2{display:block;line-height:30px !important}
+.photo-edetails{margin-top:5px;line-height:35px !important}
+.uphoto-entry .phr-opened .phd-rating{display:none}
+.phd-author{display:inline-block;vertical-align:baseline;margin:0 0 0 5px;padding:0 0 0 18px;background:url(./../../img/photopage/uico-user.png) no-repeat left center}
+.photo-slider{margin:10px 0}
+.photo-slider table{margin:auto}
+#photoModalWrap{position:fixed;z-index:10007;left:0;right:0;top:0;bottom:0;overflow:auto}
+#photoModalWrap .fancybox-wrap{position:relative !important;top:0 !important;padding-top:20px;padding-bottom:20px}
+#photoModalWrap .fancybox-inner{height:auto !important;overflow: visible !important;}
+#fakeArrowsBlock{position:relative;min-height:100%}
+.modalArrow{width:50%;position:fixed;z-index:10006}
+.modalArrow span{visibility:visible;opacity:.5}
+.modalArrow:hover span,.modalArrow.hovered span{opacity:1}
+.modalArrow.fancybox-next{right:0}
+.modalArrow.fancybox-prev{left:0}
+.fakeArrow{position:absolute;top:0;left:0;width:50%;height:100%;cursor:pointer;background:transparent url('/.s/src/ulightbox/blank.gif');outline:0}
+.fakeArrowNext{left:auto;right:0}
+#phtmDiv35{display:block}
+#photoModalWrap #phtmDiv35{min-height:31px;background:url(/.s/img/wd/3/ajax.gif) no-repeat center center}
+#mphoto-addcmt{padding:5px 0;text-align:center;background:#f9f9f9}
+#acform{text-align:left}
+#photoModalWrap #acform{display:none}
+.fixedAddComBtn{position:fixed;bottom:0;left:50%}
+#photoModalWrap .comAddOpened #acform{display:block !important}
+.comAddOpened #mphoto-addcmt-btn{display:none}
+#photoModalWrap .cMessage{word-break:break-word;overflow: hidden;}
