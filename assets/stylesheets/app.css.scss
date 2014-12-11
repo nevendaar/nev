@@ -5,6 +5,9 @@
 // Styles for ajax windows
 @import "ajax_win";
 
+// Old styles TODO: remove it!
+@import "old";
+
 // Base styles
 @import "layout";
 
@@ -24,4 +27,3 @@
 
 // Temporary files TODO: remove it!
 @import "my";
-@import "old";
