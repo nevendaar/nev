@@ -21,7 +21,7 @@ body, html {
   scrollbar-track-color: #252525;
 }
 
-body, input, textarea, td {
+body, td {
   color: #F6C577;
   font-family: "verdana", "arial", "helvetica", sans-serif;
   font-size: 8pt;
@@ -89,9 +89,7 @@ a {
 }
 
 textarea, input {
-  background: #13110E;
   border: 1px solid #4A4842;
-  color: #A89D7B;
 }
 
 button, .codeButtons {
@@ -106,9 +104,6 @@ button {
 }
 
 input {
-  &[type=button], &[type=submit], &[type=file], &[type=reset] {
-    @extend button;
-  }
   &[type=checkbox], &[type=radio] {
     border: 0;
     color: #F6C577;
