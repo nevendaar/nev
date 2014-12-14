@@ -11,7 +11,7 @@ namespace :ftp do
       if File.extname(path_to_file) == '.zip' &&
           `file -b --mime-type #{path_to_file}`.chomp == 'application/zip'
         ftp_config = YAML.load_file('config/ftp.yml')['ftp']
-        ftp = Net::FTP.new(ftp_config['host'])
+        ftp = Net::FTP.open(ftp_config['host'])
         begin
           ftp.passive = true
           ftp.login ftp_config['login'], ftp_config['password']
@@ -30,7 +30,7 @@ namespace :ftp do
             ftp.putbinaryfile(path_to_file, "/#{backup_dir}/#{filename}")
             LOGGER.info('ftp:load_archive') do
               "File: \"#{filename}\" loaded on the server.\n" \
-              "Now, you can go to #{AppConfig.config.home_url}/tmpls/?a=backupt"
+              "Now, you can go to http://#{ftp_config['host']}/tmpls/?a=backupt"
             end
           end
         ensure

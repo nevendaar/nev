@@ -1,8 +1,9 @@
 Changelog
 =========
 
-## rake ftp:test - 14.12.2014
-* Добавлена rake-задача для проверки FTP соединения.
+## rake ftp:test ftp:load_assets - 14.12.2014
+* Добавлена rake-задача для проверки FTP соединения (`ftp:test`).
+* И ещё одна, для удобной загрузки css и js файлов (`ftp:load_assets`).
 
 ## RSTARS helper - 19.09.2014
 * Добавлен хелпер `rating_stars`.<br>
