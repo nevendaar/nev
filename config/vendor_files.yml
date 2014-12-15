@@ -3,7 +3,8 @@
 ucoz:
   hostname: 's1.ucoz.net'
   javascripts:
-    '/src/socCom.js': 'socCom.js'
+    '/src/socCom.js':    'socCom.js'
+    '/src/photopage.js': 'photopage.js'
   stylesheets:
     '/src/base.css':      'base.css'
     '/src/layer6.css':    'layer6.css'
