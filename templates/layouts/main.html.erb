@@ -13,7 +13,9 @@
             <div class="middle">
                 <div class="container">
                     <main class="content bordered<%= ' vk-init' if @params[:vk][:init] %>">
-                        <% yield if block_given? %>
+                        <div class="border-exp">
+                            <% yield if block_given? %>
+                        </div>
                     </main>
                 </div>
                 <%= c '$GLOBAL_ASIDE$' %>

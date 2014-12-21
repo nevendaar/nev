@@ -9,7 +9,9 @@
     </head>
     <body>
         <main class="bordered<%= ' vk-init' if @params[:vk][:init] %>">
-            <% yield if block_given? %>
+            <div class="border-exp">
+                <% yield if block_given? %>
+            </div>
         </main>
     </body>
 </html>

@@ -147,6 +147,10 @@ input {
   -o-border-image:      url(/img/b.gif) 52 44 repeat;
   -moz-border-image:    url(/img/b.gif) 52 44 repeat;
   -webkit-border-image: url(/img/b.gif) 52 44 repeat;
+
+  > .border-exp {
+    margin: -20px -15px;
+  }
 }
 
 .clearfix {
