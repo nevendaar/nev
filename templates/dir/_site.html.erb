@@ -3,7 +3,7 @@
     <div class="material hr">
         <div class="title clearfix">
             <%# TODO: cid 5 ? %>
-            <a target="<% uif(code_is '$CID$', 5) { %>_self<% }.else { %>_blank<% }.endif! %>" href="<%= c '$SITE_URL$' %>"><%= c '$TITLE$' %></a>
+            <h2><a target="<% uif(code_is '$CID$', 5) { %>_self<% }.else { %>_blank<% }.endif! %>" href="<%= c '$SITE_URL$' %>"><%= c '$TITLE$' %></a></h2>
             <% uif('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
         </div>
         <div class="body">
