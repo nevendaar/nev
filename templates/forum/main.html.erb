@@ -30,6 +30,7 @@
         <%= c '$BODY$' %>
         <% uif(code_is '$URI_ID$', "'frTread693'") { %><div id="dice_form" style="width:100%;">Если что-то не грузится, включите поддержку JavaScript.</div><% }.endif! %>
         <script type="text/javascript" src="/rtr/1-1"></script>
+        <div align="center"><%= c '$GLOBAL_FSCRIPT$' %></div>
     </div>
     <% uif(code_is '$URI_ID$', :not, "'frPostsReplace'") { %><%= c '$GLOBAL_MCHAT$' %><% }.endif! %>
 <% end %>
