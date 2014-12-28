@@ -2,9 +2,9 @@
   .avatar {
     float: left;
     width: 25px;
-    > img {
+    img {
       vertical-align: -2px;
-      max-height: 25px;
+      max-width: 25px;
     }
   }
   .top > .mc_username {

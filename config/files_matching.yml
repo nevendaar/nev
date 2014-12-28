@@ -70,7 +70,7 @@
 #'mf2': '' #
 
 # Общие шаблоны
-#'my.css': '' # Таблица стилей (CSS)
+'my.css': 'build/stylesheets/app.min.css' # Таблица стилей (CSS)
 
 # Новости сайта
 'nw1.t': 'templates/news/index.html.erb' # Страница архива материалов
