@@ -1,7 +1,9 @@
 ﻿<aside class="left-sidebar">
 
     <!--NFM-->
-    <a title="Открыть в браузере" href="/NFM.html" class="nfm-link"><img alt="Невендаар FM" src="/img/NFM_mini.png"></a>
+    <a title="Открыть в браузере" href="/NFM.html" class="nfm-link">
+        <img alt="Невендаар FM" src="/img/NFM_mini.png">
+    </a>
     <!--/NFM-->
 
     <!--MENU-->
@@ -90,7 +92,9 @@
     <!--/MENU-->
 
     <% uif('$SEARCH_FORM$') { %>
-        <div class="control_box" data-title="Поиск">$SEARCH_FORM$</div>
+        <div class="control_box" data-title="Поиск">
+            <%= c '$SEARCH_FORM$' %>
+        </div>
     <% }.endif! %>
 
     <% uif('$CATEGORIES$', code_is('$MODULE_ID$', :not, '"dir"', '"faq"')) { %>
@@ -111,30 +115,50 @@
     <!--/NEWS-->
 
     <% uif('$LOGIN_FORM$') { %>
-        <div class="control_box" data-title="Форма входа"><%= c '$LOGIN_FORM$' %></div>
+        <div class="control_box" data-title="Форма входа">
+            <%= c '$LOGIN_FORM$' %>
+        </div>
     <% }.endif! %>
 
     <% uif('$POLL$') { %>
-        <div class="control_box" data-title="Наш опрос"><%= c '$POLL$' %></div>
+        <div class="control_box" data-title="Наш опрос">
+            <%= c '$POLL$' %>
+        </div>
     <% }.endif! %>
 
     <!--FRIENDS-->
     <div class="control_box" data-title="Друзья сайта">
-        <a title="Самая большая группа Disciples В Контакте!" href="http://vkontakte.ru/club713427" target="_blank"><img alt="Самая большая группа Disciples В Контакте!" src="/Reklama/VKbanner.jpg" alt=""></a>
+        <a title="Самая большая группа Disciples В Контакте!" href="http://vkontakte.ru/club713427" target="_blank">
+            <img alt="Самая большая группа Disciples В Контакте!" src="/Reklama/VKbanner.jpg" alt="">
+        </a>
         <br/>
-        <a title="Almarein - город эльфов. Фентези коммьюнити" href="http://theelven.mybb.ru" target="_blank"><img alt="Almarein - город эльфов. Фентези коммьюнити" src="/Reklama/almarein.gif" border="0" title="Almarein - город эльфов. Фентези коммьюнити"></a>
-        <a title="Disciples of Mortis. Сайт посвященый игровой нежити" href="http://hordesundead.clan.su" target="_blank"><img alt="Disciples of Mortis. Сайт посвященый игровой нежити" src="/Reklama/DOM.gif" border="0"></a>
+        <a title="Almarein - город эльфов. Фентези коммьюнити" href="http://theelven.mybb.ru" target="_blank">
+            <img alt="Almarein - город эльфов. Фентези коммьюнити" src="/Reklama/almarein.gif" border="0" title="Almarein - город эльфов. Фентези коммьюнити">
+        </a>
+        <a title="Disciples of Mortis. Сайт посвященый игровой нежити" href="http://hordesundead.clan.su" target="_blank">
+            <img alt="Disciples of Mortis. Сайт посвященый игровой нежити" src="/Reklama/DOM.gif" border="0">
+        </a>
         <br/>
-        <a href="http://fantasy.d2.ru/?from=2908" target="_blank"><img height="31" alt="Palantir" src="/Reklama/counter2007_20.png" width="88" border="0"></a>
-        <a href="http://www.mirf.ru" target="_blank"><img height="31" alt="Информационный Партнер" src="http://forum.mirf.ru/images/mf/logo.gif" width="88" border="0"></a>
+        <a href="http://fantasy.d2.ru/?from=2908" target="_blank">
+            <img height="31" alt="Palantir" src="/Reklama/counter2007_20.png" width="88" border="0">
+        </a>
+        <a href="http://www.mirf.ru" target="_blank">
+            <img height="31" alt="Информационный Партнер" src="http://forum.mirf.ru/images/mf/logo.gif" width="88" border="0">
+        </a>
         <br/>
-        <a href="http://www.igromania.ru" target="_blank"><img height="31" alt="Информационный Партнер" src="http://www.rusrpg.com/ourbtn/mania88x31.gif" width="88" border="0"></a>
-        <a href="http://www.lki.ru" target="_blank"><img height="31" alt="Сайт журнала Лучшие компьютерные игры. Лучшие компьютерные игры крупным планом: рецензии, описание, победные тактики и стратегии, рекомендации по прохождению игры. Новости и прогнозы по самым ожидаемым проектам. Советы мастеров: новые возможности знакомой игры, приемы киберспорта от лидеров мировых рейтингов, секреты и новые решения к лучшим играм всех времен. Авторские видеоролики по материалам номера. Фантастические рассказы, написанные специально для ЛКИ, аналитические статьи о настоящем и будущем компьютерных игр. Цикл статей о реальном оружии и его игровой судьбе. Все необходимое, чтобы самому создать полноценную игру. Рассказы о великих играх прошлого и их роли в сегодняшней игровой жизни. Авторский юмор. Клуб интеллектуальных компьютерных игр." src="http://www.lki.ru/img/logo_lki_88x31.gif" width="88" border="0"></a>
+        <a href="http://www.igromania.ru" target="_blank">
+            <img height="31" alt="Информационный Партнер" src="http://www.rusrpg.com/ourbtn/mania88x31.gif" width="88" border="0">
+        </a>
+        <a href="http://www.lki.ru" target="_blank">
+            <img height="31" alt="Сайт журнала Лучшие компьютерные игры. Лучшие компьютерные игры крупным планом: рецензии, описание, победные тактики и стратегии, рекомендации по прохождению игры. Новости и прогнозы по самым ожидаемым проектам. Советы мастеров: новые возможности знакомой игры, приемы киберспорта от лидеров мировых рейтингов, секреты и новые решения к лучшим играм всех времен. Авторские видеоролики по материалам номера. Фантастические рассказы, написанные специально для ЛКИ, аналитические статьи о настоящем и будущем компьютерных игр. Цикл статей о реальном оружии и его игровой судьбе. Все необходимое, чтобы самому создать полноценную игру. Рассказы о великих играх прошлого и их роли в сегодняшней игровой жизни. Авторский юмор. Клуб интеллектуальных компьютерных игр." src="http://www.lki.ru/img/logo_lki_88x31.gif" width="88" border="0">
+        </a>
     </div>
     <!--/FRIENDS-->
 
     <% uif('$COUNTER$') { %>
-        <div class="control_box text-center" data-title="Статистика"><%= c '$COUNTER$' %></div>
+        <div class="control_box text-center" data-title="Статистика">
+            <%= c '$COUNTER$' %>
+        </div>
     <% }.endif! %>
 
 </aside>
