@@ -1,0 +1,156 @@
+.fraction-name1:before {  content: "Имперец (Empire)"; }
+.fraction-name2:before {  content: "Нежить (Undead)"; }
+.fraction-name3:before {  content: "Еретик (Heretic)"; }
+.fraction-name4:before {  content: "Горец (Clansman)"; }
+.fraction-name5:before {  content: "Житель\00a0 леса (Sylvanfolk)"; }
+.fraction-name6:before {  content: "Зеленокожий (Greenskin)"; }
+.fraction-name7:before {  content: "Змеекожий (Lizardmen)"; }
+.fraction-name8:before {  content: "Морской\00a0 житель (Merfolk)"; }
+.fraction-name9:before {  content: "Варвар (Barbarian)"; }
+.fraction-name10:before { content: "Нейтральный\00a0 наемник (Neutrals)"; }
+
+.rank-1-1:before {   content: "Сын\00a0 Империи (Son\00a0 of\00a0 the\00a0 Empire)"; }
+.rank-1-1-f:before { content: "Дочь\00a0 Империи (Daughter\00a0 of\00a0 the\00a0 Empire)"; }
+.rank-1-2:before {   content: "Причастный\00a0 праху (Concerned\00a0 with\00a0 ashes)"; }
+.rank-1-2-f:before { content: "Причастная\00a0 праху (Concerned\00a0 with\00a0 ashes)"; }
+.rank-1-3:before {   content: "Отступник (Apostate)"; }
+.rank-1-3-f:before { content: "Отступница (Apostate)"; }
+.rank-1-4:before {   content: "Горный\00a0 житель (Mountain\00a0 inhabitant)"; }
+.rank-1-4-f:before { content: "Горная\00a0 жительница (Mountain\00a0 inhabitant)"; }
+.rank-1-5:before {   content: "Друг\00a0 Леса (Friend\00a0 of\00a0 the\00a0 Forest)"; }
+.rank-1-6:before {   content: "Воин\00a0 Равнин (Warrior\00a0 of\00a0 the\00a0 Plains)"; }
+.rank-1-6-f:before { content: "Воительница\00a0 Равнин (Warrior\00a0 of\00a0 the\00a0 Plains)"; }
+.rank-1-7:before {   content: "Змей (Serpent)"; }
+.rank-1-7-f:before { content: "Змея (Serpent)"; }
+.rank-1-8:before {   content: "Прибрежный\00a0 страж (Seashore\00a0 guard)"; }
+.rank-1-9:before {   content: "Северянин (Northerner)"; }
+.rank-1-9-f:before { content: "Северянка (Northerner)"; }
+
+.rank-2-1:before {   content: "Гвардеец (Guardsman)"; }
+.rank-2-2:before {   content: "Бледный\00a0 образ (Pale\00a0 image)"; }
+.rank-2-3:before {   content: "Одержимый (Possessed)"; }
+.rank-2-3-f:before { content: "Одержимая (Possessed)"; }
+.rank-2-4:before {   content: "Кузнец (Ironsmith)"; }
+.rank-2-5:before {   content: "Ведающий\00a0 тропы (Familiar\00a0 with\00a0 Paths)"; }
+.rank-2-5-f:before { content: "Ведающая\00a0 тропы (Familiar\00a0 with\00a0 Paths)"; }
+.rank-2-6:before {   content: "Багатур (Bagathur)"; }
+.rank-2-7:before {   content: "Аспид (Asp)"; }
+.rank-2-8:before {   content: "Морской\00a0 охотник (Sea\00a0 hunter)"; }
+.rank-2-8-f:before { content: "Морская\00a0 охотница (Sea\00a0 huntress)"; }
+.rank-2-9:before {   content: "Воин\00a0 Севера (Warrior\00a0 of\00a0 the\00a0 North)"; }
+.rank-2-9-f:before { content: "Воительница\00a0 Севера (Warrior\00a0 of\00a0 the\00a0 North)"; }
+
+.rank-3-1:before {   content: "Оруженосец (Sword-bearer)"; }
+.rank-3-2:before {   content: "Рожденный\00a0 плачем (Born\00a0 by\00a0 mourning)"; }
+.rank-3-2-f:before { content: "Рожденная\00a0 плачем (Born\00a0 by\00a0 mourning)"; }
+.rank-3-3:before {   content: "Каратель (Chastiser)"; }
+.rank-3-4:before {   content: "Пивовар (Brewer)"; }
+.rank-3-5:before {   content: "Рейнджер (Ranger)"; }
+.rank-3-6:before {   content: "Поединщик (Duellist)"; }
+.rank-3-7:before {   content: "Страж\00a0 гати (Guard\00a0 of\00a0 log\00a0 path)"; }
+.rank-3-8:before {   content: "Тритон (Triton)"; }
+.rank-3-8-f:before { content: "Сирена (Siren)"; }
+.rank-3-9:before {   content: "Следопыт (Pathfinder)"; }
+
+.rank-4-1:before {   content: "Рыцарь (Knight)"; }
+.rank-4-2:before {   content: "Зов\00a0 мертвых (Call\00a0 of\00a0 the\00a0 Dead)"; }
+.rank-4-3:before {   content: "Палач (Executioner)"; }
+.rank-4-4:before {   content: "Хирдман (Hirdman)"; }
+.rank-4-5:before {   content: "Разящий\00a0 лук (Slaying\00a0 Bow)"; }
+.rank-4-6:before {   content: "Бей (Bey)"; }
+.rank-4-7:before {   content: "Манящий\00a0 в\00a0 трясину (Beckoning to morass)"; }
+.rank-4-7-f:before { content: "Манящая\00a0 в\00a0 трясину (Beckoning to morass)"; }
+.rank-4-8:before {   content: "Укротитель\00a0 кракенов (Tamer\00a0 of\00a0 krakens)"; }
+.rank-4-8-f:before { content: "Укротительница\00a0 кракенов (Tamer\00a0 of\00a0 krakens)"; }
+.rank-4-9:before {   content: "Траппер (Trapper)"; }
+
+.rank-5-1:before {   content: "Виконт (Viscount)"; }
+.rank-5-1-f:before { content: "Виконтесса (Viscountess)"; }
+.rank-5-2:before {   content: "Страж\00a0 гробниц (Guard\00a0 of\00a0 tombs)"; }
+.rank-5-3:before {   content: "Привратник бездны (Doorkeeper\00a0 of\00a0 the\00a0 Abyss)"; }
+.rank-5-3-f:before { content: "Привратница бездны (Doorkeeper\00a0 of\00a0 the\00a0 Abyss)"; }
+.rank-5-4:before {   content: "Страж\00a0 горных\00a0 чертогов (Guard\00a0 of\00a0 the\00a0 Mountain\00a0 Halls)"; }
+.rank-5-5:before {   content: "Лесной\00a0 мститель (Sylvan\00a0 Avenger)"; }
+.rank-5-5-f:before { content: "Лесная\00a0 мстительница (Sylvan\00a0 Avenger)"; }
+.rank-5-6:before {   content: "Тудун (Tudun)"; }
+.rank-5-7:before {   content: "Шепот\00a0 болот (Whisper\00a0 of\00a0 mires)"; }
+.rank-5-8:before {   content: "Хозяин\00a0 морских\00a0 змей (Owner\00a0 of\00a0 sea\00a0 serpents)"; }
+.rank-5-8-f:before { content: "Хозяйка\00a0 морских\00a0 змей (Owner\00a0 of\00a0 sea\00a0 serpents)"; }
+.rank-5-9:before {   content: "Страж\00a0 племени (Watch\00a0 of\00a0 tribe)"; }
+
+.rank-6-1:before {   content: "Граф (Count)"; }
+.rank-6-1-f:before { content: "Графиня (Countess)"; }
+.rank-6-2:before {   content: "Хозяин\00a0 кладбищ (Master\00a0 of\00a0 cemeteries)"; }
+.rank-6-2-f:before { content: "Хозяйка\00a0 кладбищ (Mistress\00a0 of\00a0 cemeteries)"; }
+.rank-6-3:before {   content: "Мучитель\00a0 душ (Tormentor\00a0 of\00a0 souls)"; }
+.rank-6-3-f:before { content: "Мучительница\00a0 душ (Tormentor\00a0 of\00a0 souls)"; }
+.rank-6-4:before {   content: "Ярл (Jarl)"; }
+.rank-6-5:before {   content: "Стрела\00a0 Альянса (Arrow\00a0 of\00a0 the\00a0 Alliance)"; }
+.rank-6-6:before {   content: "Эльтебер (Elteber)"; }
+.rank-6-7:before {   content: "Наг (Naga)"; }
+.rank-6-8:before {   content: "Мастер\00a0 водоворотов (Master\00a0 of\00a0 whirls)"; }
+.rank-6-9:before {   content: "Великий\00a0 воин (Great\00a0 warrior)"; }
+.rank-6-9-f:before { content: "Великая\00a0 воительница (Great\00a0 warrior)"; }
+
+.rank-7-1:before {   content: "Маркиз (Marquis)"; }
+.rank-7-1-f:before { content: "Маркиза (Marchioness)"; }
+.rank-7-2:before {   content: "Губитель\00a0 жизни (Destroyer\00a0 of\00a0 life)"; }
+.rank-7-2-f:before { content: "Губительница\00a0 жизни (Destroyer\00a0 of\00a0 life)"; }
+.rank-7-3:before {   content: "Властитель\00a0 когорт (Ruler\00a0 of\00a0 the\00a0 Cohorts)"; }
+.rank-7-3-f:before { content: "Властительница\00a0 когорт (Ruler\00a0 of\00a0 the\00a0 Cohorts)"; }
+.rank-7-4:before {   content: "Старейшина\00a0 Совета (Elder\00a0 of\00a0 the\00a0 Council)"; }
+.rank-7-5:before {   content: "Лорд\00a0 Альянса (Lord\00a0 of\00a0 the\00a0 Alliance)"; }
+.rank-7-5-f:before { content: "Леди\00a0 Альянса (Lady\00a0 of\00a0 the\00a0 Alliance)"; }
+.rank-7-6:before {   content: "Хан (Khan)"; }
+.rank-7-7:before {   content: "Василиск (Basilisk)"; }
+.rank-7-7-f:before { content: "Медуза (Medusa)"; }
+.rank-7-8:before {   content: "Повелевающий\00a0 цунами (Sovereign\00a0 of\00a0 tsunamis)"; }
+.rank-7-8-f:before { content: "Повелевающая\00a0 цунами (Sovereign\00a0 of\00a0 tsunamis)"; }
+.rank-7-9:before {   content: "Шаман (Shaman)"; }
+.rank-7-9-f:before { content: "Шаманесса (Shamaness)"; }
+
+.rank-8-1:before {   content: "Императорский\00a0 наместник (Imperial\00a0 Viceroy)"; }
+.rank-8-1-f:before { content: "Императорская\00a0 наместница (Imperial\00a0 Vicaress)"; }
+.rank-8-2:before {   content: "Повелитель\00a0 чумы (Sovereign\00a0 of\00a0 plague)"; }
+.rank-8-2-f:before { content: "Повелительница\00a0 чумы (Sovereign\00a0 of\00a0 plague)"; }
+.rank-8-3:before {   content: "Деспот (Despot)"; }
+.rank-8-4:before {   content: "Конунг (Konung)"; }
+.rank-8-5:before {   content: "Великий\00a0 архонт (Great\00a0 Archon)"; }
+.rank-8-6:before {   content: "Каган (Khagan)"; }
+.rank-8-7:before {   content: "Повелитель\00a0 змей (Ruler\00a0 of\00a0 serpents)"; }
+.rank-8-7-f:before { content: "Повелительница\00a0 змей (Ruler\00a0 of\00a0 serpents)"; }
+.rank-8-8:before {   content: "Зовущий\00a0 Солониэль (Calling\00a0 Soloniel)"; }
+.rank-8-8-f:before { content: "Зовущая\00a0 Солониэль (Calling\00a0 Soloniel)"; }
+.rank-8-9:before {   content: "Вождь (Chief)"; }
+
+.rank-9-1:before {   content: "Канцлер\00a0 Империи (Imperial\00a0 Chancellor)"; }
+.rank-9-2:before {   content: "Посланец\00a0 Смерти (Messenger\00a0 of\00a0 the\00a0 Death)"; }
+.rank-9-2-f:before { content: "Посланница\00a0 Смерти (Messenger\00a0 of\00a0 the\00a0 Death)"; }
+.rank-9-3:before {   content: "Тиран (Tyrant)"; }
+.rank-9-4:before {   content: "Эйнхерий (Einherjar)"; }
+.rank-9-4-f:before { content: "Валькирия (Valkyrie)"; }
+.rank-9-5:before {   content: "Голос\00a0 Галлеана (Voice\00a0 of\00a0 Gallean)"; }
+.rank-9-6:before {   content: "Око\00a0 Громдока (Eye\00a0 of\00a0 Gromdok)"; }
+.rank-9-7:before {   content: "Дитя\00a0 Агшлизги (Child\00a0 of\00a0 Agshlisga)"; }
+.rank-9-8:before {   content: "Владыка\00a0 морей (Lord\00a0 of\00a0 the\00a0 Seas)"; }
+.rank-9-8-f:before { content: "Владычица\00a0 морей (Lady\00a0 of\00a0 the\00a0 Seas)"; }
+.rank-9-9:before {   content: "Верховный\00a0 вождь (Paramount\00a0 chief)"; }
+
+.rank-10-1:before {   content: "Хранитель\00a0 Империи (Keeper\00a0 of\00a0 the\00a0 Empire)"; }
+.rank-10-1-f:before { content: "Хранительница\00a0 Империи (Keeper\00a0 of\00a0 the\00a0 Empire)"; }
+.rank-10-2:before {   content: "Хранитель\00a0 Мира теней (Keeper\00a0 of\00a0 the\00a0 Shadows'\00a0 World)"; }
+.rank-10-2-f:before { content: "Хранительница\00a0 Мира теней (Keeper\00a0 of\00a0 the\00a0 Shadows'\00a0 World)"; }
+.rank-10-3:before {   content: "Хранитель\00a0 Темного пламени (Keeper\00a0 of\00a0 the\00a0 Dark\00a0 Flame)"; }
+.rank-10-3-f:before { content: "Хранительница\00a0 Темного пламени (Keeper\00a0 of\00a0 the\00a0 Dark\00a0 Flame)"; }
+.rank-10-4:before {   content: "Хранитель\00a0 Рун (Keeper\00a0 of\00a0 the\00a0 Runes)"; }
+.rank-10-4-f:before { content: "Хранительница\00a0 Рун (Keeper\00a0 of\00a0 the\00a0 Runes)"; }
+.rank-10-5:before {   content: "Хранитель\00a0 Золотых лесов (Keeper\00a0 of\00a0 the\00a0 Golden\00a0 Forests)"; }
+.rank-10-5-f:before { content: "Хранительница\00a0 Золотых лесов (Keeper\00a0 of\00a0 the\00a0 Golden\00a0 Forests)"; }
+.rank-10-6:before {   content: "Хранитель\00a0 Степи (Keeper\00a0 of\00a0 the\00a0 Steppe)"; }
+.rank-10-6-f:before { content: "Хранительница\00a0 Степи (Keeper\00a0 of\00a0 the\00a0 Steppe)"; }
+.rank-10-7:before {   content: "Хранитель\00a0 Топей (Keeper\00a0 of\00a0 the\00a0 Marshes)"; }
+.rank-10-7-f:before { content: "Хранительница\00a0 Топей (Keeper\00a0 of\00a0 the\00a0 Marshes)"; }
+.rank-10-8:before {   content: "Хранитель\00a0 Глубин (Keeper\00a0 of\00a0 the\00a0 Depths)"; }
+.rank-10-8-f:before { content: "Хранительница\00a0 Глубин (Keeper\00a0 of\00a0 the\00a0 Depths)"; }
+.rank-10-9:before {   content: "Хранитель\00a0 Тотемов\00a0 Севера (Keeper\00a0 of\00a0 the\00a0 North's\00a0 Totems)"; }
+.rank-10-9-f:before { content: "Хранительница\00a0 Тотемов\00a0 Севера (Keeper\00a0 of\00a0 the\00a0 North's\00a0 Totems)"; }
