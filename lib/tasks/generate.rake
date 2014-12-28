@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 
+desc 'Generate complete html page example'
 task :generate do
   AppConfig.configure do |config|
     config.env = :test
