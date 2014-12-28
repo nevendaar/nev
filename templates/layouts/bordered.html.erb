@@ -7,7 +7,7 @@
         <%= stylesheet_link_tag %>
         <%= javascript_include_tag %>
     </head>
-    <body>
+    <body class="dark-back">
         <main class="bordered<%= ' vk-init' if @params[:vk][:init] %>">
             <div class="border-exp">
                 <% yield if block_given? %>

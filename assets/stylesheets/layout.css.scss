@@ -11,7 +11,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 body, html {
   height: 100%;
   width: 100%;
-  background: #13110e;
+  background-color: transparent;
   scrollbar-face-color: #636363;
   scrollbar-arrow-color: #898989;
   scrollbar-highlight-color: #707070;
@@ -110,6 +110,10 @@ input {
     margin: 3px 3px 0 5px;
     padding: 1px;
   }
+}
+
+.dark-back {
+  background-color: #13110e;
 }
 
 /* Middle
