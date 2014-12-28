@@ -80,8 +80,10 @@
                     <li><a href="/publ/11">Cтатьи</a></li>
                 </ul>
             </li>
-            <li><a href="/board">Доска объявлений</a></li>
-            <li><a href="/tests">Тесты</a></li>
+            <% uif(group_is('$GROUP_ID$', :admin, :master)) { %>
+                <li><a href="/board">Доска объявлений</a></li>
+                <li><a href="/tests">Тесты</a></li>
+            <% }.endif! %>
         </ul>
     </div>
     <script>activate_menu("<%= c '$MODULE_ID$' %>", "<%= c '$URI_ID$' %>");</script>
