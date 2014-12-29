@@ -33,11 +33,11 @@ module BaseHelper
   end
 
   def stylesheet_link_tag
-    '<link href="/css/app.min.css" rel="stylesheet">'
+    "<link href=\"/css/app.min.css?#{config.css_version}\" rel=\"stylesheet\">"
   end
 
   def javascript_include_tag
-    '<script src="/js/app.min.js"></script>'
+    "<script src=\"/js/app.min.js?#{config.js_version}\"></script>"
   end
 
   # Bang method coz it modify @_erbout directly.

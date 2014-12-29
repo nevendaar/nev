@@ -18,6 +18,8 @@ module AppConfig
   class Configuration #:nodoc:
     attr_accessor :env,
                   :deprecated_codes,
+                  :css_version,
+                  :js_version,
                   :home_url,
                   :ucoz_url
 
@@ -26,6 +28,8 @@ module AppConfig
       @deprecated_codes = YAML.load_file('config/deprecated_codes.yml')
       @home_url = 'http://0.0.0.0'
       @ucoz_url = @home_url
+      @css_version = 1
+      @js_version  = 1
     end
   end
 end
