@@ -22,7 +22,7 @@
             <% }.endif! %>
             function init() {
                 <% uif(code_is '$PAGE_ID$', "'add'") { %>
-                    str = '$USERNAME$ опубликовал<% uif(code_is '$USER_GENDER_ID$', 2) { %>а<% }.endif! %> статью ';
+                    str = '$USERNAME$ опубликовал<% uif(female) { %>а<% }.endif! %> статью ';
                 <% }.else { %>
                     str = 'Обновлена статья ';
                 <% }.endif! %>

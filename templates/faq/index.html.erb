@@ -22,7 +22,7 @@
             <% }.endif! %>
             function init(){
                 <% uif(code_is '$PAGE_ID$', "'add'") { %>
-                    str = "<%= c '$USERNAME$' %> задал<% uif(code_is '$USER_GENDER_ID$', '2') { %>а<% }.endif! %> вопрос: ";
+                    str = "<%= c '$USERNAME$' %> задал<% uif(female) { %>а<% }.endif! %> вопрос: ";
                 <% }.else { %>
                     str = ($('#message').val() == '' ? "Дан ответ на вопрос: " : "Обновлён ответ на вопрос: ");
                 <% }.endif! %>

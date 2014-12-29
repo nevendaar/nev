@@ -22,7 +22,7 @@
             <% }.endif! %>
             function init() {
                 <% uif(code_is '$PAGE_ID$', "'add'") { %>
-                    str = '$USERNAME$ загрузил<% uif(code_is '$USER_GENDER_ID$', 2) { %>а<% }.endif! %> ' +
+                    str = '$USERNAME$ загрузил<% uif(female) { %>а<% }.endif! %> ' +
                         ($('#catSelector9').val().indexOf('Карты') < 0 ? 'файл' : 'карту') + ' ';
                 <% }.else { %>
                     str = ($('#catSelector9').val().indexOf('Карты') < 0 ? 'Файл ' : 'Карта ');

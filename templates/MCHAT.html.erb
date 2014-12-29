@@ -31,10 +31,10 @@
                     }
                 </script>
             <% }.endif! %>
-            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_smile:<% }.else { %>)<% }.endif! %>','mchatMsgF');return false;">
-                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_smile<% }.else { %>smile3<% }.endif! %>.gif" title=":)" />
+            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(female) { %>girl_smile:<% }.else { %>)<% }.endif! %>','mchatMsgF');return false;">
+                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(female) { %>girl_smile<% }.else { %>smile3<% }.endif! %>.gif" title=":)" />
             </a>
-            <% uif(code_is('$USER_GENDER_ID$', 2)) { %>
+            <% uif(female) { %>
                 <a href="javascript://" rel="nofollow" onclick="emoticon(':flirt:','mchatMsgF');return false;">
                     <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/flirt.gif" title="flirt" />
                 </a>
@@ -42,8 +42,8 @@
             <a href="javascript://" rel="nofollow" onclick="emoticon('<_<','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/4.gif" title="<_<" />
             </a>
-            <a href="javascript://" rel="nofollow" onclick="emoticon('<% uif(code_is('$USER_GENDER_ID$', 2)) { %>:girl_wink:<% }.else { %>;)<% }.endif! %>','mchatMsgF');return false;">
-                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_wink<% }.else { %>2<% }.endif! %>.gif" title=";)" />
+            <a href="javascript://" rel="nofollow" onclick="emoticon('<% uif(female) { %>:girl_wink:<% }.else { %>;)<% }.endif! %>','mchatMsgF');return false;">
+                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(female) { %>girl_wink<% }.else { %>2<% }.endif! %>.gif" title=";)" />
             </a>
             <a href="javascript://" rel="nofollow" onclick="emoticon(':grin:','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/grin.gif" title="grin" />
@@ -51,13 +51,13 @@
             <a href="javascript://" rel="nofollow" onclick="emoticon(':D','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/1.gif" title=":D" />
             </a>
-            <% uif(code_is('$USER_GENDER_ID$', 2)) { %>
+            <% uif(female) { %>
                 <a href="javascript://" rel="nofollow" onclick="emoticon(':girl_haha:','mchatMsgF');return false;">
                     <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/girl_haha.gif" title="girl_haha" />
                 </a>
             <% }.endif! %>
-            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_blum:<% }.else { %>p<% }.endif! %>','mchatMsgF');return false;">
-                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_blum<% }.else { %>blum2<% }.endif! %>.gif" title=":p" />
+            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(female) { %>girl_blum:<% }.else { %>p<% }.endif! %>','mchatMsgF');return false;">
+                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(female) { %>girl_blum<% }.else { %>blum2<% }.endif! %>.gif" title=":p" />
             </a>
             <a href="javascript://" rel="nofollow" onclick="emoticon(':blush:','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/blush.gif" title="blush" />
@@ -71,16 +71,16 @@
             <a href="javascript://" rel="nofollow" onclick="emoticon(':thinkin:','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/smiley2/thinkin.gif" title="thinkin" />
             </a>
-            <% uif(code_is('$USER_GENDER_ID$', 2)) { %>
+            <% uif(female) { %>
                 <a href="javascript://" rel="nofollow" onclick="emoticon(':girl_sad:','mchatMsgF');return false;">
                     <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/girl_sad.gif" title="sad" />
                 </a>
             <% }.endif! %>
-            <a href="javascript://" rel="nofollow" onclick="emoticon('<% uif(code_is('$USER_GENDER_ID$', 2)) { %>:girl_mad:<% }.else { %>>(<% }.endif! %>','mchatMsgF');return false;">
-                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_mad<% }.else { %>6<% }.endif! %>.gif" title=">(" />
+            <a href="javascript://" rel="nofollow" onclick="emoticon('<% uif(female) { %>:girl_mad:<% }.else { %>>(<% }.endif! %>','mchatMsgF');return false;">
+                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(female) { %>girl_mad<% }.else { %>6<% }.endif! %>.gif" title=">(" />
             </a>
-            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_<% }.endif! %>cray:','mchatMsgF');return false;">
-                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_<% }.endif! %>cray.gif" title="cray" />
+            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(female) { %>girl_<% }.endif! %>cray:','mchatMsgF');return false;">
+                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(female) { %>girl_<% }.endif! %>cray.gif" title="cray" />
             </a>
             <a href="javascript://" rel="nofollow" onclick="emoticon(':scratch:','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/scratch_one-s_head.gif" title="scratch" />
@@ -100,8 +100,8 @@
             <a href="javascript://" rel="nofollow" onclick="emoticon(':priest:','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/priest.gif" title="priest" />
             </a>
-            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_devil<% }.else { %>diablo<% }.endif! %>:','mchatMsgF');return false;">
-                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_devil<% }.else { %>diablo<% }.endif! %>.gif" title="<% uif(code_is('$USER_GENDER_ID$', 2)) { %>girl_devil<% }.else { %>diablo<% }.endif! %>" />
+            <a href="javascript://" rel="nofollow" onclick="emoticon(':<% uif(female) { %>girl_devil<% }.else { %>diablo<% }.endif! %>:','mchatMsgF');return false;">
+                <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/<% uif(female) { %>girl_devil<% }.else { %>diablo<% }.endif! %>.gif" title="<% uif(female) { %>girl_devil<% }.else { %>diablo<% }.endif! %>" />
             </a>
             <a href="javascript://" rel="nofollow" onclick="emoticon(':skull:','mchatMsgF');return false;">
                 <img alt="" style="margin:0;padding:0;border:0;" src="/Smiley/skull.gif" title="skull" />

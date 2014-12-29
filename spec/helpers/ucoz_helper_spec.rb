@@ -51,6 +51,18 @@ describe UcozHelper do
     end
   end
 
+  describe 'female' do
+    it 'should use default global code' do
+      result = @dummy_class.female
+      expect(result).to eq('$USER_GENDER_ID$=2')
+    end
+
+    it 'should work with custom code' do
+      result = @dummy_class.female('$_GENDER_ID$')
+      expect(result).to eq('$_GENDER_ID$=2')
+    end
+  end
+
   %w[ucoz_injection i].each do |method_name|
     describe method_name do
       it 'wrap given code' do

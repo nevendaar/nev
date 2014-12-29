@@ -30,6 +30,10 @@ module UcozHelper
     code_is(code, key_or_group, *groups) { |v| USER_GROUPS[v.to_sym] }
   end
 
+  def female(code = '$USER_GENDER_ID$')
+    code_is code, 2
+  end
+
   def ucoz_code(code)
     message = config.deprecated_codes[code]
     LOGGER.warn('ucoz_code') do

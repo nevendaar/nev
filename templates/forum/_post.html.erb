@@ -20,7 +20,7 @@
                         $USER_TITLE$
                     <?else?>
                         <%# TODO: если нет в классах выводить: $USER_RANK_NAME$ %>
-                        <span class="rank-<%= user_rank %>-$MSN$ <?if($GENDER_ID$='2')?>rank-<%= user_rank %>-$MSN$-f<?endif?>"></span>
+                        <span class="rank-<%= user_rank %>-$MSN$ <% uif(female '$GENDER_ID$') { %>rank-<%= user_rank %>-$MSN$-f<% }.endif! %>"></span>
                     <?endif?>
                 </div>
                 <?if($GROUP_ICON$)?>
@@ -83,7 +83,7 @@
                     <?else?>
                         <?ifnot(<%= moder_names %>)?>
                             <br><br>
-                            <div class=edited>Сообщение отредактировал<?if($GENDER_ID$='2')?>а<?endif?> $EDITEDBY$</div>
+                            <div class=edited>Сообщение отредактировал<% uif(female '$GENDER_ID$') { %>а<% }.endif! %> <%= c '$EDITEDBY$' %></div>
                         <?endif?>
                     <?endif?>
                 <?endif?>

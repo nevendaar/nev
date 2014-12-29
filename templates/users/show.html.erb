@@ -33,7 +33,7 @@
             <?if($MODER_PANEL$)?>[id: <b>$_USER_ID$</b>]<?endif?>
             <?if($_RANK_NAME$)?>
                 <span title="Ранг: $_RANK$">$_RANK_ICON$</span>
-                [ <span class="rank-$_RANK$-$_MSN$ <?if($_GENDER_ID$='2')?>rank-$_RANK$-$_MSN$-f<?endif?>"></span> ]
+                [ <span class="rank-$_RANK$-$_MSN$ <% uif(female '$_GENDER_ID$') { %>rank-$_RANK$-$_MSN$-f<% }.endif! %>"></span> ]
             <?endif?>
         </div>
         <?if($_BANNED_TILL$)?>
