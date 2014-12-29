@@ -1,8 +1,4 @@
 /* General Style */
-a:link {text-decoration:none; color:#ffba4b;}
-a:active {text-decoration:none; color:#ffba4b;}
-a:visited {text-decoration:none; color:#ffba4b;}
-a:hover {text-decoration:none; color:#FFFFFF;}
 
 td, body {font-family:verdana,arial,helvetica; font-size:8pt; color:#f6c577; scrollbar-face-color:#636363; scrollbar-arrow-color:#898989; scrollbar-highlight-color:#707070; scrollbar-shadow-color:#555555; scrollbar-darkshadow-color:#464646; scrollbar-3dlight-color:#7d7d7d; scrollbar-track-color:#252525;}
 form {padding:0px;margin:0px;}
@@ -45,7 +41,6 @@ a.noun:active {text-decoration:none; color:#824621}
 a.noun:visited {text-decoration:none; color:#824621}
 a.noun:hover {text-decoration:none; color:#FFFFFF}
 .mframe1 {padding:2 10 30 10px;}
-hr {color:#160d0b;height:1px;}
 label {cursor:pointer;cursor:hand}
 
 .infTable{}
@@ -206,21 +201,6 @@ a.entryTitleLink:active {text-decoration:none; color:#f6c577;}
 .commError {color:#FF0000;}
 .securityCode {}
 /* ------------------- */
-
-/* VKontakte comments Style */
-.VKborders {
- border: 10px solid #585858;
- -moz-border-image: url(/site/vk_borders.gif) 10 repeat repeat;
- -webkit-border-image: url(/site/vk_borders.gif) 10 repeat repeat;
- -o-border-image: url(/site/vk_borders.gif) 10 repeat repeat;
- border-image: url(/site/vk_borders.gif) 10 repeat repeat;
- padding: 2px;
- margin: 10px 0px;
-}
-.VKborders div:first-child {
- opacity: 0.9;
-}
-/* -------------- */
 
 /* Guestbook Post Form */
 .signTable {background:#13110e;border:1px solid #4a4842;}
