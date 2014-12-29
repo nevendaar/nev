@@ -18,7 +18,9 @@
             </div>
         </div>
         <div class="body">
-            $MESSAGE$
+            <div class="clearfix">
+                <%= c '$MESSAGE$' %>
+            </div>
             <?if($OTHER1$)?><div class="source"><a href="$OTHER1$" target="_blank">Источник</a></div><?endif?>
             <?if($ATTACHMENTS$)?><div class="attachments">Прикрепления: $ATTACHMENTS$</div><?endif?>
             <ul class="details">

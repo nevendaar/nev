@@ -4,7 +4,9 @@
         <% uif('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
     </div>
     <div class="body">
-        <%= c '$MESSAGE$' %>
+        <div class="clearfix">
+            <%= c '$MESSAGE$' %>
+        </div>
         <% uif('$ATTACHMENTS$') { %><div class="attachments">Прикрепления: <%= c '$ATTACHMENTS$' %></div><% }.endif! %>
         <ul class="details">
             <% uif('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
