@@ -7,236 +7,237 @@
     </div>
     <div align="left">
         <div class="pull-right text-center">
-            <?if($_MSN$)?>
-                <span class="fraction-flag fflag$_MSN$"></span>
-            <?endif?>
-            $_AVATAR$
-            <?if($MODER_PANEL$ && $UNET_ID$)?>
+            <% uif('$_MSN$') { %>
+                <span class="fraction-flag fflag<%= c '$_MSN$' %>"></span>
+            <% }.endif! %>
+            <%= c '$_AVATAR$' %>
+            <% uif('$MODER_PANEL$', '$UNET_ID$') { %>
                 <div>
-                    <a class="uid-link" href="$UNET_PROFILE_URL$" target="_blank">
+                    <a class="uid-link" href="<%= c '$UNET_PROFILE_URL$' %>" target="_blank">
                         <img src="http://src.ucoz.net/img/ma/uid.gif" alt="uid">
                     </a>
                 </div>
-            <?endif?>
-            <?if($_CHANGE_DETAILS_URL$)?><div>[ <a href="$_CHANGE_DETAILS_URL$">Изменить данные</a> ]</div><?endif?>
-            <?if($_PM_READ_URL$)?>
-                <div>[ <a href="$_PM_READ_URL$">Читать ЛС <?if($UNREAD_PM$)?>(<b>$UNREAD_PM$</b>)<?endif?></a> ]</div>
-            <?else?>
-                <?if($_PM_SEND_URL$)?>
-                    <div>[ <a href="$_PM_SEND_URL$">Отправить ЛС</a> ]</div>
-                <?endif?>
-            <?endif?>
+            <% }.endif! %>
+            <% uif('$_CHANGE_DETAILS_URL$') { %><div>[ <a href="<%= c '$_CHANGE_DETAILS_URL$' %>">Изменить данные</a> ]</div><% }.endif! %>
+            <% uif('$_PM_READ_URL$') { %>
+                <div>[ <a href="<%= c '$_PM_READ_URL$' %>">Читать ЛС <% uif('$UNREAD_PM$') { %>(<b><%= c '$UNREAD_PM$' %></b>)<% }.endif! %></a> ]</div>
+            <% }.else { %>
+                <% uif('$_PM_SEND_URL$') { %>
+                    <div>[ <a href="<%= c '$_PM_SEND_URL$' %>">Отправить ЛС</a> ]</div>
+                <% }.endif! %>
+            <% }.endif! %>
         </div>
         <div class="profile-line">
             <span class="profile-label">Пользователь</span>
-            <a href="$_PROFILE_URL$" title="Адрес профиля данного пользователя" class="prompt-link"><b>$_USERNAME$</b></a>
-            <?if($MODER_PANEL$)?>[id: <b>$_USER_ID$</b>]<?endif?>
-            <?if($_RANK_NAME$)?>
-                <span title="Ранг: $_RANK$">$_RANK_ICON$</span>
-                [ <span class="rank-$_RANK$-$_MSN$ <% uif(female '$_GENDER_ID$') { %>rank-$_RANK$-$_MSN$-f<% }.endif! %>"></span> ]
-            <?endif?>
+            <a href="<%= c '$_PROFILE_URL$' %>" title="Адрес профиля данного пользователя" class="prompt-link"><b><%= c '$_USERNAME$' %></b></a>
+            <% uif('$MODER_PANEL$') { %>[id: <b><%= c '$_USER_ID$' %></b>]<% }.endif! %>
+            <% uif('$_RANK_NAME$') { %>
+                <span title="Ранг: <%= c '$_RANK$' %>"><%= c '$_RANK_ICON$' %></span>
+                [ <span class="rank-<%= c '$_RANK$' %>-<%= c '$_MSN$' %> <% uif(female '$_GENDER_ID$') { %>rank-<%= c '$_RANK$' %>-<%= c '$_MSN$' %>-f<% }.endif! %>"></span> ]
+            <% }.endif! %>
         </div>
-        <?if($_BANNED_TILL$)?>
+        <% uif('$_BANNED_TILL$') { %>
             <div class="profile-line">
                 <span class="profile-label"></span>
-                <?if($_BANNED_TILL$="1")?>
+                <% uif(code_is '$_BANNED_TILL$', 1) { %>
                     <b style="color:red;">Активность заблокирована навсегда!</b>
-                <?else?>
-                    Активность заблокирована до <u style="color:red;">$_BANNED_TILL$</u>
-                <?endif?>
+                <% }.else { %>
+                    Активность заблокирована до <u style="color:red;"><%= c '$_BANNED_TILL$' %></u>
+                <% }.endif! %>
             </div>
-        <?endif?>
+        <% }.endif! %>
         <div class="profile-line">
             <span class="profile-label">Группа</span>
-            <?if($MODER_PANEL$)?>
-                $MODER_PANEL$
-            <?else?>
-                $_GROUP_NAME$ <?if($_GROUP_ICON$)?>$_GROUP_ICON$<?endif?>
-            <?endif?>
+            <% uif('$MODER_PANEL$') { %>
+                <%= c '$MODER_PANEL$' %>
+            <% }.else { %>
+                <%= c '$_GROUP_NAME$' %>
+                <%= c '$_GROUP_ICON$' %>
+            <% }.endif! %>
         </div>
-        <?if(0)?>
+        <% uif(0) { %>
             <div class="profile-line">
                 <span class="profile-label">Инвентарь</span>
-                <?if($AWARDS$='0')?>
+                <% uif(code_is '$AWARDS$', 0) { %>
                     нет
-                <?else?>
+                <% }.else { %>
                     <a id="see_user_awards" href="#" title="Награды">Открыть список</a>
-                <?endif?>
-                <?if(<%= group_is('$GROUP_ID$', :moderator, :admin, :master) %>)?>
-                    <?if($AWARDS_DO_URL$)?>
-                        <span class="small">[ <a href="$AWARDS_DO_URL$">Вручить награду</a> ]</span>
-                    <?endif?>
-                <?endif?>
+                <% }.endif! %>
+                <% uif(group_is '$GROUP_ID$', :moderator, :admin, :master) { %>
+                    <% uif('$AWARDS_DO_URL$') { %>
+                        <span class="small">[ <a href="<%= c '$AWARDS_DO_URL$' %>">Вручить награду</a> ]</span>
+                    <% }.endif! %>
+                <% }.endif! %>
             </div>
-        <?endif?>
+        <% }.endif! %>
         <div class="profile-line">
             <span class="profile-label">Замечания</span>
-            <?if(<%= group_is('$_GROUP_ID$', :master) %>)?>
+            <% uif(group_is '$_GROUP_ID$', :master) { %>
                 IMMUNE
-            <?else?>
-                <?if($_BAN_READ_URL$)?>
-                    <a class="banPercent" title="Смотреть историю замечаний" href="$_BAN_READ_URL$">$_BAN_PERCENT$%</a>
-                <?else?>
+            <% }.else { %>
+                <% uif('$_BAN_READ_URL$') { %>
+                    <a class="banPercent" title="Смотреть историю замечаний" href="<%= c '$_BAN_READ_URL$' %>"><%= c '$_BAN_PERCENT$' %>%</a>
+                <% }.else { %>
                     нет
-                <?endif?>
-                <?if($_BAN_DO_URL$)?>
-                    <a href="$_BAN_DO_URL$" title="Изменить уровень замечаний">
+                <% }.endif! %>
+                <% uif('$_BAN_DO_URL$') { %>
+                    <a href="<%= c '$_BAN_DO_URL$' %>" title="Изменить уровень замечаний">
                         <img src="http://src.ucoz.ru/img/fr/wm.gif">
                         <img src="http://src.ucoz.ru/img/fr/w$_BAN_RATING$.gif">
                         <img src="http://src.ucoz.ru/img/fr/wp.gif">
                     </a>
-                <?endif?>
-            <?endif?>
+                <% }.endif! %>
+            <% }.endif! %>
         </div>
-        <?if($_MSN$)?>
+        <% uif('$_MSN$') { %>
             <div class="profile-line">
                 <span class="profile-label">Фракция</span>
-                <span class="fraction-name$_MSN$"></span>
+                <span class="fraction-name<%= c '$_MSN$' %>"></span>
             </div>
-        <?endif?>
-        <?if($_REP_READ_URL$ && $_USER_ID$!='1249')?>
+        <% }.endif! %>
+        <% uif('$_REP_READ_URL$', code_is(:not, '$_USER_ID$', 1249)) { %>
             <div class="profile-line">
                 <span class="profile-label">Репутация</span>
-                <a title="Смотреть историю репутации" class="repHistory" href="$_REP_READ_URL$"><b>$_REPUTATION$</b></a>
-                <?if($_REP_DO_URL$)?>
-                    <a href="$_REP_DO_URL$" title="Изменить репутацию">
+                <a title="Смотреть историю репутации" class="repHistory" href="<%= c '$_REP_READ_URL$' %>"><b><%= c '$_REPUTATION$' %></b></a>
+                <% uif('$_REP_DO_URL$') { %>
+                    <a href="<%= c '$_REP_DO_URL$' %>" title="Изменить репутацию">
                         <img src="http://src.ucoz.ru/img/fr/wm.gif">
                         <img src="http://src.ucoz.ru/img/fr/wp.gif">
                     </a>
-                <?endif?>
+                <% }.endif! %>
             </div>
-        <?endif?>
-        <?if($_NAME$)?>
+        <% }.endif! %>
+        <% uif('$_NAME$') { %>
             <div class="profile-line">
                 <span class="profile-label">Имя</span>
-                $_NAME$ <?if($_GENDER_NAME$)?>[ $_GENDER_NAME$ ]<?endif?>
+                <%= c '$_NAME$' %> <% uif('$_GENDER_NAME$') { %>[ <%= c '$_GENDER_NAME$' %> ]<% }.endif! %>
             </div>
-        <?endif?>
-        <?if($_STATUS$)?>
+        <% }.endif! %>
+        <% uif('$_STATUS$') { %>
             <div class="profile-line">
                 <span class="profile-label">Статус</span>
-                $_STATUS$
+                <%= c '$_STATUS$' %>
             </div>
-        <?endif?>
-        <?if($MODER_PANEL$)?>
+        <% }.endif! %>
+        <% uif('$MODER_PANEL$') { %>
             <div class="profile-line">
                 <span class="profile-label">Регистрационный IP</span>
-                <a href="http://www.ripe.net/perl/whois?$_IP_ADDRESS$" target="_blank">$_IP_ADDRESS$</a>
+                <a href="http://www.ripe.net/perl/whois?<%= c '$_IP_ADDRESS$' %>" target="_blank"><%= c '$_IP_ADDRESS$' %></a>
             </div>
-        <?endif?>
-        <?if($_REG_TIME$)?>
+        <% }.endif! %>
+        <% uif('$_REG_TIME$') { %>
             <div class="profile-line">
                 <span class="profile-label">Дата регистрации</span>
-                $_REG_TIME$
+                <%= c '$_REG_TIME$' %>
             </div>
-        <?endif?>
-        <?if($_LOG_TIME$)?>
+        <% }.endif! %>
+        <% uif('$_LOG_TIME$') { %>
             <div class="profile-line">
                 <span class="profile-label">Дата входа</span>
-                $_LOG_TIME$
+                <%= c '$_LOG_TIME$' %>
             </div>
-        <?endif?>
-        <?if($_BIRTHDAY$)?>
+        <% }.endif! %>
+        <% uif('$_BIRTHDAY$') { %>
             <div class="profile-line">
                 <span class="profile-label">Дата рождения</span>
-                $_BIRTHDAY$ [ <b>$_AGE$</b> $_ZODIAC$ ]
+                <%= c '$_BIRTHDAY$' %> [ <b><%= c '$_AGE$' %></b> <%= c '$_ZODIAC$' %> ]
             </div>
-        <?endif?>
+        <% }.endif! %>
 
         <div class="profile-line">
             <span class="profile-label">E-mail</span>
-            <?if($_IS_OWN_PROFILE$)?>
-                $_EMAIL$ <?if($_EMAIL_IS_HIDDEN$)?>(Адрес скрыт)<?endif?>
-            <?else?>
-                <?if($MODER_PANEL$)?>
-                    <a href="mailto:$_EMAIL$">$_EMAIL$</a>
-                    <?if(!$_EMAIL_IS_VERIFIED$)?>
+            <% uif('$_IS_OWN_PROFILE$') { %>
+                <%= c '$_EMAIL$' %> <% uif('$_EMAIL_IS_HIDDEN$') { %>(Адрес скрыт)<% }.endif! %>
+            <% }.else { %>
+                <% uif('$MODER_PANEL$') { %>
+                    <a href="mailto:<%= c '$_EMAIL$' %>"><%= c '$_EMAIL$' %></a>
+                    <% uifnot('$_EMAIL_IS_VERIFIED$') { %>
                         <img alt="" style="vertical-align:1px;" src="http://s6.ucoz.net/img/ma/bn.gif" width="8" title="E-mail адрес не подтвержден">
-                    <?endif?>
-                <?else?>
-                    <?if($_SEND_EMAIL_URL$)?>
-                        <a href="$_SEND_EMAIL_URL$">Написать письмо пользователю</a>
-                    <?else?>
+                    <% }.endif! %>
+                <% }.else { %>
+                    <% uif('$_SEND_EMAIL_URL$') { %>
+                        <a href="<%= c '$_SEND_EMAIL_URL$' %>">Написать письмо пользователю</a>
+                    <% }.else { %>
                         <i>Адрес скрыт</i>
-                    <?endif?>
-                <?endif?>
-            <?endif?>
-            <?if($_EMAIL_VERIFICATION_URL$)?>
-                [ <a href="$_EMAIL_VERIFICATION_URL$"><b style="color:red">Подтвердить e-mail</b></a> ]
-            <?endif?>
+                    <% }.endif! %>
+                <% }.endif! %>
+            <% }.endif! %>
+            <% uif('$_EMAIL_VERIFICATION_URL$') { %>
+                [ <a href="<%= c '$_EMAIL_VERIFICATION_URL$' %>"><b style="color:red">Подтвердить e-mail</b></a> ]
+            <% }.endif! %>
         </div>
 
-        <?if($_WWW$)?>
+        <% uif('$_WWW$') { %>
             <div class="profile-line">
                 <span class="profile-label">Сайт</span>
-                <a href="$_WWW$" title="Веб-сайт" class="prompt-link" target="_blank" rel="nofollow">$_WWW$</a>
+                <a href="<%= c '$_WWW$' %>" title="Веб-сайт" class="prompt-link" target="_blank" rel="nofollow"><%= c '$_WWW$' %></a>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_ICQ$)?>
+        <% uif('$_ICQ$') { %>
             <div class="profile-line">
                 <span class="profile-label">ICQ</span>
-                $_ICQ$
+                <%= c '$_ICQ$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_AOL$)?>
+        <% uif('$_AOL$') { %>
             <div class="profile-line">
                 <span class="profile-label">AOL</span>
-                $_AOL$
+                <%= c '$_AOL$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_YAHOO$)?>
+        <% uif('$_YAHOO$') { %>
             <div class="profile-line">
                 <span class="profile-label">Yahoo</span>
-                $_YAHOO$
+                <%= c '$_YAHOO$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_COUNTRY$)?>
+        <% uif('$_COUNTRY$') { %>
             <div class="profile-line">
                 <span class="profile-label">Страна</span>
-                $_COUNTRY$
+                <%= c '$_COUNTRY$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_STATE$)?>
+        <% uif('$_STATE$') { %>
             <div class="profile-line">
                 <span class="profile-label">Штат</span>
-                $_STATE$
+                <%= c '$_STATE$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_CITY$)?>
+        <% uif('$_CITY$') { %>
             <div class="profile-line">
                 <span class="profile-label">Город</span>
-                $_CITY$
+                <%= c '$_CITY$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_SIGNATURE$)?>
+        <% uif('$_SIGNATURE$') { %>
             <div class="profile-line">
                 <span class="profile-label">Подпись</span>
-                $_SIGNATURE$
+                <%= c '$_SIGNATURE$' %>
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($_IS_ACTIVITY$)?>
+        <% uif('$_IS_ACTIVITY$') { %>
             <div class="text-center top-hr">
-                <?if($_COM_ENTRIES$)?> | <a href="$_COM_ACTIVITY_URL$" target="_blank">комментарии (<b>$_COM_ENTRIES$</b>)</a><?endif?>
-                <?if($_FORUM_ENTRIES$)?> | <a href="$_FORUM_ACTIVITY_URL$" target="_blank">форум (<b>$_FORUM_ENTRIES$</b>)</a><?endif?>
-                <?if($_BLOG_ENTRIES$)?> | <a href="$_BLOG_ACTIVITY_URL$" target="_blank">фан-творчество (<b>$_BLOG_ENTRIES$</b>)</a><?endif?>
-                <?if($_NEWS_ENTRIES$)?> | <a href="$_NEWS_ACTIVITY_URL$" target="_blank">новости (<b>$_NEWS_ENTRIES$</b>)</a><?endif?>
-                <?if($_PUBL_ENTRIES$)?> | <a href="$_PUBL_ACTIVITY_URL$" target="_blank">статьи (<b>$_PUBL_ENTRIES$</b>)</a><?endif?>
-                <?if($_LOAD_ENTRIES$)?> | <a href="$_LOAD_ACTIVITY_URL$" target="_blank">файлы (<b>$_LOAD_ENTRIES$</b>)</a><?endif?>
-                <?if($_DIR_ENTRIES$ && 0)?> | <a href="$_DIR_ACTIVITY_URL$" target="_blank">сайты (<b>$_DIR_ENTRIES$</b>)</a><?endif?>
-                <?if($_BOARD_ENTRIES$)?> | <a href="$_BOARD_ACTIVITY_URL$" target="_blank">объявления (<b>$_BOARD_ENTRIES$</b>)</a><?endif?>
-                <?if($_PHOTO_ENTRIES$)?> | <a href="$_PHOTO_ACTIVITY_URL$" target="_blank">изображения (<b>$_PHOTO_ENTRIES$</b>)</a><?endif?> |
+                <% uif('$_COM_ENTRIES$') { %>   | <a href="<%= c '$_COM_ACTIVITY_URL$' %>" target="_blank">комментарии (<b><%= c '$_COM_ENTRIES$' %></b>)</a><% }.endif! %>
+                <% uif('$_FORUM_ENTRIES$') { %> | <a href="<%= c '$_FORUM_ACTIVITY_URL$' %>" target="_blank">форум (<b><%= c '$_FORUM_ENTRIES$' %></b>)</a><% }.endif! %>
+                <% uif('$_BLOG_ENTRIES$') { %>  | <a href="<%= c '$_BLOG_ACTIVITY_URL$' %>" target="_blank">фан-творчество (<b><%= c '$_BLOG_ENTRIES$' %></b>)</a><% }.endif! %>
+                <% uif('$_NEWS_ENTRIES$') { %>  | <a href="<%= c '$_NEWS_ACTIVITY_URL$' %>" target="_blank">новости (<b><%= c '$_NEWS_ENTRIES$' %></b>)</a><% }.endif! %>
+                <% uif('$_PUBL_ENTRIES$') { %>  | <a href="<%= c '$_PUBL_ACTIVITY_URL$' %>" target="_blank">статьи (<b><%= c '$_PUBL_ENTRIES$' %></b>)</a><% }.endif! %>
+                <% uif('$_LOAD_ENTRIES$') { %>  | <a href="<%= c '$_LOAD_ACTIVITY_URL$' %>" target="_blank">файлы (<b><%= c '$_LOAD_ENTRIES$' %></b>)</a><% }.endif! %>
+                <%# "| <a href="$_DIR_ACTIVITY_URL$" target="_blank">сайты (<b>$_DIR_ENTRIES$</b>)</a>" %>
+                <% uif('$_BOARD_ENTRIES$') { %> | <a href="<%= c '$_BOARD_ACTIVITY_URL$' %>" target="_blank">объявления (<b><%= c '$_BOARD_ENTRIES$' %></b>)</a><% }.endif! %>
+                <% uif('$_PHOTO_ENTRIES$') { %> | <a href="<%= c '$_PHOTO_ACTIVITY_URL$' %>" target="_blank">изображения (<b><%= c '$_PHOTO_ENTRIES$' %></b>)</a><% }.endif! %> |
             </div>
-        <?endif?>
+        <% }.endif! %>
 
-        <?if($USERS_LIST_URL$)?>
+        <% uif('$USERS_LIST_URL$') { %>
             <div class="text-center top-hr">
                 <form method="post" action="/index" name="fuser" style="margin:0px">
                     <input type="button" class="allUsersBtn" style="width:150px;" onclick="window.location.href='/index/15-1'" value="Список пользователей">&nbsp;
@@ -245,6 +246,6 @@
                     <input type="hidden" name="a" value="15" />
                 </form>
             </div>
-        <?endif?>
+        <% }.endif! %>
     </div>
 <% end %>
