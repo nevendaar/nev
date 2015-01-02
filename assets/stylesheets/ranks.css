@@ -9,6 +9,10 @@
 .fraction-name9:before {  content: "Варвар (Barbarian)"; }
 .fraction-name10:before { content: "Нейтральный\00a0 наемник (Neutrals)"; }
 
+.rank:before {
+    content: attr(data-rank-name);
+}
+
 .rank-1-1:before {   content: "Сын\00a0 Империи (Son\00a0 of\00a0 the\00a0 Empire)"; }
 .rank-1-1-f:before { content: "Дочь\00a0 Империи (Daughter\00a0 of\00a0 the\00a0 Empire)"; }
 .rank-1-2:before {   content: "Причастный\00a0 праху (Concerned\00a0 with\00a0 ashes)"; }

@@ -33,7 +33,7 @@
             <% uif('$MODER_PANEL$') { %>[id: <b><%= c '$_USER_ID$' %></b>]<% }.endif! %>
             <% uif('$_RANK_NAME$') { %>
                 <span title="Ранг: <%= c '$_RANK$' %>"><%= c '$_RANK_ICON$' %></span>
-                [ <span class="rank-<%= c '$_RANK$' %>-<%= c '$_MSN$' %> <% uif(female '$_GENDER_ID$') { %>rank-<%= c '$_RANK$' %>-<%= c '$_MSN$' %>-f<% }.endif! %>"></span> ]
+                [ <%= rank_name '$_RANK$', '$_MSN$', '$_RANK_NAME$', '$_GENDER_ID$' %> ]
             <% }.endif! %>
         </div>
         <% uif('$_BANNED_TILL$') { %>

@@ -19,8 +19,7 @@
                     <?if($USER_TITLE$)?>
                         $USER_TITLE$
                     <?else?>
-                        <%# TODO: если нет в классах выводить: $USER_RANK_NAME$ %>
-                        <span class="rank-<%= user_rank %>-$MSN$ <% uif(female '$GENDER_ID$') { %>rank-<%= user_rank %>-$MSN$-f<% }.endif! %>"></span>
+                        <%= rank_name user_rank, '$MSN$', '$USER_RANK_NAME$', '$GENDER_ID$' %>
                     <?endif?>
                 </div>
                 <?if($GROUP_ICON$)?>
