@@ -22,7 +22,7 @@
         <td nowrap>
             <input id="rem<%= c '$PAGE_ID$' %>" type="checkbox" name="rem" value="1" checked="checked"/>
             <label for="rem<%= c '$PAGE_ID$' %>">запомнить</label>
-            <% uif("#{code_is('$PAGE_ID$', '"login"')} && $HIDDEN_ALLOWED$") { %>
+            <% uif(code_is('$PAGE_ID$', '"login"'), '$HIDDEN_ALLOWED$') { %>
                 <br>
                 <input id="hid<%= c '$PAGE_ID$' %>" type="checkbox" name="hidden" value="1" />
                 <label for="hid<%= c '$PAGE_ID$' %>">скрытый</label>

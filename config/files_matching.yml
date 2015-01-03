@@ -119,6 +119,7 @@
 'us1.t':  'templates/users/login.html.erb'        # Страница входа пользователей
 'us2.t':  'templates/users/registration.html.erb' # Страница регистрации пользователей
 'us3.t':  'templates/users/403.html.erb'          # Страница "Доступ запрещен"
+#'us4.t':  'templates/users/_login_form.html.erb'  # Форма входа пользователей
 'us5.t':  'templates/users/show.html.erb'         # Персональная страница пользователя
 'us6.t':  'templates/users/edit.html.erb'         # Страница редактирования данных пользователя
 'us7.t':  'templates/users/index.html.erb'        # Страница со списком пользователей
