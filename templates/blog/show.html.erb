@@ -30,7 +30,7 @@
             <ul class="details">
                 <% uif('$CAT_NAME$') { %><li>Категория: <a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li><% }.endif! %>
                 <li>Просмотров: <%= c '$READS$' %></li>
-                <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USER$' %></a></li>
+                <li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USER$' %></a></li>
                 <% uif('$RATING$') { %><li>Рейтинг: <%= rating_stars %></li><% }.endif! %>
                 <li><%= vk_like_btn %></li>
             </ul>

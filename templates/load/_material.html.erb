@@ -16,7 +16,7 @@
             <li>Просмотров: <%= c '$READS$' %></li>
             <li>Загрузок: <%= c '$LOADS$' %></li>
             <% uif('$USERNAME$') { %>
-                <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USERNAME$' %></a></li>
+                <li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USERNAME$' %></a></li>
             <% }.endif! %>
             <li>Дата: <%= c '$DATE$' %></li>
             <% uif('$RATING$') { %>

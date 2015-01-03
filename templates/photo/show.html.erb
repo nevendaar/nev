@@ -45,7 +45,7 @@
                 <tr>
                     <td colspan="2" class="eDetails" style="text-align:center;">
                         <ul class="details">
-                            <% uif('$USER$') { %><li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USER$' %></a></li><% }.endif! %>
+                            <% uif('$USER$') { %><li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USER$' %></a></li><% }.endif! %>
                             <li>Просмотров: <%= c '$REVIEWS$' %></li>
                             <li>Размеры: <%= c '$PHOTO_SIZE$' %>px/<%= c '$PHOTO_WEIGHT$' %>Kb</li>
                             <li>Дата: <%= c '$ADD_DATE$' %></li>
@@ -70,7 +70,7 @@
                         </div>
                     </td>
                     <td>
-                        <% uif('$ADVICE_BUTTON$') { %><%= c '$ADVICE_BUTTON$' %><% }.endif! %>
+                        <%= c '$ADVICE_BUTTON$' %>
                     </td>
                 </tr>
                 <% uif('$OTHER_PHOTOS$') { %>

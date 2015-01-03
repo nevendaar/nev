@@ -32,7 +32,7 @@
 
             <ul class="details">
                 <% uif('$CAT_NAME$') { %><li>Категория: <a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li><% }.endif! %>
-                <li>Добавил: <a href="<%= c '$PROFILE_URL$' %>"><%= c '$USER$' %></a> ($ADD_DATE$)</li>
+                <li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USER$' %></a> ($ADD_DATE$)</li>
                 <% uif('$AUTHOR_NAME$') { %><li>Автор: <u>$AUTHOR_NAME$</u></li><% }.endif! %>
                 <% uif('$AUTHOR_EMAIL_JS$') { %>
                     <li>

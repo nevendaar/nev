@@ -33,7 +33,7 @@
                     <li>Переходов: <%= c '$REDIRECTS$' %></li>
                     <li>
                         Добавил:
-                        <a href="<% uif('$AUTHOR_EMAIL_JS$') { %><%= c '$AUTHOR_EMAIL_JS$' %><% }.else { %><%= c '$PROFILE_URL$' %><% }.endif! %>">
+                        <a href="<% uif('$AUTHOR_EMAIL_JS$') { %><%= c '$AUTHOR_EMAIL_JS$' %><% }.else { %>/index/8-<%= c '$UID$' %>" class="profile-link<% }.endif! %>">
                             <% uif('$AUTHOR_NAME$') { %><%= c '$AUTHOR_NAME$' %><% }.else { %><%= c '$USERNAME$' %><% }.endif! %>
                         </a>
                     </li>
