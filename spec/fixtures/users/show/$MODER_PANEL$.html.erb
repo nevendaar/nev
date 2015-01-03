@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    function checkgruop(t) {
+        if (t.options[t.selectedIndex].value != document.chgr.dgr.value) {
+            document.chgr.ok.style.display = "";
+        }
+        else {
+            document.chgr.ok.style.display = "none";
+        }
+    }
+</script>
+<form action="<%= home_url %>/index/" method="post" style="margin:0px" name="chgr">
+    <select onchange="checkgruop(this);" name="c" size="1">
+        <option style="background:#EEEEEE;" selected="" value="1">Неофит (Neophyte)</option>
+        <option value="2">Последователь (Disciple)</option>
+        <option value="3">Дракон (Dragon)</option>
+        <option value="4">Хранитель (Keeper)</option>
+        <option value="13">hex studio</option>
+        <option value="14">Хозяин</option>
+        <option value="15">Превращен в беса (Imp form)</option>
+        <option value="251">Лорд (Lord)</option>
+        <option value="255">Заблокированные</option>
+    </select>
+    <input type="button" onclick="if (confirm('Перенести пользователя в другую группу?')){document.chgr.sbm.click();}" value="Ok" name="ok" style="display: none; font: 7pt;">
+    <input type="hidden" value="1" name="dgr">
+    <input type="hidden" value="20" name="a">
+    <input type="hidden" value="0eqb6Bhb" name="p">
+    <input type="hidden" value="<%= c '$_USER_ID$' %>" name="s">
+    <span style="display:none;">
+        <input type="submit" size="1" name="sbm">
+    </span>
+    <img border="0" align="absmiddle" height="16" width="6" src="http://s6.ucoz.net/img/fr/EmnAR_.gif" onclick="if(document.getElementById('mnc<%= c '$_USER_ID$' %>').style.display=='none'){document.getElementById('mnc<%= c '$_USER_ID$' %>').style.display='';this.src='http://s6.ucoz.net/img/fr/EmnAR_.gif';this.title='Закрыть';}else{document.getElementById('mnc<%= c '$_USER_ID$' %>').style.display='none';this.src='http://s6.ucoz.net/img/fr/EmnAR.gif';this.title='Открыть';}" title="Закрыть" style="cursor:pointer;" alt="">
+    <span id="mnc<%= c '$_USER_ID$' %>">
+        <a onclick="new _uWnd('cntEd','Управление счетчиками',-280,-100,{autosize:1,closeonesc:1,resize:0},{url:'/index/39-<%= c '$_USER_ID$' %>'});return false;" rel="nofollow" href="javascript://">
+            <img border="0" align="absmiddle" height="16" width="16" onmouseout="this.src='http://s6.ucoz.net/img/fr/EmnC.gif'" onmouseover="this.src='http://s6.ucoz.net/img/fr/EmnC_.gif'" src="http://s6.ucoz.net/img/fr/EmnC.gif" title="Управление счетчиками" alt="">
+        </a>
+        <a onclick="new _uWnd('rtEd','Титул и ранг пользователя',-300,-110,{autosize:1,closeonesc:1,resize:0},{url:'/index/41-<%= c '$_USER_ID$' %>'});return false;" rel="nofollow" href="javascript://">
+            <img border="0" align="absmiddle" height="16" width="16" onmouseout="this.src='http://s6.ucoz.net/img/fr/EmnT.gif'" onmouseover="this.src='http://s6.ucoz.net/img/fr/EmnT_.gif'" src="http://s6.ucoz.net/img/fr/EmnT.gif" title="Титул и ранг пользователя" alt="">
+        </a>
+        <a onclick="new _uWnd('Ud','Удаление записей пользователя',-260,-150,{autosize:1,closeonesc:1,resize:1,maxh:230},{url:'/index/33-<%= c '$_USER_ID$' %>'});return false;" rel="nofollow" href="javascript://">
+            <img border="0" align="absmiddle" height="16" width="16" onmouseout="this.src='http://s6.ucoz.net/img/fr/EmnDD.gif'" onmouseover="this.src='http://s6.ucoz.net/img/fr/EmnDD_.gif'" src="http://s6.ucoz.net/img/fr/EmnDD.gif" title="Удаление записей пользователя" alt="">
+        </a>
+        <a href="<%= home_url %>/index/11-<%= c '$_USER_ID$' %>">
+            <img border="0" align="absmiddle" height="16" width="16" title="Изменить" onmouseout="this.src='http://s6.ucoz.net/img/fr/EmnE.gif'" onmouseover="this.src='http://s6.ucoz.net/img/fr/EmnE_.gif'" src="http://s6.ucoz.net/img/fr/EmnE.gif" alt="">
+        </a>
+        <a onclick="_uWnd.alert('Вместо удаления перенесите пользователя в группу \'&lt;b&gt;Заблокированные&lt;/b&gt;\'','',{w:230,h:80,tm:3000}); return false;" rel="nofollow" href="javascript://">
+            <img border="0" align="absmiddle" height="16" width="16" title="Удалить" onmouseout="if (this.src!='http://s6.ucoz.net/img/fr/EmnAjax.gif')this.src='http://s6.ucoz.net/img/fr/EmnD.gif'" onmouseover="if (this.src!='http://s6.ucoz.net/img/fr/EmnAjax.gif')this.src='http://s6.ucoz.net/img/fr/EmnD_.gif'" src="http://s6.ucoz.net/img/fr/EmnD.gif" id="udib<%= c '$_USER_ID$' %>" alt="">
+        </a>
+        <img border="0" align="absmiddle" height="16" width="1" src="http://s6.ucoz.net/img/fr/Emn.gif" alt="">
+    </span>
+</form>
