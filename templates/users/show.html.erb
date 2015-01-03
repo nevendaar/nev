@@ -95,7 +95,7 @@
                 <span class="fraction-name<%= c '$_MSN$' %>"></span>
             </div>
         <% }.endif! %>
-        <% uif('$_REP_READ_URL$', code_is(:not, '$_USER_ID$', 1249)) { %>
+        <% uif('$_REP_READ_URL$', code_is('$_USER_ID$', :not, 1249)) { %>
             <div class="profile-line">
                 <span class="profile-label">Репутация</span>
                 <a title="Смотреть историю репутации" class="repHistory" href="<%= c '$_REP_READ_URL$' %>"><b><%= c '$_REPUTATION$' %></b></a>
