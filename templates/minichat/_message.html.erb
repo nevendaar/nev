@@ -9,7 +9,12 @@
         <% }.endif! %>
     </div>
     <div class="top">
-        <a href="/index/8-<%= c '$USER_ID$' %>" title="Ответить" class="mc_username"><%= c '$NAME$' %></a>
+        <a href="/index/8-<%= c '$USER_ID$' %>"
+           title="Ответить"
+           class="mc_username"
+           onclick="var input = $('#mchatMsgF', parent.window.document); input.html(input.html() + '[i]' + $(this).text().replace('\n', '').trim() + '[/i], ').focus(); return false;">
+            <%= c '$NAME$' %>
+        </a>
         <% uif('$EMAIL$') { %>
             <a href="<%= c '$EMAIL_JS$' %>" title="<%= c '$STR_EMAIL$' %>">
                 <img src="http://s6.ucoz.net/t/601/e.gif">
