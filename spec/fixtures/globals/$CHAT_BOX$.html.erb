@@ -1,0 +1,57 @@
+<iframe id="mchatIfm2" style="width:100%;height:300px" frameborder="0" scrolling="auto" hspace="0" vspace="0" allowtransparency="true" src="<%= home_url %>/mchat/"></iframe>
+
+<script type="text/javascript">
+    function sbtFrmMC991(f) {
+        $('#mchatBtn').css({display: 'none'});
+        $('#mchatAjax').css({display: ''});
+        _uPostForm('MCaddFrm', {type: 'POST', url: '/mchat/?460118284.306898'});
+    }
+    function countMessLength() {
+        var rst = 500 - $('#mchatMsgF').val().length;
+        if (rst < 0) {
+            rst = 0;
+            $('#mchatMsgF').val($('#mchatMsgF').val().substr(0, 500));
+        }
+        $('#jeuwu28').html(rst);
+    }
+    var tID7174 = -1;
+    var tAct7174 = false;
+    function setT7174(s) {
+        var v = parseInt(s.options[s.selectedIndex].value);
+        document.cookie = "mcrtd=" + s.selectedIndex + "; path=/";
+        if (tAct7174) {
+            clearInterval(tID7174);
+            tAct7174 = false;
+        }
+        if (v > 0) {
+            tID7174 = setInterval("document.getElementById('mchatIfm2').src='/mchat/?'+Math.random();", v * 1000);
+            tAct7174 = true;
+        }
+    }
+    function initSel7174() {
+        var res = document.cookie.match(/(\W|^)mcrtd=([0-9]+)/);
+        if (res) {
+            s = $("#mchatRSel")[0];
+            ;
+            s.selectedIndex = parseInt(res[2]);
+            setT7174(s);
+        }
+        $("#mchatMsgF").bind("keydown", function (e) {
+            if (e.keyCode == 13 && e.ctrlKey && !e.shiftKey) {
+                e.preventDefault();
+                sbtFrmMC991();
+            }
+        })
+    }
+</script>
+
+<form style="margin:0;padding:0;" id="MCaddFrm" onsubmit="sbtFrmMC991();return false;">
+
+  <%= render 'templates/minichat/_form.html.erb' %>
+
+  <input type="hidden" name="numa" id="numa832" value="0">
+  <input type="hidden" name="a" value="18">
+  <input type="hidden" id="ajaxFlag" name="ajax" value="1" />
+</form>
+
+<script type="text/javascript">initSel7174();</script>
