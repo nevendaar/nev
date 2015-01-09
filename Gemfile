@@ -8,6 +8,9 @@ ruby '2.0.0'
 
 gem 'rake', '>= 10.0.0'
 
+gem 'thin', '~> 1.6.3'
+gem 'sinatra', '>= 1.4.5'
+
 gem 'rubyzip', '>= 1.1.0', :require => 'zip'
 
 gem 'sprockets', '~> 2.12.0'
