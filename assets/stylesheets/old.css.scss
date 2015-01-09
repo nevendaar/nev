@@ -1,6 +1,5 @@
 /* General Style */
 
-td, body {font-family:verdana,arial,helvetica; font-size:8pt; color:#f6c577; scrollbar-face-color:#636363; scrollbar-arrow-color:#898989; scrollbar-highlight-color:#707070; scrollbar-shadow-color:#555555; scrollbar-darkshadow-color:#464646; scrollbar-3dlight-color:#7d7d7d; scrollbar-track-color:#252525;}
 form {padding:0px;margin:0px;}
 input,textarea,select {vertical-align:middle; font-size:8pt; font-family:verdana,arial,helvetica;}
 .copy {font-size:7pt;}
@@ -8,32 +7,30 @@ input,textarea,select {vertical-align:middle; font-size:8pt; font-family:verdana
 h1{font-family:Arial,Sans-Serif;color:#a89d7b;font-size:13px;margin:0px 0px 0px 0px}
 h2{font-family:Arial,Sans-Serif;color:#a89d7b;font-size:12px;margin:0px 0px 0px 0px}
 
-.passive {opacity:0.5; -moz-opacity:0.5; filter:alpha(opacity=50);}
+.passive {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
 
 .u-star-rating {display: inline-block;}
 
-input.uSpoilerButton {border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; -webkit-border-radius: 2px;
- border-top: none; border-bottom: none;
- border-left: 2px solid; border-left-color: #7d7d7d;
- border-right: 2px solid; border-right-color: #7d7d7d;
- height: 20px; font-family: sans-serif; font-weight: bold;
- color: #cacaca; background: url('/Forumdata/spoiler7.gif');
- padding-bottom: 2px;
+input.uSpoilerButton {
+  border-radius: 2px;
+  border-top-style: none;
+  border-right: 2px solid #7d7d7d;
+  border-bottom-style: none;
+  border-left: 2px solid #7d7d7d;
+  height: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #cacaca;
+  background: url('/Forumdata/spoiler7.gif');
+  padding-bottom: 2px;
+  &:hover {
+    color: #cccccc;
+  }
 }
-input.uSpoilerButton:hover {border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; -webkit-border-radius: 2px;
- border-top: none; border-bottom: none;
- border-left: 2px solid; border-left-color: #7d7d7d;
- border-right: 2px solid; border-right-color: #7d7d7d;
- height: 20px; font-family: sans-serif; font-weight: bold;
- color: #cccccc; background: url('/Forumdata/spoiler7.gif');
-}
-input.uSpoilerButton:active {border-radius: 2px; -moz-border-radius: 2px; -khtml-border-radius: 2px; -webkit-border-radius: 2px;
- border-top: none; border-bottom: none;
- border-left: 2px solid; border-left-color: #7d7d7d;
- border-right: 2px solid; border-right-color: #7d7d7d;
- height: 20px; font-family: sans-serif; font-weight: bold;
- color: #999999; background: url('/Forumdata/spoiler7.gif');
-}
+
 .uSpoilerText {padding: 5px 10px;}
 
 a.noun:link {text-decoration:none; color:#824621}

@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    autoprefixer-rails (4.0.2.2)
+      execjs
     diff-lcs (1.2.5)
     execjs (2.2.0)
     hike (1.2.3)
@@ -44,6 +46,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   rake (>= 10.0.0)
   rspec (>= 3.0.0)
   rubyzip (>= 1.1.0)

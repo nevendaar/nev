@@ -149,9 +149,6 @@ input {
   border-right-width: 44px;
   border-left-width: 44px;
   border-image:         url(/img/b.gif) 52 44 repeat;
-  -o-border-image:      url(/img/b.gif) 52 44 repeat;
-  -moz-border-image:    url(/img/b.gif) 52 44 repeat;
-  -webkit-border-image: url(/img/b.gif) 52 44 repeat;
 
   > .border-exp {
     margin: -20px -15px;
@@ -181,8 +178,8 @@ input {
 .wrapper {
   /* min-width: 800px; */
   padding: 0 45px;
-  background: url(/img/sbl.gif) left  0% repeat-y,
-              url(/img/sbr.gif) right 0% repeat-y;
+  background: url(/img/sbl.gif) left  0 repeat-y,
+              url(/img/sbr.gif) right 0 repeat-y;
 }
 
 .hide {

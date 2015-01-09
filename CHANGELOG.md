@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## Use Autoprefixer - 21.06.2014
+
+* Используем гем [Autoprefixer](https://github.com/postcss/autoprefixer).
+
 ## rank_name helper - 02.01.2015
 * Добавлен хелпер `rank_name`, выводящий span-тег для названия ранга пользователя.
   Используется пока только на странице пользователя и сообщениях на форуме.

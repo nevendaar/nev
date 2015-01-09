@@ -7,11 +7,16 @@ task :compile do
   logger = LOGGER.dup
   logger.progname = 'Sprockets'
 
+  browsers = YAML.load_file('config/autoprefixer.yml')
+  browsers = browsers && browsers['browsers']
+
   sprockets = Sprockets::Environment.new(ROOT) do |env|
     env.js_compressor  = :uglify
     env.css_compressor = :scss
     env.logger = logger
   end
+
+  AutoprefixerRails.install(sprockets, :browsers => browsers)
 
   sprockets.append_path(SOURCE_DIR.join('stylesheets').to_s)
   sprockets.append_path(SOURCE_DIR.join('javascripts').to_s)

@@ -14,6 +14,7 @@ gem 'sprockets', '~> 2.12.0'
 
 gem 'sass'
 gem 'sprockets-sass'
+gem 'autoprefixer-rails'
 
 # Use uglifier as js compressor
 gem 'uglifier', '>= 2.5.1'
