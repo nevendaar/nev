@@ -31,4 +31,10 @@ module MCHelper
 </select>
     HTML
   end
+
+  def mc_message_field
+    <<-HTML
+<textarea id="mchatMsgF" name="mcmessage" class="mchat" title="Сообщение" placeholder="Сообщение" required></textarea>
+    HTML
+  end
 end

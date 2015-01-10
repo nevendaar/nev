@@ -2,11 +2,13 @@ $(function () {
     var $mc_window = $('#mc-window'),
         $mc_refresh = $('#mchatRSel'),
         $mc_form = $('#MCaddFrm'),
+        $mc_ok_btn = $('#mchatBtn'),
+        $mc_load_icon = $('#mchatAjax'),
+        $mc_msg_fld = $('#mchatMsgF'),
         $mc_refresh_btn = $('#mc-reload-btn');
     if ($mc_window.length) {
         var load_messages = function () {
             $mc_window.load('/mchat div:eq(1)');
-            return false;
         };
         load_messages();
 
@@ -17,16 +19,23 @@ $(function () {
         $mc_form.
             removeAttr('onsubmit').
             submit(function (e) {
-                $('#mchatBtn').css({display: 'none'});
-                $('#mchatAjax').css({display: ''});
-                _uPostForm('MCaddFrm', {
+                $mc_ok_btn.hide();
+                $mc_load_icon.show();
+                $mc_msg_fld.prop('readonly', true);
+                _uPostForm($mc_form, {
                     type: 'POST',
-                    url: '/mchat/?' + (Math.random() * 1000000000)
+                    url: '/mchat/?' + (Math.random() * 1000000000),
+                    success: function () {
+                        $mc_ok_btn.show();
+                        $mc_load_icon.hide();
+                        $mc_msg_fld.prop('readonly', false).val('');
+                        load_messages();
+                    }
                 });
                 e.preventDefault();
             });
         // Form submit by CTRL + Enter
-        $('#mchatMsgF').bind('keydown', function (e) {
+        $mc_msg_fld.bind('keydown', function (e) {
             if (e.keyCode == 13 && e.ctrlKey && !e.shiftKey) {
                 e.preventDefault();
                 $mc_form.submit();
