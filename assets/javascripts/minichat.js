@@ -34,5 +34,29 @@ $(function () {
         });
 
         // Auto refresh message box
+        var refresh_interval_id = -1,
+            refresh_interval_active = false;
+
+        var set_refresh_period = function () {
+            var period = parseInt($mc_refresh.val()) || 0;
+            document.cookie = "mcrtd=" + period + "; path=/";
+            if (refresh_interval_active) {
+                clearInterval(refresh_interval_id);
+                refresh_interval_active = false;
+            }
+            if (period > 0) {
+                refresh_interval_id = setInterval(load_messages, period * 1000);
+                refresh_interval_active = true;
+            }
+        };
+
+        $mc_refresh.change(set_refresh_period);
+
+        // Get period from cookie
+        var res = document.cookie.match(/(\W|^)mcrtd=([0-9]+)/);
+        if (res) {
+            $mc_refresh.val(parseInt(res[2]));
+            set_refresh_period();
+        }
     }
 });
