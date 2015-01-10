@@ -1,7 +1,17 @@
 Changelog
 =========
 
-## Use Autoprefixer - 21.06.2014
+## Minichat: forget about `<iframe>` - 10.01.2015
+
+* Полностью переделан миничат: наконец-то мы избавились от фрейма!
+  В связи с этим также:
+  * Добавлен хэлпер `minichat_form`, который из кучи мусора вырезает только
+    форму для миничата.
+  * Добавлен хэлпер `autoupdate_selectbox`, для нормальной привязки скриптов.
+  * Добавлен хэлпер `mc_message_field`, для нормальной подстановки `placeholder`
+    и `required`.
+
+## Use Autoprefixer - 09.01.2015
 
 * Используем гем [Autoprefixer](https://github.com/postcss/autoprefixer).
 
