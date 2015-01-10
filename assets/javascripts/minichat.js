@@ -67,5 +67,14 @@ $(function () {
             $mc_refresh.val(parseInt(res[2]));
             set_refresh_period();
         }
+
+        // Paste username to message input
+        $mc_window.on('click', '.mc_username', function () {
+            $mc_msg_fld.val(
+                '' + $mc_msg_fld.val() +
+                '[i]' + $(this).text().replace('\n', '').trim() + '[/i], '
+            ).focus();
+            return false;
+        });
     }
 });
