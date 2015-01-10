@@ -38,7 +38,7 @@ $(function () {
         $mc_msg_fld.bind('keydown', function (e) {
             if (e.keyCode == 13 && e.ctrlKey && !e.shiftKey) {
                 e.preventDefault();
-                $mc_form.submit();
+                $mc_ok_btn.click();
             }
         });
 
