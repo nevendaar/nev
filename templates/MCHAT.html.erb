@@ -2,7 +2,9 @@
     <div class="border-exp">
         <div id="mc-window"></div>
         <%= minichat_form %>
-        <div id="mc-smiles" data-female="<% uif(female) { %>1<% }.else { %>0<% }.endif! %>"></div>
+        <% uif('$USER_LOGGED_IN$') { %>
+            <div id="mc-smiles" data-female="<% uif(female) { %>1<% }.else { %>0<% }.endif! %>"></div>
+        <% }.endif! %>
     </div>
 </div>
 <script type="text/javascript">
