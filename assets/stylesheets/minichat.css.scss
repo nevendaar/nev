@@ -15,6 +15,11 @@
   }
 }
 
+#mc-window {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 #mc-reload-btn {
   border: 0;
   width: 32px;
