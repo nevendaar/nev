@@ -49,3 +49,10 @@ $mc-post-left-margin: $mc-avatar-width + 5px;
     box-shadow: none;
   }
 }
+
+#mc-smiles {
+  > img {
+    cursor: pointer;
+    max-width: 70px;
+  }
+}

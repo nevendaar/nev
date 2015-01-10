@@ -1,5 +1,6 @@
 $(function () {
     var $mc_window = $('#mc-window'),
+        $mc_smiles = $('#mc-smiles'),
         $mc_refresh = $('#mchatRSel'),
         $mc_form = $('#MCaddFrm'),
         $mc_ok_btn = $('#mchatBtn'),
@@ -86,5 +87,76 @@ $(function () {
             ).focus();
             return false;
         });
+
+        if ($mc_form.length && $mc_smiles.length) {
+            var mc_d_smiles = {
+                    ':)':        [':)', '/Smiley/smile3.gif'],
+                    'flirt':     null,
+                    '<_<':       ['<_<', '/Smiley/4.gif'],
+                    ';)':        [';)', '/Smiley/2.gif'],
+                    'grin':      true,
+                    ':D':        [':D', '/Smiley/1.gif'],
+                    'girl_haha': null,
+                    ':p':        [':p', '/Smiley/blum2.gif'],
+                    'blush':     true,
+                    '^_^':       ['^_^', '/Smiley/3.gif'],
+                    'spiteful':  [
+                        '[img]http://www.kolobok.us/smiles/remake/spiteful.gif[/img]',
+                        'http://www.kolobok.us/smiles/remake/spiteful.gif'
+                    ],
+                    'thinkin':   [':thinkin:', '/smiley2/thinkin.gif'],
+                    'girl_sad':  null,
+                    '>(':        ['>(', '/Smiley/6.gif'],
+                    'cray':      true,
+                    'scratch':   [':scratch:', '/Smiley/scratch_one-s_head.gif'],
+                    'ok':        true,
+                    'nea':       true,
+                    'hi':        true,
+                    'preved':    true,
+                    'priest':    true,
+                    'diablo':    true,
+                    'skull':     true,
+                    'moderator': true,
+                    'dwarf':     true,
+                    'elf':       true,
+                    'orc':       true
+                },
+                mc_f_smiles = {
+                    ':)':        [':girl_smile:', '/Smiley/girl_smile.gif'],
+                    'flirt':     true,
+                    ';)':        [':girl_wink:', '/Smiley/girl_wink.gif'],
+                    'girl_haha': true,
+                    ':p':        [':girl_blum:', '/Smiley/girl_blum.gif'],
+                    'girl_sad':  true,
+                    '>(':        [':girl_mad:', '/Smiley/girl_mad.gif'],
+                    'cray':      [':girl_cray:', '/Smiley/girl_cray.gif'],
+                    'diablo':    [':girl_devil:', '/Smiley/girl_devil.gif']
+                },
+                html_smiles = '';
+
+            if (~~$mc_smiles.data('female') == 1)
+                $.extend(mc_d_smiles, mc_f_smiles);
+
+            var key, val, code, img_src;
+            for (key in mc_d_smiles) if (mc_d_smiles.hasOwnProperty(key)) {
+                val = mc_d_smiles[key];
+                if (val === null) continue; // Smile only for girls
+                // Simple smile: <img alt=":ok:" title="ok" src="/Smiley/ok.gif">
+                if (val === true) {
+                    code = ':' + key + ':';
+                    img_src = '/Smiley/' + key + '.gif';
+                }
+                else if (val.length) {
+                    code = val[0];
+                    img_src = val[1];
+                }
+                html_smiles += '<img alt="' + code + '" title="' + key + '" src="' + img_src + '">\n';
+            }
+            $mc_smiles.html(html_smiles).on('click', 'img', function () {
+                $mc_msg_fld.
+                    val('' + $mc_msg_fld.val() + ' ' + $(this).attr('alt') + ' ').
+                    focus();
+            });
+        }
     }
 });
