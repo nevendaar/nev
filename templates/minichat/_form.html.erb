@@ -49,11 +49,12 @@
         </table>
     <% }.endif! %>
 
-    <% uif('$FLD_CUSTOM1$ || $FLD_CUSTOM2$') { %>
-        <table border="0" cellpadding="1" cellspacing="1" width="100%">
-            <tr><td width="50%" style="display: none"><%= c '$FLD_CUSTOM1$' %></td><td><%= c '$FLD_CUSTOM2$' %></td></tr>
-        </table>
+    <% uif('$FLD_CUSTOM1$') { %>
+        <%# Потому что $FLD_CUSTOM1$ выводит много лишнего %>
+        <input id="mchatC1F" name="custom1" class="mchat" value="" type="hidden">
     <% }.endif! %>
+
+    <%= c '$FLD_CUSTOM2$' %>
 
     <% uif('$FLD_SECURE$') { %>
         <table border="0" cellpadding="1" cellspacing="1" width="100%">
