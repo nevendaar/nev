@@ -1,7 +1,7 @@
 ﻿<div class="mc_post clearfix">
     <div class="avatar">
         <% uif('$USERNAME$') { %>
-            <a href="<%= c '$PROFILE_URL$' %>" title="<%= c '$USERNAME$' %>">
+            <a href="/index/8-<%= c '$USER_ID$' %>" class="profile-link">
                 <img src="<% uif('$CUSTOM1$') { %><%= c '$CUSTOM1$' %><% }.else { %>http://s6.ucoz.net/img/icon/profile.png<% }.endif! %>">
             </a>
         <% }.else { %>
