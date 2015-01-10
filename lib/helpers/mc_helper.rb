@@ -25,16 +25,24 @@ module MCHelper
   end
 
   def autoupdate_selectbox
-    <<-HTML
-<select id="mchatRSel" class="mchat" title="Автообновление">
-#{MC_UPDATE_PERIODS.map { |k, v| "<option value=\"#{k}\">#{v}</option>" }.join("\n")}
-</select>
-    HTML
+    wrap_whitespaces! do
+      <<-HTML.gsub!(/ {2,}/, '').strip!
+        <select id="mchatRSel" class="mchat" title="Автообновление">
+        #{MC_UPDATE_PERIODS.map { |k, v| "<option value=\"#{k}\">#{v}</option>" }.join("\n")}
+        </select>
+      HTML
+    end
   end
 
   def mc_message_field
-    <<-HTML
-<textarea id="mchatMsgF" name="mcmessage" class="mchat" title="Сообщение" placeholder="Сообщение" required></textarea>
+    <<-HTML.gsub!(/\s+/, ' ').strip!
+      <textarea id="mchatMsgF"
+                name="mcmessage"
+                class="mchat"
+                title="Сообщение"
+                placeholder="Сообщение"
+                maxlength="#{ucoz_code '$MAX_MESSAGE_LEN$'}"
+                required></textarea>
     HTML
   end
 end

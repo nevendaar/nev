@@ -5,7 +5,9 @@ $(function () {
         $mc_ok_btn = $('#mchatBtn'),
         $mc_load_icon = $('#mchatAjax'),
         $mc_msg_fld = $('#mchatMsgF'),
-        $mc_refresh_btn = $('#mc-reload-btn');
+        $mc_refresh_btn = $('#mc-reload-btn'),
+        $mc_limit_counter = $('#mc-length-counter'),
+        char_limit = ~~$mc_msg_fld.attr('maxlength');
     if ($mc_window.length) {
         var load_messages = function () {
             $mc_window.load('/mchat div:eq(1)');
@@ -28,7 +30,7 @@ $(function () {
                     success: function () {
                         $mc_ok_btn.show();
                         $mc_load_icon.hide();
-                        $mc_msg_fld.prop('readonly', false).val('');
+                        $mc_msg_fld.prop('readonly', false).val('').focus();
                         load_messages();
                     }
                 });
@@ -40,6 +42,14 @@ $(function () {
                 e.preventDefault();
                 $mc_ok_btn.click();
             }
+        }).on('keyup focus', function () {
+            var rst = char_limit - $mc_msg_fld.val().length;
+            if (rst < 0) {
+                rst = 0;
+                // For IE & old Opera
+                $mc_msg_fld.val($mc_msg_fld.val().substr(0, char_limit));
+            }
+            $mc_limit_counter.html(rst);
         });
 
         // Auto refresh message box

@@ -11,7 +11,9 @@
 <% }.else { %>
     <table border="0" cellpadding="1" cellspacing="1" width="100%">
         <tr>
-            <td><%= autoupdate_selectbox %></td>
+            <td>
+                <%= autoupdate_selectbox %>
+            </td>
             <td width="70%" align="right">
                 <img id="mc-reload-btn" align="absmiddle" src="/chatbtn/mcr.gif">
                 <% uif('$SMILES_URI$') { %>
@@ -63,7 +65,7 @@
         <tr>
             <td width="95%" rowspan="2"><%= mc_message_field %></td>
             <td align="center" valign="top">
-                <div style="font-size:10px;"><%= c '$LENGTH_COUNTER$' %></div>
+                <span id="mc-length-counter"><%= c '$MAX_MESSAGE_LEN$' %></span>
             </td>
         </tr>
         <tr>

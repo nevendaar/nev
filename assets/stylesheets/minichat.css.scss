@@ -37,6 +37,11 @@ $mc-post-left-margin: $mc-avatar-width + 5px;
   cursor: pointer;
 }
 
+#mc-length-counter {
+  font-size: 10px;
+  font-weight: bold;
+}
+
 #mchatMsgF {
   width: 100%;
   height: 40px;
