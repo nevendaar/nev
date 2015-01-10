@@ -2,15 +2,17 @@
 
 require_relative '../config/application'
 require_relative 'helpers/base_helper'
-require_relative 'helpers/ucoz_helper'
 require_relative 'helpers/forum_helper'
+require_relative 'helpers/mc_helper'
+require_relative 'helpers/ucoz_helper'
 require_relative 'helpers/user_helper'
 
 class TemplateCompiler
 
   include BaseHelper
-  include UcozHelper
   include ForumHelper
+  include MCHelper
+  include UcozHelper
   include UserHelper
 
   def self.config

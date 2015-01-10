@@ -5,9 +5,10 @@
 '$LOGIN_FORM$': >
                   This code generate too much HTML, avoid using it.
                   Give link to login page or login modal window instead.
+'$CHAT_BOX$':       "See templates/MCHAT.html.erb for details."
 '$MSGCTRL_URI$':    "Write normal js for this." # TODO
 '$PROFILE_URL$': >
                   Use class='profile-link' and href='/index/8-$USER_ID$' or
                   href='/index/8-0-$USERNAME$' instead.
-'$RELOAD_URI$':     "Write normal js for this." # TODO
+'$RELOAD_URI$':     "Use normal js for this."
 '$SMILES_URI$':     "Write normal js for this." # TODO

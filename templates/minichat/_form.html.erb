@@ -13,9 +13,7 @@
         <tr>
             <td><%= c '$FLD_AUTOUPD$' %></td>
             <td width="70%" align="right">
-                <a href="<%= c '$RELOAD_URI$' %>" title="Обновить">
-                    <img border="0" align="absmiddle" src="/chatbtn/mcr.gif" width="32" height="35">
-                </a>
+                <img id="mc-reload-btn" align="absmiddle" src="/chatbtn/mcr.gif">
                 <% uif('$SMILES_URI$') { %>
                     &nbsp;
                     <a href="<%= c '$SMILES_URI$' %>" title="Вставить смайл">

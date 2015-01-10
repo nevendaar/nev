@@ -1,7 +1,8 @@
-<%# Old template %>
 <div class="bordered">
     <div class="border-exp">
-        <%= c '$CHAT_BOX$' %>
+        <div id="mc-window"></div>
+        <%= minichat_form %>
+
         <%# TODO: refactor this shit! %>
         <% uif('$USER_LOGGED_IN$') { %>
             <% uif(code_is('$PAGE_ID$', :not, "'threadpage'")) { %>
