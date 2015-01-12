@@ -91,4 +91,6 @@ $(function () {
         $this.html($this.html() == 'Комментарии' ? 'Назад' : 'Комментарии');
         return false;
     });
+
+    $('#menu_comminf').hide().removeClass('hide');
 });
