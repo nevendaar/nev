@@ -3,7 +3,7 @@
 <% @params[:title] = "#{c '$ENTRY_TITLE$'} - #{c '$CAT_NAME$'} " <<
         uif_str('$SECTION_NAME$') { |s| s << "- #{c '$SECTION_NAME$'}" }.endif! <<
         " - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
-<% @params[:meta][:title] = c '$ENTRY_NAME$' %>
+<% @params[:meta][:title] = c '$ENTRY_TITLE$' %>
 <% @params[:meta][:description] = i("substr($BRIEF$, 0, strpos($BRIEF$, '<'))") << '...' %>
 
 <% layout do %>
@@ -20,7 +20,7 @@
 
     <div class="material">
         <div class="title clearfix">
-            <h2><%= c '$ENTRY_NAME$' %> <%= c '$VERSION$' %> <%= c '$MODER_PANEL$' %></h2>
+            <h2><%= c '$ENTRY_TITLE$' %> <%= c '$VERSION$' %> <%= c '$MODER_PANEL$' %></h2>
             <div class="time pull-right">
                 <%= c '$ADD_DATE$' %>, <%= c '$ADD_TIME$' %> <%= c '$MODER_PANEL$' %>
             </div>

@@ -1,7 +1,7 @@
 <% @params[:title] = "#{c '$ENTRY_TITLE$'} - #{c '$CAT_NAME$'} " <<
         uif_str('$SECTION_NAME$'){ |s| s << "- #{c '$SECTION_NAME$'} " }.endif! <<
         "- #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
-<% @params[:meta][:title] = '$ENTRY_NAME$' %>
+<% @params[:meta][:title] = '$ENTRY_TITLE$' %>
 <% @params[:meta][:description] = i("substr($BRIEF$, 0, strpos($BRIEF$, '<'))") << '...' %>
 <% @params[:vk][:init] = true %>
 
@@ -11,7 +11,7 @@
         <li><a href="<%= c '$MODULE_URL$' %>">Статьи</a></li>
         <% uif('$SECTION_NAME$') { %><li><a href="<%= c '$SECTION_URL$' %>"><%= c '$SECTION_NAME$' %></a></li><% }.endif! %>
         <li><a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li>
-        <li class="active"><%= c '$ENTRY_NAME$' %></li>
+        <li class="active"><%= c '$ENTRY_TITLE$' %></li>
     </ol>
 
     <div class="text-right">
