@@ -127,3 +127,112 @@
 'us9.t':  'templates/users/_reg_form.html.erb'    # Форма регистрации локальных пользователей
 'us10.t': 'templates/users/_form.html.erb'        # Форма редактирования персональной информации
 'new.t':  'templates/users/pm.html.erb'           # Личные сообщения (ЛС)
+
+# Шаблоны для pda-версии сайта
+pda:
+  # Глобальные блоки
+  'AJAXJS': 'templates_pda/AJAXJS.html.erb' # Системные css и js файлы
+  'HEADER': 'templates_pda/HEADER.html.erb' # Шапка
+  'FOOTER': 'templates_pda/FOOTER.html.erb' # Подвал
+
+  # Доска объявлений
+  'bd1.t': 'templates_pda/board/main.html.erb'           # Главная страница модуля
+  'bd2.t': 'templates_pda/board/index_section.html'      # Страница со списком материалов раздела
+  'bd3.t': 'templates_pda/board/index_category.html'     # Страница со списком материалов категории
+  'bd4.t': 'templates_pda/board/show.html'               # Страница материала и комментариев к нему
+  'bd5.t': 'templates_pda/board/search.html'             # Страница поиска и рейтинга материалов
+  'bd6.t': 'templates_pda/board/new_or_edit.html'        # Страница добавления/редактирования материала
+  'bd7.t': 'templates_pda/board/_material.html'          # Вид материалов
+
+  # Блог (Фанфики)
+  'bl1.t': 'templates_pda/blog/main.html.erb'  # Главная страница дневника
+  'bl2.t': 'templates_pda/blog/index.html.erb' # Страница архива материалов
+  'bl3.t': 'templates_pda/blog/show.html.erb'  # Страница материала и комментариев к нему
+  'bl4.t': 'templates_pda/blog/_post.html.erb' # Вид материалов
+
+  # Комментарии
+  # Оба шаблона хранятся в одном файле: com.t (sic!)
+  'com.t':
+          - 'templates_pda/comments/_comment.html.erb' # Вид комментариев
+          - 'templates_pda/comments/_form.html.erb'    # Форма добавления комментариев
+
+  # Каталог сайтов
+  'dr1.t': 'templates_pda/dir/main.html.erb'           # Главная страница каталога сайтов
+  'dr2.t': 'templates_pda/dir/index_section.html.erb'  # Страница со списком материалов раздела
+  'dr3.t': 'templates_pda/dir/index_category.html.erb' # Страница со списком материалов категории
+  'dr4.t': 'templates_pda/dir/show.html.erb'           # Страница материала и комментариев к нему
+  'dr5.t': 'templates_pda/dir/search.html.erb'         # Страница поиска и рейтинга материалов
+  'dr6.t': 'templates_pda/dir/new_or_edit.html.erb'    # Страница добавления/редактирования материала
+  'dr7.t': 'templates_pda/dir/_site.html.erb'          # Вид материалов
+
+  # FAQ (вопрос/ответ)
+  'fq1.t': 'templates_pda/faq/index.html.erb' # Общий вид страниц FAQ'a
+  'fq2.t': 'templates_pda/faq/_faq.html.erb'  # Вид материалов
+
+  # Форум
+  'fr1.t': 'templates_pda/forum/main.html.erb'  # Общий вид страниц форума
+  'fr2.t': 'templates_pda/forum/_post.html.erb' # Вид материалов
+  'fr3.t': 'templates_pda/forum/_form.html.erb' # Форма добавления сообщения
+
+  # Каталог файлов
+  'ld1.t': 'templates_pda/load/main.html.erb'           # Главная страница каталога файлов
+  'ld2.t': 'templates_pda/load/index_section.html.erb'  # Страница со списком материалов раздела
+  'ld3.t': 'templates_pda/load/index_category.html.erb' # Страница со списком материалов категории
+  'ld4.t': 'templates_pda/load/show.html.erb'           # Страница материала и комментариев к нему
+  'ld5.t': 'templates_pda/load/search.html.erb'         # Страница поиска и рейтинга материалов
+  'ld6.t': 'templates_pda/load/new_or_edit.html.erb'    # Страница добавления/редактирования материала
+  'ld7.t': 'templates_pda/load/_material.html.erb'      # Вид материалов
+
+  # Мини-чат
+  'mc1.t': 'templates_pda/minichat/_message.html.erb' # Вид материалов
+  'mc2.t': 'templates_pda/minichat/_form.html.erb'    # Форма добавления сообщений
+
+  # Общие шаблоны
+  'my.css': 'build/stylesheets/app.min.css' # Таблица стилей (CSS)
+
+  # Новости сайта
+  'nw1.t': 'templates_pda/news/index.html.erb' # Страница архива материалов
+  'nw2.t': 'templates_pda/news/show.html.erb'  # Страница материала и комментариев к нему
+  'nw3.t': 'templates_pda/news/_news.html.erb' # Вид материалов
+
+  # Фотоальбом
+  'ph1.t':  'templates_pda/photo/main.html.erb'          # Главная страница фотоальбома
+  'ph2.t':  'templates_pda/photo/index_section.html.erb' # Страница со списком фотографий раздела
+  'ph3.t':  'templates_pda/photo/index_album.html.erb'   # Страница со списком фотографий альбома
+  'ph4.t':  'templates_pda/photo/show.html.erb'          # Страница с полной фотографией и комментариями
+  'ph5.t':  'templates_pda/photo/search.html.erb'        # Страница рейтинга и поиска фотографий
+  'ph6.t':  'templates_pda/photo/new.html.erb'           # Страница добавления фотографии
+  'ph7.t':  'templates_pda/photo/private_album.html.erb' # Страница входа в приватный альбом
+  'ph8.t':  'templates_pda/photo/_photo.html.erb'        # Вид фотографий
+
+  # Каталог статей
+  'pu1.t': 'templates_pda/publ/main.html.erb'           # Главная страница каталога статей
+  'pu2.t': 'templates_pda/publ/index_section.html.erb'  # Страница со списком материалов раздела
+  'pu3.t': 'templates_pda/publ/index_category.html.erb' # Страница со списком материалов категории
+  'pu4.t': 'templates_pda/publ/show.html.erb'           # Страница материала и комментариев к нему
+  'pu5.t': 'templates_pda/publ/search.html.erb'         # Страница поиска и рейтинга материалов
+  'pu6.t': 'templates_pda/publ/new_or_edit.html.erb'    # Страница добавления/редактирования материала
+  'pu7.t': 'templates_pda/publ/_article.html.erb'       # Вид материалов
+
+  # Поиск по сайту
+  'se1.t': 'templates_pda/search/main.html.erb'      # Страница поиска
+  'se2.t': 'templates_pda/search/_material.html.erb' # Вид материалов
+
+  # Редактор страниц
+  'si.t':  'templates_pda/pages/index.html.erb'    # Страницы сайта
+
+  # Тесты
+  'ts1.t': 'templates_pda/tests/main.html.erb' #
+
+  # Пользователи
+  'us1.t':  'templates_pda/users/login.html.erb'        # Страница входа пользователей
+  'us2.t':  'templates_pda/users/registration.html.erb' # Страница регистрации пользователей
+  'us3.t':  'templates_pda/users/403.html.erb'          # Страница "Доступ запрещен"
+  #'us4.t':  'templates_pda/users/_login_form.html.erb'  # Форма входа пользователей
+  'us5.t':  'templates_pda/users/show.html.erb'         # Персональная страница пользователя
+  'us6.t':  'templates_pda/users/edit.html.erb'         # Страница редактирования данных пользователя
+  'us7.t':  'templates_pda/users/index.html.erb'        # Страница со списком пользователей
+  'us8.t':  'templates_pda/users/comments.html.erb'     # Страница со списком комментариев пользователя
+  'us9.t':  'templates_pda/users/_reg_form.html.erb'    # Форма регистрации локальных пользователей
+  'us10.t': 'templates_pda/users/_form.html.erb'        # Форма редактирования персональной информации
+  'new.t':  'templates_pda/users/pm.html.erb'           # Личные сообщения (ЛС)
