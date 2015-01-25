@@ -1,0 +1,50 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <% uif(code_is '$URI_ID$', "'page1'") { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Поиск</h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$SEARCH_FORM$' %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Новое на сайте</h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$MYINF_5$' %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Последние комментарии</h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$MYINF_4$' %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Новости</h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$MYINF_3$' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }.else { %>
+        <div class="row">
+            <%= c '$CONTENT$' %>
+        </div>
+    <% }.endif! %>
+<% end %>
