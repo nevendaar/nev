@@ -16,13 +16,20 @@ require 'rspec/core/rake_task'
 ROOT       = Pathname(File.dirname(__FILE__))
 LOGGER     = Logger.new(STDERR)
 LOGGER.formatter = LogFormatter.new
+
 BUNDLES    = {
     :'app.css' => 'app.min.css',
     :'app.js'  => 'app.min.js'
-}.each{|k, v| v.freeze}.freeze
+}.each { |k, v| v.freeze }.freeze
+PDA_BUNDLES = {
+    :'app.css' => 'app_pda.min.css',
+    :'app.js'  => 'app_pda.min.js'
+}.each { |k, v| v.freeze }.freeze
+
 BUILD_DIR  = ROOT.join('build')
 SOURCE_DIR = ROOT.join('assets')
 VENDOR_DIR = ROOT.join('vendor', 'assets')
+PDA_SOURCE_DIR = ROOT.join('assets_pda')
 
 RSpec::Core::RakeTask.new
 task :test => :spec
