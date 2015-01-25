@@ -9,6 +9,9 @@ namespace :ftp do
     css_file_path = 'build/stylesheets/app.min.css'
     js_file_path  = 'build/javascripts/app.min.js'
 
+    pda_css_file_path = 'build/stylesheets/app_pda.min.css'
+    pda_js_file_path  = 'build/javascripts/app_pda.min.js'
+
     css_dir = 'css'
     js_dir  = 'js'
 
@@ -45,6 +48,8 @@ namespace :ftp do
 
         replace_file.call(ftp, css_file_path, css_dir)
         replace_file.call(ftp, js_file_path,  js_dir)
+        replace_file.call(ftp, pda_css_file_path, css_dir)
+        replace_file.call(ftp, pda_js_file_path,  js_dir)
       ensure
         ftp.close
       end
