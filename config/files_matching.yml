@@ -188,7 +188,7 @@ pda:
   'mc2.t': 'templates_pda/minichat/_form.html.erb'    # Форма добавления сообщений
 
   # Общие шаблоны
-  'my.css': 'build/stylesheets/app.min.css' # Таблица стилей (CSS)
+  'my.css': 'build/stylesheets/my.min.css' # Таблица стилей (CSS)
 
   # Новости сайта
   'nw1.t': 'templates_pda/news/index.html.erb' # Страница архива материалов

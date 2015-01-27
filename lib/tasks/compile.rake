@@ -49,6 +49,9 @@ task :compile do
   LOGGER.info('Compile') { 'Compile main assets...' }
   compile_assets.call(SOURCE_DIR, BUNDLES)
 
+  LOGGER.info('Compile') { 'Compile my.css...' }
+  compile_assets.call(SOURCE_DIR, {:'minichat.css' => 'my.min.css'})
+
   LOGGER.info('Compile') { 'Compile PDA assets...' }
   compile_assets.call(PDA_SOURCE_DIR, PDA_BUNDLES)
 end
