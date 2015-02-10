@@ -23,7 +23,7 @@
                     <li><a href="<%= c '$LOGOUT_LINK$' %>">Выход</a></li>
                 <% }.else { %>
                     <li><a href="<%= c '$REGISTER_LINK$' %>">Регистрация</a></li>
-                    <li><a href="<%= c '$LOGIN_LINK$' %>">Вход</a></li>
+                    <li><a href="<%= login_path %>">Вход</a></li>
                 <% }.endif! %>
             </ul>
         </div>

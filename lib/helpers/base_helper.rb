@@ -6,6 +6,10 @@ module BaseHelper
     config.home_url.dup
   end
 
+  def login_path
+    '/index/1'
+  end
+
   def charset_and_ie_support_tags
     wrap_whitespaces! <<-HTML.gsub!(/^\s*/, '').chomp!
       <meta charset="utf-8">
