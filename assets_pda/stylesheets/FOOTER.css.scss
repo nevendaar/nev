@@ -1,0 +1,10 @@
+.footer {
+  @extend .container-fluid;
+  .copyright {
+    margin: 0 auto;
+    width: 185px;
+    color: #5C90A0;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
