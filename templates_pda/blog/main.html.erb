@@ -1,0 +1,17 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <%# breadcrumb? %>
+    <%# TODO: $CATEGORIES$ ? %>
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                [ <a href="/blog/2009-11-16-5"><b>Правила добавления материала</b></a> ]<br>
+                [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]
+            </div>
+        </div>
+    <% }.endif! %>
+    <div class="row">
+        <div class="col-md-12">
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>

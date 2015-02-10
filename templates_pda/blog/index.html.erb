@@ -1,0 +1,12 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="<%= c '$MODULE_URL$' %>">Главная</a></li>
+                <li class="active"><%= c '$DATE_BAR$' %></li>
+            </ol>
+            <%# TODO: uif(code_is('$PAGE_ID$', "'add'", "'edit'")) %>
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>
