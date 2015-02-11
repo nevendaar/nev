@@ -10,10 +10,10 @@
         <%= javascript_include_tag(pda: true) %>
     </head>
     <body>
-        <%= c '$GLOBAL_HEADER$' %>
+        <%= c '$GLOBAL_PDAHEADER$' %>
         <main class="container-fluid">
             <% yield if block_given? %>
         </main>
-        <%= c '$GLOBAL_FOOTER$' %>
+        <%= c '$GLOBAL_PDAFOOTER$' %>
     </body>
 </html>
