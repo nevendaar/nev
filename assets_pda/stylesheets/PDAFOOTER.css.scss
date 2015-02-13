@@ -1,10 +1,15 @@
 .footer {
   @extend .container-fluid;
-  .copyright {
+  #desktop_version_link, .copyright {
     margin: 0 auto;
     width: 185px;
-    color: #5C90A0;
     text-align: center;
-    padding-top: 10px;
+  }
+  #desktop_version_link {
+    display: block;
+    padding: 10px 0;
+  }
+  .copyright {
+    color: #5c90a0;
   }
 }
