@@ -19,10 +19,10 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #FFBA4B !default;
+$brand-primary:         #fd9c00;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
+$brand-warning:         darken($brand-primary, 15%);
 $brand-danger:          #d9534f !default;
 
 
@@ -31,9 +31,9 @@ $brand-danger:          #d9534f !default;
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #13110e !default;
+$body-bg:               #13110e;
 //** Global text color on `<body>`.
-$text-color:            #F6C577 !default;
+$text-color:            #F6C577;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
@@ -363,7 +363,7 @@ $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             #777 !default;
-$navbar-default-bg:                #363636 !default;
+$navbar-default-bg:                #363636;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
@@ -699,19 +699,19 @@ $list-group-link-heading-color: #333 !default;
 //
 //##
 
-$panel-bg:                    #000 !default;
+$panel-bg:                    #000;
 $panel-body-padding:          15px !default;
 $panel-heading-padding:       10px 15px !default;
 $panel-footer-padding:        $panel-heading-padding !default;
 $panel-border-radius:         $border-radius-base !default;
 
 //** Border color for elements within panels
-$panel-inner-border:          lighten($panel-bg, 15%) !default;
+$panel-inner-border:          lighten($panel-bg, 15%);
 $panel-footer-bg:             #f5f5f5 !default;
 
-$panel-default-text:          lighten($text-color, 10%) !default;
-$panel-default-border:        lighten($panel-bg, 15%) !default;
-$panel-default-heading-bg:    lighten($panel-bg, 20%) !default;
+$panel-default-text:          lighten($text-color, 10%);
+$panel-default-border:        lighten($panel-bg, 15%);
+$panel-default-heading-bg:    lighten($panel-bg, 20%);
 
 $panel-primary-text:          #fff !default;
 $panel-primary-border:        $brand-primary !default;
@@ -787,13 +787,13 @@ $badge-border-radius:         10px !default;
 $breadcrumb-padding-vertical:   8px !default;
 $breadcrumb-padding-horizontal: 15px !default;
 //** Breadcrumb background color
-$breadcrumb-bg:                 $gray-dark !default;
+$breadcrumb-bg:                 $gray-dark;
 //** Breadcrumb text color
 $breadcrumb-color:              #ccc !default;
 //** Text color of current page in the breadcrumb
-$breadcrumb-active-color:       lighten($gray-light, 15%) !default;
+$breadcrumb-active-color:       lighten($gray-light, 15%);
 //** Textual separator for between breadcrumb elements
-$breadcrumb-separator:          "»" !default;
+$breadcrumb-separator:          "»";
 
 
 //== Carousel
