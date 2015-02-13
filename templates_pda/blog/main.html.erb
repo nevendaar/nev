@@ -1,6 +1,5 @@
 <% layout 'templates_pda/layouts/main.html.erb' do %>
     <%# breadcrumb? %>
-    <%# TODO: $CATEGORIES$ ? %>
     <% uif('$ADD_ENTRY_LINK$') { %>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
@@ -10,7 +9,11 @@
         </div>
     <% }.endif! %>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12 col-md-2">
+            <%= c '$CATEGORIES$' %>
+            <hr class="hidden-md hidden-lg">
+        </div>
+        <div class="col-sm-12 col-md-10">
             <%= c '$BODY$' %>
         </div>
     </div>
