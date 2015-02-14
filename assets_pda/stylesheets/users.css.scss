@@ -14,7 +14,7 @@
   margin-bottom: 4px;
 }
 
-#pmdform {
+#pm_page_blk > #pmdform {
   > table {
     @extend .table;
     tr {
@@ -57,4 +57,48 @@
       }
     }
   }
+}
+
+#pm_page_blk {
+  #addform {
+    input[name='subject'] {
+      @extend .form-control;
+    }
+    #PMtoUser {
+      @extend .form-control;
+    }
+    #message {
+      @extend .form-control;
+      resize: vertical;
+    }
+    table {
+      tr:nth-last-child(1) > td {
+        padding-top: 5px;
+        > input {
+          @extend .btn;
+          @extend .btn-default;
+          width: auto !important;
+        }
+      }
+      table tr > td:nth-last-child(1) {
+        display: none;
+      }
+    }
+  }
+}
+
+.inputPM, .outputPM {
+  background: no-repeat 0 0;
+  background-size: 8px;
+  > img:nth-child(1) {
+    display: none;
+  }
+}
+
+.inputPM {
+  background-image: url(/.s/img/fr/in.gif);
+}
+
+.outputPM {
+  background-image: url(/.s/img/fr/out.gif);
 }
