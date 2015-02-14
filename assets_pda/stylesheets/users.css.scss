@@ -1,0 +1,60 @@
+@import "bootstrap/my_variables";
+
+.allUsersBtn, .uSearchFlSbm {
+  @extend .btn;
+  @extend .btn-default;
+  width: auto !important;
+}
+
+.uSearchFl {
+  @extend .form-control;
+}
+
+.allUsersBtn, .uSearchFlSbm, .uSearchFl {
+  margin-bottom: 4px;
+}
+
+#pmdform {
+  > table {
+    @extend .table;
+    tr {
+      &:nth-last-child(1) {
+        display: none;
+      }
+      > td {
+        &:nth-child(1) {
+          // Hide message numbers for small displays
+          @media (max-width: $screen-xs-max) {
+            display: none !important;
+          }
+        }
+        &:nth-child(3) {
+          width: auto !important;
+          // Hide datetime for small displays
+          @media (max-width: $screen-xs-max) {
+            display: none !important;
+          }
+        }
+        &:nth-child(4) {
+          > {
+            a {
+              width: 25px;
+              height: 25px;
+              display: inline-block;
+              // Use background instead of <img>
+              background-size: cover;
+              background: url(/.s/img/fr/mnD.gif) no-repeat;
+              img {
+                display: none;
+              }
+            }
+            // Hide checkbox
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

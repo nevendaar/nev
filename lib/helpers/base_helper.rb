@@ -37,6 +37,7 @@ module BaseHelper
   end
 
   def stylesheet_link_tag(pda: false)
+    # TODO: fix version for PDA CSS!!!
     "<link href=\"/css/app#{'_pda' if pda}.min.css?#{config.css_version}\" rel=\"stylesheet\">"
   end
 
