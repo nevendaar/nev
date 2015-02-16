@@ -1,0 +1,260 @@
+<% @params[:title] = "#{c '$_USERNAME$'} - Информация о пользователе" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Информация о пользователе</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-push-8 text-center">
+            <%= c '$_AVATAR$' %>
+            <% uif('$_CHANGE_DETAILS_URL$') { %>
+                <div>
+                    [ <a href="<%= c '$_CHANGE_DETAILS_URL$' %>">Изменить данные</a> ]
+                </div>
+            <% }.endif! %>
+            <% uif('$_PM_READ_URL$') { %>
+                <div>
+                    [ <a href="<%= c '$_PM_READ_URL$' %>">Читать ЛС <% uif('$UNREAD_PM$') { %>(<b><%= c '$UNREAD_PM$' %></b>)<% }.endif! %></a> ]
+                </div>
+            <% }.else { %>
+                <% uif('$_PM_SEND_URL$') { %>
+                    <div>
+                        [ <a href="<%= c '$_PM_SEND_URL$' %>">Отправить ЛС</a> ]
+                    </div>
+                <% }.endif! %>
+            <% }.endif! %>
+        </div>
+        <div class="col-md-8 col-md-push-4">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Пользователь</th>
+                        <td>
+                            <a href="<%= c '$_PROFILE_URL$' %>">
+                                <b><%= c '$_USERNAME$' %></b>
+                            </a>
+                            <% uif('$_RANK_NAME$') { %>
+                                Ранг: <%= c '$_RANK$' %>
+                                [ <%= rank_name '$_RANK$', '$_MSN$', '$_RANK_NAME$', '$_GENDER_ID$' %> ]
+                            <% }.endif! %>
+                        </td>
+                    </tr>
+
+                    <% uif('$_BANNED_TILL$') { %>
+                        <tr>
+                            <td colspan="2">
+                                <% uif(code_is '$_BANNED_TILL$', 1) { %>
+                                    <b style="color:red;">Активность заблокирована навсегда!</b>
+                                <% }.else { %>
+                                    Активность заблокирована до <%= c '$_BANNED_TILL$' %>
+                                <% }.endif! %>
+                            </td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <tr>
+                        <th>Группа</th>
+                        <td><%= c '$_GROUP_NAME$' %></td>
+                    </tr>
+
+                    <tr>
+                        <th>Замечания</th>
+                        <td>
+                            <% uif(group_is '$_GROUP_ID$', :master) { %>
+                                IMMUNE
+                            <% }.else { %>
+                                <% uif('$_BAN_READ_URL$') { %>
+                                    <a class="banPercent" href="<%= c '$_BAN_READ_URL$' %>"><%= c '$_BAN_PERCENT$' %>%</a>
+                                <% }.else { %>
+                                    нет
+                                <% }.endif! %>
+                                <% uif('$_BAN_DO_URL$') { %>
+                                    <a href="<%= c '$_BAN_DO_URL$' %>">
+                                        <img src="http://src.ucoz.ru/img/fr/wm.gif">
+                                        <img src="http://src.ucoz.ru/img/fr/w$_BAN_RATING$.gif">
+                                        <img src="http://src.ucoz.ru/img/fr/wp.gif">
+                                    </a>
+                                <% }.endif! %>
+                          <% }.endif! %>
+                        </td>
+                    </tr>
+
+                    <% uif('$_MSN$') { %>
+                        <tr>
+                            <th>Фракция</th>
+                            <td><span class="fraction-name<%= c '$_MSN$' %>"></span></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_REP_READ_URL$', code_is('$_USER_ID$', :not, 1249)) { %>
+                        <tr>
+                            <th>Репутация</th>
+                            <td>
+                                <a class="repHistory" href="<%= c '$_REP_READ_URL$' %>">
+                                    <b><%= c '$_REPUTATION$' %></b>
+                                </a>
+                                <% uif('$_REP_DO_URL$') { %>
+                                    <a href="<%= c '$_REP_DO_URL$' %>">
+                                        <img src="http://src.ucoz.ru/img/fr/wm.gif">
+                                        <img src="http://src.ucoz.ru/img/fr/wp.gif">
+                                    </a>
+                                <% }.endif! %>
+                            </td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_NAME$') { %>
+                        <tr>
+                            <th>Имя</th>
+                            <td>
+                                <%= c '$_NAME$' %>
+                                <% uif('$_GENDER_NAME$') { %>
+                                    [ <%= c '$_GENDER_NAME$' %> ]
+                                <% }.endif! %>
+                            </td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_STATUS$') { %>
+                        <tr>
+                            <th>Статус</th>
+                            <td><%= c '$_STATUS$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$MODER_PANEL$') { %>
+                        <tr>
+                            <th>Регистрационный IP</th>
+                            <td>
+                                <a href="http://www.ripe.net/perl/whois?<%= c '$_IP_ADDRESS$' %>" target="_blank">
+                                    <%= c '$_IP_ADDRESS$' %>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_REG_TIME$') { %>
+                        <tr>
+                            <th>Дата регистрации</th>
+                            <td><%= c '$_REG_TIME$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_LOG_TIME$') { %>
+                        <tr>
+                            <th>Дата входа</th>
+                            <td><%= c '$_LOG_TIME$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_BIRTHDAY$') { %>
+                        <tr>
+                            <th>Дата рождения</th>
+                            <td>
+                                <%= c '$_BIRTHDAY$' %>
+                                [ <b><%= c '$_AGE$' %></b> <%= c '$_ZODIAC$' %> ]
+                            </td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <tr>
+                        <th>E-mail</th>
+                        <td>
+                            <% uif('$_IS_OWN_PROFILE$') { %>
+                                <%= c '$_EMAIL$' %>
+                                <% uif('$_EMAIL_IS_HIDDEN$') { %>(Адрес скрыт)<% }.endif! %>
+                            <% }.else { %>
+                                <% uif('$MODER_PANEL$') { %>
+                                    <a href="mailto:<%= c '$_EMAIL$' %>">
+                                        <%= c '$_EMAIL$' %>
+                                    </a>
+                                    <% uifnot('$_EMAIL_IS_VERIFIED$') { %>
+                                        (не подтвержден)
+                                    <% }.endif! %>
+                                <% }.else { %>
+                                    <% uif('$_SEND_EMAIL_URL$') { %>
+                                        <a href="<%= c '$_SEND_EMAIL_URL$' %>">Написать письмо пользователю</a>
+                                    <% }.else { %>
+                                        <i>Адрес скрыт</i>
+                                    <% }.endif! %>
+                                <% }.endif! %>
+                            <% }.endif! %>
+                            <% uif('$_EMAIL_VERIFICATION_URL$') { %>
+                                [
+                                <a href="<%= c '$_EMAIL_VERIFICATION_URL$' %>">
+                                    <b style="color:red">Подтвердить e-mail</b>
+                                </a>
+                                ]
+                            <% }.endif! %>
+                        </td>
+                    </tr>
+
+                    <% uif('$_WWW$') { %>
+                        <tr>
+                            <th>Сайт</th>
+                            <td>
+                                <a href="<%= c '$_WWW$' %>" class="prompt-link" target="_blank" rel="nofollow">
+                                    <%= c '$_WWW$' %>
+                                </a>
+                            </td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_ICQ$') { %>
+                        <tr>
+                            <th>ICQ</th>
+                            <td><%= c '$_ICQ$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_AOL$') { %>
+                        <tr>
+                            <th>AOL</th>
+                            <td><%= c '$_AOL$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_YAHOO$') { %>
+                        <tr>
+                            <th>Yahoo</th>
+                            <td><%= c '$_YAHOO$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_COUNTRY$') { %>
+                        <tr>
+                            <th>Страна</th>
+                            <td><%= c '$_COUNTRY$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_STATE$') { %>
+                        <tr>
+                            <th>Штат</th>
+                            <td><%= c '$_STATE$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_CITY$') { %>
+                        <tr>
+                            <th>Город</th>
+                            <td><%= c '$_CITY$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                    <% uif('$_SIGNATURE$') { %>
+                        <tr>
+                            <th>Подпись</th>
+                            <td><%= c '$_SIGNATURE$' %></td>
+                        </tr>
+                    <% }.endif! %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%# TODO: $_IS_ACTIVITY$ %>
+    <%# TODO: $USERS_LIST_URL$ %>
+<% end %>
