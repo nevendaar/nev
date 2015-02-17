@@ -1,5 +1,10 @@
 @import "bootstrap/my_variables";
 
+$col-num-nickname: 1;
+$col-num-avatar:   2;
+$col-num-rank:     3;
+$col-num-group:    4;
+
 .allUsersBtn, .uSearchFlSbm {
   @extend .btn;
   @extend .btn-default;
@@ -18,30 +23,46 @@
   @extend .table;
   tr {
     > td {
-      &:nth-child(1) { // Nickname
+      &:nth-child(#{$col-num-nickname}) { // Nickname
         > div {
           // Hide UID link
           display: none;
         }
       }
-      &:nth-child(2) { // Avatar
+      &:nth-child(#{$col-num-avatar}) { // Avatar
         display: none;
       }
-      &:nth-child(3) { // Rank
-        // Hide img, show only text
-        > img {
-          &::before {
-            content: attr(title);
-          }
-          display: none;
-        }
+      &:nth-child(#{$col-num-rank}) { // Rank
+        // Hide rank
+        display: none;
       }
-      &:nth-child(4) {
-        // Group
+      &:nth-child(#{$col-num-group}) { // Group
         > img {
           display: none;
         }
       }
+    }
+  }
+}
+
+#search_users_form > form {
+  @extend .form-inline;
+  > {
+    // input[name="ban"] {}
+    input[name="user"] {
+      @extend .form-control;
+      width: auto !important;
+      // Expand on small displays
+      @media (max-width: $screen-xs-max) {
+        width: 100% !important;
+      }
+    }
+    select {
+      @extend .form-control;
+    }
+    input[type="submit"] {
+      @extend .btn;
+      @extend .btn-default;
     }
   }
 }
