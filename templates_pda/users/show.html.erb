@@ -255,6 +255,10 @@
             </table>
         </div>
     </div>
-    <%# TODO: $_IS_ACTIVITY$ %>
+    <% uif('$_IS_ACTIVITY$') { %>
+        <div class="row">
+            <%= user_entries 'templates_pda/users/_user_entryes.html.erb' %>
+        </div>
+    <% }.endif! %>
     <%# TODO: $USERS_LIST_URL$ %>
 <% end %>

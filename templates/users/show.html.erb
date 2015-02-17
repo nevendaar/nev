@@ -225,15 +225,7 @@
     </div>
     <% uif('$_IS_ACTIVITY$') { %>
         <div class="text-center top-hr">
-            <% uif('$_COM_ENTRIES$') { %>   | <a href="<%= c '$_COM_ACTIVITY_URL$' %>" target="_blank">комментарии (<b><%= c '$_COM_ENTRIES$' %></b>)</a><% }.endif! %>
-            <% uif('$_FORUM_ENTRIES$') { %> | <a href="<%= c '$_FORUM_ACTIVITY_URL$' %>" target="_blank">форум (<b><%= c '$_FORUM_ENTRIES$' %></b>)</a><% }.endif! %>
-            <% uif('$_BLOG_ENTRIES$') { %>  | <a href="<%= c '$_BLOG_ACTIVITY_URL$' %>" target="_blank">фан-творчество (<b><%= c '$_BLOG_ENTRIES$' %></b>)</a><% }.endif! %>
-            <% uif('$_NEWS_ENTRIES$') { %>  | <a href="<%= c '$_NEWS_ACTIVITY_URL$' %>" target="_blank">новости (<b><%= c '$_NEWS_ENTRIES$' %></b>)</a><% }.endif! %>
-            <% uif('$_PUBL_ENTRIES$') { %>  | <a href="<%= c '$_PUBL_ACTIVITY_URL$' %>" target="_blank">статьи (<b><%= c '$_PUBL_ENTRIES$' %></b>)</a><% }.endif! %>
-            <% uif('$_LOAD_ENTRIES$') { %>  | <a href="<%= c '$_LOAD_ACTIVITY_URL$' %>" target="_blank">файлы (<b><%= c '$_LOAD_ENTRIES$' %></b>)</a><% }.endif! %>
-            <%# "| <a href="$_DIR_ACTIVITY_URL$" target="_blank">сайты (<b>$_DIR_ENTRIES$</b>)</a>" %>
-            <% uif('$_BOARD_ENTRIES$') { %> | <a href="<%= c '$_BOARD_ACTIVITY_URL$' %>" target="_blank">объявления (<b><%= c '$_BOARD_ENTRIES$' %></b>)</a><% }.endif! %>
-            <% uif('$_PHOTO_ENTRIES$') { %> | <a href="<%= c '$_PHOTO_ACTIVITY_URL$' %>" target="_blank">изображения (<b><%= c '$_PHOTO_ENTRIES$' %></b>)</a><% }.endif! %> |
+            <%= user_entries 'templates/users/_user_entryes.html.erb' %> |
         </div>
     <% }.endif! %>
 
