@@ -26,7 +26,7 @@
                 <% }.endif! %>
             <% }.endif! %>
         </div>
-        <div class="col-md-8 col-md-push-4">
+        <div class="col-md-8 col-md-pull-4">
             <table class="table">
                 <tbody>
                     <tr>
@@ -256,9 +256,27 @@
         </div>
     </div>
     <% uif('$_IS_ACTIVITY$') { %>
-        <div class="row">
+        <div class="row text-center">
             <%= user_entries 'templates_pda/users/_user_entryes.html.erb' %>
+            <hr class="hidden-md hidden-lg">
         </div>
     <% }.endif! %>
-    <%# TODO: $USERS_LIST_URL$ %>
+    <% uif('$USERS_LIST_URL$') { %>
+        <div class="row text-center">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                <div class="form-group">
+                    <a href="/index/15-1" class="btn btn-default">Список пользователей</a>
+                </div>
+                <form method="post" action="/index" name="fuser">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" name="user" placeholder="Логин пользователя" maxlength="25">
+                        <span class="input-group-btn">
+                            <input type="submit" class="btn btn-default" value="Найти пользователей">
+                        </span>
+                    </div>
+                    <input type="hidden" name="a" value="15">
+                </form>
+            </div>
+        </div>
+    <% }.endif! %>
 <% end %>
