@@ -6,3 +6,17 @@ a.login-with i {
   height: 35px !important;
   width: 35px !important;
 }
+
+// $SEARCH_FORM$
+.searchForm {
+  .schQuery, .schBtn {
+    @extend .form-group;
+  }
+  .queryField {
+    @extend .form-control;
+  }
+  .searchSbmFl {
+    @extend .btn;
+    @extend .btn-default;
+  }
+}
