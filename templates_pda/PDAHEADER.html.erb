@@ -27,7 +27,7 @@
                             <% }.endif! %>
                         </a>
                     </li>
-                    <li><a href="/index/8">Профиль</a></li>
+                    <li><a href="/index/8-<%= i '$USER_ID$' %>">Профиль</a></li>
                     <li><a href="/index/10">Выход</a></li> <%# $LOGOUT_LINK$ не работает на странице pm %>
                 <% }.else { %>
                     <li><a href="<%= c '$REGISTER_LINK$' %>">Регистрация</a></li>
