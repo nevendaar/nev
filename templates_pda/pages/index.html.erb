@@ -44,7 +44,9 @@
         </div>
     <% }.else { %>
         <div class="row">
-            <%= c '$CONTENT$' %>
+            <div class="col-md-12">
+                <%= c '$CONTENT$' %>
+            </div>
         </div>
     <% }.endif! %>
 <% end %>
