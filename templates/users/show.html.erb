@@ -21,10 +21,8 @@
             <% uif('$_CHANGE_DETAILS_URL$') { %><div>[ <a href="<%= c '$_CHANGE_DETAILS_URL$' %>">Изменить данные</a> ]</div><% }.endif! %>
             <% uif('$_PM_READ_URL$') { %>
                 <div>[ <a href="<%= c '$_PM_READ_URL$' %>">Читать ЛС <% uif('$UNREAD_PM$') { %>(<b><%= c '$UNREAD_PM$' %></b>)<% }.endif! %></a> ]</div>
-            <% }.else { %>
-                <% uif('$_PM_SEND_URL$') { %>
-                    <div>[ <a href="<%= c '$_PM_SEND_URL$' %>">Отправить ЛС</a> ]</div>
-                <% }.endif! %>
+            <% }.elsif('$_PM_SEND_URL$') { %>
+                <div>[ <a href="<%= c '$_PM_SEND_URL$' %>">Отправить ЛС</a> ]</div>
             <% }.endif! %>
         </div>
         <div class="profile-line">
@@ -148,19 +146,15 @@
             <span class="profile-label">E-mail</span>
             <% uif('$_IS_OWN_PROFILE$') { %>
                 <%= c '$_EMAIL$' %> <% uif('$_EMAIL_IS_HIDDEN$') { %>(Адрес скрыт)<% }.endif! %>
-            <% }.else { %>
-                <% uif('$MODER_PANEL$') { %>
-                    <a href="mailto:<%= c '$_EMAIL$' %>"><%= c '$_EMAIL$' %></a>
-                    <% uifnot('$_EMAIL_IS_VERIFIED$') { %>
-                        <img alt="" style="vertical-align:1px;" src="http://s6.ucoz.net/img/ma/bn.gif" width="8" title="E-mail адрес не подтвержден">
-                    <% }.endif! %>
-                <% }.else { %>
-                    <% uif('$_SEND_EMAIL_URL$') { %>
-                        <a href="<%= c '$_SEND_EMAIL_URL$' %>">Написать письмо пользователю</a>
-                    <% }.else { %>
-                        <i>Адрес скрыт</i>
-                    <% }.endif! %>
+            <% }.elsif('$MODER_PANEL$') { %>
+                <a href="mailto:<%= c '$_EMAIL$' %>"><%= c '$_EMAIL$' %></a>
+                <% uifnot('$_EMAIL_IS_VERIFIED$') { %>
+                    <img alt="" style="vertical-align:1px;" src="http://s6.ucoz.net/img/ma/bn.gif" width="8" title="E-mail адрес не подтвержден">
                 <% }.endif! %>
+            <% }.elsif('$_SEND_EMAIL_URL$') { %>
+                <a href="<%= c '$_SEND_EMAIL_URL$' %>">Написать письмо пользователю</a>
+            <% }.else { %>
+                <i>Адрес скрыт</i>
             <% }.endif! %>
             <% uif('$_EMAIL_VERIFICATION_URL$') { %>
                 [ <a href="<%= c '$_EMAIL_VERIFICATION_URL$' %>"><b style="color:red">Подтвердить e-mail</b></a> ]

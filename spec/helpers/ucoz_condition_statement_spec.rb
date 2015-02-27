@@ -56,6 +56,46 @@ describe UcozConditionStatement do
     end
   end
 
+  context 'elsif()' do
+
+    it 'return self' do
+      statement = UcozConditionStatement.new('', 'true')
+      elsif_statement = statement.elsif
+      expect(statement).to eq elsif_statement
+    end
+
+    it 'return self with block' do
+      statement = UcozConditionStatement.new('', 'true')
+      elsif_statement = statement.elsif {}
+      expect(statement).to eq elsif_statement
+    end
+
+    it "add 'else' and 'if' statement to out" do
+      outstr = 'content'
+      UcozConditionStatement.new(outstr, 'true') do
+        outstr << 'SECRET'
+      end.elsif('maybe') do
+        outstr << 'MAY BE SECRET'
+      end.elsif('maybe not') do
+        outstr << 'MAY BE NOT SECRET'
+      end.else do
+        outstr << 'NOT SECRET'
+      end.endif!
+      expect(outstr).to eq(
+      'content<?if(true)?>SECRET<?else?>'\
+        '<?if(maybe)?>MAY BE SECRET<?else?>'\
+          '<?if(maybe not)?>MAY BE NOT SECRET<?else?>'\
+            'NOT SECRET'\
+          '<?endif?>'\
+        '<?endif?>'\
+      '<?endif?>')
+    end
+
+    xit 'support ifnot' do
+      pending ': write tests here!'
+    end
+  end
+
   context 'else()' do
 
     it 'return self' do

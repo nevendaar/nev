@@ -17,14 +17,12 @@
     <div class="text-right">
         <% uif('$ADD_ENTRY_LINK$') { %>
             [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]
-        <% }.else { %>
-            <% uif(code_is('$CID$', 2, 5)) { %>
-                [
-                <a href="/faq/<% uif(code_is('$CID$', 2)) { %>2-0-34<% }.else { %>3-0-126<% }.endif! %>" style="text-decoration:blink;color:orange;font-weight:bold;">
-                    <u>Как установить карту?</u>
-                </a>
-                ]
-            <% }.endif! %>
+        <% }.elsif(code_is('$CID$', 2, 5)) { %>
+            [
+            <a href="/faq/<% uif(code_is('$CID$', 2)) { %>2-0-34<% }.else { %>3-0-126<% }.endif! %>" style="text-decoration:blink;color:orange;font-weight:bold;">
+                <u>Как установить карту?</u>
+            </a>
+            ]
         <% }.endif! %>
     </div>
 
