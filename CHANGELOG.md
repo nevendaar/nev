@@ -1,6 +1,10 @@
 Changelog
 =========
 
+## elsif support - 27.02.2015
+
+Для класса `UcozConditionStatement` добавлена поддержка выражения `elsif`.
+
 ## Minichat: forget about `<iframe>` - 10.01.2015
 
 * Полностью переделан миничат: наконец-то мы избавились от фрейма!

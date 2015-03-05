@@ -57,14 +57,12 @@
                     <a href="/index/8-0-<%= c '$USERNAME$' %>" class="profile-link uc-profile-link">
                         <%= c '$USERNAME$' %>
                     </a>
-                <% }.else { %>
-                    <% uif('$SOC_LINK$') { %>
-                        <a rel="nofollow" href="<%= c '$SOC_LINK$' %>" class="uc-profile-link">
-                            <%= c '$NAME$' %>
-                        </a>
-                    <% }.else { %>
+                <% }.elsif('$SOC_LINK$') { %>
+                    <a rel="nofollow" href="<%= c '$SOC_LINK$' %>" class="uc-profile-link">
                         <%= c '$NAME$' %>
-                    <% }.endif! %>
+                    </a>
+                <% }.else { %>
+                    <%= c '$NAME$' %>
                 <% }.endif! %>
                 <% uif('$USER_LOGGED_IN$', '$EMAIL$') { %>
                     <a href="<%= c '$EMAIL_JS$' %>" title="Email">

@@ -7,14 +7,12 @@
         <div class="body"><%= c '$COM_BODY$' %></div>
         <% uif('$COM_CAN_ADD$') { %>
             <%= c '$COM_ADD_FORM$' %>
-        <% }.else { %>
-            <% uifnot('$USER_LOGGED_IN$') { %>
-                <div class="text-center">
-                    Добавлять комментарии могут только зарегистрированные пользователи.<br>
-                    [ <a href="<%= c '$REGISTER_LINK$' %>">Регистрация</a> |
-                    <a href="<%= c '$LOGIN_LINK$' %>">Вход</a> ]
-                </div>
-            <% }.endif! %>
+        <% }.elsifnot('$USER_LOGGED_IN$') { %>
+            <div class="text-center">
+                Добавлять комментарии могут только зарегистрированные пользователи.<br>
+                [ <a href="<%= c '$REGISTER_LINK$' %>">Регистрация</a> |
+                <a href="<%= c '$LOGIN_LINK$' %>">Вход</a> ]
+            </div>
         <% }.endif! %>
     </div>
 
