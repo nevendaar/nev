@@ -1,80 +1,82 @@
 ﻿<%# Old template %>
-<table class=postTable cellSpacing=1 cellPadding=2 width="100%" border=0>
-    <?if(<%= not_new_on_the_site_tread %>)?>
+<table class="postTable" cellSpacing="1" cellPadding="2" width="100%" border="0">
+    <% uif(not_new_on_the_site_tread) { %>
         <tr>
-            <?if(<%= role_game_section(:not) %> || <%= first_post(:not) %>)?>
-                <td class=postTdTop align=middle width="23%">
-                    <a class=postUser onclick="emoticon('[b]$USERNAME$[/b],');return false;" href="javascript://">$USERNAME$</a>
+            <% uifnot(role_game_section, first_post) { %>
+                <td class="postTdTop" align="middle" width="23%">
+                    <a class="postUser" onclick="emoticon('[b]<%= c '$USERNAME$' %>[/b],');return false;" href="javascript://"><%= c '$USERNAME$' %></a>
                 </td>
-            <?endif?>
-            <td class=postTdTop>Дата: $WDAY$, $DATE$, $TIME$ | Сообщение # $NUMBER$ </td>
+            <% }.endif! %>
+            <td class="postTdTop">Дата: <%= c '$WDAY$' %>, <%= c '$DATE$' %>, <%= c '$TIME$' %> | Сообщение # <%= c '$NUMBER$' %></td>
         </tr>
-    <?endif?>
+    <% }.endif! %>
     <tr>
-        <?if(<%= role_game_section(:not) %> && <%= not_new_on_the_site_tread %> || <%= first_post(:not) %>)?>
-            <td class=postTdInfo vAlign=top>
-                <?if($AVATAR_URL$)?><img class=userAvatar title=$USERNAME$ src="$AVATAR_URL$" border=0><?endif?>
-                <?if($MSN$)?><span class="fraction-flag fflag$MSN$"></span><?endif?>
+        <% uif(first_post(:not) << '||' << role_game_section(:not) << '&&' << not_new_on_the_site_tread) { %>
+            <td class="postTdInfo" vAlign="top">
+                <% uif('$AVATAR_URL$') { %><img class="userAvatar" title="<%= c '$USERNAME$' %>" src="<%= c '$AVATAR_URL$' %>" border="0"><% }.endif! %>
+                <% uif('$MSN$') { %><span class="fraction-flag fflag<%= c '$MSN$' %>"></span><% }.endif! %>
                 <div class="postRankName">
-                    <?if($USER_TITLE$)?>
-                        $USER_TITLE$
-                    <?else?>
+                    <% uif('$USER_TITLE$') { %>
+                        <%= c '$USER_TITLE$' %>
+                    <% }.else { %>
                         <%= rank_name user_rank, '$MSN$', '$USER_RANK_NAME$', '$GENDER_ID$' %>
-                    <?endif?>
+                    <% }.endif! %>
                 </div>
-                <?if($GROUP_ICON$)?>
-                    <div class=postRankIco>$GROUP_ICON$</div>
-                <?else?>
+                <% uif('$GROUP_ICON$') { %>
+                    <div class="postRankIco"><%= c '$GROUP_ICON$' %></div>
+                <% }.else { %>
                     <div class="postRankIco"><%= c '$USER_RANK_ICON$' %></div>
-                <?endif?>
-                <?if($GROUP_NAME$)?>
-                    <div class=postUserGroup>Группа: $GROUP_NAME$</div>
-                <?endif?>
-                <?if($POSTS$)?>
-                    <div class=numposts>Сообщений: <span class="UNP">$POSTS$</span></div>
-                <?endif?>
+                <% }.endif! %>
+                <% uif('$GROUP_NAME$') { %>
+                    <div class="postUserGroup">Группа: <%= c '$GROUP_NAME$' %></div>
+                <% }.endif! %>
+                <% uif('$POSTS$') { %>
+                    <div class="numposts">Сообщений: <span class="UNP"><%= c '$POSTS$' %></span></div>
+                <% }.endif! %>
 
-                <?if($READ_REP_URL$)?>
-                    <div class=reputation>
+                <% uif('$READ_REP_URL$') { %>
+                    <div class="reputation">
                         Репутация:
-                        <a class=repHistory title="Смотреть историю репутации" href="$READ_REP_URL$">
-                            <span class=repNums>$REP_RATING$</span>
+                        <a class="repHistory" title="Смотреть историю репутации" href="<%= c '$READ_REP_URL$' %>">
+                            <span class="repNums"><%= c '$REP_RATING$' %></span>
                         </a>
-                        <?if($DO_REP_URL$)?>
-                            &nbsp;<a class=reputationDo title="Изменить репутацию" href="$DO_REP_URL$">±</a>
-                        <?else?>
+                        <% uif('$DO_REP_URL$') { %>
+                            &nbsp;<a class="reputationDo" title="Изменить репутацию" href="<%= c '$DO_REP_URL$' %>">±</a>
+                        <% }.else { %>
                             <br/>
-                        <?endif?>
+                        <% }.endif! %>
                     </div>
-                <?endif?>
-                <?if($READ_BAN_URL$)?>
-                    <div class=userBan>
+                <% }.endif! %>
+                <% uif('$READ_BAN_URL$') { %>
+                    <div class="userBan">
                         Замечания:
-                        <?if(<%= group_is('$GROUP_ID$', :master) %>)?>
+                        <% uif(group_is('$GROUP_ID$', :master)) { %>
                             IMMUNE
-                        <?else?>
-                            <a class=banPercent title="Смотреть историю замечаний" href="$READ_BAN_URL$">$BAN_RATING$</a>
-                            <?if($DO_BAN_URL$)?>
-                                &nbsp;<a class=banDo title="Изменить уровень замечаний" href="$DO_BAN_URL$">±</a>
-                            <?endif?>
-                        <?endif?>
+                        <% }.else { %>
+                            <a class="banPercent" title="Смотреть историю замечаний" href="<%= c '$READ_BAN_URL$' %>"><%= c '$BAN_RATING$' %></a>
+                            <% uif('$DO_BAN_URL$') { %>
+                                &nbsp;<a class="banDo" title="Изменить уровень замечаний" href="<%= c '$DO_BAN_URL$' %>">±</a>
+                            <% }.endif! %>
+                        <% }.endif! %>
                     </div>
-                <?endif?>
-                <?if($USER_STATUS$)?>
-                    <div class=statusBlock>Статус: $USER_STATUS$</div>
-                <?endif?>
+                <% }.endif! %>
+                <% uif('$USER_STATUS$') { %>
+                    <div class="statusBlock">Статус: <%= c '$USER_STATUS$' %></div>
+                <% }.endif! %>
             </td>
-        <?endif?>
-        <td class=posttdMessage vAlign=top style="background: url(/site/bottomleft.gif) #000 no-repeat bottom left; padding:0;">
+        <% }.endif! %>
+        <td class="posttdMessage" vAlign="top" style="background: url(/site/bottomleft.gif) #000 no-repeat bottom left; padding:0;">
             <div style="min-height:139px; padding:10px; background: url(/site/topright.gif) no-repeat top right;">
-                <div id="frmmsg$ID$">$MESSAGE$</div>
-                <?if($ATTACHMENT$)?>
-                    <div class=eAttach align=left>Прикрепления: $ATTACHMENT$</div>
-                <?endif?>
-                <?if($SIGNATURE$ && $TID$!='704' && <%= role_game_section(:not) %> && <%= code_is('$FID$', :not, 13, 24) %> && <%= not_new_on_the_site_tread %>)?>
-                    <hr class=signatureHr align=left width=150 size=1>
-                    <span class=signatureView>$SIGNATURE$</span>
-                <?endif?>
+                <div id="frmmsg<%= c '$ID$' %>">
+                    <%= c '$MESSAGE$' %>
+                </div>
+                <% uif('$ATTACHMENT$') { %>
+                    <div class="eAttach" align="left">Прикрепления: <%= c '$ATTACHMENT$' %></div>
+                <% }.endif! %>
+                <% uif('$SIGNATURE$', code_is('$TID$', :not, 704), role_game_section(:not), code_is('$FID$', :not, 13, 24), not_new_on_the_site_tread) { %>
+                    <hr class="signatureHr" align="left" width="150" size="1">
+                    <span class="signatureView"><%= c '$SIGNATURE$' %></span>
+                <% }.endif! %>
                 <% uif('$EDITEDBY$') { %>
                     <% uif(moder_names) { %>
                         <% uif(group_is('$GROUP_ID$', :user, :banned)) { %>
@@ -84,47 +86,50 @@
                     <% }.else { %>
                         <%# Подразумевается, что группы :user и :banned не могут редактировать свои сообщения %>
                         <br><br>
-                        <div class=edited>Сообщение отредактировал<% uif(female '$GENDER_ID$') { %>а<% }.endif! %> <%= c '$EDITEDBY$' %></div>
+                        <div class="edited">Сообщение отредактировал<% uif(female '$GENDER_ID$') { %>а<% }.endif! %> <%= c '$EDITEDBY$' %></div>
                     <% }. endif! %>
                 <% }. endif! %>
-                <?if(<%= role_game_section %> && <%= first_post %>)?>
+                <% uif(role_game_section, first_post) { %>
                     <div align="right">
-                        <a href="/map/#$TID$" target="_blank" title="Посмотреть на карте"><img border="0" src="/map/seemap.gif"></a>
+                        <a href="/map/#<%= c '$TID$' %>" target="_blank" title="Посмотреть на карте"><img border="0" src="/map/seemap.gif"></a>
                     </div>
-                <?endif?>
+                <% }.endif! %>
             </div>
         </td>
     </tr>
-    <?if(<%= not_new_on_the_site_tread %>)?>
+    <% uif(not_new_on_the_site_tread) { %>
         <tr>
-            <?if(<%= role_game_section(:not) %> || <%= first_post(:not) %>)?>
-                <td class=postBottom align=middle>
-                    <?if($USER_IP$)?>
-                        <div class=postip>[ $USER_IP$ ]</div>
-                    <?endif?>
+            <% uifnot(role_game_section, first_post) { %>
+                <td class="postBottom" align="middle">
+                    <% uif('$USER_IP$') { %>
+                        <div class="postip">[ <%= c '$USER_IP$' %> ]</div>
+                    <% }.endif! %>
                 </td>
-            <?endif?>
-            <td class=postBottom>
-                <table cellSpacing=0 cellPadding=0 width="100%" border=0>
+            <% }.endif! %>
+            <td class="postBottom">
+                <table cellSpacing="0" cellPadding="0" width="100%" border="0">
                     <tbody>
                         <tr>
-                            <td>$USER_DETAILS_ICON_BAR$</td>
-                            <td style="padding-right: 15px" align=right>
-                                <?if(<%= not_lucky_pub_tread %> || <%= group_is('$CUR_GROUP_ID$', :master) %>)?>
-                                    $ENTRY_MANAGE_ICON_BAR$
-                                <?else?>
-                                    <?if($USER_LOGGED_IN$)?>
-                                        <a href="$QUOTE_URL$" class="postQuote">
+                            <td><%= c '$USER_DETAILS_ICON_BAR$' %></td>
+                            <td style="padding-right: 15px" align="right">
+                                <% uif(not_lucky_pub_tread << '||' << group_is('$CUR_GROUP_ID$', :master)) { %>
+                                    <%= c '$ENTRY_MANAGE_ICON_BAR$' %>
+                                <% }.else { %>
+                                    <% uif('$USER_LOGGED_IN$') { %>
+                                        <a href="<%= c '$QUOTE_URL$' %>" class="postQuote">
                                             <img alt="" style="margin:0;padding:0;border:0;" src="/Forumdata/Buttons/p_quote.gif" title="Цитировать">
                                         </a>
-                                    <?endif?>
-                                <?endif?>
+                                    <% }.endif! %>
+                                <% }.endif! %>
                             </td>
-                            <td noWrap align=right width="2%">$ON_TOP_ICON$ $DEL_ENTRY_FIELD$</td>
+                            <td noWrap align="right" width="2%">
+                                <%= c '$ON_TOP_ICON$' %>
+                                <%= c '$DEL_ENTRY_FIELD$' %>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </td>
         </tr>
-    <?endif?>
+    <% }.endif! %>
 </table>
