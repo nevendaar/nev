@@ -1,5 +1,5 @@
 /* Original: http://s1.ucoz.net/src/base.css */
-/* Last check: 2014-12-15 09:56:49 +0300 */
+/* Last check: 2015-03-06 13:19:23 +0300 */
 
 
 #subscribe{float: right;font-size: 10px;}
@@ -144,4 +144,8 @@ ul.user_awards_list li{
 
 .com-order-block {
 	text-align: right;
+}
+
+.hidden_for_calendar {
+	display: none;
 }

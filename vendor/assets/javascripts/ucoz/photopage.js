@@ -1,5 +1,5 @@
 // Original: http://s1.ucoz.net/src/photopage.js
-// Last check: 2014-12-15 09:56:49 +0300
+// Last check: 2015-03-06 13:19:23 +0300
 
 window.processComments = {
     initialise: function(a, c, b, d) {
