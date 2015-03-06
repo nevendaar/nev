@@ -75,17 +75,18 @@
                     <hr class=signatureHr align=left width=150 size=1>
                     <span class=signatureView>$SIGNATURE$</span>
                 <?endif?>
-                <?if($EDITEDBY$)?>
-                    <?if(<%= group_is('$GROUP_ID$', :user, :banned) %> && (<%= moder_names %>))?>
-                        <br><br>
-                        <div class=edited>Сообщение активировал $EDITEDBY$</div>
-                    <?else?>
-                        <?ifnot(<%= moder_names %>)?>
+                <% uif('$EDITEDBY$') { %>
+                    <% uif(moder_names) { %>
+                        <% uif(group_is('$GROUP_ID$', :user, :banned)) { %>
                             <br><br>
-                            <div class=edited>Сообщение отредактировал<% uif(female '$GENDER_ID$') { %>а<% }.endif! %> <%= c '$EDITEDBY$' %></div>
-                        <?endif?>
-                    <?endif?>
-                <?endif?>
+                            <div class="edited">Сообщение активировал <%= c '$EDITEDBY$' %></div>
+                        <% }. endif! %>
+                    <% }.else { %>
+                        <%# Подразумевается, что группы :user и :banned не могут редактировать свои сообщения %>
+                        <br><br>
+                        <div class=edited>Сообщение отредактировал<% uif(female '$GENDER_ID$') { %>а<% }.endif! %> <%= c '$EDITEDBY$' %></div>
+                    <% }. endif! %>
+                <% }. endif! %>
                 <?if(<%= role_game_section %> && <%= first_post %>)?>
                     <div align="right">
                         <a href="/map/#$TID$" target="_blank" title="Посмотреть на карте"><img border="0" src="/map/seemap.gif"></a>
