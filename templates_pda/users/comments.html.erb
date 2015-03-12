@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <ol class="breadcrumb">
                 <li><a href="/index/8-<%= i '$UID$' %>"><%= c '$USER$' %></a></li>
-                <li class="active">Комментарии</li>
+                <li class="active">Комментарии [<%= c '$USER$' %>]</li>
             </ol>
             <div class="clearfix hr">
                 <% uif('$NUM_SHOWN$') { %>Показано комментариев: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
