@@ -1,0 +1,22 @@
+﻿<div class="material">
+    <div class="title">
+        <a href="<%= c '$ENTRY_URL$' %>">
+            <%= c '$TITLE$' %>
+        </a>
+    </div>
+    <div class="body">
+        <% uif(code_is '$MODULE_ID$', "'shop'") { %>
+            <a class="pull-left" href="<%= c '$ENTRY_URL$' %>">
+                <img alt="" src="<%= c '$SMALL$' %>" class="gphoto">
+            </a>
+        <% }.endif! %>
+        <%= c '$MESSAGE$' %>
+        <% uif('$ATTACHMENTS$') { %>
+            <div class="attachments">Прикрепления: <%= c '$ATTACHMENTS$' %></div>
+        <% }.endif! %>
+        <div class="details">
+            <%= c '$ENTRY_DEPTH$' %>
+            <% uif('$SAVING_DATE$') { %>- <%= c '$SAVING_DATE$' %><% }.endif! %>
+        </div>
+    </div>
+</div>

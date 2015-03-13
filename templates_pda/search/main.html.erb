@@ -1,0 +1,21 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <%= c '$SEARCHFORM$' %>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            Результаты <b><%= c '$NUM_SHOWN$' %></b> из <b><%= c '$NUM_ENTRIES$' %></b>
+            по запросу <b><%= c '$SEARCH_QUERY$' %></b> (<%= c '$SEARCH_TIME$' %> секунд)
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <%= c '$BODY$' %>
+            <div class="text-center"><%= c '$PAGE_SELECTOR$' %></div>
+        </div>
+    </div>
+<% end %>
