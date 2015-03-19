@@ -1,0 +1,172 @@
+﻿<% uif('$ERROR$') { %>
+    <div class="text-center text-danger">
+        <%= c '$ERROR$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$LOGIN_FL$') { %>
+    <div class="form-group">
+        <label><%= c '$LOGIN_SIGN$' %>:</label>
+        <%= c '$LOGIN_FL$' %><%# IRL: no input here %>
+    </div>
+<% }.endif! %>
+
+<% uif('$PASSWORD_FL$') { %>
+    <div class="form-group">
+        <label><%= c '$PASSWORD_SIGN$' %>:</label>
+        <%= c '$PASSWORD_FL$' %><%# IRL: no input here %>
+    </div>
+<% }.endif! %>
+
+<% uif('$PASSWORD1_FL$') { %>
+    <div class="form-group">
+        <label for="siF14"><%= c '$PASSWORD1_SIGN$' %>:</label>
+        <%= c '$PASSWORD1_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$GROUP_FL$') { %>
+    <div class="form-group">
+        <label for="siF15"><%= c '$GROUP_SIGN$' %>:</label><%# TODO: check id and u_code %>
+        <%= c '$GROUP_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$NAME_FL$') { %>
+    <div class="form-group">
+        <label for="siF16"><%= c '$NAME_SIGN$' %>:</label>
+        <%= c '$NAME_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$EMAIL_FL$') { %>
+    <div class="form-group">
+        <label for="siF17"><%= c '$EMAIL_SIGN$' %>:</label>
+        <%= c '$EMAIL_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$WWW_FL$') { %>
+    <div class="form-group">
+        <label for="siF1"><%= c '$WWW_SIGN$' %>:</label>
+        <%= c '$WWW_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$ICQ_FL$') { %>
+    <div class="form-group">
+        <label for="siF2"><%= c '$ICQ_SIGN$' %>:</label>
+        <%= c '$ICQ_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$AOL_FL$') { %>
+    <div class="form-group">
+        <label for="siF3"><%= c '$AOL_SIGN$' %>:</label><%# TODO: check id %>
+        <%= c '$AOL_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$MSN_FL$') { %>
+    <div class="form-group">
+        <label for="raceSelect"><%= c '$MSN_SIGN$' %>:</label>
+        <div class="hide"><%= c '$MSN_FL$' %></div>
+        <select id="raceSelect" name="msn" size="1">
+            <option value=""></option>
+            <option value="1">Имперец (Empire)</option>
+            <option value="2">Нежить (Undead)</option>
+            <option value="3">Еретик (Heretic)</option>
+            <option value="4">Горец (Clansman)</option>
+            <option value="5">Житель леса (Sylvanfolk)</option>
+            <option value="6">Зеленокожий (Greenskin)</option>
+            <option value="7">Обитатели болот (Marshdwellers)</option>
+            <option value="8">Морской житель (Merfolk)</option>
+            <option value="9">Варвар (Barbarian)</option>
+            <option value="10">Нейтральный наемник (Neutrals)</option>
+        </select>
+        <script>
+            $('option[value=' + $('#siF4').parent().remove().end().val() + ']', '#raceSelect').prop('selected', true);
+        </script>
+    </div>
+<% }.endif! %>
+
+<% uif('$YAHOO_FL$') { %>
+    <div class="form-group">
+        <label for="siF5"><%= c '$YAHOO_SIGN$' %>:</label><%# TODO: check id %>
+        <%= c '$YAHOO_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$BIRTHDAY_FL$') { %>
+    <div class="form-group">
+        <label for="siF21"><%= c '$BIRTHDAY_SIGN$' %>:</label>
+        <%= c '$BIRTHDAY_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$GENDER_FL$') { %>
+    <div class="form-group">
+        <label for="siF24"><%= c '$GENDER_SIGN$' %>:</label>
+        <%= c '$GENDER_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$COUNTRY_FL$') { %>
+    <div class="form-group">
+        <label for="siF25"><%= c '$COUNTRY_SIGN$' %>:</label><%# TODO: check id %>
+        <%= c '$COUNTRY_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$STATE_FL$') { %>
+    <div class="form-group">
+        <label for="siF26"><%= c '$STATE_SIGN$' %>:</label><%# TODO: check id %>
+        <%= c '$STATE_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$CITY_FL$') { %>
+    <div class="form-group">
+        <label for="siF27"><%= c '$CITY_SIGN$' %>:</label><%# TODO: check id %>
+        <%= c '$CITY_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$AVATAR_FL$') { %>
+    <div class="form-group">
+        <label for="siF12"><%= c '$AVATAR_SIGN$' %>:</label>
+        <%= c '$AVATAR_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$SIGNATURE_FL$') { %>
+    <div class="form-group">
+        <label for="siF9"><%= c '$SIGNATURE_SIGN$' %>:</label>
+        <%= c '$SIGNATURE_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$SUBSCRIPTION_FL$') { %>
+    <div class="form-group">
+        <label for="siF5"><%= c '$SUBSCRIPTION_SIGN$' %>:</label><%# TODO: check id %>
+        <%= c '$SUBSCRIPTION_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$OPTIONS_FL$') { %>
+    <div class="checkbox">
+        <div class="text-center"><%= c '$OPTIONS_SIGN$' %></div>
+        <%= c '$OPTIONS_FL$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$SECURITY_CODE_FL$') { %>
+    <div class="form-group">
+        <label><%= c '$SECURITY_CODE_SIGN$' %>:</label>
+        <%= c '$SECURITY_CODE_FL$' %>
+    </div>
+<% }.endif! %>
+
+<div class="text-center">
+    <button id="siF20" type="submit" class="btn btn-default"><%= c '$SUBMIT_SIGN$' %></button>
+</div>
