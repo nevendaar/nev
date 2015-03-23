@@ -1,0 +1,29 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <% uif('$CATEGORY_NAME$') { %>
+                    <li><a href="<%= c '$MODULE_URL$' %>"><%= c '$MODULE_NAME$' %></a></li>
+                    <li class="active"><%= c '$CATEGORY_NAME$' %></li>
+                <% }.else { %>
+                    <li class="active"><%= c '$MODULE_NAME$' %></li>
+                <% }.endif! %>
+            </ol>
+            <% uif('$ADD_ENTRY_LINK$') { %>
+                <div class="text-right">
+                    [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить вопрос</a> ]
+                </div>
+            <% }.endif! %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-2">
+            <%= c '$CATEGORIES$' %>
+            <hr class="hidden-md hidden-lg">
+        </div>
+        <div class="col-sm-12 col-md-10">
+            <%# TODO: uif(code_is('$PAGE_ID$', "'add'", "'edit'")) %>
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>
