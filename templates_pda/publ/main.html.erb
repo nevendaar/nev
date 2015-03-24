@@ -1,0 +1,26 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li class="active"><%= c '$MODULE_NAME$' %></li>
+    </ol>
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить статью</a> ]
+            </div>
+        </div>
+    <% }.endif! %>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="clearfix hr">
+                Всего материалов в каталоге: <b><%= c '$NUM_ENTRIES$' %></b>
+                <% uif('$NUM_SHOWN$') { %><br/>Показано материалов: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
+                <% uif('$PAGE_SELECTOR$') { %>
+                    <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
+                <% }.endif! %>
+            </div>
+            <%= c '$BODY$' %>
+            <%= render :btm_page_selector %>
+        </div>
+    </div>
+<% end %>
