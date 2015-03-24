@@ -1,0 +1,27 @@
+﻿<div class="material hr">
+    <div class="title clearfix">
+        <h2>
+            <a href="<%= c '$ENTRY_DIRECT_URL$' %>" title="Прямая ссылка на вопрос" class="prompt-link" name="<%= c '$ID$' %>">
+                <%= c '$TITLE$' %>
+            </a>
+        </h2>
+        <% uif('$MODER_PANEL$') { %><div class="pull-right"><%= c '$MODER_PANEL$' %></div><% }.endif! %>
+    </div>
+    <div class="body">
+        <%= c '$MESSAGE$' %>
+        <div class="answer">
+            <% uif('$ANSWER$') { %>
+                <%= c '$ANSWER$' %>
+            <% }.else { %>
+                <i>Еще нет ответа на этот вопрос.</i>
+            <% }.endif! %>
+        </div>
+        <% uif('$NAME$', group_is('$CUR_GROUP_ID$', :moderator, :admin, :master)) { %>
+            Добавил: <a href="<%= c '$EMAIL_JS$' %>"><%= c '$NAME$' %></a>
+            <% uif('$USERNAME$') { %>
+                (<a href="/index/8-<%= c '$UID$' %>" class="profile-link"><%= c '$USERNAME$' %></a>)
+            <% }.endif! %>
+        <% }.endif! %>
+        <% uif('$RATING$') { %><%= rating_stars %><% }.endif! %>
+    </div>
+</div>
