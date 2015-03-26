@@ -131,7 +131,6 @@
 # Шаблоны для pda-версии сайта
 pda:
   # Глобальные блоки
-  'AJAXJS':    'templates_pda/AJAXJS.html.erb'    # Системные css и js файлы
   'PDAHEADER': 'templates_pda/PDAHEADER.html.erb' # Шапка
   'PDAFOOTER': 'templates_pda/PDAFOOTER.html.erb' # Подвал
 
