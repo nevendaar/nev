@@ -1,0 +1,49 @@
+﻿<% nns_uri     = code_is('$URI_ID$', "'drCat5'") %>
+<% not_nns_uri = code_is('$URI_ID$', :not, "'drCat5'") %>
+
+<% @params[:title] = uif_str(nns_uri) { |s|
+  s << 'Новое на сайте'
+}.else { |str|
+  str << c('$CAT_NAME$') << ' '
+  str << uif_str('$SECTION_NAME$') { |s| s << "- #{c '$SECTION_NAME$'}" }.endif!
+  str << " - #{c '$MODULE_NAME$'}"
+}.endif! << " - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <% uif(nns_uri) { %>
+            <li class="active">Новое на сайте</li>
+        <% }.else { %>
+            <% uif('$SECTION_NAME$') { %>
+                <li><a href="<%= c '$SECTION_URL$' %>">Каталог сайтов</a></li>
+            <% }.endif! %>
+            <li class="active"><%= c '$CAT_NAME$' %></li>
+        <% }.endif! %>
+    </ol>
+
+    <% uif('$ADD_ENTRY_LINK$', "(#{not_nns_uri} || #{group_is('$GROUP_ID$', :moderator, :admin, :master)})") { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить<% uif(not_nns_uri) { %> сайт<% }.endif! %></a> ]
+            </div>
+        </div>
+    <% }.endif! %>
+
+    <div class="row">
+        <div class="col-md-12"><%# TODO: id="topsel" %>
+            <div class="clearfix">
+                <% uif(nns_uri) { %>Всего записей<% }.else { %>В категории материалов<% }.endif! %>: <b><%= c '$NUM_ENTRIES$' %></b>
+                <% uif('$NUM_SHOWN$') { %><br/>Показано материалов: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
+                <% uif('$PAGE_SELECTOR$') { %>
+                    <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
+                <% }.endif! %>
+            </div>
+            <% uif('$SORTING_MENU$', not_nns_uri) { %>Сортировать по: <%= c '$SORTING_MENU$' %><hr><% }.endif! %>
+        </div>
+        <div class="col-md-12">
+            <%= c '$BODY$' %>
+            <%= render :btm_page_selector %>
+        </div>
+    </div>
+<% end %>
