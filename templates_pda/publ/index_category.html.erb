@@ -1,5 +1,5 @@
-﻿<% @params[:title] = c('$CAT_NAME$') << ' ' << uif_str('$SECTION_NAME$') {
-        |s| s << "- #{c '$SECTION_NAME$'}"
+﻿<% @params[:title] = c('$CAT_NAME$') << ' ' << uif_str('$SECTION_NAME$') { |s|
+  s << "- #{c '$SECTION_NAME$'}"
 }.endif! << " - #{c '$MODULE_NAME$'}" << " - #{c '$SITE_NAME$'}" %>
 
 <% layout 'templates_pda/layouts/main.html.erb' do %>

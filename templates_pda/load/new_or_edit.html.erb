@@ -1,0 +1,23 @@
+﻿<% @params[:title] = "#{c '$SECTION_NAME$'} - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a href="<%= c '$MODULE_URL$' %>">Файлы</a></li>
+        <li class="active"><%= c '$SECTION_NAME$' %></li>
+    </ol>
+
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                [ <a id="diradd" href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]
+            </div>
+        </div>
+    <% }.endif! %>
+
+    <div class="row">
+        <div class="col-md-12">
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>
