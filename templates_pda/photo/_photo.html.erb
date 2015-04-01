@@ -1,0 +1,38 @@
+﻿<%# Old template %>
+
+<% info_title = "Просмотры: #{c '$REVIEWS$'} | Размеры: #{c '$PHOTO_SIZE$'}, #{c '$PHOTO_WEIGHT$'} KB" %>
+
+<div align="center">
+    <div style="padding-bottom: 1px;">
+        <% uif('$PHOTO_NAME$') { %>
+            <a href="<%= c '$PHOTO_URL$' %>">
+                <% uif('len($PHOTO_NAME$) > 25') { %>
+                    <%= i 'substr($PHOTO_NAME$, 0, 23)' %>...
+                <% }.else { %>
+                    <%= c '$PHOTO_NAME$' %>
+                <% }.endif! %>
+            </a>
+        <% }.else { %>
+            &nbsp;
+        <% }.endif! %>
+    </div>
+    <a href="<%= c '$PHOTO_LIGHTBOX_URL$' %>" title="<%= info_title %>"><%= c '$PHOTO$' %></a>
+    <% uif('$CAT_NAME$') { %>
+        <div style="padding-top: 1px;">
+            <a href="<%= c '$CAT_URL$' %>">
+                <% uif('len($CAT_NAME$) > 25') { %>
+                    <%= i 'substr($CAT_NAME$, 0, 23)' %>...
+                <% }.else { %>
+                    <%= c '$PHOTO_NAME$' %>
+                <% }.endif! %>
+            </a>
+        </div>
+    <% }.endif! %>
+    <div style="margin-top: 2px;" class="eDetails">
+        <% uif('$MODER_PANEL$') { %>
+            <div style="position: absolute; z-index: 30;">
+                <%= c '$MODER_PANEL$' %>
+            </div>
+        <% }.endif! %>
+    </div>
+</div>
