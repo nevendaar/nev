@@ -4,7 +4,7 @@
 <% @params[:meta][:title] = '$PHOTO_NAME$' %>
 <% @params[:meta][:description] = i("substr($PHOTO_DESCR$, 0, strpos($PHOTO_DESCR$, '<'))") << '...' %>
 
-<% layout do %>
+<% layout 'templates_pda/layouts/main.html.erb' do %>
     <ol class="breadcrumb">
         <li><a href="/">Главная</a></li>
         <li><a href="<%= c '$MODULE_URL$' %>">Фотоальбом</a></li>
