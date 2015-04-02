@@ -14,7 +14,9 @@
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Новое на сайте</h1>
+                        <h1 class="panel-title">
+                            <a href="/dir/5">Новое на сайте</a>
+                        </h1>
                     </div>
                     <div class="panel-body">
                         <%= c '$MYINF_5$' %>
@@ -24,7 +26,13 @@
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Последние комментарии</h1>
+                        <h1 class="panel-title">
+                            <% uif(group_is('$GROUP_ID$', :admin, :master)) { %>
+                                <a href="/index/86">Последние комментарии</a>
+                            <% }.else { %>
+                                Последние комментарии
+                            <% }.endif! %>
+                        </h1>
                     </div>
                     <div class="panel-body">
                         <%= c '$MYINF_4$' %>
@@ -34,7 +42,9 @@
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title"><a href="/news">Новости</a></h1>
+                        <h1 class="panel-title">
+                            <a href="/news">Новости</a>
+                        </h1>
                     </div>
                     <div class="panel-body">
                         <%= c '$MYINF_3$' %>
