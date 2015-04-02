@@ -219,7 +219,6 @@ pda:
 
   # Редактор страниц
   'si.t':  'templates_pda/pages/index.html.erb'    # Страницы сайта
-  'si110': 'templates_pda/pages/minichat.html.erb' # MiniChat
 
   # Тесты
   'ts1.t': 'templates_pda/tests/main.html.erb' #
