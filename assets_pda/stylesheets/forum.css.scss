@@ -57,3 +57,29 @@ form[name='searchform'] {
 //    @extend .form-control;
 //  }
 }
+
+.forum_recentthreads {
+  > {
+    table:not(.gTable) {
+      @include clearfix;
+      > tbody > tr > td {
+        width: 100% !important;
+        float: left;
+
+      }
+    }
+  }
+  .fFastNavTd, .fFastSearchTd {
+    > input {
+      &[type=submit], &[type=button] {
+        @extend .btn;
+        @extend .btn-default;
+      }
+    }
+  }
+  .fFastNavTd > select.fastNav,
+  .fFastSearchTd > input.fastSearch[name=kw] {
+    @extend .form-control;
+    display: inline-block;
+  }
+}
