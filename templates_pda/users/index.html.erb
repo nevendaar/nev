@@ -1,0 +1,21 @@
+<% @params[:title] = 'Список пользователей' %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Список пользователей</h2>
+            <div class="clearfix">
+                Найдено <b><%= c '$NUM_ENTRIES$' %></b> пользователей
+                <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
+            </div>
+            <div id="search_users_list">
+                <%= c '$BODY$' %>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div id="search_users_form" class="col-xs-8 col-xs-offset-2 col-sm-12 col-sm-offset-0">
+            <%= c '$SEARCH_FORM$' %>
+        </div>
+    </div>
+<% end %>

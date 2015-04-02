@@ -16,6 +16,8 @@ gem 'sass'
 gem 'sprockets-sass'
 gem 'autoprefixer-rails'
 
+gem 'bootstrap-sass', '~> 3.3.3'
+
 # Use uglifier as js compressor
 gem 'uglifier', '>= 2.5.1'
 

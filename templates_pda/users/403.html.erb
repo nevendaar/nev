@@ -1,0 +1,20 @@
+<% @params[:title] = "Доступ запрещен - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <% uif('$USER_LOGGED_IN$') { %>
+                <p class="lead text-center">
+                    Вы входите в группу пользователей, которым запрещено совершать данное действие.
+                </p>
+                <p class="text-center">
+                    По всем вопросам обращайтесь к администратору сайта.
+                </p>
+            <% }.else { %>
+                <p class="lead text-center">
+                    Гостям запрещено просматривать данную страницу, пожалуйста <a href="<%= login_path %>">войдите на сайт как пользователь</a>.
+                </p>
+            <% }.endif! %>
+        </div>
+    </div>
+<% end %>

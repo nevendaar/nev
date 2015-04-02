@@ -6,6 +6,10 @@ module BaseHelper
     config.home_url.dup
   end
 
+  def login_path
+    '/index/1'
+  end
+
   def charset_and_ie_support_tags
     wrap_whitespaces! <<-HTML.gsub!(/^\s*/, '').chomp!
       <meta charset="utf-8">
@@ -32,12 +36,13 @@ module BaseHelper
     s.chomp! || s
   end
 
-  def stylesheet_link_tag
-    "<link href=\"/css/app.min.css?#{config.css_version}\" rel=\"stylesheet\">"
+  def stylesheet_link_tag(pda: false)
+    # TODO: fix version for PDA CSS!!!
+    "<link href=\"/css/app#{'_pda' if pda}.min.css?#{config.css_version}\" rel=\"stylesheet\">"
   end
 
-  def javascript_include_tag
-    "<script src=\"/js/app.min.js?#{config.js_version}\"></script>"
+  def javascript_include_tag(pda: false)
+    "<script src=\"/js/app#{'_pda' if pda}.min.js?#{config.js_version}\"></script>"
   end
 
   # Bang method coz it modify @_erbout directly.

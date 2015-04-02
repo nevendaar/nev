@@ -1,0 +1,15 @@
+.footer {
+  @extend .container-fluid;
+  #desktop_version_link, .copyright {
+    margin: 0 auto;
+    width: 185px;
+    text-align: center;
+  }
+  #desktop_version_link {
+    display: block;
+    padding: 10px 0;
+  }
+  .copyright {
+    color: #5c90a0;
+  }
+}

@@ -1,0 +1,34 @@
+﻿<% @params[:title] = "#{c '$SECTION_NAME$'} - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a id="dircat" href="<%= c '$MODULE_URL$' %>">Каталог сайтов</a></li>
+        <li class="active"><%= c '$SECTION_NAME$' %></li>
+    </ol>
+
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                [ <a id="diradd" href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить сайт</a> ]
+            </div>
+        </div>
+    <% }.endif! %>
+
+    <div class="row">
+        <div class="col-md-12">
+            <%= c '$BODY$' %>
+            <script type="text/javascript">
+                $('#cus5').hide().next().hide();
+                if ($('#catSelector9').val() == 'Site') {
+                    $('#drM52,#drM53,#drM23,#drM24,#drM26,#drM27,#tagsTd1,#tagsTd2,.manTdSep:first,.manTdSep:eq(4)<% uif(code_is('$PAGE_ID$', "'add'")) { %>,.manTdSep:eq(5)<% }.endif! %>').hide();
+                    $('#dircat').attr('href', '/dir/5').html('Новое на сайте');
+                    $('#drM4').html($('#drM4').html().replace('Название сайта', 'Заголовок'));
+                    $('#drM7').html($('#drM7').html().replace(' на сайт', ''));
+                    $('#drM9').html($('#drM9').html().replace(' сайта', ''));
+                    <% uif('$ADD_ENTRY_LINK$') { %>$('#diradd').html('Добавить');<% }.endif! %>
+                }
+            </script>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,72 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <% uif(code_is '$URI_ID$', "'page1'") { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Поиск</h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$SEARCH_FORM$' %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">
+                            <a href="/dir/5">Новое на сайте</a>
+                        </h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$MYINF_5$' %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">
+                            <% uif(group_is('$GROUP_ID$', :admin, :master)) { %>
+                                <a href="/index/86">Последние комментарии</a>
+                            <% }.else { %>
+                                Последние комментарии
+                            <% }.endif! %>
+                        </h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$MYINF_4$' %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">
+                            <a href="/news">Новости</a>
+                        </h1>
+                    </div>
+                    <div class="panel-body">
+                        <%= c '$MYINF_3$' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }.elsif(code_is '$URI_ID$', "'page110'") { %>
+        <div id="mc-window"></div>
+        <%= minichat_form %>
+        <% uif('$USER_LOGGED_IN$') { %>
+            <div id="mc-smiles" data-female="<% uif(female) { %>1<% }.else { %>0<% }.endif! %>"></div>
+        <% }.endif! %>
+        <script type="text/javascript">
+            $('#changelink').attr('title', 'Форум').attr('href', '/forum/');
+            $('#mchatC1F').val('<%= c '$USER_AVATAR_URL$' %>');
+        </script>
+    <% }.else { %>
+        <div class="row">
+            <div class="col-md-12">
+                <%= c '$CONTENT$' %>
+            </div>
+        </div>
+    <% }.endif! %>
+<% end %>

@@ -1,0 +1,30 @@
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="/">Главная</a></li>
+                    <li class="active"><%= c '$MODULE_NAME$' %> (<b><%= c '$NUM_ENTRIES$' %></b>)</li>
+                </ol>
+            </div>
+        </div>
+        <% uif('$ADD_ENTRY_LINK$') { %>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                    [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]
+                </div>
+            </div>
+        <% }.endif! %>
+        <div class="row">
+            <div class="col-sm-12 col-md-2">
+                <%= c '$CATEGORIES$' %>
+                <hr class="hidden-md hidden-lg">
+            </div>
+            <div class="col-sm-12 col-md-10">
+                <%= c '$BODY$' %>
+            </div>
+        </div>
+    <% }.else { %>
+        <script>document.location.href = "/";</script>
+    <% }.endif! %>
+<% end %>

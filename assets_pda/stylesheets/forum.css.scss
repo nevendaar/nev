@@ -1,0 +1,85 @@
+form[name='searchform'] {
+  select {
+    @extend .form-control;
+    margin-bottom: 4px;
+  }
+
+  br {
+    display: none;
+  }
+
+  .searchQueryFl {
+    @extend .form-control;
+    margin-bottom: 5px;
+  }
+
+  .searchSubmitFl {
+    @extend .btn;
+    @extend .btn-default;
+  }
+
+  .searchForumsFl {
+    height: auto;
+  }
+
+  .gTable {
+    > tbody {
+      > tr {
+        > td {
+          width: 100% !important;
+          height: auto !important;
+          float: left;
+        }
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          > td:nth-child(2) > b {
+            // hide "Где искать"
+            display: none;
+          }
+        }
+        &:nth-child(3) {
+          > td:nth-child(2) {
+            &:before {
+              display: block;
+              content: "Где искать";
+              font-weight: bold;
+              margin-left: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+//  select[name^='o'] {
+//    @extend .form-control;
+//  }
+}
+
+.forum_recentthreads {
+  > {
+    table:not(.gTable) {
+      @include clearfix;
+      > tbody > tr > td {
+        width: 100% !important;
+        float: left;
+
+      }
+    }
+  }
+  .fFastNavTd, .fFastSearchTd {
+    > input {
+      &[type=submit], &[type=button] {
+        @extend .btn;
+        @extend .btn-default;
+      }
+    }
+  }
+  .fFastNavTd > select.fastNav,
+  .fFastSearchTd > input.fastSearch[name=kw] {
+    @extend .form-control;
+    display: inline-block;
+  }
+}

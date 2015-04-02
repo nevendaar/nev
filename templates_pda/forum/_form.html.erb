@@ -1,0 +1,159 @@
+<div class="text-center">
+    <%= c '$FORM_TITLE$' %>
+</div>
+
+<% uif('$ERROR$') { %>
+    <div class="text-center text-danger">
+        <%= c '$ERROR$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$_USER$') { %>
+    <div class="form-group">
+        <label for="user">Имя:</label><%# TODO: check input name %>
+        <%= c '$_USER$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$_THREAD_NAME$') { %>
+    <div class="form-group">
+        <label for="frF3">Название темы:</label>
+        <%= c '$_THREAD_NAME$' %>
+    </div>
+    <div class="form-group">
+        <label for="frF4">Описание темы:</label>
+        <%= c '$_THREAD_DESCR$' %>
+    </div>
+<% }.endif! %>
+
+<% uif('$_POLL_QUESTION$') { %>
+    <div class="form-group">
+        <label for="frF6">Вопрос голосования:</label>
+        <%= c '$_POLL_QUESTION$' %>
+    </div>
+    <div class="form-group">
+        <label for="frF7">Пункты опроса:</label>
+        <%= c '$_POLL_ANSWERS$' %>
+        <p class="help-block">Введите по одному ответу на строку. Максимум <b>10</b> ответов.</p>
+    </div>
+    <!--Опции опроса:-->
+    <div class="checkbox">
+        <label>
+            <%= c '$_POLL_ONLY_OPT$' %>
+            Только опрос (писать ответы в теме будет нельзя)
+        </label>
+    </div>
+    <div class="checkbox">
+        <label>
+            <%= c '$_POLL_MULTI_OPT$' %>
+            Множественный выбор
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="frF9">Период голосования:</label>
+        <%= c '$_POLL_PERIOD_OPT$' %>
+        <p class="help-block"><b>0</b> - без ограничений</p>
+    </div>
+<% }.endif! %>
+
+<div class="form-group">
+    <label for="message">Текст сообщения:</label>
+    <%# TODO c '$BBCODES$' ? %>
+    <%= c '$_MESSAGE$' %>
+</div>
+
+<!--Опции сообщения:-->
+<% uif('$MESSAGE_OPTIONS_FLAG$') { %>
+    <% uif('$_HTML_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_HTML_OPT$' %>
+                Включить HTML теги
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <%= c '$_MAKE_BR_OPT$' %>
+                Заменять переводы строк тегом <b>&lt;BR&gt;</b>
+            </label>
+        </div>
+    <% }.endif! %>
+    <% uif('$_EDITED_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_EDITED_OPT$' %>
+                Добавить надпись "Отредактировано..." в это сообщение?
+            </label>
+        </div>
+    <% }.endif! %>
+    <% uif('$_SMILES_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_SMILES_OPT$' %>
+                Включить смайлы
+            </label>
+        </div>
+    <% }.endif! %>
+    <% uif('$_SIGNATURE_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_SIGNATURE_OPT$' %>
+                Включить подпись
+            </label>
+        </div>
+    <% }.endif! %>
+    <% uif('$_SUBSCRIBE_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_SUBSCRIBE_OPT$' %>
+                Включить уведомление на e-mail при ответах
+            </label>
+        </div>
+    <% }.endif! %>
+<% }.endif! %>
+
+<!--Опции темы:-->
+<% uif('$MODER_OPTIONS_FLAG$') { %>
+    <% uif('$_FIRSTONTOP_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_FIRSTONTOP_OPT$' %>
+                Первое сообщение темы сделать шапкой (показывать на всех страницах)
+            </label>
+        </div>
+    <% }.endif! %>
+    <% uif('$_ONTOP_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_ONTOP_OPT$' %>
+                Тема всегда сверху
+            </label>
+        </div>
+    <% }.endif! %>
+    <% uif('$_CLOSED_OPT$') { %>
+        <div class="checkbox">
+            <label>
+                <%= c '$_CLOSED_OPT$' %>
+                Закрытая тема
+            </label>
+        </div>
+    <% }.endif! %>
+<% }.endif! %>
+
+<% uif('$_FILES_UPLOADER$') { %>
+    <div class="form-group">
+        <label for="attachment">Прикрепить файл:</label><%# TODO: check input name %>
+        <%= c '$_FILES_UPLOADER$' %>
+        <p class="help-block">(не более <b><%= c '$FILE_MAX_SIZE$' %></b>Kb)</p>
+    </div>
+<% }.endif! %>
+
+<% uif('$_SECURITY_CODE$') { %>
+    <div class="form-group">
+        <label for="attachment">Код безопасности:</label>
+        <%= c '$_SECURITY_CODE$' %>
+    </div>
+<% }.endif! %>
+
+<button type="button" class="btn btn-default">Просмотреть</button>
+<button type="submit" class="btn btn-default"><%= c '$SUBMIT_SIGN$' %></button>

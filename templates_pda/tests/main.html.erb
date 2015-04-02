@@ -1,0 +1,33 @@
+<% @params[:title] = uif_str('$TEST_NAME$') { |s| s << "#{c '$TEST_NAME$'} - "}.endif! <<
+        uif_str('$CAT_NAME$') { |s| s << "#{c '$CAT_NAME$'} - " }.endif! <<
+        " - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <% uif('$CAT_NAME$ || $TEST_NAME$') { %>
+            <li><a href="<%= c '$MODULE_URL$' %>"><%= c '$MODULE_NAME$' %></a></li>
+            <% uif('$TEST_NAME$') { %>
+                <% uif('$CAT_NAME$') { %>
+                    <li><a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li>
+                <% }.endif! %>
+                <li class="active"><%= c '$TEST_NAME$' %></li>
+            <% }.else { %>
+                <li class="active"><%= c '$CAT_NAME$' %></li>
+            <% }.endif! %>
+        <% }.else { %>
+            <li class="active"><%= c '$MODULE_NAME$' %></li>
+        <% }.endif! %>
+    </ol>
+    <div class="row">
+        <% uif('$CATEGORIES$') { %>
+            <div class="col-sm-12 col-md-2">
+                <%= c '$CATEGORIES$' %>
+                <hr class="hidden-md hidden-lg">
+            </div>
+        <% }.endif! %>
+        <div class="col-sm-12 col-md-10">
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>

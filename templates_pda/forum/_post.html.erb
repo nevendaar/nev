@@ -1,0 +1,37 @@
+﻿<div>
+    <div class="clearfix">
+        [ <%= c '$NUMBER$' %> ]
+        <%= c '$USERNAME$' %>
+        <span class="pull-right">
+            <%= c '$TIME$' %>, <%= c '$DATE$' %>
+        </span>
+    </div>
+
+    <div id="frmmsg<%= c '$ID$' %>" class="clearfix">
+        <%= c '$MESSAGE$' %>
+    </div>
+
+    <% uif('$ATTACHMENT$') { %>
+        <div class="eAttach" align="left">
+            Прикрепления: <%= c '$ATTACHMENT$' %>
+        </div>
+    <% }. endif! %>
+
+    <% uif('$SIGNATURE$', code_is('$TID$', :not, 704), role_game_section(:not), code_is('$FID$', :not, 13, 24), not_new_on_the_site_tread) { %>
+        <hr class="signatureHr" align="left" width="150" size="1">
+        <span class="signatureView"><%= c '$SIGNATURE$' %></span>
+    <% }. endif! %>
+
+    <% uif('$EDITEDBY$') { %>
+        <% uif(moder_names) { %>
+            <% uif(group_is('$GROUP_ID$', :user, :banned)) { %>
+                <br><br>
+                <div class="edited">Сообщение активировал <%= c '$EDITEDBY$' %></div>
+            <% }. endif! %>
+        <% }.else { %>
+            <%# Подразумевается, что группы :user и :banned не могут редактировать свои сообщения %>
+            <br><br>
+            <div class=edited>Сообщение отредактировал<% uif(female '$GENDER_ID$') { %>а<% }.endif! %> <%= c '$EDITEDBY$' %></div>
+        <% }. endif! %>
+    <% }. endif! %>
+</div>

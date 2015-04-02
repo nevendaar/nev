@@ -1,0 +1,23 @@
+﻿<% @params[:title] = "#{c '$SECTION_NAME$'} - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a href="<%= c '$MODULE_URL$' %>">Фотоальбом</a></li>
+        <li class="active"><%= c '$SECTION_NAME$' %></li>
+    </ol>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-10">
+            <div class="clearfix">
+                Фотографий в разделе: <b><%= c '$NUM_ENTRIES$' %></b>
+                <% uif('$NUM_SHOWN$') { %><br/>Показано материалов: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
+                <% uif('$PAGE_SELECTOR$') { %>
+                    <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
+                <% }.endif! %>
+            </div>
+            <%= c '$BODY$' %>
+            <%= render :btm_page_selector %>
+        </div>
+    </div>
+<% end %>

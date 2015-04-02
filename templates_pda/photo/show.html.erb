@@ -1,0 +1,88 @@
+<% @params[:title] = "#{c '$PHOTO_NAME$'} - #{c '$CAT_NAME$'} " <<
+        uif_str('$SECTION_NAME$'){ |s| s << "- #{c '$SECTION_NAME$'} " }.endif! <<
+        "- #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+<% @params[:meta][:title] = '$PHOTO_NAME$' %>
+<% @params[:meta][:description] = i("substr($PHOTO_DESCR$, 0, strpos($PHOTO_DESCR$, '<'))") << '...' %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a href="<%= c '$MODULE_URL$' %>">Фотоальбом</a></li>
+        <% uif('$SECTION_NAME$') { %>
+            <li><a href="<%= c '$SECTION_URL$' %>"><%= c '$SECTION_NAME$' %></a></li>
+        <% }.endif! %>
+        <li><a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li>
+        <li class="active"><%= c '$PHOTO_NAME$' %></li>
+    </ol>
+
+    <% uif('$ADD_ENTRY_LINK$') { %>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-6 col-md-3 col-md-offset-9">
+                [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить фотографию</a> ]
+            </div>
+        </div>
+    <% }.endif! %>
+
+    <div class="material">
+        <div class="body">
+            <%# Old template %>
+            <table border="0" width="100%" cellspacing="1" cellpadding="2">
+                <tr>
+                    <td colspan="2" align="center">
+                        <% uif('$FILE_URL$') { %>
+                            <a href="<%= c '$FULL_PHOTO_URL$' %>" target="_blank"><%= c '$PHOTO$' %></a>
+                        <% }.else { %>
+                            <%= c '$PHOTO$' %>
+                        <% }.endif! %>
+                    </td>
+                </tr>
+                <% uif('$FULL_PHOTO_URL$') { %>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <a href="<%= c '$FULL_PHOTO_URL$' %>" target="_blank">Открыть в реальном размере</a>
+                        </td>
+                    </tr>
+                <% }.endif! %>
+                <tr><td colspan="2" align="center"><%= c '$PHOTO_DESCR$' %><hr></td></tr>
+                <tr>
+                    <td colspan="2" class="eDetails" style="text-align:center;">
+                        <ul class="details">
+                            <% uif('$USER$') { %><li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USER$' %></a></li><% }.endif! %>
+                            <li>Просмотров: <%= c '$REVIEWS$' %></li>
+                            <li>Размеры: <%= c '$PHOTO_SIZE$' %>px/<%= c '$PHOTO_WEIGHT$' %>Kb</li>
+                            <li>Дата: <%= c '$ADD_DATE$' %></li>
+                            <% uif('$MODER_PANEL$') { %><li><%= c '$MODER_PANEL$' %></li><% }.endif! %>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="eDetails" style="text-align:center;">
+                        <% uif('$TAGS$') { %><div class="tags">Теги: <i><%= c('$TAGS$') %></i></div><% }.endif! %>
+                        <% uif('$RATING$') { %>
+                            <div style="margin: 0px auto;width: 155px;"><%# TODO: rewrite rating_stars helper! %>
+                                <%= i "$RSTARS$('30', 'http://s6.ucoz.net/img/stars/3/30.png', '1', 'float')" %>
+                            </div>
+                        <% }.endif! %>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <%= c '$ADVICE_BUTTON$' %>
+                    </td>
+                </tr>
+                <% uif('$OTHER_PHOTOS$') { %>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <%= c '$NEAR_PHOTOS$' %>
+                            <div style="padding-top:5px">
+                                <%= c '$OTHER_PHOTOS$' %>
+                            </div>
+                        </td>
+                    </tr>
+                <% }.endif! %>
+            </table>
+        </div>
+    </div>
+
+    <%= render :comment_box %>
+<% end %>

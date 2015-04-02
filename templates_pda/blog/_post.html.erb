@@ -1,0 +1,27 @@
+﻿<div class="material hr">
+    <div class="title clearfix">
+        <h2><a href="<%= c '$ENTRY_URL$' %>"><%= c '$TITLE$' %></a></h2>
+        <% uif('$MODER_PANEL$') { %>
+            <div class="pull-right"><%= c '$MODER_PANEL$' %></div>
+        <% }.endif! %>
+    </div>
+    <div class="body">
+        <% uif('$MESSAGE$') { %>
+            <div>
+                <% uif('$OTHER1$') { %>Автор: <%= c '$OTHER1$' %><% }.endif! %><br/>
+                <% uif('$OTHER2$') { %>Редактор: <%= c '$OTHER2$' %><% }.endif! %><br/>
+                <% uif('$OTHER3$') { %>Жанр: <%= c '$OTHER3$' %><% }.endif! %><br/>
+                <% uif('$OTHER4$') { %>Дисклеймер: <%= c '$OTHER4$' %><% }.endif! %><br/><br/>
+            </div>
+            <%= c '$MESSAGE$' %>
+        <% }.endif! %>
+        <ul class="details">
+            <% uif('$CATEGORY_NAME$') { %><li>Категория: <a href="<%= c '$CATEGORY_URL$' %>"><%= c '$CATEGORY_NAME$' %></a></li><% }.endif! %>
+            <li>Просмотров: <%= c '$READS$' %></li>
+            <% uif('$USERNAME$') { %><li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USERNAME$' %></a></li><% }.endif! %>
+            <li>Дата: <%= c '$DATE$' %></li>
+            <% uif('$RATING$') { %><li>Рейтинг: <%= c '$RATING$' %>/<%= c '$RATED$' %></li><% }.endif! %>
+            <% uif('$COMMENTS_URL$') { %><li><a href="<%= c '$COMMENTS_URL$' %>">Комментарии (<%= c '$COMMENTS_NUM$' %>)</a></li><% }.endif! %>
+        </ul>
+    </div>
+</div>

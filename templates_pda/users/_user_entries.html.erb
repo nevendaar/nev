@@ -1,0 +1,8 @@
+<% entry_type = @locals[:entry_type].to_s.upcase %>
+<% uif("$_#{entry_type}_ENTRIES$") { %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <a href="<%= c "$_#{entry_type}_ACTIVITY_URL$" %>" target="_blank">
+            <%= @locals[:entry_name] %> (<b><%= c "$_#{entry_type}_ENTRIES$" %></b>)
+        </a>
+    </div>
+<% }.endif! %>

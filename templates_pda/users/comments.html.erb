@@ -1,0 +1,20 @@
+<% @params[:title] = "Комментарии пользователя [#{c '$USER$'}] - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li><a href="/index/8-<%= i '$UID$' %>"><%= c '$USER$' %></a></li>
+                <li class="active">Комментарии [<%= c '$USER$' %>]</li>
+            </ol>
+            <div class="clearfix hr">
+                <% uif('$NUM_SHOWN$') { %>Показано комментариев: <b><%= c '$NUM_SHOWN$' %></b><% }.endif! %>
+                <% uif('$PAGE_SELECTOR$') { %>
+                    <div class="pull-right">Страницы: <%= c '$PAGE_SELECTOR$' %></div>
+                <% }.endif! %>
+            </div>
+            <%= c '$BODY$' %>
+            <%= render :btm_page_selector %>
+        </div>
+    </div>
+<% end %>

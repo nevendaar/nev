@@ -1,0 +1,10 @@
+<% @params[:title] = c '$TITLE$' %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <div class="row">
+        <div id="pm_page_blk" class="col-md-12">
+            <h2><%= c '$TITLE$' %></h2>
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>

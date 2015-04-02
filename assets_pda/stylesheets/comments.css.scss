@@ -1,0 +1,12 @@
+.com-order-block {
+  @extend .form-group;
+}
+
+// label
+.com-order-wrap {
+  width: 100%;
+}
+
+.com-order-select {
+  @extend .form-control;
+}

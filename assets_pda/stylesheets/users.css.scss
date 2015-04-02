@@ -1,0 +1,157 @@
+@import "bootstrap/my_variables";
+
+$col-num-nickname: 1;
+$col-num-avatar:   2;
+$col-num-rank:     3;
+$col-num-group:    4;
+
+.allUsersBtn, .uSearchFlSbm {
+  @extend .btn;
+  @extend .btn-default;
+  width: auto !important;
+}
+
+.uSearchFl {
+  @extend .form-control;
+}
+
+.allUsersBtn, .uSearchFlSbm, .uSearchFl {
+  margin-bottom: 4px;
+}
+
+#search_users_list > table {
+  @extend .table;
+  tr {
+    > td {
+      &:nth-child(#{$col-num-nickname}) { // Nickname
+        > div {
+          // Hide UID link
+          display: none;
+        }
+      }
+      &:nth-child(#{$col-num-avatar}) { // Avatar
+        display: none;
+      }
+      &:nth-child(#{$col-num-rank}) { // Rank
+        // Hide rank
+        display: none;
+      }
+      &:nth-child(#{$col-num-group}) { // Group
+        > img {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#search_users_form > form {
+  @extend .form-inline;
+  > {
+    // input[name="ban"] {}
+    input[name="user"] {
+      @extend .form-control;
+      width: auto !important;
+      // Expand on small displays
+      @media (max-width: $screen-xs-max) {
+        width: 100% !important;
+      }
+    }
+    select {
+      @extend .form-control;
+    }
+    input[type="submit"] {
+      @extend .btn;
+      @extend .btn-default;
+    }
+  }
+}
+
+#pm_page_blk > #pmdform {
+  > table {
+    @extend .table;
+    tr {
+      &:nth-last-child(1) {
+        display: none;
+      }
+      > td {
+        &:nth-child(1) {
+          // Hide message numbers for small displays
+          @media (max-width: $screen-xs-max) {
+            display: none !important;
+          }
+        }
+        &:nth-child(3) {
+          width: auto !important;
+          // Hide datetime for small displays
+          @media (max-width: $screen-xs-max) {
+            display: none !important;
+          }
+        }
+        &:nth-child(4) {
+          > {
+            a {
+              width: 25px;
+              height: 25px;
+              display: inline-block;
+              // Use background instead of <img>
+              background-size: cover;
+              background: url(/.s/img/fr/mnD.gif) no-repeat;
+              img {
+                display: none;
+              }
+            }
+            // Hide checkbox
+            input {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#pm_page_blk {
+  #addform {
+    input[name='subject'] {
+      @extend .form-control;
+    }
+    #PMtoUser {
+      @extend .form-control;
+    }
+    #message {
+      @extend .form-control;
+      resize: vertical;
+    }
+    table {
+      tr:nth-last-child(1) > td {
+        padding-top: 5px;
+        > input {
+          @extend .btn;
+          @extend .btn-default;
+          width: auto !important;
+        }
+      }
+      table tr > td:nth-last-child(1) {
+        display: none;
+      }
+    }
+  }
+}
+
+.inputPM, .outputPM {
+  background: no-repeat 0 0;
+  background-size: 8px;
+  > img:nth-child(1) {
+    display: none;
+  }
+}
+
+.inputPM {
+  background-image: url(/.s/img/fr/in.gif);
+}
+
+.outputPM {
+  background-image: url(/.s/img/fr/out.gif);
+}

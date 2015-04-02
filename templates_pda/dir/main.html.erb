@@ -1,0 +1,5 @@
+﻿<% @params[:redirect][:path] = '/dir/6' %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    Redirect to <%= @params[:redirect][:path]%>
+<% end %>

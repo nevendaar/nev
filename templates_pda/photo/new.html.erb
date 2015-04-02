@@ -1,0 +1,14 @@
+﻿<% @params[:title] = "#{c '$SECTION_NAME$'} - #{c '$MODULE_NAME$'} - #{c '$SITE_NAME$'}" %>
+
+<% layout 'templates_pda/layouts/main.html.erb' do %>
+    <ol class="breadcrumb">
+        <li><a href="/">Главная</a></li>
+        <li><a href="<%= c '$MODULE_URL$' %>"><%= c '$MODULE_NAME$' %></a></li>
+        <li class="active"><%= c '$SECTION_NAME$' %></li>
+    </ol>
+    <div class="row">
+        <div class="col-sm-12">
+            <%= c '$BODY$' %>
+        </div>
+    </div>
+<% end %>
