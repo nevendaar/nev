@@ -7,6 +7,10 @@ a.login-with i {
   width: 35px !important;
 }
 
+textarea {
+  resize: none;
+}
+
 // $SEARCH_FORM$
 .searchForm {
   .schQuery, .schBtn {
@@ -19,4 +23,9 @@ a.login-with i {
     @extend .btn;
     @extend .btn-default;
   }
+}
+
+.uSpoilerButton {
+  @extend .btn;
+  @extend .btn-default;
 }

@@ -83,3 +83,53 @@ form[name='searchform'] {
     display: inline-block;
   }
 }
+
+.forum_threadpage {
+  > {
+    table {
+      @include clearfix;
+      > tbody > tr > td {
+        width: 100% !important;
+        float: left;
+      }
+    }
+  }
+}
+
+#frmButns83 {
+  margin-top: 5px;
+  > a {
+    @extend .btn;
+    @extend .btn-default;
+  }
+}
+
+.postTextFl {
+  @extend .form-control;
+}
+
+#frM60 > input {
+  @extend .btn;
+  @extend .btn-default;
+}
+
+// Clear button for topic reply form
+#frF17 {
+  display: none;
+}
+
+#thread_search_button {
+  @extend .btn;
+  @extend .btn-default;
+  float: right;
+  width: 15%;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+#thread_search_field {
+  @extend .form-control;
+  width: 85%;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
