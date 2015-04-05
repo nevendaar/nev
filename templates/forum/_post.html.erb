@@ -2,7 +2,7 @@
 <table class="postTable" cellSpacing="1" cellPadding="2" width="100%" border="0">
     <% uif(not_new_on_the_site_tread) { %>
         <tr>
-            <% uifnot(role_game_section, first_post) { %>
+            <% uif("#{role_game_section(:not)} || #{first_post(:not)}") { %>
                 <td class="postTdTop" align="middle" width="23%">
                     <a class="postUser" onclick="emoticon('[b]<%= c '$USERNAME$' %>[/b],');return false;" href="javascript://"><%= c '$USERNAME$' %></a>
                 </td>
@@ -99,7 +99,7 @@
     </tr>
     <% uif(not_new_on_the_site_tread) { %>
         <tr>
-            <% uifnot(role_game_section, first_post) { %>
+            <% uif("#{role_game_section(:not)} || #{first_post(:not)}") { %>
                 <td class="postBottom" align="middle">
                     <% uif('$USER_IP$') { %>
                         <div class="postip">[ <%= c '$USER_IP$' %> ]</div>
