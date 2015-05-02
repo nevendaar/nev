@@ -1,3 +1,46 @@
+@import "bootstrap/my_variables";
+
+$topic-border-radius: 4px;
+
+.threadNametd {
+  padding: 2px 0;
+  > div {
+    border: 1px solid;
+    border-radius: $topic-border-radius;
+    position: relative;
+    font-size: 0;
+    line-height: 20px;
+  }
+  .forum {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 11px 5px;
+    height: 100%;
+    width: 100%;
+    font-size: $font-size-base;
+    overflow: hidden;
+    white-space: pre;
+
+  }
+  .forumStat, .forumLastUpdateAuthor {
+    display: none;
+  }
+}
+
+.forumLastUpdateLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  font-size: $font-size-large;
+  padding: 8px 11px;
+  background-color: $body-bg;
+  border-top-right-radius: $topic-border-radius;
+  border-bottom-right-radius: $topic-border-radius;
+}
+
 form[name='searchform'] {
   select {
     @extend .form-control;
