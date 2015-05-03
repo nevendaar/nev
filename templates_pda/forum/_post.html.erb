@@ -1,13 +1,15 @@
 ﻿<div>
     <div class="clearfix">
         [ <%= c '$NUMBER$' %> ]
-        <%= c '$USERNAME$' %>
+        <a class="postUser" onclick="emoticon('[b]<%= c '$USERNAME$' %>[/b], ');return false;" href="/index/8-<%= c '$UID$' %>">
+            <%= c '$USERNAME$' %>
+        </a>
         <span class="pull-right">
-            <%= c '$TIME$' %>, <%= c '$DATE$' %>
+            <%= c '$DATE$' %> в <%= c '$TIME$' %>
         </span>
     </div>
 
-    <div id="frmmsg<%= c '$ID$' %>" class="clearfix">
+    <div id="frmmsg<%= c '$ID$' %>" class="frm-msg-body">
         <%= c '$MESSAGE$' %>
     </div>
 

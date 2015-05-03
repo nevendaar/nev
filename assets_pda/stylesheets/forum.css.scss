@@ -41,6 +41,12 @@ $topic-border-radius: 4px;
   border-bottom-right-radius: $topic-border-radius;
 }
 
+.frm-msg-body {
+  img {
+    @include img-responsive(inline-block);
+  }
+}
+
 form[name='searchform'] {
   select {
     @extend .form-control;
