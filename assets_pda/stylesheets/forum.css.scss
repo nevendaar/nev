@@ -2,7 +2,11 @@
 
 $topic-border-radius: 4px;
 
-.threadNametd {
+.gTableTop {
+  @extend h3;
+}
+
+.forumNameTd, .threadNametd {
   padding: 2px 0;
   > div {
     border: 1px solid;
