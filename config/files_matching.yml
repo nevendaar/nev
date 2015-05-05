@@ -182,10 +182,6 @@ pda:
   'ld6.t': 'templates_pda/load/new_or_edit.html.erb'    # Страница добавления/редактирования материала
   'ld7.t': 'templates_pda/load/_material.html.erb'      # Вид материалов
 
-  # Мини-чат
-  'mc1.t': 'templates_pda/minichat/_message.html.erb' # Вид материалов
-  'mc2.t': 'templates_pda/minichat/_form.html.erb'    # Форма добавления сообщений
-
   # Общие шаблоны
   'my.css': 'build/stylesheets/app.min.css' # Таблица стилей (CSS)
 
