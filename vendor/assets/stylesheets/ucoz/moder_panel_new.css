@@ -1,0 +1,239 @@
+/* Original: http://s1.ucoz.net/src/moder_panel_new.css */
+/* Last check: 2015-05-14 12:18:37 +0300 */
+
+
+.u-mpanel,
+.u-mpanel * {
+ -moz-box-sizing: border-box;
+ box-sizing: border-box;
+ }
+
+ .u-mpanel.hidden {
+ 	display: none;
+ }
+
+ .u-mpanel a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+ 
+ .u-mpanel-l {
+padding: 0 0 0 3px;
+margin: 0 15px 0 0 !important;
+list-style: none;
+line-height: 0;
+font-size: 0;
+visibility: hidden;
+-webkit-transition: all .35s ease;
+-o-transition: all .35s ease;
+transition: all .35s ease;
+border-radius: 13px 0 0 13px;
+border: 1px solid #D9DEDF;
+position: absolute;
+right: -10px;
+opacity: 0;
+background-color: #EDF1F2;
+white-space: nowrap;
+top: 0;
+ }
+ 
+.u-mpanel.open .u-mpanel-l {
+visibility: visible;
+opacity: 1;
+right: 0;
+padding-right: 10px;
+ }
+
+.u-mpanel {
+ height: 25px;
+ width: 25px;
+ display: inline-block;
+ vertical-align: middle;
+ position: relative;
+ border-radius: 13px;
+ z-index: 0;
+ margin-left: 10px;
+}
+ 
+ .u-mpanel-toggle {
+ height: 25px;
+ width: 25px;
+ border: 1px solid #d9dedf;
+ position: relative;
+ border-radius: 100%;
+ background: #fff url('/img/moder.png') no-repeat -20px -20px;
+ position: absolute;
+ z-index: 10;
+ cursor: pointer;
+ }
+ .u-mpanel-l li {
+ position: relative;
+ width: 25px;
+ height: 23px;
+ display: inline-block;
+ cursor: pointer;
+ background-image: inherit;
+ margin: 0;
+ }
+
+ .u-mpanel-l .u-mpanel-nspam {width: 57px;}
+ .u-mpanel-l .u-mpanel-spam {width: 36px;}
+ 
+ .u-mpanel-ico {
+ background: url('/img/moder.png') no-repeat;
+ width: 11px;
+ height: 11px;
+ display: block;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ margin-top: -5px;
+ margin-left: -6px;
+ }
+
+ .u-mpanel.open .u-mpanel-toggle {background-position: -41px -20px;}
+ 
+.u-mpanel-ip .u-mpanel-ico {background-position: -5px -109px;}
+ .u-mpanel-ip:hover .u-mpanel-ico {background-position: -26px -109px;}
+
+.u-mpanel-pending .u-mpanel-ico {background-position: -47px -110px;}
+ .u-mpanel-pending:hover .u-mpanel-ico {background-position: -68px -110px;}
+ 
+ 
+.u-mpanel-nspam .u-mpanel-ico {width: 45px;margin-left: -23px;background-position: -5px -68px;}
+.u-mpanel-nspam:hover .u-mpanel-ico, .u-mpanel-nspam.hover .u-mpanel-ico{background-position: -5px -89px;}
+
+.u-mpanel-spam .u-mpanel-ico {width: 24px;margin-left: -12px;background-position: -57px -68px;}
+.u-mpanel-spam:hover .u-mpanel-ico {background-position: -57px -89px;}
+ 
+ .u-mpanel-publ .u-mpanel-ico {background-position: -5px -5px;}
+ .u-mpanel-publ:hover .u-mpanel-ico {background-position: -26px -5px;}
+ 
+ .u-mpanel-tags .u-mpanel-ico {background-position: -68px -26px;}
+ .u-mpanel-tags:hover .u-mpanel-ico {background-position: -68px -47px;}
+ 
+ .u-mpanel-rating .u-mpanel-ico {background-position: -5px -47px;}
+ .u-mpanel-rating:hover .u-mpanel-ico {background-position: -26px -47px;}
+ 
+ .u-mpanel-edit .u-mpanel-ico {background-position: -47px -47px;}
+ .u-mpanel-edit:hover .u-mpanel-ico {background-position: -68px -5px;}
+ 
+ .u-mpanel-del .u-mpanel-ico {background-position: -47px -5px;}
+ .u-mpanel-del:hover .u-mpanel-ico {background-position: -5px -26px;}
+ 
+ .u-mpanel-mark .u-mpanel-ico {background-position: -5px -131px;}
+ .u-mpanel-mark:hover .u-mpanel-ico {background-position: -26px -131px;}
+
+ .u-mpanel-left .u-mpanel-ico {background-position: -47px -131px;}
+ .u-mpanel-left:hover .u-mpanel-ico {background-position: -68px -131px;}
+ 
+ .u-mpanel-right .u-mpanel-ico {background-position: -47px -152px;}
+ .u-mpanel-right:hover .u-mpanel-ico {background-position: -68px -152px;}
+ 
+ .u-mpanel-bw .u-mpanel-ico {background-position: -5px -152px;}
+ .u-mpanel-bw:hover .u-mpanel-ico {background-position: -26px -152px;}
+
+.u-mpanel-hide .u-mpanel-ico {width: 14px; height: 9px; margin-top: -4px; margin-left: -7px; background-position: -3px -174px;}
+.u-mpanel-hide:hover .u-mpanel-ico, .u-mpanel-hidden .u-mpanel-ico  {background-position: -24px -174px;}
+
+.u-mpanel-stock .u-mpanel-ico {width: 14px; height: 9px; margin-top: -4px; margin-left: -7px; background-position: -47px -174px;}
+.u-mpanel-stock:hover .u-mpanel-ico {background-position: -67px -174px;}
+
+.u-mpanel-wait .u-mpanel-ico { width: 16px; height: 16px; margin:-8px 0 0 -8px; background: url('/.s/img/icon/ajsml.gif') no-repeat 0 0!important }
+
+.u-mpanel-spam.hidden{ display:none }
+
+.u-mpanel-tooltip {
+ margin-bottom: 15px;
+ visibility: hidden;
+ opacity: 0;
+ position: absolute;
+ bottom: 100%;
+ right: -16px;
+ margin-left: -100px;
+ text-align: right;
+ padding: 5px 12px;
+ border-radius: 4px;
+ background-color: #000;
+ background-color: rgba(0, 0, 0, 0.7);
+ color: #fff;
+ font: 400 11px 'PT Sans', Arial, sans-serif;
+ line-height: 1.5;
+ white-space: nowrap;
+ transition: all .2s ease-out;
+}
+.u-mpanel-tooltip:before {
+ position: absolute;
+ display: block;
+ content: "";
+ top: 100%;
+ left: 0;
+ width: 100%;
+ height: 12px;
+}
+.u-mpanel-tooltip:after {
+ position: absolute;
+ display: block;
+ content: "";
+ top: 100%;
+ right: 21px;
+ margin: 0 0 0 -6px;
+ border: 6px solid rgba(0, 0, 0, 0);
+ border-top-color: #000;
+ border-top-color: rgba(0, 0, 0, 0.7);
+}
+.u-mpanel-l li:hover .u-mpanel-tooltip {
+ visibility: visible;
+ opacity: 1;
+ margin-bottom: 10px;
+}
+ 
+ 
+ /*--------- Reverse ---------*/
+ 
+ .u-mpanel.right .u-mpanel-l {
+ padding: 0 3px 0 0;
+ margin: 0 0 0 15px !important;
+ right: inherit;
+ left: -10px;
+ border-radius: 0 13px 13px 0;
+}
+ 
+.u-mpanel.open.right .u-mpanel-l {
+ padding: 0 3px 0 10px;
+ left: 0;
+}
+.u-mpanel.right {
+ margin: 0 10px 0 0;
+} 
+.u-mpanel.right .u-mpanel-tooltip {
+ left: -16px;
+ right: inherit;
+ margin-right: -100px;
+ margin-left: 0;
+ text-align: left;
+}
+.u-mpanel.right .u-mpanel-tooltip:before {
+ right: 0;
+ left: inherit; 
+}
+.u-mpanel.right .u-mpanel-tooltip:after {
+ top: 100%;
+ left: 21px;
+ right: inherit;
+ margin: 0 -6px 0 0;
+} 
+ 
+
+.u-mpanel.right.photo-view,.u-mpanel.video-view {
+ margin-top: -5px;
+}
+ 
+.u-mpanel-ud .u-mpanel-ico {background-position: -5px -197px;}
+.u-mpanel-ud:hover .u-mpanel-ico {background-position: -26px -197px;}
+
+.u-mpanel-rank .u-mpanel-ico {background-position: -47px -196px;}
+.u-mpanel-rank:hover .u-mpanel-ico {background-position: -68px -196px;}
