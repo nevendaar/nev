@@ -198,3 +198,16 @@ input {
   display: none   !important;
   visibility: hidden !important;
 }
+
+#switch_to_pda_blk {
+  margin: 0 -45px;
+  background: #777;
+  > a {
+    width: 100%;
+    display: block;
+    padding: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}

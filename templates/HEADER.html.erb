@@ -1,4 +1,11 @@
-﻿<header class="header">
+﻿<% uif('$USER_AGENT_PDA$') { %>
+    <div id="switch_to_pda_blk">
+        <a href="/pda<%= c '$REQUEST_URI$' %>">
+            Switch to mobile version
+        </a>
+    </div>
+<% }.endif! %>
+<header class="header">
     <a href="/" class="logo" title="Всё о серии игр Disciples-I, II, III. Новости, скриншоты, карты и саги.">
         <img src="/site/logo.gif" alt="DISCIPLES">
     </a>
