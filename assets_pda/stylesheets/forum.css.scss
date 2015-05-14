@@ -6,6 +6,13 @@ $topic-border-radius: 4px;
   @extend h3;
 }
 
+// Paging
+.switchDigit {
+  border: 1px solid #F6C577;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
 .forumNameTd, .threadNametd {
   padding: 2px 0;
   > div {
