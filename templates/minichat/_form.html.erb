@@ -49,10 +49,7 @@
         </table>
     <% }.endif! %>
 
-    <% uif('$FLD_CUSTOM1$') { %>
-        <%# Потому что $FLD_CUSTOM1$ выводит много лишнего %>
-        <input id="mchatC1F" name="custom1" class="mchat" value="" type="hidden">
-    <% }.endif! %>
+    <%= c '$FLD_CUSTOM1$' %>
 
     <%= c '$FLD_CUSTOM2$' %>
 
