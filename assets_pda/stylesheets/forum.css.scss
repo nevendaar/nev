@@ -158,6 +158,18 @@ form[name='searchform'] {
     @extend .form-control;
     display: inline-block;
   }
+  .fFastNavTd > select.fastNav {
+    width: 83%;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    margin-right: -4px;
+  }
+  .fFastNavTd > input.fastNav {
+    width: 15%;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-top: -1px;
+  }
 }
 
 .forum_threadpage {
