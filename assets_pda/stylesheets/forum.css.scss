@@ -7,7 +7,23 @@ $topic-border-radius: 4px;
 }
 
 // Paging
-.switchDigit {
+.switches {
+  margin: 5px 0;
+  .pagesInfo, .switchActive, .switch {
+    float: left;
+  }
+  .pagesInfo {
+    width: 100%;
+  }
+  .switchActive, .switch {
+    padding: 2px 5px;
+  }
+  .switchBack, .switchDigit, .switchNext {
+    margin: -2px -3px;
+  }
+}
+
+.switchBack, .switchDigit, .switchNext {
   border: 1px solid #F6C577;
   border-radius: 3px;
   padding: 2px 5px;
