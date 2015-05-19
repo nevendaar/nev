@@ -35,12 +35,18 @@
                             <a href="<%= c '$_PROFILE_URL$' %>">
                                 <b><%= c '$_USERNAME$' %></b>
                             </a>
-                            <% uif('$_RANK_NAME$') { %>
-                                Ранг: <%= c '$_RANK$' %>
-                                [ <%= rank_name '$_RANK$', '$_MSN$', '$_RANK_NAME$', '$_GENDER_ID$' %> ]
-                            <% }.endif! %>
                         </td>
                     </tr>
+
+                    <% uif('$_RANK_NAME$') { %>
+                        <tr>
+                            <th>Ранг</th>
+                            <td>
+                                <%= c '$_RANK$' %>
+                                [ <%= rank_name '$_RANK$', '$_MSN$', '$_RANK_NAME$', '$_GENDER_ID$' %> ]
+                            </td>
+                        </tr>
+                    <% }.endif! %>
 
                     <% uif('$_BANNED_TILL$') { %>
                         <tr>
