@@ -1,6 +1,23 @@
 Changelog
 =========
 
+## `u_default` helper - 19.05.2015
+
+Добавлен хэлпер `u_default`, который позволяет указывать значение по умолчанию
+для какого-либо юкозового кода (аналог выражения `variable || 'default'` в js и ruby)
+
+Пример:
+
+```ruby
+u_default '$AVATAR_URL$', '/.s/img/icon/profile.png'
+```
+
+Результат:
+
+```erb
+<?if($AVATAR_URL$)?>$AVATAR_URL$<?else?>/.s/img/icon/profile.png<?endif?>
+```
+
 ## Аватарки в чате - 15.05.2015
 
 Убрал старый костыльный метод вывода аватарок в миничате.

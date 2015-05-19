@@ -3,7 +3,7 @@
         <% uif('$USERNAME$') { %>
             <a href="/index/8-<%= c '$USER_ID$' %>" class="profile-link">
         <% }.endif! %>
-            <img src="<%= c '$AVATAR_URL$' %>" alt="<%= c '$NAME$' %>">
+            <img src="<%= u_default '$AVATAR_URL$', '/.s/img/icon/profile.png' %>" alt="<%= c '$NAME$' %>">
         <% uif('$USERNAME$') { %>
             </a>
         <% }.endif! %>

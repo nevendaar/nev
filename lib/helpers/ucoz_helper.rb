@@ -94,6 +94,11 @@ module UcozHelper
   end
   alias_method :uifnot_str, :ucoz_ifnot_str
 
+  # TODO: Add test!
+  def u_default(code, default)
+    ucoz_if_str(code){ |s| s << code }.else { |s| s << default }.endif!
+  end
+
   def unclosed_conditions
     @cond_operators.count { |c| !c.closed? }
   end
