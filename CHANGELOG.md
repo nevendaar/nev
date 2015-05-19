@@ -1,22 +1,26 @@
 Changelog
 =========
 
-## `u_default` helper - 19.05.2015
+## `u_default` and `rating_stars` helpers - 19.05.2015
 
-Добавлен хэлпер `u_default`, который позволяет указывать значение по умолчанию
-для какого-либо юкозового кода (аналог выражения `variable || 'default'` в js и ruby)
+* Добавлен хэлпер `u_default`, который позволяет указывать значение по умолчанию
+  для какого-либо юкозового кода
+  (аналог выражения `variable || 'default'` в js и ruby)
 
-Пример:
+  Пример:
 
-```ruby
-u_default '$AVATAR_URL$', '/.s/img/icon/profile.png'
-```
+  ```ruby
+  u_default '$AVATAR_URL$', '/.s/img/icon/profile.png'
+  ```
 
-Результат:
+  Результат:
 
-```erb
-<?if($AVATAR_URL$)?>$AVATAR_URL$<?else?>/.s/img/icon/profile.png<?endif?>
-```
+  ```erb
+  <?if($AVATAR_URL$)?>$AVATAR_URL$<?else?>/.s/img/icon/profile.png<?endif?>
+  ```
+
+* А хэлперу `rating_stars` теперь можно передавать аргументы так же, как и
+  оригинальному коду `$RSTARS$`.
 
 ## Аватарки в чате - 15.05.2015
 

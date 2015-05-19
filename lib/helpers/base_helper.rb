@@ -52,8 +52,11 @@ module BaseHelper
     nil
   end
 
-  def rating_stars
-    ucoz_injection "$RSTARS$('12', '/site/stars.png', '1', 'float')"
+  # форма оценки материалов в виде звезд
+  # action[1-can vote; 0-read only]
+  # type[float/int/half]
+  def rating_stars(size = 12, img_path = '/site/stars.png', action = 1, type = :float)
+    ucoz_injection "$RSTARS$('#{size}', '#{img_path}', '#{action}', '#{type}')"
   end
 
   def vk_like_btn

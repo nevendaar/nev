@@ -59,8 +59,8 @@
                     <td colspan="2" class="eDetails" style="text-align:center;">
                         <% uif('$TAGS$') { %><div class="tags">Теги: <i><%= c('$TAGS$') %></i></div><% }.endif! %>
                         <% uif('$RATING$') { %>
-                            <div style="margin: 0px auto;width: 155px;"><%# TODO: rewrite rating_stars helper! %>
-                                <%= i "$RSTARS$('30', 'http://s6.ucoz.net/img/stars/3/30.png', '1', 'float')" %>
+                            <div style="margin: 0px auto;width: 155px;">
+                                <%= rating_stars 30, '/.s/img/stars/3/30.png' %>
                             </div>
                         <% }.endif! %>
                     </td>
