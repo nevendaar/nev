@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## PDA: message sending to chat - 22.05.2015
+
+Теперь можно отправлять сообщения в миничат в PDA-режиме.
+
+Подробнее в [самом шаблоне](templates_pda/pages/minichat.html.erb).
+
 ## `u_default` and `rating_stars` helpers - 19.05.2015
 
 * Добавлен хэлпер `u_default`, который позволяет указывать значение по умолчанию

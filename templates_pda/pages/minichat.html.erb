@@ -1,0 +1,36 @@
+﻿<%#
+    На самом деле содержимое этого файла вручную вставляется в качестве контента
+    на страницу 110 (/index/31-110-0-1-2), потому что юкоз не создаёт отдельного
+    PDA-шаблона для этой страницы. Вместо этого он выводит обычный шаблон, в нём
+    мы выводим код $CONTENT$, вот это и есть его содержимое.
+ %>
+
+<% uif(0) { %>
+    RTFM! https://github.com/nevendaar/nev/blob/master/templates_pda/pages/minichat.html.erb
+<% }.endif! %>
+
+<% uif('$USER_LOGGED_IN$', group_is('$GROUP_ID$', :not, :user, :imp_form, :banned)) { %>
+    <form id="MCaddFrm">
+        <input type="hidden" name="a" value="18">
+        <input type="hidden" name="numa" id="numa832" value="0">
+        <input type="hidden" id="ajaxFlag" name="ajax" value="1">
+        <%# See 'templates/minichat/_form.html.erb' %>
+        <div class="row form-group">
+          <div class="col-xs-2">
+                <img id="mc-reload-btn" src="/chatbtn/mcr.gif">
+            </div>
+            <div class="col-xs-10">
+                <textarea id="mchatMsgF" name="mcmessage" class="mchat form-control" placeholder="Сообщение" maxlength="500" required></textarea>
+            </div>
+        </div>
+        <%# TODO: captcha? %>
+        <div class="row form-group">
+            <div class="col-xs-12">
+                <input type="submit" value="OK" id="mchatBtn" class="mchat btn btn-success btn-block">
+                <img alt="Loading..." style="display:none;" id="mchatAjax" src="/.s/img/fr/ajax3.gif">
+            </div>
+        </div>
+    </form>
+<% }.endif! %>
+
+<div id="mc-window"></div>

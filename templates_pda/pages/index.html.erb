@@ -52,15 +52,6 @@
                 </div>
             </div>
         </div>
-    <% }.elsif(code_is '$URI_ID$', "'page110'") { %>
-        <div id="mc-window"></div>
-        <%= minichat_form %>
-        <% uif('$USER_LOGGED_IN$') { %>
-            <div id="mc-smiles" data-female="<% uif(female) { %>1<% }.else { %>0<% }.endif! %>"></div>
-        <% }.endif! %>
-        <script type="text/javascript">
-            $('#changelink').attr('title', 'Форум').attr('href', '/forum/');
-        </script>
     <% }.else { %>
         <div class="row">
             <div class="col-md-12">
