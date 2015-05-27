@@ -6,8 +6,9 @@ require 'erb'
 require 'yaml'
 require 'pathname'
 
-require_relative 'lib/template_compiler'
+require_relative 'lib/http_engine'
 require_relative 'lib/log_formatter'
+require_relative 'lib/template_compiler'
 
 Bundler.require
 
