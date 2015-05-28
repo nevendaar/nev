@@ -20,11 +20,36 @@
     padding-left: 35px;
     min-height: 30px;
     line-height: 30px;
+    font-size: 16pt;
   }
   h2.leaders {
     background: url('/Disciples2/Rasi/general/75245697.gif') no-repeat;
     &:after {
       content: 'Лидеры';
+    }
+  }
+  h2.warriors {
+    background: url('/Disciples2/Rasi/general/Wariar.gif') no-repeat;
+    &:after {
+      content: 'Воины';
+    }
+  }
+  h2.archers {
+    background: url('/Disciples2/Rasi/general/Archer.gif') no-repeat;
+    &:after {
+      content: 'Лучники';
+    }
+  }
+  h2.wizards {
+    background: url('/Disciples2/Rasi/general/Magic.gif') no-repeat;
+    &:after {
+      content: 'Маги';
+    }
+  }
+  h2.support {
+    background: url('/Disciples2/Rasi/general/support.gif') no-repeat;
+    &:after {
+      content: 'Юниты поддержки';
     }
   }
   &.legions {

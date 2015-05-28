@@ -57,6 +57,8 @@ module PagesHelper
   def d2_unit_stat(attr_key, val)
     return 'Нет' if val == :none
     case attr_key
+      when :damage, :weapon_type
+        [val].flatten.uniq.join(' / ')
       when :damage_type
         [val].flatten.uniq.map { |v| D2_UNIT_IMMUNITIES[v] }.join(' / ')
       when :immune, :resist
@@ -66,7 +68,7 @@ module PagesHelper
       when :expirience
         "0 / #{val}"
       when :accuracy
-        "#{val}%"
+        [val].flatten.uniq.map { |v| "#{v}%" }.join(' / ')
       when :targets
         D2_UNIT_TARGETS[val]
       else

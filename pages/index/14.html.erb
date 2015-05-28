@@ -1,0 +1,117 @@
+﻿<% @params[:back_page_id] = 73 %>
+<% @params[:race_class] = 'legions' %>
+<% @params[:race_name] = 'Легионы проклятых' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="warriors"></h2>
+
+    <%= d2_unit_table(
+                'Одержимый',
+                '/Disciples2/Rasi/Ligion/warrior/1.jpg', {
+                level:        1,
+                expirience:   95,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Короткий меч',
+                accuracy:     80,
+                damage:       25,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Повелители демонов порабощают души самых сильных крестьян для
+            участия в дьявольских битвах.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Берсерк',
+                '/Disciples2/Rasi/Ligion/warrior/2.jpg', {
+                level:        2,
+                expirience:   550,
+                hp:           170,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевые топоры',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Берсеркер всегда бросается в бой с отчаянной решимостью, готовый
+            сражаться до тех пор, пока последний враг не испустит дух.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Темный паладин',
+                '/Disciples2/Rasi/Ligion/warrior/3.jpg', {
+                level:        3,
+                expirience:   1050,
+                hp:           220,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевой топор',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Душами этих некогда святых воинов овладели демоны, их верная служба
+            Церкви осталась далеко в прошлом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Воин Ада',
+                '/Disciples2/Rasi/Ligion/warrior/4.jpg', {
+                level:        4,
+                expirience:   1725,
+                hp:           270,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Адский меч',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Эти рыцари, некогда служившие Всевышнему, продали свои души Бетрезену.
+            В адских когортах их научили заращивать на себе самые ужасные раны.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Сатир',
+                '/Disciples2/Rasi/Ligion/warrior/5.jpg', {
+                level:        1,
+                expirience:   475,
+                hp:           250,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  %w[Удар Яд],
+                accuracy:     [80, 40],
+                damage:       [60, 15],
+                damage_type:  [:weapon, :death],
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Сатир прячет свое бесформенное тело в подземном лабиринте.
+            Немногие могут выдержать его неистовую атаку.
+        DESC
+        ) %>
+<% end %>
