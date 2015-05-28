@@ -1,0 +1,75 @@
+﻿<% @params[:back_page_id] = 73 %>
+<% @params[:race_class] = 'legions' %>
+<% @params[:race_name] = 'Легионы проклятых' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="archers"></h2>
+
+    <%= d2_unit_table(
+                'Горгулья',
+                '/Disciples2/Rasi/Ligion/archer/1.jpg', {
+                level:        1,
+                expirience:   400,
+                hp:           90,
+                armor:        40,
+                immune:       :poison,
+                resist:       :mind,
+                weapon_type:  'Осколки камня',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :earth,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Те, кто слепо повиновался приказам жестоких командиров, после смерти
+            превращаются в каменных демонов; в адском огне их тела становятся
+            столь же каменными, как и их души.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Мраморная Горгулья',
+                '/Disciples2/Rasi/Ligion/archer/2.jpg', {
+                level:        2,
+                expirience:   1650,
+                hp:           150,
+                armor:        60,
+                immune:       :poison,
+                resist:       :mind,
+                weapon_type:  'Осколки камня',
+                accuracy:     80,
+                damage:       65,
+                damage_type:  :earth,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Мраморные горгульи - крылатые демоны шестого круга Ада; они
+            невосприимчивы к направленным на сознание атакам, а каменная шкура
+            делает их почти неуязвимыми.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Ониксовая Горгулья',
+                '/Disciples2/Rasi/Ligion/archer/3.jpg', {
+                level:        3,
+                expirience:   2500,
+                hp:           170,
+                armor:        65,
+                immune:       :poison,
+                resist:       :mind,
+                weapon_type:  'Осколки камня',
+                accuracy:     80,
+                damage:       85,
+                damage_type:  :earth,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Закаленные огнем преисподней, Ониксовые горгульи являются одними из
+            самых сильных бойцов армии Бетрезена.
+        DESC
+        ) %>
+<% end %>
