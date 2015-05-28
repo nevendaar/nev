@@ -1,0 +1,154 @@
+﻿<% @params[:back_page_id] = 73 %>
+<% @params[:race_class] = 'legions' %>
+<% @params[:race_name] = 'Легионы проклятых' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <%= d2_unit_table(
+                'Ашкаэль',
+                '/Disciples2/Rasi/Ligion/leader/1.jpg', {
+                level:        1,
+                expirience:   9000,
+                hp:           900,
+                armor:        50,
+                immune:       :disarmor,
+                resist:       :none,
+                weapon_type:  'Адский взрыв',
+                accuracy:     95,
+                damage:       250,
+                damage_type:  :life,
+                initiative:   90,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Командующий 80 когортами Ада - Ашкаэль - избран Бетрезеном для
+            неусыпной охраны столицы Проклятых.
+        DESC
+        ) %>
+
+    <h2 class="leaders"></h2>
+
+    <%= d2_unit_table(
+                'Герцог',
+                '/Disciples2/Rasi/Ligion/leader/2.jpg', {
+                level:        1,
+                expirience:   150,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Адский меч',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   3,
+                moves:        25,
+                skills:       [:flying, :artefacts]
+        }, <<-DESC
+            Его воинственный дух ведет демонов в бой - когда их возглавляет
+            Герцог, им не страшны никакие противники.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Архидьявол',
+                '/Disciples2/Rasi/Ligion/leader/3.jpg', {
+                level:        1,
+                expirience:   150,
+                hp:           65,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Пламя',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6,
+                leadership:   3,
+                moves:        20,
+                skills:       [:flying, :scrolls, :spheres]
+        }, <<-DESC
+            Архидьявол - хранитель запретного знания, поэтому ему ведомы тайны
+            магических жезлов и свитков.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Советник',
+                '/Disciples2/Rasi/Ligion/leader/4.jpg', {
+                level:        1,
+                expirience:   145,
+                hp:           90,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Арбалет',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1,
+                leadership:   3,
+                moves:        35,
+                skills:       [:flying, :boots]
+        }, <<-DESC
+            Советник ведет передовые отряды Проклятых - благодаря быстрым
+            крыльям ему не страшны никакие природные преграды.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Баронесса',
+                '/Disciples2/Rasi/Ligion/leader/5.jpg', {
+                level:        1,
+                expirience:   120,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Ужас',
+                accuracy:     80,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 1,
+                leadership:   1,
+                moves:        20,
+                skills:       [:flying, :rod_hoist]
+        }, <<-DESC
+            Баронесса способна превратить цветущую долину в выжженную пустыню с
+            потоками лавы.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Вор',
+                '/Disciples2/Rasi/Ligion/leader/6.jpg', {
+                level:        1,
+                expirience:   95,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Кинжалы',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   0,
+                moves:        25,
+                skills:       :none
+        }, <<-DESC
+            Вор является непревзойденным мастером диверсий и шпионажа, каждый
+            раз выполняя порученные ему задания.
+        DESC
+        ) %>
+<% end %>

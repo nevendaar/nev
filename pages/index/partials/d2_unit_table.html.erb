@@ -1,0 +1,23 @@
+<% unit_attrs = @locals[:unit_attrs] %>
+<table class="d2-unit-stats">
+    <caption><%= @locals[:unit_name] %></caption>
+    <tr>
+        <td class="portrait" rowspan="<%= unit_attrs.size %>">
+            <img alt="" src="<%= @locals[:img_path] %>">
+        </td>
+        <th><%= D2_UNIT_ATTRS[:level] %></th>
+        <td><%= unit_attrs[:level] %></td>
+    </tr>
+    <% D2_UNIT_ATTRS.drop(1).each do |arr| %>
+        <% next if unit_attrs[arr.first].nil? %>
+        <tr>
+            <th><%= arr.last %></th>
+            <td><%= d2_unit_stat(arr.first, unit_attrs[arr.first]) %></td>
+        </tr>
+    <% end %>
+    <tr>
+        <td class="description" colspan="3">
+            <p><%= @locals[:unit_desc].strip.gsub("\n\n", '</p><p>') %></p>
+        </td>
+    </tr>
+</table>

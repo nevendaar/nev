@@ -1,0 +1,63 @@
+.back-btn {
+  img {
+    border: 0;
+  }
+}
+
+.d2race {
+  h1, h2 {
+    font-family: 'Monotype Corsiva';
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    padding-left: 53px;
+    min-height: 50px;
+    line-height: 50px;
+  }
+  h2 {
+    padding-left: 35px;
+    min-height: 30px;
+    line-height: 30px;
+  }
+  h2.leaders {
+    background: url('/Disciples2/Rasi/general/75245697.gif') no-repeat;
+    &:after {
+      content: 'Лидеры';
+    }
+  }
+  &.legions {
+    h1 {
+      background: url('/Disciples2/Rasi/general/legion.gif') no-repeat;
+    }
+  }
+}
+
+.d2-unit-stats {
+  margin: 0 auto;
+  width: 550px;
+  caption {
+    font-family: 'Monotype Corsiva';
+    font-size: 14pt;
+    font-weight: bold;
+  }
+  td.portrait {
+    width: 120px;
+    img {
+      border: 0;
+    }
+  }
+  th {
+    width: 160px;
+    text-align: left;
+    padding-left: 5px;
+    &:after {
+      content: ':';
+    }
+  }
+  td.description {
+    padding: 10px 3px;
+    text-align: justify;
+  }
+}

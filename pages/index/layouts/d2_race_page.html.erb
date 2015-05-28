@@ -1,0 +1,10 @@
+<% if @params[:back_page_id] %>
+    <a href="/index/0-<%= @params[:back_page_id] %>" class="back-btn">
+        <img alt="Back" src="/site/back.gif">
+    </a>
+<% end %>
+
+<div class="d2race <%= @params[:race_class] %>">
+    <h1><%= @params[:race_name] %></h1>
+    <% yield if block_given? %>
+</div>
