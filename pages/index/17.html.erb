@@ -1,0 +1,183 @@
+﻿<% @params[:back_page_id] = 73 %>
+<% @params[:race_class] = 'legions' %>
+<% @params[:race_name] = 'Легионы проклятых' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="support"></h2>
+
+    <%= d2_unit_table(
+                'Чёрт',
+                '/Disciples2/Rasi/Ligion/support/1.jpg', {
+                level:        1,
+                expirience:   275,
+                hp:           170,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   35,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Эта нечестивая тварь наводит ужас на смертных к вящей славе
+            князя Тьмы Бетрезена, в бою сей воин почти непобедим.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Демон',
+                '/Disciples2/Rasi/Ligion/support/2.jpg', {
+                level:        2,
+                expirience:   850,
+                hp:           270,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       80,
+                damage_type:  :weapon,
+                initiative:   35,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Демоны населяют последние круги Ада и своей силой превосходят
+            большинство других его обитателей.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Молох',
+                '/Disciples2/Rasi/Ligion/support/3.jpg', {
+                level:        3,
+                expirience:   2275,
+                hp:           370,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       110,
+                damage_type:  :weapon,
+                initiative:   35,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Молохи приобретают силу и могущество, пожирая души тех, кого убивают.
+            В бою они не жалеют своих противников.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Повелитель демонов',
+                '/Disciples2/Rasi/Ligion/support/4.jpg', {
+                level:        4,
+                expirience:   2650,
+                hp:           470,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Топор',
+                accuracy:     80,
+                damage:       170,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Повелитель демонов - один из владык Ада. Он ведет армии Бетрезена
+            к славе и величию, сметая все преграды на своем пути.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тварь',
+                '/Disciples2/Rasi/Ligion/support/5.jpg', {
+                level:        4,
+                expirience:   3100,
+                hp:           420,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       70,
+                damage_type:  :weapon,
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Исполинская Тварь - истинное воплощение Зла, как гласят древние
+            легенды, еще никому не удавалось уйти от нее.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Повелитель Ада',
+                '/Disciples2/Rasi/Ligion/support/6.jpg', {
+                level:        5,
+                expirience:   3600,
+                hp:           600,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Адский клинок', 'Окаменение'],
+                accuracy:     [80, 50],
+                damage:       140,
+                damage_type:  [:weapon, :mind],
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Повелитель Ада редко покидает адские бездны.
+            Его появление вселяет страх даже в самых бывалых воинов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Владыка',
+                '/Disciples2/Rasi/Ligion/support/7.jpg', {
+                level:        5,
+                expirience:   3875,
+                hp:           570,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Адский клинок', 'Ожог'],
+                accuracy:     [80, 70],
+                damage:       [170, 30],
+                damage_type:  [:weapon, :fire],
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Владыка держит в повиновении непокорных обитателей Ада,
+            но бывает, его помощь нужна и на земле.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тиамат',
+                '/Disciples2/Rasi/Ligion/support/8.jpg', {
+                level:        5,
+                expirience:   5000,
+                hp:           495,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Удар', 'Снижение повреждения'],
+                accuracy:     [80, 80],
+                damage:       100,
+                damage_type:  [:weapon, :mind],
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Бетрезен освобождает прикованного к адскому трону Тиамата только
+            во время своих самых больших безумств.
+        DESC
+        ) %>
+<% end %>

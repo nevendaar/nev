@@ -58,9 +58,9 @@ module PagesHelper
     return 'Нет' if val == :none
     case attr_key
       when :damage, :weapon_type
-        [val].flatten.uniq.join(' / ')
+        [val].flatten.join(' / ')
       when :damage_type
-        [val].flatten.uniq.map { |v| D2_UNIT_IMMUNITIES[v] }.join(' / ')
+        [val].flatten.map { |v| D2_UNIT_IMMUNITIES[v] }.join(' / ')
       when :immune, :resist
         [val].flatten.uniq.map { |v| D2_UNIT_IMMUNITIES[v] }.join(', ')
       when :skills
@@ -68,7 +68,7 @@ module PagesHelper
       when :expirience
         "0 / #{val}"
       when :accuracy
-        [val].flatten.uniq.map { |v| "#{v}%" }.join(' / ')
+        [val].flatten.map { |v| "#{v}%" }.join(' / ')
       when :targets
         D2_UNIT_TARGETS[val]
       else
