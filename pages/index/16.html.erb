@@ -1,0 +1,227 @@
+﻿<% @params[:back_page_id] = 73 %>
+<% @params[:race_class] = 'legions' %>
+<% @params[:race_name] = 'Легионы проклятых' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="wizards"></h2>
+
+    <%= d2_unit_table(
+                'Сектант',
+                '/Disciples2/Rasi/Ligion/mags/1.jpg', {
+                level:        1,
+                expirience:   75,
+                hp:           45,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Огненный дождь',
+                accuracy:     80,
+                damage:       15,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Люди, имеющие врожденную тягу ко злу - по приказу своего бога они
+            готовы истребить любого с помощью адского огня.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тёмный колдун',
+                '/Disciples2/Rasi/Ligion/mags/2.jpg', {
+                level:        2,
+                expirience:   500,
+                hp:           75,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Огненный дождь',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Благодаря своей магической силе Темные колдуны могут призвать
+            огненный дождь для уничтожения сил врага.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Ведьма',
+                '/Disciples2/Rasi/Ligion/mags/3.jpg', {
+                level:        2,
+                expirience:   600,
+                hp:           75,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Превращение',
+                accuracy:     80,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Ведьмы обитают в глуши лесов, на смертных осмелившихся потревожить
+            их покой они насылают порчу.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Двойник',
+                '/Disciples2/Rasi/Ligion/mags/4.jpg', {
+                level:        3,
+                expirience:   500,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Сменить облик или удар',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   80,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Двойник обладает способностью полностью менять свой облик, вводя
+            врагов в заблуждение и используя их возможности.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Демонолог',
+                '/Disciples2/Rasi/Ligion/mags/5.jpg', {
+                level:        3,
+                expirience:   1325,
+                hp:           105,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Огненный шторм',
+                accuracy:     80,
+                damage:       45,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Демонолог вызывает огненный шторм такой силы, что ни одно войско не
+            может защититься от него.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Колдунья',
+                '/Disciples2/Rasi/Ligion/mags/6.jpg', {
+                level:        3,
+                expirience:   1400,
+                hp:           115,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Превращение',
+                accuracy:     80,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Колдуньи могут превращать врагов во что пожелают.
+            После такой метаморфозы противнику уже не до битвы с врагом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Инкуб',
+                '/Disciples2/Rasi/Ligion/mags/7.jpg', {
+                level:        4,
+                expirience:   1125,
+                hp:           135,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Обратить в камень',
+                accuracy:     60,
+                damage:       0,
+                damage_type:  :earth,
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Своим смертоносным криком Инкуб превращает людей в камень,
+            который уже никому не причинит вреда.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Суккуб',
+                '/Disciples2/Rasi/Ligion/mags/8.jpg', {
+                level:        4,
+                expirience:   1500,
+                hp:           145,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Превращение',
+                accuracy:     40,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Суккубы - демоны, не желающие расставаться с земными наслаждениями.
+            Они могут превратить противника во что угодно.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Пандемониус',
+                '/Disciples2/Rasi/Ligion/mags/9.jpg', {
+                level:        4,
+                expirience:   2250,
+                hp:           135,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Огненный смерч',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Пандемониусу подвластен адский огонь, который за одно мгновение
+            может испепелить целые армии.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Модеус',
+                '/Disciples2/Rasi/Ligion/mags/10.jpg', {
+                level:        5,
+                expirience:   3100,
+                hp:           170,
+                armor:        0,
+                immune:       :none,
+                resist:       :fire,
+                weapon_type:  'Огненный смерч',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Пламя Модеуса, черпающего силы в геенне огненной,
+            несет врагам гибель, от которой невозможно убежать.
+        DESC
+        ) %>
+<% end %>
