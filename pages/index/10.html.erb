@@ -1,0 +1,74 @@
+﻿<% @params[:back_page_id] = 45 %>
+<% @params[:race_class] = 'empire' %>
+<% @params[:race_name] = 'Защитники империи' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="archers"></h2>
+
+    <%= d2_unit_table(
+                'Лучник', # /_ph/35/2/703318969.gif
+                '/Disciples2/Rasi/Imperia/Archer/Arch.jpg', {
+                level:        1,
+                expirience:   70,
+                hp:           45,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                accuracy:     80,
+                damage:       25,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Выстрелы Лучника быстры и настигают врага на большом расстоянии.
+            Это делает его грозой магов, которые обычно укрываются за спинами
+            своих более сильных товарищей.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Рейнджер', # /_ph/35/2/452223081.gif
+                '/Disciples2/Rasi/Imperia/Archer/Reindzh.jpg', {
+                level:        2,
+                expirience:   500,
+                hp:           90,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                accuracy:     85,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Меткий стрелок искусен в обращении с луком: его стрелы летят далеко
+            и единственное попадание может обернуться смертью для противника.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Ассассин', # /_ph/35/2/765703425.gif
+                '/Disciples2/Rasi/Imperia/Archer/Assasin.jpg', {
+                level:        3,
+                expirience:   1100,
+                hp:           135,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  %w[Кинжал Яд],
+                accuracy:     [85, 75],
+                damage:       [60, 20],
+                damage_type:  [:weapon, :death],
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Имперский ассассин использует тёмные искусства для убийства своих
+            противников.
+        DESC
+        ) %>
+<% end %>
