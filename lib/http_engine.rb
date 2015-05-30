@@ -6,9 +6,21 @@ module HTTPEngine
     login_host = 'login.uid.me'
     target_host = uid_config['host']
 
-    client = HTTPClient.new(agent_name: uid_config['user_agent'])
-    # Initial cookie is readonly, don't rewrite it!
-    client.set_cookie_store('config/initial_cookie.tsv')
+    client = Mechanize.new do |a|
+      a.log = Logger.new('log/mechanize.log')
+      a.user_agent = uid_config['user_agent']
+    end
+
+    cookie_defaults = {
+        domain: '.uid.me',
+        path: '/',
+        expires: (Date.today + 1).to_s
+    }
+
+    # Initial cookies
+    client.cookie_jar << Mechanize::Cookie.new(cookie_defaults.merge(name: 'lng', value: 'ru'))
+    client.cookie_jar << Mechanize::Cookie.new(cookie_defaults.merge(name: 'uPriv', value: '0'))
+    client.cookie_jar << Mechanize::Cookie.new(cookie_defaults.merge(domain: 'login.uid.me', name: 'UZRef', value: "http://#{target_host}/"))
 
     login_data = URI.encode_www_form(
         ajax: 0,
@@ -19,21 +31,8 @@ module HTTPEngine
         secmode: 0
     )
 
-    client.debug_dev = nil #$stderr
-
-    # UID login
-    result = client.post("http://#{login_host}/dolog/", login_data)
-    location_with_key = result.header['location'].first
-
-    # Подменяем домен для куки, чтобы отправить её в следующем запросе
-    bad_cookie = client.cookies.detect { |c| c.name == 'uNet' }
-    bad_cookie.domain = '.uid.me'
-    bad_cookie.domain_orig = '.uid.me'
-    # Заменяем старую куку новой
-    client.cookie_manager.add bad_cookie
-
-    # Site login
-    client.get(location_with_key, follow_redirect: true)
+    # UID login on the site
+    client.post("http://#{login_host}/dolog/", login_data)
 
     if block_given?
       yield(client, target_host)
@@ -42,8 +41,6 @@ module HTTPEngine
     end
 
     # Logout
-    client.get("http://#{target_host}/index/10", follow_redirect: true)
-
-    client.debug_dev = nil
+    client.get("http://#{target_host}/index/10")
   end
 end

@@ -24,7 +24,7 @@ gem 'uglifier', '>= 2.5.1'
 # Use V8 as js interpreter
 gem 'therubyracer', '~> 0.12.1'
 
-gem 'httpclient', '~> 2.6.0'
+gem 'mechanize', '2.7.3'
 
 # Use rspec for testing
 gem 'rspec', '>= 3.0.0'
