@@ -34,13 +34,15 @@ module HTTPEngine
     # UID login on the site
     client.post("http://#{login_host}/dolog/", login_data)
 
-    if block_given?
-      yield(client, target_host)
-    else
-      sleep 1
+    begin
+      if block_given?
+        yield(client, target_host)
+      else
+        sleep 1
+      end
+    ensure
+      # Logout
+      client.get("http://#{target_host}/index/10")
     end
-
-    # Logout
-    client.get("http://#{target_host}/index/10")
   end
 end
