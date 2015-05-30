@@ -20,3 +20,6 @@ build/*
 # Ignore secret settings
 config/auth.yml
 config/ftp.yml
+
+# Ignore all logs
+log/
