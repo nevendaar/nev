@@ -1,0 +1,154 @@
+﻿<% @params[:back_page_id] = 45 %>
+<% @params[:race_class] = 'empire' %>
+<% @params[:race_name] = 'Защитники империи' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <%= d2_unit_table(
+                'Мизраэль', # /_ph/35/2/685695623.gif
+                '/Disciples2/Rasi/Imperia/Lider/37099413.jpg', {
+                level:        1,
+                expirience:   9000,
+                hp:           900,
+                armor:        50,
+                immune:       :disarmor,
+                resist:       :none,
+                weapon_type:  'Праведный гнев',
+                accuracy:     95,
+                damage:       250,
+                damage_type:  :life,
+                initiative:   90,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Мизраэль призван помочь Защитникам Империи в их святом деле.
+            Он оберегает столицу, никогда не оставляя её без присмотра.
+        DESC
+        ) %>
+
+    <h2 class="leaders"></h2>
+
+    <%= d2_unit_table(
+                'Рыцарь Пегаса', # /_ph/35/2/487433229.gif
+                '/Disciples2/Rasi/Imperia/Lider/27554472.jpg', {
+                level:        1,
+                expirience:   150,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Длинный меч',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   3,
+                moves:        20,
+                skills:       [:flying, :artefacts]
+        }, <<-DESC
+            Рыцарь пегаса это благородный воин, несомый крыльями своего скакуна
+            над лесами и морями.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Архимаг', # /_ph/35/2/722216145.gif
+                '/Disciples2/Rasi/Imperia/Lider/03043063.jpg', {
+                level:        1,
+                expirience:   150,
+                hp:           65,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6,
+                leadership:   3,
+                moves:        20,
+                skills:       [:scrolls, :spheres]
+        }, <<-DESC
+            Хранитель тайного знания, Архимаг - единственный лидер в империи,
+            кто может использовать посохи и свитки.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Следопыт', # /_ph/35/2/622690996.gif
+                '/Disciples2/Rasi/Imperia/Lider/14337449.jpg', {
+                level:        1,
+                expirience:   145,
+                hp:           90,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Соколиная стрела',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1,
+                leadership:   3,
+                moves:        35,
+                skills:       :boots
+        }, <<-DESC
+            Следопыт легко покрывает огромные расстояния и часто выполняет
+            разведывательные миссии по приказу своего Императора.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Архангел', # /_ph/35/2/234828987.gif
+                '/Disciples2/Rasi/Imperia/Lider/87026479.jpg', {
+                level:        1,
+                expirience:   100,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечение',
+                accuracy:     100,
+                heal:         40,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1,
+                leadership:   1,
+                moves:        20,
+                skills:       [:flying, :rod_hoist]
+        }, <<-DESC
+            Архангел расширяет границы Империи, водружая Жезлы. Земля вокруг
+            них волшебным образом преображается и становится плодородной.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Вор', # /_ph/35/2/36570048.gif
+                '/Disciples2/Rasi/Imperia/Lider/23822535.jpg', {
+                level:        1,
+                expirience:   95,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Кинжалы',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   0,
+                moves:        25,
+                skills:       :none
+        }, <<-DESC
+            Воры являются мастерами обмана, поэтому они могут незаметно
+            пробраться в тыл врага и добыть необходимые Империи сведения.
+        DESC
+        ) %>
+<% end %>

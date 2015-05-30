@@ -13,6 +13,7 @@ module PagesHelper
       weapon_type:  'Тип оружия',
       accuracy:     'Точность',
       damage:       'Повреждения',
+      heal:         'Лечить', # TODO: более звучное название?
       damage_type:  'Тип атаки',
       initiative:   'Инициатива',
       targets:      'Зона поражения',
