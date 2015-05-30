@@ -1,0 +1,225 @@
+﻿<% @params[:back_page_id] = 45 %>
+<% @params[:race_class] = 'empire' %>
+<% @params[:race_name] = 'Защитники империи' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="warriors"></h2>
+
+    <%= d2_unit_table(
+                'Сквайр', # /_ph/35/2/478908576.gif
+                '/Disciples2/Rasi/Imperia/Warrior/Skv.jpg', {
+                level:        1,
+                expirience:   80,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Меч',
+                accuracy:     80,
+                damage:       25,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Сквайр благородно предлагает свою защиту более слабым
+            соотечественникам, отбиваясь от захватчиков своим мечом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Рыцарь', # /_ph/35/2/699888174.gif
+                '/Disciples2/Rasi/Imperia/Warrior/Knight.jpg', {
+                level:        2,
+                expirience:   475,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Меч',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Рыцарь использует свою божественную силу для защиты Империи от зла.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Охотник на ведьм', # /_ph/35/2/415335566.gif
+                '/Disciples2/Rasi/Imperia/Warrior/wichhunter.jpg', {
+                level:        2,
+                expirience:   475,
+                hp:           140,
+                armor:        0,
+                immune:       :mind,
+                resist:       :none,
+                weapon_type:  'Меч',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Охотник на ведьм неуязвим для атак на разум благодаря своему опыту
+            сражений с силами зла.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Имперский рыцарь', # /_ph/35/2/486155159.gif
+                '/Disciples2/Rasi/Imperia/Warrior/ImperialKniaght.jpg', {
+                level:        3,
+                expirience:   950,
+                hp:           200,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Копьё',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Чистая вера Имперского рыцаря побуждает его к защите невиновных,
+            делая его грозным соперником.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Инквизитор', # /_ph/35/2/120424738.gif
+                '/Disciples2/Rasi/Imperia/Warrior/Inkv.jpg', {
+                level:        3,
+                expirience:   950,
+                hp:           180,
+                armor:        0,
+                immune:       :mind,
+                resist:       :none,
+                weapon_type:  'Булава',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Давно посвятив себя делу искоренения зла, Инквизитор бьётся со
+            священной силой и неуязвим к атакам на разум.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Ангел', # /_ph/35/2/544502507.gif
+                '/Disciples2/Rasi/Imperia/Warrior/Angel.jpg', {
+                level:        4,
+                expirience:   1600,
+                hp:           225,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Освящённая пика',
+                accuracy:     80,
+                damage:       125,
+                damage_type:  :weapon, # TODO: check
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Ангел - посланник Всевышнего, его святое копьё поражает всех, кто угрожает Империи.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Паладин', # /_ph/35/2/515500201.gif
+                '/Disciples2/Rasi/Imperia/Warrior/paladin.jpg', {
+                level:        4,
+                expirience:   1600,
+                hp:           175,
+                armor:        30,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Длинный меч',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Паладин был одет в лучшую броню страны, чтобы стойко защищать своих
+            людей от нечестивых сил.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Великий Инквизитор', # /_ph/35/2/695732856.gif
+                '/Disciples2/Rasi/Imperia/Warrior/grandInkv.jpg', {
+                level:        4,
+                expirience:   800,
+                hp:           210,
+                armor:        0,
+                immune:       :mind,
+                resist:       :fire,
+                weapon_type:  'Святая булава',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Великий Инквизитор выдержал огни и муки Ада, чтобы устранить
+            влияние зла из государства.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Священный мститель', # /_ph/35/2/394195901.gif
+                '/Disciples2/Rasi/Imperia/Warrior/HolyAvenger.jpg', {
+                level:        5,
+                expirience:   2000,
+                hp:           250,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Длинный меч',
+                twice_attack: true,
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Священный мститель занят своей земной миссией уничтожения зла.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Защитник веры', # /_ph/35/2/268009786.gif
+                '/Disciples2/Rasi/Imperia/Warrior/Defender.jpg', {
+                level:        5,
+                expirience:   2100,
+                hp:           225,
+                armor:        30,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Меч',
+                accuracy:     80,
+                damage:       125,
+                damage_type:  :weapon,
+                initiative:   70,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Защитник веры защищается от нечестивых созданий,
+            противостоящих Всевышнему.
+        DESC
+        ) %>
+<% end %>

@@ -15,6 +15,7 @@ module PagesHelper
       damage:       'Повреждения',
       heal:         'Лечить', # TODO: более звучное название?
       damage_type:  'Тип атаки',
+      # twice_attack: 'Двойная атака', # hidden
       initiative:   'Инициатива',
       targets:      'Зона поражения',
       target_count: 'Количество целей',
@@ -55,10 +56,11 @@ module PagesHelper
     render 'pages/index/partials/d2_unit_table.html.erb', locals: locals
   end
 
-  def d2_unit_stat(attr_key, val)
+  def d2_unit_stat(attr_key, attrs)
+    val = attrs[attr_key]
     return 'Нет' if val == :none
     case attr_key
-      when :damage, :weapon_type
+      when :damage
         [val].flatten.join(' / ')
       when :damage_type
         [val].flatten.map { |v| D2_UNIT_IMMUNITIES[v] }.join(' / ')
@@ -72,6 +74,8 @@ module PagesHelper
         [val].flatten.map { |v| "#{v}%" }.join(' / ')
       when :targets
         D2_UNIT_TARGETS[val]
+      when :weapon_type
+        [val].flatten.join(' / ') + (attrs[:twice_attack] ? ' <b>(x2)</b>' : '')
       else
         val
     end

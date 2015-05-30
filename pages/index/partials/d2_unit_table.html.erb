@@ -12,7 +12,7 @@
         <% next if unit_attrs[arr.first].nil? %>
         <tr>
             <th><%= arr.last %></th>
-            <td><%= d2_unit_stat(arr.first, unit_attrs[arr.first]) %></td>
+            <td><%= d2_unit_stat(arr.first, unit_attrs) %></td>
         </tr>
     <% end %>
     <tr>
