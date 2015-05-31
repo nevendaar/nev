@@ -1,0 +1,161 @@
+﻿<% @params[:back_page_id] = 45 %>
+<% @params[:race_class] = 'empire' %>
+<% @params[:race_name] = 'Защитники империи' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="wizards"></h2>
+
+    <%= d2_unit_table(
+                'Ученик',
+                '/Disciples2/Rasi/Imperia/Magic/Appereance.jpg', {
+                level:        1,
+                expirience:   75,
+                hp:           35,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       15,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Ученик призывает молнии на вражеских воинов;
+            его волшебство поражает на большом расстоянии.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Маг',
+                '/Disciples2/Rasi/Imperia/Magic/Mag.jpg', {
+                level:        2,
+                expirience:   550,
+                hp:           65,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Метая молнии с удвоенной силой,
+            маг не испытывает милосердия к своим врагам.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Волшебник',
+                '/Disciples2/Rasi/Imperia/Magic/Wizzard.jpg', {
+                level:        3,
+                expirience:   1200,
+                hp:           95,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       45,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Волшебник - бесподобный заклинатель, он призывает мощные удары
+            молнии с небес.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Повелитель стихий',
+                '/Disciples2/Rasi/Imperia/Magic/Elementalist.jpg', {
+                level:        3,
+                expirience:   1500,
+                hp:           95,
+                armor:        0,
+                immune:       :none,
+                resist:       :air,
+                weapon_type:  'Вызов',
+                accuracy:     100,
+                damage:       0,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Повелитель стихий, Элементалист, в помощь своим соратникам вызывает
+            на поле боя могущественных элементалей воздуха.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Белый Маг',
+                '/Disciples2/Rasi/Imperia/Magic/WhiteMag.jpg', {
+                level:        4,
+                expirience:   2100,
+                hp:           125,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Белый маг использует чистую магию для помощи последователям
+            Всевышнего.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Титан',
+                '/Disciples2/Rasi/Imperia/Magic/Titan.jpg', {
+                level:        1,
+                expirience:   475,
+                hp:           250,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Кулак',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Существо, обладающее гигантской мощью и ростом.
+            Благодаря своей огромной силе легко крушит слуг Зла.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Элементаль Воздуха',
+                '/Disciples2/Rasi/Imperia/Magic/AirElement.jpg', {
+                level:        1,
+                expirience:   400,
+                hp:           100,
+                armor:        0,
+                immune:       :air,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Элементали Воздуха служат Повелителям стихий, которые призывают
+            их из Сферы Воздуха.
+        DESC
+        ) %>
+<% end %>
