@@ -1,0 +1,161 @@
+﻿<% @params[:back_page_id] = 45 %>
+<% @params[:race_class] = 'empire' %>
+<% @params[:race_name] = 'Защитники империи' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="support"></h2>
+
+    <%= d2_unit_table(
+                'Послушница',
+                '/Disciples2/Rasi/Imperia/Support/94155093.jpg', {
+                level:        1,
+                expirience:   80,
+                hp:           50,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечение',
+                accuracy:     100,
+                heal:         20,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Будучи начинающим лекарем, Послушница всегда готова облегчить
+            страдания раненного воина, дабы он мог дальше сражаться с нечистью.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Имперский Жрец',
+                '/Disciples2/Rasi/Imperia/Support/2.jpg', {
+                level:        2,
+                expirience:   475,
+                hp:           75,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечение',
+                accuracy:     100,
+                heal:         40,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Жрец посвятил всю свою жизнь служению Добру, поэтому он заботливо
+            ухаживает за раненым, совершая чудеса исцеления прямо на поле боя.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Монахиня',
+                '/Disciples2/Rasi/Imperia/Support/3.jpg', {
+                level:        2,
+                expirience:   425,
+                hp:           75,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечение',
+                accuracy:     100,
+                heal:         20,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Несмотря на небольшой опыт во врачевании ран, Монахиня призывает
+            Божью благодать для исцеления всех раненных в сражении.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Имперский Священник',
+                '/Disciples2/Rasi/Imperia/Support/4.jpg', {
+                level:        3,
+                expirience:   1275,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Исцеление',
+                accuracy:     100,
+                heal:         80,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Священник наделен даром врачевания; под его присмотром к раненому
+            возвращается большая часть жизненных сил.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Аббатиса',
+                '/Disciples2/Rasi/Imperia/Support/5.jpg', {
+                level:        3,
+                expirience:   1125,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечение',
+                accuracy:     100,
+                heal:         40,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Аббатиса, обращаясь к Всевышнему, просит его дать ей божественные
+            силы для исцеления раненых бойцов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Патриарх',
+                '/Disciples2/Rasi/Imperia/Support/6.jpg', {
+                level:        4,
+                expirience:   2000,
+                hp:           125,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  %w[Лечение Оживление],
+                accuracy:     100,
+                heal:         120,
+                damage_type:  [:life, :life],
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Владея тайным знанием, Патриарх способен своими молитвами и
+            обрядами воскрешать павших на поле боя воинов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Прорицательница',
+                '/Disciples2/Rasi/Imperia/Support/7.jpg', {
+                level:        4,
+                expirience:   2050,
+                hp:           125,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечение',
+                accuracy:     100,
+                heal:         70,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Прорицательница способна обращаться к Всевышнему напрямую. Благодаря
+            полученной силе, она способна излечивать раненых прямо на поле боя.
+        DESC
+        ) %>
+<% end %>
