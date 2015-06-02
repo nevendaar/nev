@@ -41,7 +41,7 @@
                     ]</b>
                 </div>
             <% }.endif! %>
-        <%= c('$MESSAGE$') %>
+        <% uif('$MESSAGE$') { %><%= c('$MESSAGE$') %><% }.else { %><%= c('$BRIEF$') %><% }.endif! %>
         <ul class="details">
             <% uif('$CAT_NAME$') { %><li>Категория: <a href="<%= c '$CAT_URL$' %>"><%= c '$CAT_NAME$' %></a></li><% }.endif! %>
             <li>Добавил: <a class="profile-link" href="/index/8-<%= c '$UID$' %>"><%= c '$USER$' %></a></li>
