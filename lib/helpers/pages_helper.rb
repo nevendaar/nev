@@ -80,4 +80,22 @@ module PagesHelper
         val
     end
   end
+
+  def race_btns(mode = :d2_units, active: :empire)
+    locals = {active: active}
+    case mode
+      when :d2_units
+        locals[:races] = {
+            empire:   '/index/0-45',
+            clans:    '/index/0-74',
+            legions:  '/index/0-73',
+            undead:   '/index/0-75',
+            elves:    '/index/0-76',
+            neutrals: '/index/0-77'
+        }
+      else
+        raise 'Unknown mode'
+    end
+    render 'pages/index/partials/race_btns.html.erb', locals: locals
+  end
 end

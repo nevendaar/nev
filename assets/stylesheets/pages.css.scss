@@ -4,6 +4,48 @@
   }
 }
 
+$race-btn-width: 180px;
+$race-btn-height: 50px;
+$race-list: (
+//     race-name img-name
+        empire   55633000,
+        clans    gnom,
+        legions  legion,
+        undead   undead,
+        elves    elfs,
+        neutrals neutral
+);
+
+.race-blc {
+  text-align: center;
+  margin: 0 auto;
+  width: #{$race-btn-width * 3 + 10};
+  img {
+    border: 0;
+  }
+}
+
+.race-btn {
+  background: url('/site/race-btns.gif') no-repeat;
+  width: $race-btn-width;
+  height: $race-btn-height;
+  display: inline-block;
+  img {
+    width: $race-btn-width;
+    height: $race-btn-height;
+  }
+  @for $i from 1 through length($race-list) {
+    $race: nth(nth($race-list, $i), 1);
+    $btn-bg-top: -$race-btn-height * ($i - 1);
+    &.#{$race} {
+      background-position: 0 $btn-bg-top;
+      &:hover, &.active {
+        background-position: -$race-btn-width $btn-bg-top;
+      }
+    }
+  }
+}
+
 .d2race {
   h1, h2 {
     font-family: 'Monotype Corsiva';
@@ -52,14 +94,11 @@
       content: 'Юниты поддержки';
     }
   }
-  &.empire {
-    h1 {
-      background: url('/Disciples2/Rasi/general/55633000.gif') no-repeat;
-    }
-  }
-  &.legions {
-    h1 {
-      background: url('/Disciples2/Rasi/general/legion.gif') no-repeat;
+  @each $race in $race-list {
+    &.#{nth($race, 1)} {
+      h1 {
+        background: url('/Disciples2/Rasi/general/#{nth($race, 2)}.gif') no-repeat;
+      }
     }
   }
 }

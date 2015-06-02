@@ -1,0 +1,8 @@
+<% active_btn = @locals[:active] %>
+<div class="race-blc">
+    <% @locals[:races].each do |race, path| %>
+        <a href="<%= path %>" class="race-btn <%= race %><%= ' active' if race == active_btn %>">
+            <img src="/site/null.gif" alt="<%= race %>"> <%# For users with disabled images %>
+        </a>
+    <% end %>
+</div>
