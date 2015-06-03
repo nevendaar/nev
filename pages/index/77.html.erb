@@ -1,0 +1,23 @@
+<% @params[:main_page] = true %>
+<% @params[:race_class] = 'neutrals' %>
+<% @params[:race_name] = 'Нейтралы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <div class="race-desc">
+        <img alt="" src="/Disciples2/Rasi/Hubert.jpg" align="left">
+        <p>
+            Про Disciples написано уже достаточно много. Обычно, каждый обзор
+            этой игры начинается довольно длинным и бестолковым объяснением того,
+            что Disciples - это никакой не клон Heroes of Might & Magic а
+            самостоятельная игра. Утверждение столь же смелое, сколь и очевидное.
+            Нельзя называть "сделанными под копирку" две игрушки только потому,
+            что у них один жанр. У Disciples и Heroes разная концепция,
+            другой мир и, наконец, другие ощущения.
+        </p>
+    </div>
+    <%= unit_links(
+                unique:     33,
+                neutrals_1: 34,
+                neutrals_2: 59
+        ) %>
+<% end %>

@@ -56,7 +56,10 @@ module PagesHelper
       warriors: 'Воины ближнего боя',
       archers: 'Воины дистанционного боя',
       wizards: 'Маги',
-      support: 'Воины поддержки'
+      support: 'Воины поддержки',
+      unique:  'Уникальные юниты',
+      neutrals_1: 'Нейтралы 1',
+      neutrals_2: 'Нейтралы 2'
   }.each { |_k, v| v.freeze }.freeze
 
   def d2_unit_table(name, img_path, attrs = {}, unit_desc = '')
