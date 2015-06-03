@@ -1,3 +1,7 @@
+.orange {
+  color: #daa520;
+}
+
 .back-btn {
   img {
     border: 0;
@@ -20,9 +24,6 @@ $race-list: (
   text-align: center;
   margin: 0 auto;
   width: #{$race-btn-width * 3 + 10};
-  img {
-    border: 0;
-  }
 }
 
 .race-btn {
@@ -47,6 +48,10 @@ $race-list: (
 }
 
 .d2race {
+  @extend .clearfix;
+  img {
+    border: 0;
+  }
   h1, h2 {
     font-family: 'Monotype Corsiva';
     display: table;
@@ -96,11 +101,34 @@ $race-list: (
   }
   @each $race in $race-list {
     &.#{nth($race, 1)} {
-      h1 {
+      h1:not(.orange) {
         background: url('/Disciples2/Rasi/general/#{nth($race, 2)}.gif') no-repeat;
       }
     }
   }
+  .race-desc {
+    p {
+      text-indent: 1.5em;
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+    img {
+      &[align='left']{
+        margin-right: 10px;
+      }
+      &[align='right']{
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.unit-links {
+  padding: 20px 220px;
+  font-size: 12pt;
+  font-family: 'Monotype Corsiva';
+  font-weight: bold;
+  text-align: center;
 }
 
 .d2-unit-stats {

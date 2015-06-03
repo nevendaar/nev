@@ -1,3 +1,4 @@
+<% h_tag = 'h1' %>
 <% if @params[:back_page_id] %>
     <a href="/index/0-<%= @params[:back_page_id] %>" class="back-btn">
         <img alt="Back" src="/site/back.gif">
@@ -5,6 +6,13 @@
 <% end %>
 
 <div class="d2race <%= @params[:race_class] %>">
-    <h1><%= @params[:race_name] %></h1>
+    <% if @params[:main_page] %>
+        <% h_tag = 'h2' %>
+        <h1 class="orange">
+            Расы Disciples 2.
+        </h1>
+        <%= race_btns(:d2_units, active: @params[:race_class].to_sym) %>
+    <% end %>
+    <%= "<#{h_tag}>" %><%= @params[:race_name] %><%= "</#{h_tag}>" %>
     <% yield if block_given? %>
 </div>

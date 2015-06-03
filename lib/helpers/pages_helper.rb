@@ -51,6 +51,14 @@ module PagesHelper
       rod_hoist: 'Водрузить жезл'
   }.each { |_k, v| v.gsub!(' ', '&nbsp;'); v.freeze }.freeze
 
+  UNIT_TYPE_FOR_LINK = {
+      leaders: 'Лидеры',
+      warriors: 'Воины ближнего боя',
+      archers: 'Воины дистанционного боя',
+      wizards: 'Маги',
+      support: 'Воины поддержки'
+  }.each { |_k, v| v.freeze }.freeze
+
   def d2_unit_table(name, img_path, attrs = {}, unit_desc = '')
     locals = {unit_name: name, img_path: img_path, unit_attrs: attrs, unit_desc: unit_desc}
     render 'pages/index/partials/d2_unit_table.html.erb', locals: locals
@@ -97,5 +105,9 @@ module PagesHelper
         raise 'Unknown mode'
     end
     render 'pages/index/partials/race_btns.html.erb', locals: locals
+  end
+
+  def unit_links(locals = {})
+    render 'pages/index/partials/unit_links.html.erb', locals: locals
   end
 end
