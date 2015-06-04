@@ -1,0 +1,95 @@
+﻿<% @params[:back_page_id] = 74 %>
+<% @params[:race_class] = 'clans' %>
+<% @params[:race_name] = 'Горные кланы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="archers"></h2>
+
+    <%= d2_unit_table(
+                'Метатель топоров',
+                '/Disciples2/Rasi/GNOM/archer/1.jpg', {
+                level:        1,
+                expirience:   100,
+                hp:           65,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Метательный топор',
+                accuracy:     80,
+                damage:       25,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Огромная сила и неустрашимый характер позволяют Метателю топоров
+            поразить любую цель на поле боя.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Арбалетчик',
+                '/Disciples2/Rasi/GNOM/archer/2.jpg', {
+                level:        2,
+                expirience:   550,
+                hp:           110,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Арбалет',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Их стрелы летят быстро и бьют точно в цель, поэтому каждый залп
+            Арбалетчиков несет смерть врагам.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Защитник горна',
+                '/Disciples2/Rasi/GNOM/archer/3.jpg', {
+                level:        3,
+                expirience:   1100,
+                hp:           155,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Арбалет',
+                accuracy:     80,
+                damage:       70,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Защитник горна тщательно готовит свое оружие к каждой битве;
+            стрелы его арбалета несут врагам верную смерть.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Метатель огня',
+                '/Disciples2/Rasi/GNOM/archer/4.jpg', {
+                level:        3,
+                expirience:   1100,
+                hp:           130,
+                armor:        0,
+                immune:       :none,
+                resist:       :fire,
+                weapon_type:  'Пламя',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Ни один враг не может устоять на поле боя, когда на него идет
+            стена огня, ниспосланная Метателем.
+        DESC
+        ) %>
+<% end %>

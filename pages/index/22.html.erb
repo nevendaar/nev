@@ -1,0 +1,139 @@
+﻿<% @params[:back_page_id] = 74 %>
+<% @params[:race_class] = 'clans' %>
+<% @params[:race_name] = 'Горные кланы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="support"></h2>
+
+    <%= d2_unit_table(
+                'Холмовой великан',
+                '/Disciples2/Rasi/GNOM/support/1.jpg', {
+                level:        1,
+                expirience:   400,
+                hp:           210,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар дубины',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :earth,
+                initiative:   30,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Великан Холмов обладает столь великой силой, что оружием
+            ему служат вырванные с корнем деревья.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Горный великан',
+                '/Disciples2/Rasi/GNOM/support/2.jpg', {
+                level:        2,
+                expirience:   1100,
+                hp:           310,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Каменные глыбы',
+                accuracy:     80,
+                damage:       90,
+                damage_type:  :earth,
+                initiative:   30,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Исполинский Горный великан с легкостью поднимает огромные
+            каменные глыбы и швыряет их во врагов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Ледяной великан',
+                '/Disciples2/Rasi/GNOM/support/3.jpg', {
+                level:        3,
+                expirience:   1950,
+                hp:           400,
+                armor:        0,
+                immune:       :water,
+                resist:       :none,
+                weapon_type:  'Осколки льда',
+                accuracy:     80,
+                damage:       120,
+                damage_type:  :water,
+                initiative:   30,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Ледяной великан спускается с холодных горных вершин, чтобы сражаться
+            под знаменами Кланов и крушить противника мечом холода.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Повелитель бурь',
+                '/Disciples2/Rasi/GNOM/support/4.jpg', {
+                level:        3,
+                expirience:   2450,
+                hp:           350,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :air,
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Они спускаются с заснеженных горных вершин, чтобы
+            обрушить на врага лавину смертоносных молний.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Сын Имира',
+                '/Disciples2/Rasi/GNOM/support/5.jpg', {
+                level:        4,
+                expirience:   3050,
+                hp:           500,
+                armor:        0,
+                immune:       :water,
+                resist:       :none,
+                weapon_type:  ['Ледяной меч', 'Мороз'],
+                accuracy:     [80, 85],
+                damage:       [150, 30],
+                damage_type:  [:water, :water],
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Величайших воинов Горных кланов зовут Сыны Имира.
+            Они настолько сильны, что могут убить противника одним ударом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Наместник Вотана',
+                '/Disciples2/Rasi/GNOM/support/6.jpg', {
+                level:        4,
+                expirience:   3500,
+                hp:           400,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Молния',
+                accuracy:     80,
+                damage:       80,
+                damage_type:  :air,
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Наместники Вотана в совершенстве владеют искусством ведения войны,
+            поэтому они являются самыми почитаемыми воинами.
+        DESC
+        ) %>
+<% end %>

@@ -1,0 +1,141 @@
+﻿<% @params[:back_page_id] = 74 %>
+<% @params[:race_class] = 'clans' %>
+<% @params[:race_name] = 'Горные кланы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="wizards"></h2>
+
+    <%= d2_unit_table(
+                'Травница',
+                '/Disciples2/Rasi/GNOM/mags/1.jpg', {
+                level:        1,
+                expirience:   95,
+                hp:           60,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Увелечение силы',
+                accuracy:     100,
+                damage:       '+25%',
+                damage_type:  :life,
+                initiative:   70,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Благодаря знанию лечебных трав, Травница может увеличивать
+            силу своих соратников.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Посвященная',
+                '/Disciples2/Rasi/GNOM/mags/2.jpg', {
+                level:        2,
+                expirience:   325,
+                hp:           90,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Увелечение силы',
+                accuracy:     100,
+                damage:       '+50%',
+                damage_type:  :life,
+                initiative:   70,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Магические зелья Посвященной увеличивают повреждения,
+            наносимые воинами врагу во время сражения.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Алхимик',
+                '/Disciples2/Rasi/GNOM/mags/3.jpg', {
+                level:        3,
+                expirience:   325,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Дополнительная атака',
+                accuracy:     100,
+                damage:       0,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Алхимики налагают на воинов чары, которые позволяют им атаковать
+            в битве на один раз больше.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Друид',
+                '/Disciples2/Rasi/GNOM/mags/4.jpg', {
+                level:        3,
+                expirience:   850,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Увелечение силы', 'Лечение'],
+                accuracy:     [100, 100],
+                damage:       '+75%',
+                # heal:         0, # TODO: а лечит на сколько?
+                damage_type:  [:life, :life],
+                initiative:   70,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Владея тайным знанием, Друид не только лечит своих союзников,
+            но и может увеличить силу их оружия.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Архидруид',
+                '/Disciples2/Rasi/GNOM/mags/5.jpg', {
+                level:        4,
+                expirience:   1450,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Увелечение силы', 'Лечение'],
+                accuracy:     [100, 100],
+                damage:       '+100%',
+                # heal:         0, # TODO: а лечит на сколько?
+                damage_type:  [:life, :life],
+                initiative:   70,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Архидруид во время битвы выдает воинам специальное зелье,
+            которое придает им большую ярость и силу в бою.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Йети',
+                '/Disciples2/Rasi/GNOM/mags/6.jpg', {
+                level:        1,
+                expirience:   700,
+                hp:           230,
+                armor:        0,
+                immune:       :none,
+                resist:       :water,
+                weapon_type:  'Ледяное дыхание',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :water,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Покрытые толстой шкурой Йети своим ледяным дыханием отправили
+            в могилу многих приспешников врага.
+        DESC
+        ) %>
+<% end %>

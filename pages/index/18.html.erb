@@ -1,0 +1,154 @@
+<% @params[:back_page_id] = 74 %>
+<% @params[:race_class] = 'clans' %>
+<% @params[:race_name] = 'Горные кланы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <%= d2_unit_table(
+                'Витар',
+                '/Disciples2/Rasi/GNOM/leader/1.jpg', {
+                level:        1,
+                expirience:   9000,
+                hp:           900,
+                armor:        50,
+                immune:       :disarmor,
+                resist:       :none,
+                weapon_type:  'Гром Витара',
+                accuracy:     95,
+                damage:       250,
+                damage_type:  :life,
+                initiative:   90,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Могущественный Витар сидит по правую руку от Вотана за пиршественным
+            столом. Ему поручено неотлучно охранять столицу.
+        DESC
+        ) %>
+
+    <h2 class="leaders"></h2>
+
+    <%= d2_unit_table(
+                'Королевский страж',
+                '/Disciples2/Rasi/GNOM/leader/2.jpg', {
+                level:        1,
+                expirience:   225,
+                hp:           225,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевой топор',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   3,
+                moves:        20,
+                skills:       :artefacts
+        }, <<-DESC
+            Живущие лишь битвами, Королевские стражи готовы уничтожить любую
+            опасность, грозящую землям Гномов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Учёный',
+                '/Disciples2/Rasi/GNOM/leader/3.jpg', {
+                level:        1,
+                expirience:   175,
+                hp:           95,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Обвал',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :earth,
+                initiative:   30,
+                targets:      :all,
+                target_count: 6,
+                leadership:   3,
+                moves:        20,
+                skills:       [:scrolls, :spheres]
+        }, <<-DESC
+            Владеющие знанием из поколения в поколение передают мудрость Кланов
+            и могут пользоваться магическими жезлами и свитками.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Инженер',
+                '/Disciples2/Rasi/GNOM/leader/4.jpg', {
+                level:        1,
+                expirience:   175,
+                hp:           135,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Арбалет',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :all,
+                target_count: 1,
+                leadership:   3,
+                moves:        30,
+                skills:       :boots
+        }, <<-DESC
+            Инженеры много путешествуют, сообщая Верховному Королю обо всем,
+            что происходит в землях Кланов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Старейшина',
+                '/Disciples2/Rasi/GNOM/leader/5.jpg', {
+                level:        1,
+                expirience:   120,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Топор',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   30,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   1,
+                moves:        25,
+                skills:       :rod_hoist
+        }, <<-DESC
+            Избранник Вотана, Старейшина расширяет владения Верховного Короля,
+            водружая жезлы власти.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Вор',
+                '/Disciples2/Rasi/GNOM/leader/6.jpg', {
+                level:        1,
+                expirience:   120,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Кинжалы',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   0,
+                moves:        20,
+                skills:       :none
+        }, <<-DESC
+            Вор знает множество способов выполнить любое, даже самое деликатное
+            поручение Верховного Короля.
+        DESC
+        ) %>
+<% end %>

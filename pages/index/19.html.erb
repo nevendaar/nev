@@ -1,0 +1,229 @@
+﻿<% @params[:back_page_id] = 74 %>
+<% @params[:race_class] = 'clans' %>
+<% @params[:race_name] = 'Горные кланы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="warriors"></h2>
+
+    <%= d2_unit_table(
+                'Гном',
+                '/Disciples2/Rasi/GNOM/warrior/1.jpg', {
+                level:        1,
+                expirience:   130,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевой молот',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Гном яростно бросается в битву, разбивая головы врагам,
+            при этом зная, что Вотан защитит храброе сердце.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Воин',
+                '/Disciples2/Rasi/GNOM/warrior/2.jpg', {
+                level:        2,
+                expirience:   600,
+                hp:           200,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевой молот',
+                accuracy:     80,
+                damage:       55,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Воин всегда готов к битве и доспехи его начищены до блеска. Во славу
+            своего бога Вотана, он готов сражаться в любое время и в любом месте.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Ветеран',
+                '/Disciples2/Rasi/GNOM/warrior/3.jpg', {
+                level:        3,
+                expirience:   1275,
+                hp:           250,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевой молот',
+                accuracy:     80,
+                damage:       80,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Ветеран победил во многих битвах, а число павших от его руки
+            врагов не поддается счету. И если придется ему погибнуть в бою,
+            то умрет он как истинный воин.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Горец',
+                '/Disciples2/Rasi/GNOM/warrior/4.jpg', {
+                level:        3,
+                expirience:   1500,
+                hp:           225,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Осколки льда',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :water,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Закаленные суровым климатом, Горцы осыпают врага дождем ледяных
+            осколков с горных ледников.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Старый Ветеран',
+                '/Disciples2/Rasi/GNOM/warrior/5.jpg', {
+                level:        4,
+                expirience:   1750,
+                hp:           275,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Боевой топор',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Долгие годы проведшие в схватках, Древние ветераны сражаются
+            со свирепостью, данной тем, кому пир Валгаллы слаще жизни.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Повелитель волков',
+                '/Disciples2/Rasi/GNOM/warrior/6.jpg', {
+                level:        4,
+                expirience:   2250,
+                hp:           225,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Сменить обличие или Ледяное дыхание',
+                accuracy:     80,
+                damage:       55,
+                damage_type:  :water,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Повелитель волков поражает врагов своим ледяным дыханием,
+            и в пылу битвы может призвать себе в помощь дух самого Фенрира.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Отшельник',
+                '/Disciples2/Rasi/GNOM/warrior/7.jpg', {
+                level:        4,
+                expirience:   1000,
+                hp:           250,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Осколки льда', 'Снижение инициативы'],
+                accuracy:     [80, 33],
+                damage:       55,
+                damage_type:  [:water, :water],
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Отшельник владеет Рогом Войны, чей звук созывает бойцов всех
+            Горных Кланов на смертельную битву с врагом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Мастер Рун',
+                '/Disciples2/Rasi/GNOM/warrior/8.jpg', {
+                level:        5,
+                expirience:   2500,
+                hp:           300,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Топор',
+                twice_attack: true,
+                accuracy:     80,
+                damage:       65,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Мастер рун, познав тайную силу рунических надписей, выковал себе
+            уникальный боевой топор, которым во время битвы крушит противников.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Король гномов',
+                '/Disciples2/Rasi/GNOM/warrior/9.jpg', {
+                level:        5,
+                expirience:   2500,
+                hp:           250,
+                armor:        30,
+                immune:       :none,
+                resist:       [:mind, :water],
+                weapon_type:  'Огромная булава',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   35,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Гномы, в награду за небывалую доблесть в бою провозглашенные
+            Королями своих кланов. Короли Гномов носят лучшие из гномьих доспехов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Дух Фенрира',
+                '/Disciples2/Rasi/GNOM/warrior/10.JPG', {
+                level:        1,
+                expirience:   1975,
+                hp:           275,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       90,
+                damage_type:  :weapon,
+                initiative:   65,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Когда Повелитель одержим духом волков, он становится грозным
+            восприемником самого Фенрира.
+        DESC
+        ) %>
+<% end %>
