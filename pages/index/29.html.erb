@@ -1,0 +1,95 @@
+﻿<% @params[:back_page_id] = 76 %>
+<% @params[:race_class] = 'elves' %>
+<% @params[:race_name] = 'Эльфийский союз' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="warriars"></h2>
+
+    <%= d2_unit_table(
+                'Кентавр Копейщик',
+                '/Disciples2/Rasi/elfs/warriar/1.jpg', {
+                level:        1,
+                expirience:   145,
+                hp:           150,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Копьё',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Отлично владеющий копьём, Кентавр Копейщик - грозный воин,
+            всегда готовый встать на защиту Эльфов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Кентавр Странник',
+                '/Disciples2/Rasi/elfs/warriar/2.jpg', {
+                level:        2,
+                expirience:   730,
+                hp:           175,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Секира',
+                accuracy:     80,
+                damage:       65,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Безудержный Кентавр Странник беспощадно прорубает себе путь
+            сквозь полчища врага.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Кентавр Латник',
+                '/Disciples2/Rasi/elfs/warriar/3.jpg', {
+                level:        2,
+                expirience:   525,
+                hp:           175,
+                armor:        20,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Копьё',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Грозно блистающий доспехами самой тонкой работы, на которую только
+            способны эльфийские мастера, Кентавр Латник ведёт в бой кавалерию.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Кентавр Дикарь',
+                '/Disciples2/Rasi/elfs/warriar/4.jpg', {
+                level:        3,
+                expirience:   1300,
+                hp:           210,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Дубина', 'Критическое попадание'],
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   35,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Наводящий на врагов панический страх, Кентавр Дикарь забывает
+            себя в боевом безумии кровавого сражения.
+        DESC
+        ) %>
+<% end %>

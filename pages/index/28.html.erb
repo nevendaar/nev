@@ -1,0 +1,153 @@
+﻿<% @params[:back_page_id] = 76 %>
+<% @params[:race_class] = 'elves' %>
+<% @params[:race_name] = 'Эльфийский союз' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <%= d2_unit_table(
+                'Иллюмиэль',
+                '/Disciples2/Rasi/elfs/leader/1.jpg', {
+                level:        1,
+                expirience:   9000,
+                hp:           900,
+                armor:        50,
+                immune:       :disarmor,
+                resist:       :none,
+                weapon_type:  'Клинок Дракона',
+                accuracy:     95,
+                damage:       250,
+                damage_type:  :life,
+                initiative:   90,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Королева Иллюмиэль защищает свою землю с помощью могущественной
+            магии, одновременно стараясь примирить своих необузданных подданных.
+        DESC
+        ) %>
+
+    <h2 class="leaders"></h2>
+
+    <%= d2_unit_table(
+                'Лесной Лорд',
+                '/Disciples2/Rasi/elfs/leader/2.jpg', {
+                level:        1,
+                expirience:   150,
+                hp:           135,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Мечи',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   55,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   3,
+                moves:        25,
+                skills:       :artefacts
+        }, <<-DESC
+            Лесной Лорд - это эльф чистейших кровей, обнаживший своё оружие
+            во имя защиты своего народа.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Дриада',
+                '/Disciples2/Rasi/elfs/leader/3.jpg', {
+                level:        1,
+                expirience:   165,
+                hp:           55,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Цепная молния',
+                accuracy:     80,
+                damage:       35,
+                damage_type:  :air,
+                initiative:   45,
+                targets:      :all,
+                target_count: 6,
+                leadership:   3,
+                moves:        25,
+                skills:       [:flying, :scrolls, :spheres]
+        }, <<-DESC
+            Дриады - игривые духи деревьев. Самой Природой им дарована
+            возможность пользоваться могучей магией и знать тайны жезлов и свитков.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Страж',
+                '/Disciples2/Rasi/elfs/leader/4.jpg', {
+                level:        1,
+                expirience:   170,
+                hp:           135,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лук',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :all,
+                target_count: 1,
+                leadership:   3,
+                moves:        35,
+                skills:       :boots
+        }, <<-DESC
+            Стражи - это жестокие Кентавры Лучники, быстрые как ветер и
+            выносливые как драконы. Они способны покрывать огромные расстояния.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Мудрец',
+                '/Disciples2/Rasi/elfs/leader/5.jpg', {
+                level:        1,
+                expirience:   100,
+                hp:           80,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Призвание Энта Малого',
+                accuracy:     100,
+                damage_type:  :life,
+                initiative:   40,
+                targets:      :all,
+                target_count: 1,
+                leadership:   1,
+                moves:        20,
+                skills:       :rod_hoist
+        }, <<-DESC
+            Старейшие из Эльфов, Мудрецы с помощью зачарованных жезлов
+            окутывают магией Рощи весь Невендаар.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Вор',
+                '/Disciples2/Rasi/elfs/leader/6.jpg', {
+                level:        1,
+                expirience:   95,
+                hp:           90,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Кинжалы',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   65,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   0,
+                moves:        30,
+                skills:       :none
+        }, <<-DESC
+            Лунная тень - это шёпот ветра в листьях деревьев. Она мастер обмана,
+            неразгаданных загадок, ловких пальцев и безмолвных краж в лунном свете.
+        DESC
+        ) %>
+<% end %>
