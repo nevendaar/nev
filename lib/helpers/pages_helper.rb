@@ -86,7 +86,8 @@ module PagesHelper
       when :targets
         D2_UNIT_TARGETS[val]
       when :weapon_type
-        [val].flatten.join(' / ') + (attrs[:twice_attack] ? ' <b>(x2)</b>' : '')
+        [val].flatten.each { |e| e.gsub!(' ', '&nbsp;') }.join(' / ') +
+            (attrs[:twice_attack] ? ' <b>(x2)</b>' : '')
       else
         val
     end
