@@ -1,0 +1,118 @@
+﻿<% @params[:back_page_id] = 76 %>
+<% @params[:race_class] = 'elves' %>
+<% @params[:race_name] = 'Эльфийский союз' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="support"></h2>
+
+    <%= d2_unit_table(
+                'Женщина Дух',
+                '/Disciples2/Rasi/elfs/support/1.jpg', {
+                level:        1,
+                expirience:   90,
+                hp:           45,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечить',
+                accuracy:     100,
+                heal:         25,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Женщина Дух появляется из глубины лесов лишь во время сражений и
+            исцеляет раненых на поле боя.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Оракул',
+                '/Disciples2/Rasi/elfs/support/2.jpg', {
+                level:        2,
+                expirience:   450,
+                hp:           60,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Лечить',
+                accuracy:     100,
+                heal:         40,
+                damage_type:  :life,
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Эльфийские Оракулы не только искусные целители, но и великие
+            провидцы, обладающие способностью прорицать волю Галеана.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Лесная Дева',
+                '/Disciples2/Rasi/elfs/support/3.jpg', {
+                level:        3,
+                expirience:   1300,
+                hp:           85,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Даровать защиту от магии элементов', 'Лечить'],
+                accuracy:     [100, 100],
+                heal:         50,
+                damage_type:  [:life, :life],
+                initiative:   10,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Лесные Девы священными ритуалами зачаровывают и хранят эльфийский
+            народ, даруя защиту от магииЗемли, Воздуха, Огня и Воды всем
+            своим союзникам.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Сильфида',
+                '/Disciples2/Rasi/elfs/support/4.jpg', {
+                level:        4,
+                expirience:   2470,
+                hp:           95,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Даровать защиту от магии воздуха', 'Лечить'],
+                accuracy:     [100, 100],
+                heal:         55,
+                damage_type:  [:life, :life],
+                initiative:   10,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Жестокие бури и ужасные штормы - ничто для Сильфиды.
+            Она усмиряет их ярость, защищая и исцеляя раненых Эльфов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Солнечная Танцовщица',
+                '/Disciples2/Rasi/elfs/support/5.jpg', {
+                level:        4,
+                expirience:   2535,
+                hp:           115,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Даровать защиту от магии огня', 'Лечить'],
+                accuracy:     [100, 100],
+                heal:         50,
+                damage_type:  [:life, :life],
+                initiative:   10,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Солнечная Танцовщица непревзойдённая целительница. Она может пройти
+            сквозь пламя и, если пожелает, провести с собой кого-нибудь ещё.
+        DESC
+        ) %>
+<% end %>

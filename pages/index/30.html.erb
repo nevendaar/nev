@@ -1,0 +1,206 @@
+﻿<% @params[:back_page_id] = 76 %>
+<% @params[:race_class] = 'elves' %>
+<% @params[:race_name] = 'Эльфийский союз' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="archers"></h2>
+
+    <%= d2_unit_table(
+                'Разведчик',
+                '/Disciples2/Rasi/elfs/archer/1.jpg', {
+                level:        1,
+                expirience:   95,
+                hp:           45,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   65,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Эльфийские разведчики могут бесшумно снять врага одной стрелой.
+            И только ощутив наконечник в горле - враг понимает, что он мёртв.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Охотник',
+                '/Disciples2/Rasi/elfs/archer/2.jpg', {
+                level:        2,
+                expirience:   490,
+                hp:           85,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                accuracy:     80,
+                damage:       45,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Эльф Охотник - безжалостнее лесного хищника. Любой, кто оказался
+            в лесу непрошенным гостем может почувствовать себя на месте его жертвы.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Сторож',
+                '/Disciples2/Rasi/elfs/archer/3.jpg', {
+                level:        2,
+                expirience:   475,
+                hp:           75,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Удар Молнии',
+                accuracy:     85,
+                damage:       40,
+                damage_type:  :air,
+                initiative:   65,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Элита Королевской Гвардии, Сторожа зачаровывают свои стрелы
+            могучим волшебством.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Бандит',
+                '/Disciples2/Rasi/elfs/archer/4.jpg', {
+                level:        3,
+                expirience:   1010,
+                hp:           115,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                twice_attack: true,
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Не признающие никаких законов, Бандиты грабят неосторожных путников.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Стингер',
+                '/Disciples2/Rasi/elfs/archer/5.jpg', {
+                level:        3,
+                expirience:   1300,
+                hp:           125,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  %w[Стрелы Яд],
+                accuracy:     [80, 90],
+                damage:       [65, 15],
+                damage_type:  [:weapon, :death],
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Единственный выстрел Эльфа Стингера приводит к неминуемой гибели.
+            Наконечники его стрел смазаны смертельным ядом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Стражник',
+                '/Disciples2/Rasi/elfs/archer/6.jpg', {
+                level:        3,
+                expirience:   1455,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :fire,
+                weapon_type:  ['Огненные Стрелы', 'Ожог'],
+                accuracy:     [85, 70],
+                damage:       [60, 15],
+                damage_type:  [:fire, :fire],
+                initiative:   70,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Стражи создают стрелы Первозданного Пламени и горе захватчикам,
+            осмелившимся переступить границы эльфийских лесов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Часовой',
+                '/Disciples2/Rasi/elfs/archer/7.jpg', {
+                level:        3,
+                expirience:   1335,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :water,
+                weapon_type:  ['Ледяные Стрелы', 'Обморожение'],
+                accuracy:     [85, 70],
+                damage:       [55, 20],
+                damage_type:  [:water, :water],
+                initiative:   70,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Часовой обрушивает на врага неистовство самой зимы, осыпая ряды
+            его воинов смертельным дождём ледяных стрел.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Разбойник',
+                '/Disciples2/Rasi/elfs/archer/8.jpg', {
+                level:        4,
+                expirience:   1500,
+                hp:           155,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                twice_attack: true,
+                accuracy:     80,
+                damage:       55,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Эльфы Разбойники крадутся вдоль извилистых лесных дорог в поисках жертв.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Мародёр',
+                '/Disciples2/Rasi/elfs/archer/9.jpg', {
+                level:        5,
+                expirience:   2665,
+                hp:           170,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Стрелы',
+                twice_attack: true,
+                accuracy:     80,
+                damage:       70,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Стрелы Эльфа Мародёра быстрее молнии, он успевает сделать два
+            смертельных выстрела даже до того, как его противник сделает только один.
+        DESC
+        ) %>
+<% end %>

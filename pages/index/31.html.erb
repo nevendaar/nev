@@ -1,0 +1,138 @@
+﻿<% @params[:back_page_id] = 76 %>
+<% @params[:race_class] = 'elves' %>
+<% @params[:race_name] = 'Эльфийский союз' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="wizards"></h2>
+
+    <%= d2_unit_table(
+                'Адепт',
+                '/Disciples2/Rasi/elfs/magic/1.jpg', {
+                level:        1,
+                expirience:   75,
+                hp:           35,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Шок',
+                accuracy:     80,
+                damage:       15,
+                damage_type:  :air,
+                initiative:   45,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Адепт эксперементирует со смертоносными силами природы и
+            применяет полученные знания против врага.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Чаннелер',
+                '/Disciples2/Rasi/elfs/magic/2.jpg', {
+                level:        2,
+                expirience:   505,
+                hp:           60,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Взрыв Молний',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :air,
+                initiative:   45,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Чаннелер обладает даром направлять бьющую с небес молнию прямо на врага.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тиург', # TODO: e?
+                '/Disciples2/Rasi/elfs/magic/3.jpg', {
+                level:        3,
+                expirience:   1240,
+                hp:           95,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  ['Буря молний', 'Разбить броню'],
+                accuracy:     [80, 80],
+                damage:       40,
+                damage_type:  [:air, :air],
+                initiative:   45,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Подчинив себе ярость бури, Тиург вдребезги разбивает броню своих врагов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Архонт',
+                '/Disciples2/Rasi/elfs/magic/4.jpg', {
+                level:        3,
+                expirience:   1190,
+                hp:           85,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Буря',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :air,
+                initiative:   45,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Находящийся на высшей ступени эльфийского общества,
+            Архонт - это живое олицетворение магии Эльфов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Грифон',
+                '/Disciples2/Rasi/elfs/magic/5.jpg', {
+                level:        1,
+                expirience:   415,
+                hp:           200,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Когти',
+                accuracy:     80,
+                damage:       65,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Величественный Грифон яростно защищает своих эльфийских хозяев
+            от любой опасности.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Владыка Небес',
+                '/Disciples2/Rasi/elfs/magic/6.jpg', {
+                level:        2,
+                expirience:   1200,
+                hp:           300,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Укус',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Всего лишь один раз в несколько лет, в стае Грифонов рождается
+            Владыка Небес - самый могучий из своих крылатых собратьев.
+            Невероятно предан своим хозяевам - Эльфам.
+        DESC
+        ) %>
+<% end %>
