@@ -1,0 +1,168 @@
+﻿<% @params[:back_page_id] = 75 %>
+<% @params[:race_class] = 'undead' %>
+<% @params[:race_name] = 'Орды нежити' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="warriors"></h2>
+
+    <%= d2_unit_table(
+                'Воин',
+                '/Disciples2/Rasi/undead/warriar/1.jpg', {
+                animation:    '/_ph/37/2/90545587.gif',
+                level:        1,
+                expirience:   95,
+                hp:           120,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Меч',
+                accuracy:     80,
+                damage:       25,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Когда-то эти воины пали на поле брани, но теперь Мортис призвала
+            их под свои знамёна и они снова вынуждены сражаться.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Зомби',
+                '/Disciples2/Rasi/undead/warriar/2.jpg', {
+                animation:    '/_ph/37/2/515165201.gif',
+                level:        2,
+                expirience:   600,
+                hp:           170,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Благодаря тёмному ритуалу, души когда-то умерших живых существ
+            отныне превратились в лишённых любых эмоций Зомби.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тамплиер',
+                '/Disciples2/Rasi/undead/warriar/3.jpg', {
+                animation:    '/_ph/37/2/116270906.gif',
+                level:        2,
+                expirience:   600,
+                hp:           160,
+                armor:        0,
+                immune:       :none,
+                resist:       [:fire, :water, :air, :earth],
+                weapon_type:  'Копьё',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Тамплиеры извращают религиозные догматы во славу королевы Мортис.
+            Над ними не властна магия стихий.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Скелет-воин',
+                '/Disciples2/Rasi/undead/warriar/4.jpg', {
+                animation:    '/_ph/37/2/654987105.gif',
+                level:        3,
+                expirience:   1150,
+                hp:           220,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Длинный меч',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Скелет-воин поднялся из земли по приказу Мортис и теперь сражается
+            с любым противником, защищая интересы Нежити.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Лорд Тьмы',
+                '/Disciples2/Rasi/undead/warriar/5.jpg', {
+                animation:    '/_ph/37/2/298419510.gif',
+                level:        3,
+                expirience:   600,
+                hp:           200,
+                armor:        0,
+                immune:       :none,
+                resist:       [:fire, :water, :air, :earth],
+                weapon_type:  'Мёртвый меч',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            В награду за преданную службу, Мортис, богиня мёртвых, дарует
+            Лордам Тьмы власть над стихиями.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Скелет-рыцарь',
+                '/Disciples2/Rasi/undead/warriar/6.jpg', {
+                animation:    '/_ph/37/2/217627216.gif',
+                level:        4,
+                expirience:   1600,
+                hp:           270,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Длинный меч',
+                accuracy:     80,
+                damage:       100,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Непобедимый Скелет-рыцарь возглавляет великий поход против смертных,
+            устоять перед его мощью никто не в силах.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Воин-призрак',
+                '/Disciples2/Rasi/undead/warriar/7.jpg', {
+                animation:    '/_ph/37/2/453915026.gif',
+                level:        5,
+                expirience:   2100,
+                hp:           320,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  ['Мёртвый меч', 'Паралич'],
+                accuracy:     [80, 50],
+                damage:       125,
+                damage_type:  [:weapon, :mind],
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Воины, предавшие своих товарищей, отныне вынуждены сражаться вечно,
+            пока им не будет даровано прощение.
+        DESC
+        ) %>
+<% end %>

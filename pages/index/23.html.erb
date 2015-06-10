@@ -1,0 +1,162 @@
+﻿<% @params[:back_page_id] = 75 %>
+<% @params[:race_class] = 'undead' %>
+<% @params[:race_name] = 'Орды нежити' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <%= d2_unit_table(
+                'Ашган',
+                '/Disciples2/Rasi/undead/leader/1.jpg', {
+                animation:    '/_ph/37/2/220286347.gif',
+                level:        1,
+                expirience:   9000,
+                hp:           900,
+                armor:        50,
+                immune:       :disarmor,
+                resist:       :none,
+                weapon_type:  'Ветер смерти',
+                accuracy:     95,
+                damage:       250,
+                damage_type:  :life,
+                initiative:   90,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Ашган, несущий чуму, был высшим жрецом Алкмаара.
+            По приказу Мортис, он никогда не оставляет Столицу без защиты.
+        DESC
+        ) %>
+
+    <h2 class="leaders"></h2>
+
+    <%= d2_unit_table(
+                'Рыцарь Смерти',
+                '/Disciples2/Rasi/undead/leader/2.jpg', {
+                animation:    '/_ph/37/2/124675640.gif',
+                level:        1,
+                expirience:   165,
+                hp:           150,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Меч мёртвых',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   3,
+                moves:        20,
+                skills:       [:flying, :artefacts]
+        }, <<-DESC
+            Жестокость Рыцаря Смерти в бою не знает предела.
+            Умение руководить и способность к передвижению по воздуху делают
+            из него непревзойденного воина.
+        DESC
+        ) %>
+    
+    <%= d2_unit_table(
+                'Королева личей',
+                '/Disciples2/Rasi/undead/leader/3.jpg', {
+                animation:    '/_ph/37/2/147178153.gif',
+                level:        1,
+                expirience:   165,
+                hp:           65,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Огненный смерч',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :fire,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6,
+                leadership:   3,
+                moves:        20,
+                skills:       [:scrolls, :spheres]
+        }, <<-DESC
+            Женщины-некроманты после смерти превращаются в жутких Королев личей.
+            Их темные знания позволяют им использовать силу, заключенную в
+            магических жезлах и свитках.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Носферату',
+                '/Disciples2/Rasi/undead/leader/4.jpg', {
+                animation:    '/_ph/37/2/138884062.gif',
+                level:        1,
+                expirience:   100,
+                hp:           90,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Высосать жизнь',
+                accuracy:     80,
+                damage:       10,
+                damage_type:  :death,
+                initiative:   50,
+                targets:      :all,
+                target_count: 6,
+                leadership:   3,
+                moves:        35,
+                skills:       :boots
+        }, <<-DESC
+            Носферату высасывают жизненную силу из своих врагов,
+            ослабляя их и питая свою собственную черную душу.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Баньши',
+                '/Disciples2/Rasi/undead/leader/5.jpg', {
+                animation:    '/_ph/37/2/509579797.gif',
+                level:        1,
+                expirience:   115,
+                hp:           100,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Паралич',
+                accuracy:     80,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 1,
+                leadership:   1,
+                moves:        20,
+                skills:       :rod_hoist
+        }, <<-DESC
+            Благодаря жезлам Баньши способны обратить цветущие земли в
+            бесплодную пустыню, где не останется ничего живого.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Вор',
+                '/Disciples2/Rasi/undead/leader/6.jpg', {
+                animation:    '/_ph/37/2/178074909.gif',
+                level:        1,
+                expirience:   95,
+                hp:           100,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Кинжалы',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :nearest,
+                target_count: 1,
+                leadership:   0,
+                moves:        25,
+                skills:       :none
+        }, <<-DESC
+            Как только хозяин отдаст приказ, Вор сразу же готов отправиться
+            во вражеский город, чтобы сеять там смуту и панику.
+        DESC
+        ) %>
+<% end %>

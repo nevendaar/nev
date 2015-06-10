@@ -1,0 +1,237 @@
+﻿<% @params[:back_page_id] = 75 %>
+<% @params[:race_class] = 'undead' %>
+<% @params[:race_name] = 'Орды нежити' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="wizards"></h2>
+
+    <%= d2_unit_table(
+                'Адепт',
+                '/Disciples2/Rasi/undead/magic/1.jpg', {
+                animation:    '/_ph/37/2/529851097.gif',
+                level:        1,
+                expirience:   75,
+                hp:           45,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Мор',
+                accuracy:     80,
+                damage:       15,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Одним своим видом Адепты наводят страх на простых смертных,
+            на поле же боя они сеют смерть и болезни.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Колдун',
+                '/Disciples2/Rasi/undead/magic/2.jpg', {
+                animation:    '/_ph/37/2/247604628.gif',
+                level:        2,
+                expirience:   500,
+                hp:           75,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Мор',
+                accuracy:     80,
+                damage:       30,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Человеческие страдания, боль и несчастья дают Колдунам необходимую
+            силу, чтобы творить своё чёрное дело и насылать на земли Невендаара
+            всевозможные эпидемии.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Некромант',
+                '/Disciples2/Rasi/undead/magic/3.jpg', {
+                animation:    '/_ph/37/2/448552537.gif',
+                level:        3,
+                expirience:   1150,
+                hp:           105,
+                armor:        0,
+                immune:       :none,
+                resist:       :death,
+                weapon_type:  'Мор',
+                accuracy:     80,
+                damage:       45,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Перед чёрными силами, которыми овладел Некромант, не устоит ни одна
+            армия из простых смертных.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Злой Дух',
+                '/Disciples2/Rasi/undead/magic/4.jpg', {
+                animation:    '/_ph/37/2/616466608.gif',
+                level:        3,
+                expirience:   900,
+                hp:           75,
+                armor:        0,
+                immune:       [:weapon, :death],
+                resist:       :none,
+                weapon_type:  'Мор',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :death,
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Злые Духи приходят из преисподней на земли Невендаара, чтобы сеять
+            смерть и мор среди живых.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Вампир',
+                '/Disciples2/Rasi/undead/magic/5.jpg', {
+                animation:    '/_ph/37/2/520188221.gif',
+                level:        4,
+                expirience:   2300,
+                hp:           185,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Высосать жизнь',
+                accuracy:     80,
+                damage:       50,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Люди, отвергнувшие слово Всевышнего, становятся Вампирами. Они
+            поддерживают своё существование за счёт жизненной силы невинных жертв.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Лич',
+                '/Disciples2/Rasi/undead/magic/6.jpg', {
+                animation:    '/_ph/37/2/825390301.gif',
+                level:        4,
+                expirience:   2450,
+                hp:           140,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Чума',
+                accuracy:     80,
+                damage:       70,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Те, кто приобщился к тайнам магии при жизни, становятся Личами;
+            они насылают на живых смертоносную чуму.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Смерть',
+                '/Disciples2/Rasi/undead/magic/7.jpg', {
+                animation:    '/_ph/37/2/782650592.gif',
+                level:        4,
+                expirience:   900,
+                hp:           125,
+                armor:        0,
+                immune:       [:weapon, :death],
+                resist:       :none,
+                weapon_type:  ['Прикосновение смерти', 'Яд'],
+                accuracy:     [80, 50],
+                damage:       [100, 20],
+                damage_type:  [:death, :death],
+                initiative:   40,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Воплощение и вестница Смерти, собирающая души в землях живых.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Сущий',
+                '/Disciples2/Rasi/undead/magic/8.jpg', {
+                animation:    '/_ph/37/2/512987602.gif',
+                level:        4,
+                expirience:   900,
+                hp:           105,
+                armor:        0,
+                immune:       [:weapon, :death],
+                resist:       :none,
+                weapon_type:  ['Прикосновение смерти', 'Понижение уровня'],
+                accuracy:     [80, 80],
+                damage:       75,
+                damage_type:  [:death, :death],
+                initiative:   50,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Воины-изменники ведут охоту на живых в обличье отвратительных Сущих,
+            для которых не существует никаких преград.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Архилич',
+                '/Disciples2/Rasi/undead/magic/9.jpg', {
+                animation:    '/_ph/37/2/775391757.gif',
+                level:        5,
+                expirience:   3500,
+                hp:           170,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Чума',
+                accuracy:     80,
+                damage:       90,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Колдун, чьим магическим изысканиям не стала помехой даже сама смерть,
+            становится Архиличом.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Верховный Вампир',
+                '/Disciples2/Rasi/undead/magic/10.jpg', {
+                animation:    '/_ph/37/2/974806307.gif',
+                level:        5,
+                expirience:   3300,
+                hp:           210,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Могильный холод',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Верховный Вампир способен обмануть даже смерть, для этого он ворует
+            жизненную силу у противника.
+        DESC
+        ) %>
+<% end %>

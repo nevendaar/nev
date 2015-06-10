@@ -1,0 +1,77 @@
+﻿<% @params[:back_page_id] = 75 %>
+<% @params[:race_class] = 'undead' %>
+<% @params[:race_name] = 'Орды нежити' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="archers"></h2>
+
+    <%= d2_unit_table(
+                'Привидение',
+                '/Disciples2/Rasi/undead/Archer/1.jpg', {
+                animation:    '/_ph/37/2/89518530.gif',
+                level:        1,
+                expirience:   75,
+                hp:           45,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Паралич',
+                accuracy:     65,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Груз совершённых при жизни грехов навеки приковал эти неприкаянные
+            души к бренному миру смертных. Теперь они присоединились к великому
+            походу Нежити.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Призрак',
+                '/Disciples2/Rasi/undead/Archer/2.jpg', {
+                animation:    '/_ph/37/2/635646232.gif',
+                level:        2,
+                expirience:   700,
+                hp:           90,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Паралич',
+                accuracy:     70,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Одного взгляда Призрака достаточно, чтобы кровь застыла в жилах и
+            смертельный холод сковал всё тело.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тень',
+                '/Disciples2/Rasi/undead/Archer/3.jpg', {
+                animation:    '/_ph/37/2/304012444.gif',
+                level:        3,
+                expirience:   850,
+                hp:           135,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Паралич',
+                accuracy:     50,
+                damage:       0,
+                damage_type:  :mind,
+                initiative:   20,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Страх, который исходит от Тени настолько силён, что противника
+            просто паралиует, лишая при этом возможности сопротивляться.
+        DESC
+        ) %>
+<% end %>

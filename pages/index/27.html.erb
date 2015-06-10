@@ -1,0 +1,145 @@
+﻿<% @params[:back_page_id] = 75 %>
+<% @params[:race_class] = 'undead' %>
+<% @params[:race_name] = 'Орды нежити' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2 class="support"></h2>
+
+    <%= d2_unit_table(
+                'Виверна',
+                '/Disciples2/Rasi/undead/support/1.jpg', {
+                animation:    '/_ph/37/2/182954439.gif',
+                level:        1,
+                expirience:   500,
+                hp:           225,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Дыхание',
+                accuracy:     80,
+                damage:       25,
+                damage_type:  :death,
+                initiative:   35,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Колдуны оживляют мёртвых драконов, создавая Виверн, которые
+            сражаются за Орды Нежити.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Дракон Рока',
+                '/Disciples2/Rasi/undead/support/2.jpg', {
+                animation:    '/_ph/37/2/543568235.gif',
+                level:        2,
+                expirience:   1100,
+                hp:           300,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Дыхание',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :death,
+                initiative:   35,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Эти устрашающие существа дышали огнём, пока были живы - теперь они
+            изрыгают ядовитые испарения.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Дракон Смерти',
+                '/Disciples2/Rasi/undead/support/3.jpg', {
+                animation:    '/_ph/37/2/308677285.gif',
+                level:        3,
+                expirience:   2550,
+                hp:           375,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Дыхание',
+                accuracy:     80,
+                damage:       55,
+                damage_type:  :death,
+                initiative:   35,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Драконы наводят ужас на страну даже после смерти. Их ядовитое
+            дыхание во время битвы окутывает целые армии.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Драколич',
+                '/Disciples2/Rasi/undead/support/4.jpg', {
+                animation:    '/_ph/37/2/347586433.gif',
+                level:        4,
+                expirience:   3350,
+                hp:           525,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  'Ядовитое дыхание',
+                accuracy:     80,
+                damage:       75,
+                damage_type:  :death,
+                initiative:   35,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Огромный оживший дракон наводит ужас на своих врагов, а своим
+            ядовитым дыханием отравляет воздух на поле битвы.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Змей Ужаса',
+                '/Disciples2/Rasi/undead/support/5.jpg', {
+                animation:    '/_ph/37/2/678122330.gif',
+                level:        4,
+                expirience:   3600,
+                hp:           450,
+                armor:        0,
+                immune:       :death,
+                resist:       :none,
+                weapon_type:  ['Ядовитое дыхание', 'Яд'],
+                accuracy:     [80, 40],
+                damage:       [65, 20],
+                damage_type:  [:death, :death],
+                initiative:   35,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Змей Ужаса призван внушать своим видом страх в души бойцов
+            противника, чтобы залить землю ядом своей злобы.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Оборотень',
+                '/Disciples2/Rasi/undead/support/6.jpg', {
+                animation:    '/_ph/37/2/558274597.gif',
+                level:        1,
+                expirience:   600,
+                hp:           100,
+                armor:        0,
+                immune:       :weapon,
+                resist:       :none,
+                weapon_type:  'Удар',
+                accuracy:     80,
+                damage:       40,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Оборотень выходит на свою охоту при свете Луны, убить его простым
+            мечом невозможно, только с помощью магии его можно уничтожить.
+        DESC
+        ) %>
+<% end %>
