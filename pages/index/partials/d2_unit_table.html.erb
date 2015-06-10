@@ -3,7 +3,7 @@
     <caption><%= @locals[:unit_name] %></caption>
     <tr>
         <td class="portrait" rowspan="<%= unit_attrs.size %>">
-            <img alt="" src="<%= @locals[:img_path] %>">
+            <img src="<%= @locals[:img_path] %>" alt="<%= @locals[:unit_name] %> portrait">
         </td>
         <th><%= D2_UNIT_ATTRS[:level] %></th>
         <td><%= unit_attrs[:level] %></td>
@@ -20,4 +20,11 @@
             <p><%= @locals[:unit_desc].strip.gsub("\n\n", '</p><p>') %></p>
         </td>
     </tr>
+    <% if @locals[:animation] %>
+        <tr>
+            <td class="text-center" colspan="3">
+                <img src="<%= @locals[:animation] %>" alt="<%= @locals[:unit_name] %> animation">
+            </td>
+        </tr>
+    <% end %>
 </table>

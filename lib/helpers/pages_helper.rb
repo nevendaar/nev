@@ -63,7 +63,14 @@ module PagesHelper
   }.each { |_k, v| v.freeze }.freeze
 
   def d2_unit_table(name, img_path, attrs = {}, unit_desc = '')
-    locals = {unit_name: name, img_path: img_path, unit_attrs: attrs, unit_desc: unit_desc}
+    gif_src = attrs.delete(:animation)
+    locals = {
+        unit_name: name,
+        img_path: img_path,
+        unit_attrs: attrs,
+        unit_desc: unit_desc,
+        animation: gif_src
+    }
     render 'pages/index/partials/d2_unit_table.html.erb', locals: locals
   end
 
