@@ -1,0 +1,491 @@
+<% @params[:back_page_id] = 77 %>
+<% @params[:race_class] = 'neutrals' %>
+<% @params[:race_name] = 'Нейтралы' %>
+
+<% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <%= d2_unit_table(
+                'Астерот',
+                '/Disciples2/Rasi/neutral/boss/1.jpg', {
+                animation:    '/_ph/36/2/203399540.gif',
+                level:        1,
+                expirience:   9900,
+                hp:           1020,
+                armor:        0,
+                immune:       [:mind, :fire],
+                resist:       :none,
+                weapon_type:  'Адский клинок',
+                twice_attack: true,
+                accuracy:     80,
+                damage:       150,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Имя командира восьмидесяти адских когорт Астерота заставляет
+            трепетать всех; он безжалостен к своим и чужим.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Могильный Голем',
+                '/Disciples2/Rasi/neutral/boss/2.jpg', {
+                animation:    '/_ph/37/2/329298881.gif',
+                level:        1,
+                expirience:   9995,
+                hp:           2800,
+                armor:        0,
+                immune:       :mind,
+                resist:       [:death, :fire, :water, :air, :earth],
+                weapon_type:  %w[Фантом Паралич],
+                accuracy:     [95, 60],
+                damage:       200,
+                damage_type:  [:life, :mind],
+                initiative:   60,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Инкарнация некрополиса, Могильный Голем, обладая силой многих
+            тысяч погибших Душ, ведёт смертных к их последнему пристанищу.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Граф Фламел Краули',
+                '/Disciples2/Rasi/neutral/boss/3.jpg', {
+                # animation:    '', # TODO: Find it!
+                level:        1,
+                expirience:   9995,
+                hp:           1000,
+                armor:        20,
+                immune:       :mind,
+                resist:       :fire,
+                weapon_type:  ['Дьявольская Булава', 'Яд'],
+                accuracy:     [90, 90],
+                damage:       [175, 50],
+                damage_type:  [:weapon, :death],
+                initiative:   65,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Марионетка Тёмных Повелителей, граф Фламел Краули жаждит
+            воссоединения Империи под своей властью. Любой ценой!
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Гумтик Кровоточащий',
+                '/Disciples2/Rasi/neutral/boss/4.jpg', {
+                animation:    '/_ph/34/2/438180638.gif',
+                level:        1,
+                expirience:   9995,
+                hp:           1100,
+                armor:        0,
+                immune:       :mind,
+                resist:       :fire,
+                weapon_type: %w(Катапульта Ожог),
+                accuracy:     [80, 50],
+                damage:       [110, 15],
+                damage_type:  [:weapon, :fire],
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Проекты Гумтика может быть и не самые лучшие с эстетической точки зрения,
+            но его уважают и боятся за созданные им осадные машины, обладающие
+            огромной разрушительной силой.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                "Друлиа'ан",
+                '/Disciples2/Rasi/neutral/boss/5.jpg', {
+                # animation:    '', # TODO: Find it!
+                level:        1,
+                expirience:   9995,
+                hp:           2000,
+                armor:        50,
+                immune:       [:mind, :earth],
+                resist:       :none,
+                weapon_type:  ['Драконий Клинок', 'Мороз'],
+                accuracy:     [95, 60],
+                damage:       [175, 30],
+                damage_type:  [:life, :water],
+                initiative:   60,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Олицетворение добродетели и правосудия, Друлиа'ан - наследница
+            королевы Таладриэль, продолжает мстить за эльфийский народ.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Королева Эльфов',
+                '/Disciples2/Rasi/neutral/boss/6.jpg', {
+                animation:    '/_ph/40/2/768896888.gif',
+                level:        1,
+                expirience:   9900,
+                hp:           800,
+                armor:        0,
+                immune:       :mind,
+                resist:       :none,
+                weapon_type:  'Дыхание дракона',
+                accuracy:     95,
+                damage:       125,
+                damage_type:  :life,
+                initiative:   60,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Правительница Эльфов - королева Таладриэль Лилем, охраняет своих
+            сородичей с помощью верховых драконов.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Костяной Лорд',
+                '/Disciples2/Rasi/neutral/boss/7.jpg', {
+                animation:    '/_ph/37/2/309378750.gif',
+                level:        1,
+                expirience:   2900,
+                hp:           400,
+                armor:        0,
+                immune:       [:mind, :death],
+                resist:       :none,
+                weapon_type:  'Могильный холод',
+                accuracy:     80,
+                damage:       65,
+                damage_type:  :weapon,
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Доспех, созданный самой Мортис; его обладатель получает великую силу
+            и бессмертие, но за это должен омывать доспех свежей кровью.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Лакхаан',
+                '/Disciples2/Rasi/neutral/boss/8.jpg', {
+                # animation:    '', # TODO: Find it!
+                level:        1,
+                expirience:   9995,
+                hp:           800,
+                armor:        0,
+                immune:       :mind,
+                resist:       :death,
+                weapon_type:  'Буря',
+                accuracy:     90,
+                damage:       125,
+                damage_type:  :life,
+                initiative:   60,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Оракул эльфийского народа обладает даром общения с Галлеаном.
+            Только это приносит мир и надежду в эти ужасные времена раздоров и отчаяния.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тёмный Лакхаан',
+                '/Disciples2/Rasi/neutral/boss/16.jpg', {
+                # animation:    '', # TODO: Find it!
+                level:        1,
+                expirience:   9995,
+                hp:           2000,
+                armor:        0,
+                immune:       :mind,
+                resist:       [:death, :fire, :water, :air, :earth],
+                weapon_type:  'Призыв',
+                accuracy:     100,
+                damage:       0,
+                damage_type:  :death,
+                initiative:   90,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Мортис превратила эльфийского Аватара в эту пародию на правильность.
+            Тёмный Эльф Лакхаан использует своих союзников, Чёрных Драконов,
+            чтобы повергать врагов Мортис.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Маг Хугин',
+                '/Disciples2/Rasi/neutral/boss/9.jpg', {
+                animation:    '/_ph/40/2/173419488.gif',
+                level:        1,
+                expirience:   9900,
+                hp:           900,
+                armor:        0,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Торнадо',
+                accuracy:     80,
+                damage:       70,
+                damage_type:  :air,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Искусный маг, сведущий в секретах древних рун.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Небирос',
+                '/Disciples2/Rasi/neutral/boss/10.jpg', {
+                animation:    '/_ph/36/2/54743158.gif',
+                level:        1,
+                expirience:   9995,
+                hp:           2600,
+                armor:        30,
+                immune:       :mind,
+                resist:       [:death, :fire, :water, :air, :earth],
+                weapon_type:  %w[Алебарда Паралич],
+                accuracy:     [90, 60],
+                damage:       300,
+                damage_type:  [:weapon, :mind],
+                initiative:   60,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Небирос - тварь, появившаяся из самого сердца подземного мира. Он
+            был окроплён кровью самого Бетрезена, разжигающей пламя чумы повсюду.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Эрхог Тёмная',
+                '/Disciples2/Rasi/neutral/boss/21.jpg', {
+                animation:    '/_ph/37/2/295941395.gif',
+                level:        1,
+                expirience:   2140,
+                hp:           95,
+                armor:        0,
+                immune:       :none,
+                resist:       [:fire, :water, :air, :earth],
+                weapon_type:  'Высосать жизнь',
+                accuracy:     80,
+                damage:       45,
+                damage_type:  :death,
+                initiative:   40,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Никому не превзойти в искусстве чёрных обрядов Эрхог, которая
+            питается человеческим мясом в надежде обрести бессмертие.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Некромант Эрхог',
+                '/Disciples2/Rasi/neutral/boss/11.jpg', {
+                animation:    '/_ph/37/2/59234489.gif',
+                level:        1,
+                expirience:   9000,
+                hp:           300,
+                armor:        0,
+                immune:       :none,
+                resist:       [:fire, :water, :air, :earth],
+                weapon_type:  'Пить жизнь',
+                accuracy:     80,
+                damage:       60,
+                damage_type:  :death,
+                initiative:   50,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Никому не превзойти в искусстве чёрных обрядов Эрхог, которая
+            питается человеческим мясом в надежде обрести бессмертие.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Нидхегг',
+                '/Disciples2/Rasi/neutral/boss/12.jpg', {
+                animation:    '/_ph/40/2/898138856.gif',
+                level:        1,
+                expirience:   9900,
+                hp:           2000,
+                armor:        0,
+                immune:       :mind,
+                resist:       :none,
+                weapon_type:  %w[Укус Яд],
+                twice_attack: true,
+                accuracy:     [90, 90],
+                damage:       [150, 50],
+                damage_type:  [:weapon, :death],
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Змей Нидхегг - вестник Рагнарёка, Гибели Богов.
+            Прикосновение Змея ослабляет врага, лишая его жизненной силы.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Принцесса Ятаа Халли',
+                '/Disciples2/Rasi/neutral/boss/13.jpg', {
+                animation:    '/_ph/34/2/143439297.gif',
+                level:        1,
+                expirience:   1600,
+                hp:           250,
+                armor:        20,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Рунный топор',
+                accuracy:     80,
+                damage:       80,
+                damage_type:  :weapon,
+                initiative:   40,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Дочь Морока Повелителя Туч Ятаа'Халли - могучая воительница и
+            осторожный дипломат.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Сэр Аллемон',
+                '/Disciples2/Rasi/neutral/boss/14.jpg', {
+                animation:    '/_ph/35/2/699266477.gif',
+                level:        1,
+                expirience:   9995,
+                hp:           800,
+                armor:        20,
+                immune:       :mind,
+                resist:       :none,
+                weapon_type:  ['Благословенный Меч', 'Разбить броню'],
+                accuracy:     [80, 50],
+                damage:       300,
+                damage_type:  [:weapon, :weapon],
+                initiative:   60,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Сэр Аллемон Локлестерский был назначен королём Эмри,
+            дабы защитить честь Империи.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Тварь Галлеана',
+                '/Disciples2/Rasi/neutral/boss/15.jpg', {
+                animation:    '/_ph/40/2/437889235.gif',
+                level:        1,
+                expirience:   9995,
+                hp:           2800,
+                armor:        0,
+                immune:       :mind,
+                resist:       [:death, :fire, :water, :air, :earth],
+                weapon_type:  ['Гнев Галлеана', 'Яд'],
+                accuracy:     [95, 95],
+                damage:       [300, 60],
+                damage_type:  [:life, :life],
+                initiative:   60,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Когда эльфийский бог Галлеан захотел использовать свой дар создания
+            жизни во Зло, его проклятый дух воплотился в этом ужасном Звере.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Утер',
+                '/Disciples2/Rasi/neutral/boss/17.jpg', {
+                animation:    '/_ph/35/2/636769175.gif',
+                level:        1,
+                expirience:   2550,
+                hp:           300,
+                armor:        0,
+                immune:       :none,
+                resist:       [:fire, :water, :air, :earth],
+                weapon_type:  %w[Меч Паралич],
+                accuracy:     [80, 60],
+                damage:       80,
+                damage_type:  [:weapon, :mind],
+                initiative:   50,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Пропавший наследник Империи Утер вернулся, чтобы защитить
+            Империю от врагов своего отца.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Утер',
+                '/Disciples2/Rasi/neutral/boss/18.jpg', {
+                animation:    '/_ph/36/2/309599134.gif',
+                level:        1,
+                expirience:   5750,
+                hp:           300,
+                armor:        0,
+                immune:       :none,
+                resist:       [:mind, :death, :fire, :water, :air, :earth],
+                weapon_type:  ['Огненный шар', 'Паралич'],
+                accuracy:     [90, 90],
+                damage:       100,
+                damage_type:  [:fire, :mind],
+                initiative:   60,
+                targets:      :all,
+                target_count: 1
+        }, <<-DESC
+            Утер - пропавший наследник Империи. Бесрезен вселился в тело этого
+            мальчика, чтобы вернуться в Невендаар.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Утер-демон',
+                '/Disciples2/Rasi/neutral/boss/19.jpg', {
+                animation:    '/_ph/36/2/925762455.gif',
+                level:        1,
+                expirience:   9900,
+                hp:           1500,
+                armor:        0,
+                immune:       [:mind, :fire],
+                resist:       [:death, :water, :air, :earth],
+                weapon_type: %w(Ад Паралич),
+                accuracy:     [90, 60],
+                damage:       150,
+                damage_type:  [:fire, :mind],
+                initiative:   65,
+                targets:      :all,
+                target_count: 6
+        }, <<-DESC
+            Утер в обличье демона, не знающий страха и жалости,
+            уничтожит любого, кто встанет у него на пути.
+        DESC
+        ) %>
+
+    <%= d2_unit_table(
+                'Хьюберт де Лейли',
+                '/Disciples2/Rasi/neutral/boss/20.jpg', {
+                animation:    '/_ph/35/2/211904661.gif',
+                level:        1,
+                expirience:   1950,
+                hp:           200,
+                armor:        30,
+                immune:       :none,
+                resist:       :none,
+                weapon_type:  'Булава',
+                accuracy:     90,
+                damage:       75,
+                damage_type:  :weapon,
+                initiative:   60,
+                targets:      :nearest,
+                target_count: 1
+        }, <<-DESC
+            Далёкий родственник Императора, Хьюберт де Лейли жаждет
+            захватить трон и править Империей.
+        DESC
+        ) %>
+<% end %>
