@@ -2,7 +2,7 @@
 <table class="d2-unit-stats">
     <caption><%= @locals[:unit_name] %></caption>
     <tr>
-        <td class="portrait" rowspan="<%= unit_attrs.size %>">
+        <td class="portrait" rowspan="<%= unit_attrs.count { |k, _| k != :twice_attack } %>">
             <img src="<%= @locals[:img_path] %>" alt="<%= @locals[:unit_name] %> portrait">
         </td>
         <th><%= D2_UNIT_ATTRS[:level] %></th>
