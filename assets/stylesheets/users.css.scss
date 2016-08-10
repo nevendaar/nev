@@ -5,3 +5,8 @@
     display: inline-block;
   }
 }
+
+// personal messages table
+.user_pm > #pmdform > table > tbody > tr:hover {
+  background-color: rgba(155, 155, 155, 0.33);
+}

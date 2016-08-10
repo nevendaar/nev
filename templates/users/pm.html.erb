@@ -28,7 +28,9 @@
     </script>
     <b><%= c '$TITLE$' %></b>
     <hr>
-    <%= c '$BODY$' %>
+    <div class="user_pm">
+        <%= c '$BODY$' %>
+    </div>
     <script type="text/javascript">
         $('#bc18').html('<input type="button" title="Quote" value="quote" onclick="simpletag(&#34;quote&#34;,&#34;&#34;,&#34;&#34;,&#34;message&#34;,&#34;&#34;)" class="codeButtons" style="width:40px;" id="quote"/>');
         $('#snewmes').before('<div align="right" id="squote" style="display:none;">[ <a href="javascript:Insert(selection);" onmouseover="get_selection()">Цитировать</a> ]</div>').click(function () {
