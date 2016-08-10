@@ -22,46 +22,6 @@
     </script>
 <% }.endif! %>
 
-<% uif('0 && ' << code_is('$URI_ID$', "'addthread'")) { %>
-    <!-- add_to_site_news -->
-    <script type="text/javascript">
-        var str="";
-        <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
-            $('<input id="atsn" type="checkbox" checked="checked"/> <label for="atsn" style="color:#8BEEF7;">Добавить запись в блок "Новое на сайте"?</label><br/>').insertBefore('#smon');
-        <% }.endif! %>
-        function checksubmit(obj){
-            <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
-                if($('#atsn').attr('checked')){
-            <% }.endif! %>
-            $.post('/dir/',
-                    {
-                        jkd498: 1,
-                        jkd428: 1,
-                        ocat: 5,
-                        title: $('#frF3').val(),
-                        slink: url,
-                        brief: (str + '"' + $('#puF1').val() + '" в разделе [i]' + $('#catSelector9').val() + '[/i].'),
-                        edttbrief: 2,
-                        format_brief: 1,
-                        a: 12,
-                        ssid: $('input[name="ssid"]').val(),
-                        numi: 1
-                    },
-                    function(p, s) {
-                        str = (s == 'success' ? '<br/><br/>( Добавлена запись в список обновления материалов )' : '');
-                        _uWnd.content('addEnt', t + str) || $('input.manFlSbm').attr('disabled', 0);
-                        init();
-                    }
-            );
-            <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
-                }
-            <% }.endif! %>
-        }
-        function addnn(url, t) {}
-    </script>
-    <!-- /add_to_site_news -->
-<% }.endif! %>
-
 <% uif(code_is('$URI_ID$', "'frTread693'")) { %>
     <script type="text/javascript">function spages(p){if (0){document.location.href='/dir/1-'+p+'-0-38-0-0-0-1302360057'; return;}try{document.getElementById('myGrid').style.cssText = 'position:absolute; z-index:8; top:0;left:0; display:normal; background: url(\'http://s6.ucoz.net/img/fr/g.gif\'); text-align:center; width:'+document.body.scrollWidth+'px; height:'+document.body.scrollHeight+'px;';}catch(e){}_uPostForm('',{url:'/dir/1-'+p+'-0-38-987-0-0-1302360057'});}</script>
     <script type="text/javascript">function addcom(f){drop_dice();_uPostForm('acform',{type:'POST',url:'http://nevendaar.com/index/'});}</script>

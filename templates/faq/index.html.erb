@@ -13,52 +13,6 @@
     <% }.endif! %>
     <hr>
     <% uif('$CATEGORIES$') { %><%= c '$CATEGORIES$' %><hr><% }.endif! %>
-    <% uif(code_is '$PAGE_ID$', "'add'", "'edit'") { %>
-        <%= i "substr($BODY$, 0, strpos($BODY$, \"m'}\") + 2)" %>,success:function(a){var a=$(a);if(!a.text().match('myWinError')){addnn(a.text().match(/href="(.*)"\s/)[1],a.text().match(/<div[^<>]*>(.+)\]/i)[0])}}<%= i "substr($BODY$, strpos($BODY$, \"m'}\") + 2)" %>
-        <script>
-            var str="";
-            <% uif(group_is '$GROUP_ID$', :moderator, :admin, :master) { %>
-                $('<input id="atsn" type="checkbox" checked="checked"/> <label for="atsn">Добавить запись в блок "Новое на сайте"?</label><br/>').insertBefore('#ispen');
-            <% }.endif! %>
-            function init(){
-                <% uif(code_is '$PAGE_ID$', "'add'") { %>
-                    str = "<%= c '$USERNAME$' %> задал<% uif(female) { %>а<% }.endif! %> вопрос: ";
-                <% }.else { %>
-                    str = ($('#message').val() == '' ? "Дан ответ на вопрос: " : "Обновлён ответ на вопрос: ");
-                <% }.endif! %>
-            }
-            function addnn(url, t){
-                <% uif(group_is '$GROUP_ID$', :moderator, :admin, :master) { %>
-                    if(!$('#atsn').attr('checked')){
-                        _uWnd.content('addEnt', t) || $('input.manFlSbm').attr('disabled', 0);
-                        return false
-                    }
-                <% }.endif! %>
-                $.get('/dir/5-0-0-0-1', function(i){
-                    $.post('/dir/', {
-                            jkd498:1,
-                            jkd428:1,
-                            ocat:5,
-                            title:$('input[name="subject"]').val(),
-                            slink:url,
-                            brief:(str+'"'+$('input[name="subject"]').val()+'" в разделе [i]'+($('#fqF7').val()==0?'FAQ':$('#fqF7 > option').eq($('#fqF7').val()).text())+'[/i].'),
-                            edttbrief:2,
-                            format_brief:1,
-                            a:12,
-                            ssid:$('input[name="ssid"]', i).val(),
-                            numi:1
-                        }, function(p, s){
-                            str = (s == 'success' ? '<br/><br/>( Добавлена запись в список обновления материалов )' : '');
-                            _uWnd.content('addEnt', t + str) || $('input.manFlSbm').attr('disabled',0);
-                            init();
-                        }
-                    )
-                })
-            }
-            init();
-        </script>
-    <% }.else { %>
-        <%= c '$BODY$' %>
-    <% }.endif! %>
+    <%= c '$BODY$' %>
     <script>$("#entryID" + window.location.hash.substr(1)).addClass("faq_light");</script>
 <% end %>

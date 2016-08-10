@@ -14,7 +14,7 @@
     <% }.endif! %>
 
     <div class="clearfix top-hr">
-        <%= i "substr($BODY$,0,strpos($BODY$,\"m'}\")+2)" %>,success:function(a){var a=$(a);!a.text().match('myWinError')?location.href=a.text().match(/href="(.*)"\s/)[1]:_uWnd.content('addEnt',a.text().match(/<div[^<>]*>(.+)<\/div>/i)[0])||$('input.manFlSbm').attr('disabled',0)}<%= i "substr($BODY$,strpos($BODY$,\"m'}\")+2)" %>
+        <%= c '$BODY$' %>
         <script type="text/javascript">
             $('#cus5').hide().next().hide();
             if($('#catSelector9').val() == 'Site'){
