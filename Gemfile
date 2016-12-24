@@ -19,7 +19,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'uglifier', '>= 2.5.1'
 
 # Use V8 as js interpreter
-gem 'therubyracer', '~> 0.12.1'
+gem 'therubyracer', '0.12.2'
 
 gem 'mechanize', '2.7.3'
 

@@ -15,7 +15,7 @@ GEM
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     json (1.8.1)
-    libv8 (3.16.14.3)
+    libv8 (3.16.14.17)
     mechanize (2.7.3)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -35,7 +35,7 @@ GEM
     ntlm-http (0.1.1)
     rack (1.5.2)
     rake (10.1.0)
-    ref (1.0.5)
+    ref (2.0.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -58,7 +58,7 @@ GEM
     sprockets-sass (1.1.0)
       sprockets (~> 2.0)
       tilt (~> 1.1)
-    therubyracer (0.12.1)
+    therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
     tilt (1.4.1)
@@ -83,5 +83,8 @@ DEPENDENCIES
   sass
   sprockets (~> 2.12.0)
   sprockets-sass
-  therubyracer (~> 0.12.1)
+  therubyracer (= 0.12.2)
   uglifier (>= 2.5.1)
+
+BUNDLED WITH
+   1.13.6
