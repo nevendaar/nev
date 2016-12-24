@@ -11,7 +11,15 @@ $(function () {
         char_limit = ~~$mc_msg_fld.attr('maxlength');
     if ($mc_window.length) {
         var load_messages = function () {
-            $mc_window.load('/mchat div:eq(1)');
+            $.ajax({
+                url: '/mchat',
+                cache: false,
+                method: 'GET',
+                dataType: 'html'
+            }).done(function (html) {
+                var $msg_body = $(html).children('div');
+                $mc_window.html($msg_body);
+            });
         };
         load_messages();
 
