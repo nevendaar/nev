@@ -3,6 +3,8 @@
 <% @params[:race_name] = 'Нейтралы' %>
 
 <% layout 'pages/index/layouts/d2_race_page.html.erb' do %>
+    <h2><%= UNIT_TYPE_FOR_LINK[:unique] %></h2>
+
     <%= d2_unit_table(
                 'Астерот',
                 '/Disciples2/Rasi/neutral/boss/1.jpg', {
