@@ -15,6 +15,14 @@
     </ol>
 
     <div class="text-right">
+        <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+            <button type="button" class="add_to_nots_btn">Добавить в блок ННС</button>
+            <span class="nots-brief hidden">
+                <%= c '$USER$' %> загрузил
+                <% uif(code_is('$CID$', 2, 5)) { %>карту<% }.else { %>файл<% }.endif! %>
+                "<%= c '$ENTRY_TITLE$' %>" в раздел [i]<%= c '$CAT_NAME$' %>[/i].
+            </span>
+        <% }.endif! %>
         <% uif('$ADD_ENTRY_LINK$') { %>
             [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]
         <% }.elsif(code_is('$CID$', 2, 5)) { %>
@@ -28,7 +36,11 @@
 
     <div class="material">
         <div class="title clearfix">
-            <h2><%= c '$ENTRY_TITLE$' %> <%= c '$VERSION$' %> <%= c '$MODER_PANEL$' %></h2>
+            <h2>
+                <span class="nots-title"><%= c '$ENTRY_TITLE$' %></span>
+                <%= c '$VERSION$' %>
+                <%= c '$MODER_PANEL$' %>
+            </h2>
             <div class="time pull-right">
                 <%= c '$ADD_DATE$' %>, <%= c '$ADD_TIME$' %>
             </div>
