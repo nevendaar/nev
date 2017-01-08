@@ -1,7 +1,12 @@
-﻿function replacer(){
-    $.get('/index/54-$_USER_ID$', function(data){//nevendaar.com
-        cont=$('cmd:last', data).text().replace(/Предметы/ig, 'Инвентарь').replace(/Богатство/ig, 'Заклинания').replace(/AwL/ig, 'AwLD').replace(/\{url:'\/index\/54-$_USER_ID$-/ig, '\'<div align="left"><img alt="" src="http://s29.ucoz.net/.s/img/wd/6/ajax.gif"></div>\');set_content(').replace(/'\}\);/ig, ');');
-        _uWnd.content('AwL',cont);
+﻿function replacer() {
+    $.get('/index/54-$_USER_ID$', function (data) {//nevendaar.com
+        var cont = $('cmd:last', data).text().
+            replace(/Предметы/ig, 'Инвентарь').
+            replace(/Богатство/ig, 'Заклинания').
+            replace(/AwL/ig, 'AwLD').
+            replace(/\{url:'\/index\/54-$_USER_ID$-/ig, '\'<div align="left"><img alt="" src="http://s29.ucoz.net/.s/img/wd/6/ajax.gif"></div>\');set_content(').
+            replace(/'\}\);/ig, ');');
+        _uWnd.content('AwL', cont);
     });
 }
 
