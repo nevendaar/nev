@@ -10,9 +10,22 @@
         <li class="active"><%= c '$ENTRY_NAME$' %></li>
     </ol>
 
+    <div class="text-right">
+      <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+          <button type="button" class="add_to_nots_btn"></button>
+          <span class="nots-brief hidden">
+            <%= c '$USER$' %> поделился(лась) творчеством
+            «<%= c '$ENTRY_TITLE$' %>» в разделе [i]<%= u_default '$CAT_NAME$', 'Фан-творчество' %>[/i].
+          </span>
+      <% }.endif! %>
+      <% uif('$ADD_ENTRY_LINK$') { %>
+          [ <a href="<%= c '$ADD_ENTRY_LINK$' %>">Добавить материал</a> ]
+      <% }.endif! %>
+    </div>
+
     <div class="material">
         <div class="title clearfix">
-            <h2><%= c '$ENTRY_NAME$' %></h2>
+            <h2><span class="nots-title"><%= c '$ENTRY_NAME$' %></span></h2>
             <div class="time pull-right">
                 <%= c '$ADD_TIME$' %> <%= c '$MODER_PANEL$' %>
             </div>

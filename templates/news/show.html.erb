@@ -12,13 +12,17 @@
 
     <div class="material">
         <div class="title clearfix">
-            <h2>$ENTRY_NAME$</h2>
-            <div class="time pull-right">
-                $ADD_TIME$ $MODER_PANEL$
+            <h2><span class="news-title">$ENTRY_NAME$</span></h2>
+            <div class="pull-right">
+                <span class="time">$ADD_TIME$</span>
+                <% uif(group_is('$GROUP_ID$', :moderator, :admin, :master)) { %>
+                    <button type="button" class="add_to_nots_btn"></button>
+                <% }.endif! %>
+                $MODER_PANEL$
             </div>
         </div>
         <div class="body">
-            <div class="clearfix">
+            <div class="clearfix nots-brief">
                 <%= c '$MESSAGE$' %>
             </div>
             <?if($OTHER1$)?><div class="source"><a href="$OTHER1$" target="_blank">Источник</a></div><?endif?>
