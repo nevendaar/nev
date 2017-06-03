@@ -1,7 +1,6 @@
 ---
 
 # Глобальные блоки
-'AJAXJS': 'templates/AJAXJS.html.erb' # Системные css и js файлы
 'ASIDE':  'templates/ASIDE.html.erb'  # Меню сайта
 'FOOTER': 'templates/FOOTER.html.erb' # Подвал
 'HEADER': 'templates/HEADER.html.erb' # Шапка
