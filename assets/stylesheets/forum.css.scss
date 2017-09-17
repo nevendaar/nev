@@ -537,6 +537,9 @@ a.threadLink:active {
   width: 550px;
   height: 150px;
   color: #FFFFFF;
+  resize: vertical;
+  min-height: 100px;
+  max-height: 600px;
 }
 
 .postUserFl {
@@ -555,6 +558,10 @@ a.threadLink:active {
 .smilesPart {
   padding-top: 5px;
   text-align: center
+}
+
+#frM58 {
+  padding-right: 5px;
 }
 /* End Post Form */
 
