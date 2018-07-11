@@ -113,6 +113,7 @@
                         <textarea class="uf-txt-input commFl js-start-txt" placeholder="Оставьте ваш комментарий..."></textarea>
                     </li>
                     <li>
+                        <%= c '$SECURITY_CODE$' %>
                         <button class="uf-btn" onclick="preSaveMessage();window.open('/index/800?ref='+window.location.href,'SocialLoginWnd','width=500,height=340,resizable=yes,titlebar=yes');">Отправить</button>
                     </li>
                 </ul>
