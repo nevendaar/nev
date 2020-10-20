@@ -157,10 +157,11 @@
                 <% uif(group_is('$GROUP_ID$', :admin, :moderator, :master)) { %>
                     $('#activate_r').show();
                 <% }.endif! %>
-                cont_p = $('table:eq(1)', cont).html();
-                data_p = $('div:eq(1)', cont_p).html().split(' ', 3);
+                var cont_p = $('.u-rep-history-item:eq(1)', cont);
+                var data_p = cont_p.children('div:eq(1)').html().split(' ', 3);
                 dj = (data_p[0] != "_" ? data_p[0] : $('b:first', cont_p).html());
-                $('#last_air').html('Предыдущий эфир был: ' + $('td:eq(1)', cont_l).text() + '(DJ ' + dj + ')').slideDown();
+                var timestmp = /\d{2}\.\d{2}\.\d{4}, \d{2}:\d{2}/.exec(cont_p.text())[0];
+                $('#last_air').html('Предыдущий эфир был: ' + timestmp + ' (DJ ' + dj + ')').slideDown();
             }
         });
     </script>
