@@ -140,9 +140,9 @@
     <script type="text/javascript">
         $.get('/index/9-1249', function (data) {
             cont = $('cmd[p=content]', data).text();
-            cont_l = $('table:eq(0)', cont).html();
-            data_l = $('div:eq(1)', cont_l).html().split(' ', 3);
-            dj = (data_l[0] != "_" ? data_l[0] : $('b:first', cont_l).html());
+            var cont_l = $('.u-rep-history-item:first', cont);
+            var data_l = cont_l.children('div:eq(1)').html().split(' ', 3);
+            var dj = (data_l[0] != "_" ? data_l[0] : $('b:first', cont_l).html());
             if (dj != "off") {
                 color = (data_l[1] != "_" ? data_l[1] : "orange");
                 href = data_l[2];
