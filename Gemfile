@@ -21,7 +21,7 @@ gem 'uglifier', '>= 2.5.1'
 # Use V8 as js interpreter
 gem 'therubyracer', '0.12.2'
 
-gem 'mechanize', '2.7.3'
+gem 'mechanize', '2.7.7'
 
 # Use rspec for testing
 gem 'rspec', '>= 3.0.0'
